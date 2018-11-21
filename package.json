@@ -1,0 +1,25 @@
+{
+  "name": "skynix-site-react-v.2",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "next",
+    "build": "next build",
+    "start": "next start"
+  },
+  "repository": {
+    "type": "git",
+    "url": "ssh://git@bitbucket.skynix.co/skycrm/skynix-site-react-v.2.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "next": "^7.0.2",
+    "react": "^16.6.3",
+    "react-dom": "^16.6.3"
+  },
+  "devDependencies": {
+    "@zeit/next-sass": "^1.0.1"
+  }
+}
