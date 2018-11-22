@@ -88,5 +88,8 @@
     width: 100%;
     border-top: none;
     background: rgba($white, .1);
+    @include tablets {
+      background: $white;
+    }
   }
 }

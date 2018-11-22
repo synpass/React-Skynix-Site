@@ -1,10 +1,48 @@
 import Page from "../components/Page";
-import Header from "../components/header/Header";
+import React, {Component} from 'react';
+import ParallaxBg from "../components/background/ParallaxBg";
+import Intro from "../components/intro/Intro";
+import ReactFullpage from '@fullpage/react-fullpage';
 
-const Index = () => (
-    <Page>
-        <div>Home page</div>
-    </Page>
-);
+export default class Index extends Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            preload: false,
+            loaded: false
+        };
+    }
 
-export default Index;
+    componentDidMount() {
+        setTimeout(function() {
+            this.setState({preload: true})
+        }.bind(this), 2000);
+        setTimeout(function() {
+            this.setState({loaded: true})
+        }.bind(this), 7000);
+    }
+
+    render() {
+        return (
+            <Page loading={true}>
+                <ParallaxBg/>
+                <ReactFullpage
+                    render={({ state, fullpageApi }) => {
+                        return (
+                            <ReactFullpage.Wrapper>
+                                <div className="section">
+                                    <Intro/>
+                                </div>
+                                <div className="section">
+
+                                </div>
+                            </ReactFullpage.Wrapper>
+                        );
+                    }}
+                />
+            </Page>
+        )
+    }
+
+
+}

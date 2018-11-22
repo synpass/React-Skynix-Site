@@ -17,14 +17,20 @@
   "dependencies": {
     "next": "^7.0.2",
     "react": "^16.6.3",
-    "react-dom": "^16.6.3"
+    "react-dom": "^16.6.3",
+    "react-loader": "^2.4.5"
   },
   "devDependencies": {
+    "@fullpage/react-fullpage": "^0.1.6",
     "@zeit/next-sass": "^1.0.1",
     "node-sass": "^4.10.0",
+    "parallax-js": "^3.1.0",
     "prop-types": "^15.6.2",
     "react-animate-height": "^2.0.7",
     "react-animated-css": "^1.0.4",
+    "react-html-parser": "^2.0.2",
+    "react-preload": "^0.6.0",
+    "react-preloading-screen": "^1.0.2",
     "shortid": "^2.2.14"
   }
 }

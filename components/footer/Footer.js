@@ -1,5 +1,5 @@
 import React from 'react';
-import { Animated } from "react-animated-css";
+import {Animated} from "react-animated-css";
 import links from './social.config.json';
 import shortid from 'shortid'
 
@@ -10,14 +10,16 @@ export default function Footer() {
 
     return (
         <div className="footer-wrapper">
-            <footer className="footer">
-                <div className='footer__links'>
-                    {social}
-                </div>
-                <div className='footer__scroll'>
-                    Scroll to navigate
-                </div>
-            </footer>
+            <Animated animationIn="fadeInUp">
+                <footer className="footer">
+                    <div className='footer__links'>
+                        {social}
+                    </div>
+                    <div className='footer__scroll'>
+                        Scroll to navigate
+                    </div>
+                </footer>
+            </Animated>
         </div>
     )
 }

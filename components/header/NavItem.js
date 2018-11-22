@@ -31,6 +31,10 @@ export default class NavItem extends Component {
         this.setState({height});
     }
 
+    componentDidMount() {
+        console.log('mount');
+    }
+
     render() {
         const { children, name, contrast, order } = this.props;
 
@@ -45,13 +49,11 @@ export default class NavItem extends Component {
 
 
         return (
-            <Animated animationIn="fadeIn" animationInDelay={300 + order * 200}>
-                <li onMouseLeave={this.hide} onMouseEnter={this.show}>
-                    <a className={linkClasses.join(' ')}>{name} { children ? <span/> : null}</a>
-                    { children ? <button className={expandClasses.join(' ')} onClick={this.toggle}/> : null }
-                    { children ? <Submenu children={children} height={height}/> : null }
-                </li>
-            </Animated>
+            <li onMouseLeave={this.hide} onMouseEnter={this.show}>
+                <a className={linkClasses.join(' ')}>{name} { children ? <span/> : null}</a>
+                { children ? <button className={expandClasses.join(' ')} onClick={this.toggle}/> : null }
+                { children ? <Submenu children={children} height={height}/> : null }
+            </li>
         )
     }
 }

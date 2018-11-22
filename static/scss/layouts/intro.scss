@@ -1,0 +1,54 @@
+.intro {
+  height: 100%;
+  padding: 100px 0;
+  &__slide {
+    width: 100%;
+    background: -webkit-linear-gradient(to left, transparent, rgba(255,255,255, 0.7));  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to left, transparent, rgba(255,255,255, 0.7)); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    padding-right: 50%;
+    min-height: 50%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    position: relative;
+
+    &--reverse {
+      background: -webkit-linear-gradient(to right, transparent, rgba(255,255,255, 0.7));  /* Chrome 10-25, Safari 5.1-6 */
+      background: linear-gradient(to right, transparent, rgba(255,255,255, 0.7)); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+      padding-left: 50%;
+      padding-right: 0;
+      border-top: 1px solid rgba($blue, .2);
+    }
+  }
+  h1 {
+    font-size: 36px;
+    width: 75%;
+    margin-left: 25%;
+  }
+
+  b {
+    color: $blue;
+  }
+
+  p {
+    margin-right: 25%;
+  }
+
+  h1,
+  p {
+    max-width: 400px;
+  }
+
+  a {
+    background: $blue;
+    color: $white;
+    display: inline-block;
+    padding: 10px 27px;
+    font-size: 14px;
+    text-decoration: none;
+    transition: background .2s;
+    &:hover {
+      background: $dark-pale;
+    }
+  }
+}
