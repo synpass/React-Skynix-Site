@@ -3,7 +3,7 @@ import Submenu from "./Submenu";
 import PropTypes from 'prop-types';
 import { Animated } from "react-animated-css";
 
-export default class Nav extends Component {
+export default class NavItem extends Component {
 
     constructor(props) {
         super(props);
@@ -56,7 +56,7 @@ export default class Nav extends Component {
     }
 }
 
-Nav.propTypes = {
+NavItem.propTypes = {
     children: PropTypes.array,
     name: PropTypes.string.isRequired,
     contrast: PropTypes.bool,

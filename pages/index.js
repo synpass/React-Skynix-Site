@@ -3,7 +3,7 @@ import Header from "../components/header/Header";
 
 const Index = () => (
     <Page>
-        <Header/>
+        <div>Home page</div>
     </Page>
 );
 
