@@ -1,0 +1,60 @@
+.nav {
+  @include tablets {
+    margin-right: 27px;
+  }
+
+  &__menu {
+    margin: 0;
+    width: 75%;
+    overflow: hidden;
+    transition: transform .3s  linear;
+    position: fixed;
+    background: $blue;
+    color: $white;
+    left: 0;
+    top: 0;
+    height: 100%;
+    transform: translateX(-101%);
+    padding: 20px 0;
+    z-index: 10;
+
+    &.opened {
+      transform: translateX(0);
+    }
+    @include phones {
+      width: 300px;
+    }
+    @include tablets {
+      transition: none;
+      transform: none;
+      width: auto;
+      position: relative;
+      display: flex;
+      background: transparent;
+      color: $dark;
+      overflow: visible;
+      opacity: 1;
+    }
+
+    @include desktop {
+      flex-wrap: nowrap;
+    }
+
+    li {
+      padding: 0;
+      margin: 0 0 0 -1px;
+      list-style: none;
+      position: relative;
+    }
+  }
+
+  &__submenu {
+    position: relative;
+    left: 0;
+
+    @include tablets {
+      position: absolute;
+      width: 166px;
+    }
+  }
+}

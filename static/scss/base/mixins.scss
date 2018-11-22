@@ -1,0 +1,21 @@
+/* breakpoints */
+@mixin desktop {
+  @media (min-width: 1366px) {
+    @content
+  }
+}
+@mixin laptop {
+  @media (min-width: 1024px) {
+    @content
+  }
+}
+@mixin tablets {
+  @media (min-width: 768px) {
+    @content
+  }
+}
+@mixin phones {
+  @media (min-width: 544px) {
+    @content
+  }
+}

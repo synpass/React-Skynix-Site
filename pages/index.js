@@ -1,7 +1,10 @@
+import Page from "../components/Page";
+import Header from "../components/header/Header";
+
 const Index = () => (
-    <div>
-    <p>Hello Next.js</p>
-</div>
+    <Page>
+        <Header/>
+    </Page>
 );
 
 export default Index;

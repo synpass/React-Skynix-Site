@@ -1,0 +1,35 @@
+.header {
+  width: 100%;
+  max-width: 1460px;
+  padding: 10px 15px 0;
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  @include tablets {
+    padding-top: 40px;
+  }
+
+  @include tablets {
+    &-wrapper {
+      position: fixed;
+      width: 100%;
+      top: 0;
+      left: 0;
+      z-index: 10;
+      background: rgba($white, .9);
+    }
+  }
+
+  &__logo {
+    width: 110px;
+    img {
+      width: 100%;
+    }
+  }
+
+  &__nav {
+    align-items: stretch;
+    display: flex;
+  }
+}
