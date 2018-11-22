@@ -3,6 +3,7 @@ import '../static/scss/app.scss';
 import Head from 'next/head'
 import PropTypes from 'prop-types';
 import Header from './header/Header';
+import Footer from './footer/Footer';
 
 export default function Page(props) {
     return (
@@ -13,6 +14,7 @@ export default function Page(props) {
             </Head>
             <Header/>
             {props.children}
+            <Footer/>
         </div>
     )
 }
