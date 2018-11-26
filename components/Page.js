@@ -55,4 +55,4 @@ export default class Page extends Component {
 Page.propTypes = {
     children: PropTypes.array,
     className: PropTypes.string
-}
+};

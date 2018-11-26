@@ -26,20 +26,7 @@ export default class Index extends Component {
         return (
             <Page loading={true}>
                 <ParallaxBg/>
-                <ReactFullpage
-                    render={({ state, fullpageApi }) => {
-                        return (
-                            <ReactFullpage.Wrapper>
-                                <div className="section">
-                                    <Intro/>
-                                </div>
-                                <div className="section">
-
-                                </div>
-                            </ReactFullpage.Wrapper>
-                        );
-                    }}
-                />
+                <Intro/>
             </Page>
         )
     }

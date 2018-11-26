@@ -9,17 +9,15 @@ export default function Footer() {
     );
 
     return (
-        <div className="footer-wrapper">
-            <Animated animationIn="fadeInUp">
-                <footer className="footer">
-                    <div className='footer__links'>
-                        {social}
-                    </div>
-                    <div className='footer__scroll'>
-                        Scroll to navigate
-                    </div>
-                </footer>
-            </Animated>
-        </div>
+        <Animated animationIn="fadeInUp" className="footer-wrapper">
+            <footer className="footer">
+                <div className='footer__links'>
+                    {social}
+                </div>
+                <div className='footer__scroll'>
+                    Scroll to navigate
+                </div>
+            </footer>
+        </Animated>
     )
 }

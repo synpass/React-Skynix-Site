@@ -61,16 +61,18 @@
     }
   }
 
-  &--contrast,
-  &:hover {
-    background: $dark-pale;
-    border-color: $dark-pale;
-    color: $white;
+  @include tablets {
+    &--contrast,
+    &:hover {
+      background: $dark-pale;
+      border-color: $dark-pale;
+      color: $white;
 
-    span {
-      transform: scale(1, -1) translateY(1px);
-      &:before,&:after {
-        background: $white;
+      span {
+        transform: scale(1, -1) translateY(1px);
+        &:before, &:after {
+          background: $white;
+        }
       }
     }
   }
