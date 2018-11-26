@@ -2,31 +2,46 @@ import Page from "../components/Page";
 import React, {Component} from 'react';
 import ParallaxBg from "../components/background/ParallaxBg";
 import Intro from "../components/intro/Intro";
+import Solutions from "../components/home-slides/Solutions"
 import ReactFullpage from '@fullpage/react-fullpage';
 
 export default class Index extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            preload: false,
-            loaded: false
+            currSlide: null
         };
+        this.handleOnLeaveSlide = this.handleOnLeaveSlide.bind(this);
     }
 
-    componentDidMount() {
-        setTimeout(function() {
-            this.setState({preload: true})
-        }.bind(this), 2000);
-        setTimeout(function() {
-            this.setState({loaded: true})
-        }.bind(this), 7000);
+
+    handleOnLeaveSlide(origin, destination, direction) {
+        this.setState({currSlide: destination.index});
     }
 
     render() {
+        const fullpageOptions = {
+            anchors: ["introPage", "solutionPage"],
+            onLeave: this.handleOnLeaveSlide
+        };
+
         return (
             <Page loading={true}>
-                <ParallaxBg/>
-                <Intro/>
+                    <ParallaxBg/>
+                    <ReactFullpage {...fullpageOptions}
+                        render={({ state, fullpageApi }) => {
+                            return (
+                                <ReactFullpage.Wrapper>
+                                    <div className="section">
+                                        <Intro/>
+                                    </div>
+                                    <div className="section solutions-wrapper">
+                                        <Solutions show={this.state.currSlide === 1}/>
+                                    </div>
+                                </ReactFullpage.Wrapper>
+                            );
+                        }}
+                    />
             </Page>
         )
     }

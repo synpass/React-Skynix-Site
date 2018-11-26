@@ -1,0 +1,30 @@
+.heading {
+  margin: 30px 0 0;
+  font: {
+    family:  $sofia-semibold;
+    size: 28px;
+    weight: 100;
+  }
+  @include tablets {
+    font-size: 60px;
+  }
+
+  b {
+    color: $blue;
+    font-weight: 100;
+  }
+
+  &__sub {
+    margin: 5px 0 0;
+    color: $quartz;
+    letter-spacing: 0.5em;
+    font: {
+      family: $proxima;
+      weight: 100;
+      size: 12px;
+    }
+    @include tablets {
+      font-size: 14px;
+    }
+  }
+}

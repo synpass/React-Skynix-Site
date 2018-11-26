@@ -28,13 +28,13 @@ export default class Page extends Component {
     render() {
         const content = (
             <div>
-                <Header/>
                 <div className="content-wrapper">
                     <div className="content">
                         {this.props.children}
                     </div>
                 </div>
                 <Footer/>
+                <Header/>
             </div>
         );
 

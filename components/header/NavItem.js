@@ -31,10 +31,6 @@ export default class NavItem extends Component {
         this.setState({height});
     }
 
-    componentDidMount() {
-        console.log('mount');
-    }
-
     render() {
         const { children, name, contrast, order } = this.props;
 

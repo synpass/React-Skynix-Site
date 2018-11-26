@@ -1,0 +1,140 @@
+.solutions {
+  padding: 0 15px;
+  &-wrapper {
+    background: rgba($white, .7);
+  }
+
+  $b: &;
+
+  &__heading {
+    max-width: 1200px;
+    width: 100%;
+    margin: 0 auto 30px;
+    @include tablets {
+      margin-bottom: 70px;
+    }
+  }
+
+  &__content {
+    display: flex;
+    max-width: 1120px;
+    width: calc(100% + 10px);
+    padding: 0;
+    margin: 0 -5px;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    @include tablets {
+      justify-content: space-between;
+      width: 100%;
+      margin: 0 auto;
+      padding: 0 30px;
+    }
+
+    @include tablets {
+      height: 235px;
+      flex-wrap: nowrap;
+      align-items: center;
+      justify-content: space-between;
+
+      .move {
+        transition: margin .5s;
+        &:first-child {
+          margin-top: -10%;
+        }
+        &:last-child {
+          margin-top: 10%;
+        }
+      }
+    }
+  }
+
+  &__article {
+    display: block;
+    text-decoration: none;
+    color: $dark-pale;
+    padding: 0 5px 15px 10px;
+    max-width: 333px;
+
+    @include tablets {
+      padding: 0 20px;
+      flex: 1;
+      width: 33.3333%;
+    }
+
+    sup {
+      position: absolute;
+      left: -17px;
+      font: {
+        family: $proxima;
+        weight: 100;
+        size: 11px;
+      }
+      @include tablets {
+        font-size: 16px;
+        left: -26px;
+      }
+    }
+
+    h2 {
+      transition: color .2s;
+      position: relative;
+      font: {
+        family: $sofia-semibold;
+        weight: 100;
+        size: 16px;
+      }
+      @include tablets {
+        font-size: 32px;
+      }
+    }
+
+    p {
+      text-align: left;
+      margin: 0;
+      font: {
+        family: $proxima;
+        weight: 100;
+        size: 12px;
+      }
+      @include tablets {
+        font-size: 18px;
+        text-align: center;
+      }
+    }
+
+    &:hover {
+      h2 {
+        color: $blue;
+      }
+    }
+
+  }
+
+  &__link {
+    color: $dark-pale;
+    width: 380px;
+    max-width: 100%;
+    padding: 15px 0;
+    border: 1px solid $lilac;
+    text-decoration: none;
+    text-align: center;
+    line-height: 1;
+    margin: 20px auto 0;
+    display: block;
+    transition: box-shadow .2s;
+    font: {
+      family: $proxima-semibold;
+      weight: 100;
+      size: 13px;
+    }
+    @include tablets {
+      margin-top: 108px;
+      font-size: 16px;
+    }
+
+    &:hover {
+      box-shadow: 0 1px 3px 0 rgba($dark,0.3);
+    }
+  }
+}
