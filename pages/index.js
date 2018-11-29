@@ -3,45 +3,52 @@ import React, {Component} from 'react';
 import ParallaxBg from "../components/background/ParallaxBg";
 import Intro from "../components/intro/Intro";
 import Solutions from "../components/home-slides/Solutions"
-import ReactFullpage from '@fullpage/react-fullpage';
+import WhySkynix from "../components/home-slides/WhySkynix";
+import AddedValue from "../components/home-slides/Added-Value";
+
 
 export default class Index extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            currSlide: null
+            parallaxBg: true,
+            parallaxBgTop: 0
         };
-        this.handleOnLeaveSlide = this.handleOnLeaveSlide.bind(this);
+        this.bgRef = React.createRef();
+        this.handleScroll = this.handleScroll.bind(this);
+    }
+    componentDidMount() {
+        this.handleScroll();
+        window.addEventListener('scroll', this.handleScroll);
     }
 
-
-    handleOnLeaveSlide(origin, destination, direction) {
-        this.setState({currSlide: destination.index});
+    componentWillUnmount() {
+        window.removeEventListener('scroll', this.handleScroll);
     }
+
+    handleScroll() {
+        const componentOffsetTop = this.bgRef.current.offsetTop;
+        const windowScroll = window.scrollY + window.screen.height / 2;
+        const received = windowScroll > componentOffsetTop;
+
+        if (received && this.state.parallaxBg) {
+            this.setState({parallaxBg: false});
+        }
+        if (!received && !this.state.parallaxBg) {
+            this.setState({parallaxBg: true})
+        }
+    }
+
 
     render() {
-        const fullpageOptions = {
-            anchors: ["introPage", "solutionPage"],
-            onLeave: this.handleOnLeaveSlide
-        };
-
         return (
             <Page loading={true}>
-                    <ParallaxBg/>
-                    <ReactFullpage {...fullpageOptions}
-                        render={({ state, fullpageApi }) => {
-                            return (
-                                <ReactFullpage.Wrapper>
-                                    <div className="section">
-                                        <Intro/>
-                                    </div>
-                                    <div className="section solutions-wrapper">
-                                        <Solutions show={this.state.currSlide === 1}/>
-                                    </div>
-                                </ReactFullpage.Wrapper>
-                            );
-                        }}
-                    />
+                <ParallaxBg show={this.state.parallaxBg}/>
+                <Intro/>
+                <Solutions/>
+                <div ref={this.bgRef}>
+                    <WhySkynix/>
+                </div>
             </Page>
         )
     }

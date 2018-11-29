@@ -4,7 +4,6 @@ import Head from 'next/head'
 import PropTypes from 'prop-types';
 import Header from './header/Header';
 import Footer from './footer/Footer';
-import ParallaxSlide from "./ParallaxSlide";
 import {Animated} from "react-animated-css";
 
 export default class Page extends Component {
@@ -46,7 +45,8 @@ export default class Page extends Component {
                     <meta name="viewport" content="initial-scale=1.0, width=device-width"/>
                 </Head>
 
-                {this.state.loaded ? content : <ParallaxSlide loaded={this.state.preload}/>}
+                {/*{this.state.loaded ? content : <ParallaxSlide loaded={this.state.preload}/>}*/}
+                {content}
             </div>
         )
     }

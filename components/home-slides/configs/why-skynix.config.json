@@ -1,20 +1,24 @@
 [
   {
+    "id": 1,
     "title": "Warranty",
     "subtitle": "6-month warranty for our code",
     "img": ""
   },
   {
+    "id": 2,
     "title": "Security",
     "subtitle": "6-month warranty for our code",
     "img": ""
   },
   {
+    "id": 3,
     "title": "Transparency",
     "subtitle": "Operations and costing transparency",
     "img": ""
   },
   {
+    "id": 4,
     "title": "Communication",
     "subtitle": "Effecitve and frequent communication",
     "img": ""

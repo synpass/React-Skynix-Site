@@ -1,5 +1,13 @@
 .solutions {
   padding: 0 15px;
+  @include tablets {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
   &-wrapper {
     background: rgba($white, .7);
   }
@@ -7,9 +15,8 @@
   $b: &;
 
   &__heading {
-    max-width: 1200px;
-    width: 100%;
-    margin: 0 auto 30px;
+    @include max-width;
+    margin-bottom: 30px;
     @include tablets {
       margin-bottom: 70px;
     }
@@ -38,7 +45,7 @@
       justify-content: space-between;
 
       .move {
-        transition: margin .5s;
+        transition: margin .5s ease-in-out;
         &:first-child {
           margin-top: -10%;
         }

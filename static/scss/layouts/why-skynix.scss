@@ -1,0 +1,91 @@
+.why-skynix {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  &__heading {
+    @include max-width;
+    margin-bottom: 30px;
+    @include tablets {
+      margin-bottom: 70px;
+    }
+  }
+
+  &__points {
+    @include max-width;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    @include laptop {
+      flex-wrap: nowrap;
+      justify-content: space-between;
+    }
+  }
+
+  &-point {
+    padding: 0 10px 30px;
+    width: 100%;
+    @include phones {width: 50%}
+    @include tablets {width: 25%}
+    @include laptop {
+      width: auto;
+      padding: 0 35px;
+    }
+
+    h3 {
+      color: $blue;
+      margin: 0 0 12px;
+      letter-spacing: .02em;
+      font: {
+        size: 20px;
+        family: $sofia-semibold;
+        weight: 100;
+      }
+      @include tablets { font-size: 24px }
+      @include laptop { font-size: 32px }
+    }
+
+    p {
+      line-height: 28px;
+      margin: 0;
+      letter-spacing: .03em;
+      font: {
+        size: 14px;
+        family: $sofia-medium;
+      }
+      @include tablets {
+        font-size: 18px
+      }
+    }
+  }
+
+  &__link {
+    color: $dark-pale;
+    letter-spacing: .05em;
+    width: 260px;
+    max-width: 100%;
+    padding: 14px 0;
+    border: 1px solid $lilac;
+    text-decoration: none;
+    text-align: center;
+    line-height: 1;
+    margin: 0 auto;
+    display: block;
+    transition: box-shadow .2s;
+    font: {
+      family: $proxima-semibold;
+      weight: 100;
+      size: 13px;
+    }
+    @include tablets {
+      margin-top: 99px;
+      font-size: 16px;
+    }
+
+    &:hover {
+      box-shadow: 0 1px 3px 0 rgba($dark, 0.3);
+    }
+  }
+}

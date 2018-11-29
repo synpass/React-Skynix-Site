@@ -1,0 +1,68 @@
+.why-skynix-values {
+  @include max-width;
+  padding-top: 34px;
+  padding-bottom: 34px;
+  @include tablets {
+    padding-top: 114px;
+    padding-bottom: 114px;
+  }
+
+  h2 {
+    width: 100%;
+    margin: 0 0 25px;
+    letter-spacing: .02em;
+    font: {
+      family: $sofia-semibold;
+      size: 20px;
+      weight: 100;
+    }
+    @include tablets {
+      font-size: 32px;
+      margin-bottom: 50px;
+    }
+  }
+  @include phones {
+    &__cols {
+      display: flex;
+      section {
+        width: 50%;
+      }
+    }
+  }
+
+  &__section {
+    width: 100%;
+    padding-right: 20px;
+    padding-bottom: 40px;
+    @include tablets {
+      padding-right: 100px;
+    }
+
+    h4 {
+      margin: 0;
+      font-size: 14px;
+      font-family: $sofia-medium;
+      letter-spacing: .03em;
+      font-weight: 100;
+      margin-bottom: 17px;
+      @include tablets {
+        font-size: 18px;
+      }
+
+    }
+    p {
+      margin: 0;
+      letter-spacing: .03em;
+      font-size: 12px;
+      font-family: $proxima;
+      line-height: 18px;
+      @include tablets {
+        font-size: 14px;
+        line-height: 22px;
+      }
+    }
+    b {
+      color: $blue;
+    }
+  }
+}

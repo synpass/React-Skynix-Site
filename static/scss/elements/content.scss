@@ -1,17 +1,11 @@
 .content {
   width: 100%;
   //max-width: 1440px;
-  height: 100%;
   position: relative;
   margin: 0 auto;
+  overflow-x: hidden;
 
   &-wrapper {
-    position: fixed;
-    width: 100vw;
-    height: 100vh;
-    top: 0;
-    left: 0;
-    overflow-x: hidden;
     //z-index: -1;
     //scrollpadding: 100px 0;
   }

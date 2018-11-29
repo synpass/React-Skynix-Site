@@ -1,7 +1,7 @@
 .intro {
   @include tablets {
-    height: 100%;
-    padding: 100px 0;
+    height: 100vh;
+    padding: 100px 0 0;
   }
 
   &__slide {

@@ -1,21 +1,26 @@
 [
   {
+    "id": 1,
     "title": "Clean, well-documented  and reusable code",
     "description": "<b>No binds</b> to a specific team after the project is completed"
   },
   {
+    "id": 2,
     "title": "Contemporary environment and continuous integration",
     "description": "<b>No headache</b> from providing a hosting and third party software tto support the development process"
   },
   {
+    "id": 3,
     "title": "Cost efficiency",
     "description": "You will use <b>a cohesive team</b> coming from Ukraine — a country with Europe's most demanding IT education system yet lowest cost of living"
   },
   {
+    "id": 4,
     "title": "Dedicated team and PM",
     "description": "<b>No micromanaging</b> your developers, no parroting your expectations times and times again. Full technical documentation, direct communication channels and regular reporting will always be at your fingertips"
   },
   {
+    "id": 5,
     "title": "Expert advice and after-sales scalability",
     "description": "You will be able to make <b>informed decisions</b> about your product's growth every step of the way"
   }
