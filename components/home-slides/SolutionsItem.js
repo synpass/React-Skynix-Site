@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import ReactHtmlParser from 'react-html-parser';
-import {Animated} from "react-animated-css";
+import { Animated } from "react-animated-css";
+import PropTypes from 'prop-types';
 
 export default class SolutionItem extends Component {
     constructor(props) {
@@ -40,8 +41,17 @@ export default class SolutionItem extends Component {
             </a>
         )
     }
+}
 
+SolutionItem.propTypes = {
+    show: PropTypes.bool,
+    num: PropTypes.number.isRequired,
+    name: PropTypes.string,
+    description: PropTypes.string
+};
 
+SolutionItem.defaultProps ={
+    show: true
 }
 
 

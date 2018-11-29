@@ -1,11 +1,9 @@
 import Page from "../components/Page";
 import React, {Component} from 'react';
 import ParallaxBg from "../components/background/ParallaxBg";
-import Intro from "../components/intro/Intro";
+import Intro from "../components/home-slides/Intro";
 import Solutions from "../components/home-slides/Solutions"
 import WhySkynix from "../components/home-slides/WhySkynix";
-import AddedValue from "../components/home-slides/Added-Value";
-
 
 export default class Index extends Component {
     constructor(props) {

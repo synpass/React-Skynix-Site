@@ -25,11 +25,13 @@ export default class Page extends Component {
     }
 
     render() {
+        const {children, className} = this.props;
+
         const content = (
             <div>
                 <div className="content-wrapper">
                     <div className="content">
-                        {this.props.children}
+                        {children}
                     </div>
                 </div>
                 <Footer/>
@@ -38,7 +40,7 @@ export default class Page extends Component {
         );
 
         return (
-            <div className={this.props.className}>
+            <div className={className}>
                 <Head>
                     <link rel="stylesheet"
                           href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css"/>

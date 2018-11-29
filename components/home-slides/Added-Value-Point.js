@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
-import {Animated} from "react-animated-css";
+import { Animated } from "react-animated-css";
+import PropTypes from 'prop-types';
 import ReactHtmlParser from 'react-html-parser';
 
 export function AddedValuePoint(props) {
-
     const animation = {
         animationIn: 'fadeInUp',
         animationInDelay: props.id * 350,
@@ -18,3 +18,10 @@ export function AddedValuePoint(props) {
         </Animated>
     )
 }
+
+AddedValuePoint.propTypes = {
+    show: PropTypes.bool,
+    id: PropTypes.number.isRequired,
+    description: PropTypes.string,
+    title:  PropTypes.string
+};

@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import {Animated} from "react-animated-css";
+import { Animated } from 'react-animated-css';
+import PropTypes from 'prop-types';
 
 export function WhySkynixPoint(props) {
 
@@ -17,3 +18,14 @@ export function WhySkynixPoint(props) {
         </Animated>
     )
 }
+
+WhySkynixPoint.propTypes = {
+    id: PropTypes.number.isRequired,
+    title: PropTypes.string,
+    subtitle: PropTypes.string,
+    show: PropTypes.bool,
+};
+
+WhySkynixPoint.defaultProps = {
+    show: true
+};

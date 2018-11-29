@@ -10,9 +10,12 @@ export default class AddedValue extends Component {
         this.state = {
             show: false,
         };
+        this.onLoad = this.onLoad.bind(this);
     }
 
-    onLoad = () => this.setState({show: true});
+    onLoad() {
+        this.setState({show: true})
+    }
 
     render() {
         const lazyLoadProps = {
@@ -23,7 +26,6 @@ export default class AddedValue extends Component {
 
         let col1 = values.map(value => <AddedValuePoint {...value} key={value.id} show={this.state.show}/>);
         let col2 = col1.splice(0, Math.ceil(col1.length / 2));
-
 
         return (
             <LazyLoad {...lazyLoadProps} onLoad={this.onLoad}>

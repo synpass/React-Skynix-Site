@@ -1,5 +1,5 @@
 import React from 'react';
-import config from './intro.config.json';
+import config from './configs/intro.config.json';
 import {Animated} from "react-animated-css";
 import ReactHtmlParser from 'react-html-parser';
 

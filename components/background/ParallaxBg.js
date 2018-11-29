@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import {Animated} from "react-animated-css";
 import Bracket from "./Bracket";
+import PropTypes from 'prop-types';
 
 export default function ParallaxBg(props) {
 
@@ -26,3 +27,7 @@ export default function ParallaxBg(props) {
         </div>
     );
 }
+
+ParallaxBg.propTypes = {
+    show: PropTypes.bool
+};
