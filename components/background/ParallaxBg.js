@@ -9,8 +9,11 @@ export default function ParallaxBg(props) {
         opacity: +props.show
     };
 
+    let classNames = ['bg'];
+    if (props.className) classNames.push(props.className);
+
     return (
-        <div className='bg' id='bg' style={styles}>
+        <div className={classNames.join(' ')} id='bg' style={styles}>
             <div>
                 <div className='bg__elem bg__elem--bracket move'>
                     <Bracket parallax={props.show}/>
@@ -29,5 +32,6 @@ export default function ParallaxBg(props) {
 }
 
 ParallaxBg.propTypes = {
-    show: PropTypes.bool
+    show: PropTypes.bool,
+    className: PropTypes.string
 };

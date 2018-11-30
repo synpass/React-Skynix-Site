@@ -10,6 +10,8 @@
   z-index: -1;
   transition: opacity .5s;
 
+  $b: &;
+
   &__elem {
     position: relative;
     max-height: calc(100vh - 400px);
@@ -57,4 +59,39 @@
       height: 100%;
     }
   }
+
+  &--absolute {
+    position: absolute;
+    height: 100%;
+    transform: scaleX(-1);
+
+    #{$b}__elem--bracket.move {
+      margin-top: -100%;
+      @include tablets {
+        margin-top: -160%;
+      }
+    }
+
+    #{$b}__elem--bracket-reverse.move {
+      margin-top: 50%;
+      @include tablets {
+        margin-top: 130%;
+      }
+    }
+
+    &:after {
+      z-index: 0;
+      content: '';
+      top: -20%;
+      height: 120%;
+      left: 0;
+      position: absolute;
+      width: 100%;
+      background: rgba($white, .7);
+      @include tablets {
+        height: 140%;
+      }
+    }
+  }
+
 }

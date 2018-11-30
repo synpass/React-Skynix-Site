@@ -1,0 +1,47 @@
+.clutch {
+  &-wrapper {
+    position: relative;
+  }
+  &__content {
+    margin: auto;
+    min-width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+
+    @include tablets {
+      min-height: 700px;
+    }
+    @include laptop {
+      min-width: 900px;
+    }
+
+    iframe {
+      max-width: 282px;
+      margin: auto;
+      @include tablets {
+        max-width: 100%;
+      }
+    }
+  }
+
+  &-widget {
+    margin: auto;
+    width: 100%;
+    max-width: 900px;
+
+    &-mobile {
+      @include tablets {
+        display: none;
+      }
+    }
+
+    &-desktop {
+      display: none;
+      @include tablets {
+        display: block;
+      }
+    }
+  }
+}

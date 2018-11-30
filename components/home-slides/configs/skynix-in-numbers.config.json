@@ -1,21 +1,31 @@
 [
   {
+    "id": 1,
+    "value": "60+",
+    "text": "Customers Satisfied"
+  },
+  {
+    "id": 4,
     "value": "9000+",
     "text": "Coffee Cups Consumed"
   },
   {
+    "id": 5,
     "value": "40+",
     "text": "Pre-release Prayers Said"
   },
   {
+    "id": 2,
     "value": "150+",
     "text": "Overnights Worked"
   },
   {
+    "id": 6,
     "value": "20+",
     "text": "Heart Attacks Prevented"
   },
   {
+    "id": 3,
     "value": "50+",
     "text": "Champagnes Uncorked"
   }
