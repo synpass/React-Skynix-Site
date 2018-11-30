@@ -7,6 +7,7 @@ import WhySkynix from "../components/home-slides/WhySkynix";
 import Numbers from "../components/home-slides/Numbers";
 import Projects from "../components/home-slides/Projects";
 import ClutchBlock from "../components/home-slides/ClutchBlock";
+import ContactBlock from "../components/contact/ContactBlock";
 
 export default class Index extends Component {
     constructor(props) {
@@ -53,6 +54,7 @@ export default class Index extends Component {
                 <Numbers/>
                 <Projects/>
                 <ClutchBlock/>
+                <ContactBlock/>
             </Page>
         )
     }

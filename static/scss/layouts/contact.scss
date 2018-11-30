@@ -1,0 +1,43 @@
+.contact {
+  @include max-width;
+  position: relative;
+  padding-top: 100px;
+  margin-top: 100px;
+
+  &__bg {
+    margin-left: -15%;
+    display: block;
+    z-index: -1;
+    position: relative;
+
+    //height: 100%;
+  }
+
+  &__title {
+    z-index: 100;
+    padding-top: 150px;
+  }
+
+  &__form {
+    @include max-width;
+    z-index: 100;
+    max-width: 1010px;
+
+    p {
+      max-width: 330px;
+      margin: 50px 0;
+      line-height: 22px;
+      letter-spacing: .03em;
+      color: $grey-dark;
+      font: {
+        size: 14px;
+        family: $proxima;
+      }
+
+      b {
+        color: $blue;
+      }
+    }
+
+  }
+}

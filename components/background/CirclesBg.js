@@ -13,7 +13,7 @@ export default function CirclesBg(props){
 
     let circlesSet = mappingArray.map((e, i) => {
         return (
-            <div data-depth={(i + 1) * 0.1} //Parallax property
+            <div data-depth={(i + 1) * 0.02} //Parallax property
                  className={classes.concat(['slide-circle-' + i]).join(' ')}
                  key={shortid.generate()}>
                 <img src='/static/images/circle.svg'/>
@@ -33,5 +33,4 @@ CirclesBg.propTypes = {
 CirclesBg.defaultProps = {
     length: 12,
     parallax: true,
-    type: Object.keys(config)[0]
 };
