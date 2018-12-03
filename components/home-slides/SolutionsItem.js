@@ -52,7 +52,7 @@ SolutionItem.propTypes = {
 
 SolutionItem.defaultProps ={
     show: true
-}
+};
 
 
 

@@ -20,7 +20,6 @@ export default class Index extends Component {
         this.handleScroll = this.handleScroll.bind(this);
     }
     componentDidMount() {
-        this.handleScroll();
         window.addEventListener('scroll', this.handleScroll);
     }
 
@@ -40,7 +39,6 @@ export default class Index extends Component {
             this.setState({parallaxBg: true})
         }
     }
-
 
     render() {
         return (

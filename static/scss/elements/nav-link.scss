@@ -14,25 +14,13 @@
     weight: 800;
     size: 16px;
   }
-
   @include tablets {
     text-align: center;
     border: 1px solid $lilac;
     color: $dark-pale;
     background: $white;
+    white-space: normal;
     padding: 16px 10px 19px;
-  }
-
-  @include laptop {
-    padding: 16px 20px 19px;
-  }
-
-  @include desktop {
-    width: 166px;
-    padding: 16px 0 19px;
-  }
-
-  @include tablets {
     &.parent span {
       width: 8px;
       height: 4px;
@@ -59,9 +47,7 @@
         left: 4px;
       }
     }
-  }
 
-  @include tablets {
     &--contrast,
     &:hover {
       background: $dark-pale;
@@ -76,14 +62,17 @@
       }
     }
   }
+  @include laptop {
+    padding: 16px 20px 19px;
+  }
+  @include desktop {
+    width: 166px;
+    padding: 16px 0 19px;
+  }
 
   &--contrast {
     background: $blue;
     border-color: $blue;
-  }
-
-  @include tablets {
-    white-space: normal;
   }
 
   &--submenu {

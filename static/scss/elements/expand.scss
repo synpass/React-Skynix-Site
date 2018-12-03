@@ -12,7 +12,6 @@
   @include tablets {
     display: none;
   }
-
   &:before,&:after {
     top: 50%;
     position: absolute;
@@ -22,24 +21,19 @@
     background: $white;
     transition: transform .3s;
   }
-
   &:before {
     transform: rotate(40deg);
     left: 0;
   }
-
   &:after {
     transform: rotate(-40deg);
     right: 0;
   }
 
-
-
   &.opened {
     &:after {
       transform: rotate(40deg);
     }
-
     &:before {
       transform: rotate(-40deg);
     }

@@ -1,77 +1,158 @@
 .contact-form {
   display: flex;
   width: 100%;
-  box-shadow: 0px 0px 40px 18px rgba(28, 28, 28, 0.05);
-
+  flex-direction: column;
+  box-shadow: 0 0 40px 18px rgba(28, 28, 28, 0.05);
+  @include tablets {
+    flex-direction: row;
+  }
 
   &__body {
-    width: calc(880 / 990 * 100% );
-    padding: 45px 80px 59px;
+    padding: 25px 20px;
     background: $white;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
+    @include tablets {
+      padding: 45px 80px 59px;
+      width: calc(880 / 990 * 100% );
+    }
   }
 
   &__submit {
     background: $blue;
     color: $white;
-    width: calc(110 / 990 * 100%);
+    position: relative;
+    transition: background .3s;
+    padding: 10px 0;
+    @include tablets {
+      width: calc(110 / 990 * 100%);
+    }
+    &:hover {
+      background: $dark;
+    }
+
+    button {
+      cursor: pointer;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      height: 100%;
+      width: 100%;
+
+      span {
+        color: $white;
+        letter-spacing: 0.05em;
+        margin-top: 7px;
+        font: {
+          family: $proxima;
+          size: 12px;
+        }
+        @include tablets {
+          font-size: 16px;
+        }
+      }
+
+      img {
+        width: 16px;
+        height: 16px;
+        @include tablets {
+          width: 26px;
+          height: 26px;
+        }
+      }
+    }
   }
 
   &__field {
-    width: calc(50% - 40px);
+    width: 100%;
     position: relative;
     padding: 27px 0 17px;
     display: flex;
     flex-direction: column;
-
-    input,
-    textarea {
-      width: 100%;
-      border: none;
-      border-bottom: 1px solid $lilac;
-      height: 40px;
-      outline: none;
+    @include tablets {
+      width: calc(50% - 10px);
+    }
+    @include laptop {
+      width: calc(50% - 40px);
     }
 
-    textarea {
-      padding-top: 10px;
-    }
+    &--text {
+      input,
+      textarea {
+        width: 100%;
+        border: none;
+        border-bottom: 1px solid $lilac;
+        height: 40px;
+        outline: none;
+      }
 
-    label,
-    input,
-    textarea {
-      font: {
-        size: 18px;
-        family: $sofia;
-        weight: 100;
+      textarea {
+        padding-top: 10px;
+        height: 71px;
+        resize: none;
+      }
+
+      label,
+      input,
+      textarea {
+        font: {
+          size: 12px;
+          family: $sofia;
+          weight: 100;
+        }
+        @include tablets {
+          font-size: 18px;
+        }
+      }
+
+      label {
+        transition: transform .3s;
+        display: block;
+        order: -1;
+      }
+
+      input + label {
+        position: absolute;
+        left: 0;
+        top: 35px;
+        cursor: text;
+      }
+
+      input{
+        &:focus,
+        &:not([value='']) {
+          & + label {
+            transform: translate(-10%, -25px) scale(.8)
+          }
+        }
+      }
+
+      textarea {
+        &:focus,
+        &.filled {
+          & + label {
+            transform: translate(-10%, 0) scale(.8)
+          }
+        }
+      }
+
+      &.required label:after {
+        content: '*';
+        color: $blue
       }
     }
+  }
 
-    label {
-      transition: transform .3s;
-      order: -1;
-    }
-
-    input + label {
-      position: absolute;
-      left: 0;
-      top: 35px;
-      cursor: text;
-    }
-
-    input:not([value='']) + label{
-      transform: translate(-10%, -25px) scale(.8)
-    }
-
-    input:focus + label {
-      transform: translate(-10%, -25px) scale(.8)
-    }
-
-    &.required label:after{
-      content: '*';
-      color: $blue
+  &__wrapper {
+    .field-error {
+      padding: 5px 0;
+      color: $red;
+      font: {
+        family: $proxima-semibold;
+        size: 11px;
+      }
     }
   }
 }

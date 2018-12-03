@@ -13,15 +13,12 @@
     top: 0;
     left: 0;
     z-index: 10;
-    background: $white;  /* fallback for old browsers */
-
+    background: $white;
     @include tablets {
-      background: -webkit-linear-gradient(to top, transparent, $white); /* Chrome 10-25, Safari 5.1-6 */
-      background: linear-gradient(to top, transparent, $white); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+      background: -webkit-linear-gradient(to top, transparent, $white);
+      background: linear-gradient(to top, transparent, $white);
     }
   }
-
-
 
   &__logo {
     width: 110px;

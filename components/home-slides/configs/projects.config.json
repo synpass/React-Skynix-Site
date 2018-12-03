@@ -1,12 +1,5 @@
 [
   {
-    "id": 0,
-    "title": "Bikebiz",
-    "img": "bikebiz.png",
-    "description": "Motorcycles of all brands and all kinds. The best choice. All that is necessary for your motorcycle you can find here. Also you can find here the equipment and spare parts, the best place to pump you and your motorcycle.",
-    "link": "/"
-  },
-  {
     "id": 1,
     "title": "Bikebiz",
     "img": "bikebiz.png",
@@ -17,7 +10,7 @@
     "id": 2,
     "title": "Laravel logic updates",
     "img": "laravel.png",
-    "description": "The Estonia startup required some assistance in adjusting and modifying the logic on this Laravel project. Our developers took this as first priority items to ensure all works perfectly and as per the expectations. There were numerous modifications done, so this made on Laravel portal works absolutely fine.",
+    "description": "The Estonia startup required some assistance in adjusting and modifying the logic on this Laravel project. Our developers took this as first priority items to ensure all works perfectly and as per the expectations.",
     "link": "/"
   },
   {

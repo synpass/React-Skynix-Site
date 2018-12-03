@@ -1,10 +1,11 @@
 import React from 'react';
 import CirclesBg from "../background/CirclesBg";
 import Form from "./Form";
+import LazyLoad from "../LazyLoad";
 
 export default function ContactBlock(){
-     return (
-         <div className='contact'>
+    return (
+        <LazyLoad className='contact'>
              <div className='contact__bg'>
                  <CirclesBg/>
              </div>
@@ -15,10 +16,8 @@ export default function ContactBlock(){
 
              <div className='contact__form'>
                  <p>Drop us a few lines about your project and we'll get back to you within <b>one business day</b></p>
-
                 <Form/>
-
              </div>
-         </div>
+        </LazyLoad>
      )
 }

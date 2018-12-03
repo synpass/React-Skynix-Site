@@ -35,3 +35,6 @@ ParallaxBg.propTypes = {
     show: PropTypes.bool,
     className: PropTypes.string
 };
+ParallaxBg.defaultProps = {
+    show: false
+};

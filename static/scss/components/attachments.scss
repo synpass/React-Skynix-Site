@@ -1,0 +1,99 @@
+.attachments {
+  margin-top: auto;
+
+  &__submit {
+    position: relative;
+    height: 36px;
+    margin: 0;
+    @include tablets {
+      height: 46px;
+    }
+
+    input {
+      position: absolute;
+      opacity: 0;
+    }
+
+    label {
+      width: 100%;
+      height: 100%;
+      line-height: 100%;
+      border: 1px solid $lilac;
+      display: flex;
+      align-items: center;
+      cursor: pointer;
+      padding: 0 24px;
+
+      img {
+        width: 15px;
+        height: 16px;
+        margin-right: 10px;
+        transform: rotate(45deg);
+        @include tablets {
+          width: 20px;
+          height: 21px;
+        }
+      }
+
+      span {
+        letter-spacing: 0.05em;
+        font: {
+          family: $proxima-semibold;
+          size: 12px;
+        }
+        @include tablets {
+          font-size: 16px;
+        }
+      }
+    }
+  }
+
+  &__file {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    background: $white;
+    padding: 7px 24px;
+    margin: 0 0 5px;
+    box-shadow: 1px 1px 3px 0 rgba($dark, .2);
+
+    img {
+      height: 16px;
+    }
+
+    span {
+      padding: 0 10px;
+      font: {
+        family: $proxima;
+        size: 12px;
+      }
+      @include tablets {
+        font-size: 14px;
+      }
+    }
+
+    button {
+      margin-left: auto;
+      opacity: .7;
+      cursor: pointer;
+      &:hover {
+        opacity: 1;
+      }
+
+      img {
+        height: 15px
+      }
+    }
+  }
+
+  ul {
+    list-style: none;
+    padding: 0;
+    margin: 15px 0 0;
+    display: block;
+    width: 100%;
+    li {
+      width: 100%;
+    }
+  }
+}

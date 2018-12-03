@@ -17,10 +17,6 @@
     transform: translateX(-101%);
     padding: 20px 0;
     z-index: 10;
-
-    &.opened {
-      transform: translateX(0);
-    }
     @include phones {
       width: 300px;
     }
@@ -35,9 +31,12 @@
       overflow: visible;
       opacity: 1;
     }
-
     @include desktop {
       flex-wrap: nowrap;
+    }
+
+    &.opened {
+      transform: translateX(0);
     }
 
     li {
@@ -51,7 +50,6 @@
   &__submenu {
     position: relative;
     left: 0;
-
     @include tablets {
       position: absolute;
       width: 166px;
