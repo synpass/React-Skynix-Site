@@ -1,5 +1,6 @@
 import Page from "../components/Page";
 import React, {Component} from 'react';
+
 import ParallaxBg from "../components/background/ParallaxBg";
 import Intro from "../components/home-slides/Intro";
 import Solutions from "../components/home-slides/Solutions"
@@ -8,6 +9,9 @@ import Numbers from "../components/home-slides/Numbers";
 import Projects from "../components/home-slides/Projects";
 import ClutchBlock from "../components/home-slides/ClutchBlock";
 import ContactBlock from "../components/contact/ContactBlock";
+
+import meta from './index-meta.config.json';
+
 
 export default class Index extends Component {
     constructor(props) {
@@ -42,7 +46,7 @@ export default class Index extends Component {
 
     render() {
         return (
-            <Page loading={true}>
+            <Page loading={true} meta={meta}>
                 <ParallaxBg show={this.state.parallaxBg}/>
                 <Intro/>
                 <Solutions/>

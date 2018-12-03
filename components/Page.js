@@ -6,6 +6,7 @@ import Header from './header/Header';
 import Footer from './footer/Footer';
 import {Animated} from "react-animated-css";
 import ParallaxSlide from "./ParallaxSlide";
+import Meta from "./Meta";
 
 export default class Page extends Component {
     constructor(props) {
@@ -26,7 +27,7 @@ export default class Page extends Component {
     }
 
     render() {
-        const {children, className} = this.props;
+        const {children, className, meta} = this.props;
 
         const content = (
             <div>
@@ -45,13 +46,18 @@ export default class Page extends Component {
                 <Head>
                     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"/>
                     <link rel="stylesheet" href="owl-carousel/owl.theme.css"/>
-
                     <link rel="stylesheet"
                           href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css"/>
                     <meta name="viewport" content="initial-scale=1.0, width=device-width"/>
                 </Head>
+                <Meta {...meta}/>
+                <div style={{display: this.state.loaded ? 'block' : 'none'}}>
+                    {content}
+                </div>
 
-                {this.state.loaded ? content : <ParallaxSlide loaded={this.state.preload}/>}
+                <div style={{display: this.state.loaded ? 'none' : 'block'}}>
+                    <ParallaxSlide loaded={this.state.preload}/>
+                </div>
             </div>
         )
     }
@@ -59,5 +65,6 @@ export default class Page extends Component {
 
 Page.propTypes = {
     children: PropTypes.array,
-    className: PropTypes.string
+    className: PropTypes.string,
+    meta: PropTypes.object
 };

@@ -12,7 +12,6 @@ export default class LazyLoad extends Component {
     }
 
     componentDidMount() {
-        this.handleScroll();
         window.addEventListener('scroll', this.handleScroll);
     }
 
