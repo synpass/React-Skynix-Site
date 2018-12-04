@@ -1,0 +1,85 @@
+.agreement {
+  display: flex;
+  align-items: center;
+
+  &-wrapper {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    padding: 30px 0;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  span {
+    letter-spacing: .03em;
+    user-select: none;
+    margin-left: 10px;
+    max-width: calc(100% - 35px);
+    font: {
+      family: $proxima;
+      size: 12px;
+    }
+    @include tablets {
+      font-size: 14px;
+      max-width: calc(100% - 15px);
+    }
+  }
+
+  input {
+    position: absolute;
+    opacity: 0;
+  }
+
+  a {
+    text-decoration: none;
+    border-bottom: 1px solid $blue;
+    color: $blue;
+    font-family: $proxima-semibold;
+  }
+
+  label {
+    position: relative;
+    cursor: pointer;
+    display: block;
+    width: 20px;
+    height: 20px;
+    border: 1px solid $blue;
+    border-radius: 50%;
+    &:before {
+      content: '';
+      width: 18px;
+      height: 18px;
+      border: 1px solid rgba($blue, 0);
+      top: -1px;
+      left: -1px;
+      position: absolute;
+      border-radius: 50%;
+      display: inline-block;
+      box-shadow: none;
+    }
+  }
+
+  input:checked + label {
+    background: url('/static/images/checkmark.svg') center;
+    background-size: 22px 22px;
+    &:before {
+      animation: check-on 300ms ease-out;
+    }
+  }
+}
+
+@keyframes check-on {
+  0% {
+    box-shadow: 0 0 0 0 rgba($blue, 0) ;
+  }
+  40% {
+    box-shadow: 0 0 0 5px rgba($blue, .2) ;
+  }
+  70% {
+    box-shadow: 0 0 0 10px rgba($blue, .3) ;
+  }
+  100% {
+    box-shadow: 0 0 0 12px rgba($blue, .1) ;
+  }
+}

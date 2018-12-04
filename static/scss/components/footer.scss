@@ -1,0 +1,47 @@
+.footer {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  max-width: 1440px;
+  padding: 20px;
+  margin: 0 auto;
+  @include desktop {
+    padding: 40px;
+  }
+
+  &-wrapper {
+    background: $white;
+    background: -webkit-linear-gradient(to bottom, transparent, $white);
+    background: linear-gradient(to bottom, transparent, $white);
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+    left: 0;
+  }
+
+  &__links {
+    display: flex;
+    align-items: center;
+    a {
+      color: $dark-pale;
+      font-size: 14px;
+      margin-right: 35px;
+      font-weight: 700;
+      text-decoration: none;
+      &:hover {
+        color: $blue;
+      }
+    }
+  }
+
+  &__scroll {
+    cursor: pointer;
+    color: $dark-pale;
+    font-size: 14px;
+    font-weight: 700;
+    display: none;
+    @include phones {
+      display: block;
+    }
+  }
+}

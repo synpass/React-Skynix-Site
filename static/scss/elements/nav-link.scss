@@ -1,0 +1,86 @@
+.nav-link {
+  width: 100%;
+  height: 100%;
+  padding: 16px 20px 19px;
+  color: $white;
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  white-space: nowrap;
+  text-transform: lowercase;
+  transition: border-color .2s ease-out, color .2s ease-out, background .2s ease-out;
+  font: {
+    family: $proxima;
+    weight: 800;
+    size: 16px;
+  }
+  @include tablets {
+    text-align: center;
+    border: 1px solid $lilac;
+    color: $dark-pale;
+    background: $white;
+    white-space: normal;
+    padding: 16px 10px 19px;
+    &.parent span {
+      width: 8px;
+      height: 4px;
+      display: inline-block;
+      vertical-align: middle;
+      position: relative;
+      padding-top: 1px;
+      margin-left: 11px;
+      transition: transform .3s;
+      &:before, &:after {
+        position: absolute;
+        left: 0;
+        content: "";
+        width: 6px;
+        height: 1px;
+        background: $dark-pale;
+        transition: background .3s;
+      }
+      &:before {
+        transform: rotate(43deg);
+      }
+      &:after {
+        transform: rotate(-43deg);
+        left: 4px;
+      }
+    }
+
+    &--contrast,
+    &:hover {
+      background: $dark-pale;
+      border-color: $dark-pale;
+      color: $white;
+
+      span {
+        transform: scale(1, -1) translateY(1px);
+        &:before, &:after {
+          background: $white;
+        }
+      }
+    }
+  }
+  @include laptop {
+    padding: 16px 20px 19px;
+  }
+  @include desktop {
+    width: 166px;
+    padding: 16px 0 19px;
+  }
+
+  &--contrast {
+    background: $blue;
+    border-color: $blue;
+  }
+
+  &--submenu {
+    width: 100%;
+    border-top: none;
+    background: rgba($white, .1);
+    @include tablets {
+      background: $white;
+    }
+  }
+}

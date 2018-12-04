@@ -1,0 +1,45 @@
+.contact {
+  @include max-width;
+  position: relative;
+  padding-top: 20px;
+  @include tablets {
+    padding-top: 100px;
+  }
+
+  &__bg {
+    margin-left: -15%;
+    display: block;
+    z-index: -1;
+    position: relative;
+  }
+
+  &__title {
+    z-index: 100;
+    @include tablets {
+      padding-top: 100px;
+    }
+  }
+
+  &__form {
+    @include max-width;
+    z-index: 100;
+    max-width: 1010px;
+
+    p {
+      max-width: 330px;
+      margin: 50px 0;
+      line-height: 22px;
+      letter-spacing: .03em;
+      color: $grey-dark;
+      font: {
+        size: 14px;
+        family: $proxima;
+      }
+
+      b {
+        color: $blue;
+      }
+    }
+
+  }
+}

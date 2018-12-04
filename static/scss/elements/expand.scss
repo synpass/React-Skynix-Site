@@ -1,0 +1,41 @@
+.expand {
+  display: block;
+  width: 20px;
+  height: 20px;
+  padding: 0;
+  margin: 2px 10px;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  z-index: 10;
+  cursor: pointer;
+  @include tablets {
+    display: none;
+  }
+  &:before,&:after {
+    top: 50%;
+    position: absolute;
+    content: "";
+    width: 12px;
+    height: 3px;
+    background: $white;
+    transition: transform .3s;
+  }
+  &:before {
+    transform: rotate(40deg);
+    left: 0;
+  }
+  &:after {
+    transform: rotate(-40deg);
+    right: 0;
+  }
+
+  &.opened {
+    &:after {
+      transform: rotate(40deg);
+    }
+    &:before {
+      transform: rotate(-40deg);
+    }
+  }
+}

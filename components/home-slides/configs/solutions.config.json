@@ -1,0 +1,17 @@
+[
+  {
+    "name": "Ecommerce",
+    "description": "Everything you need <br> for your online store",
+    "link": "/"
+  },
+  {
+    "name": "Business Solutions",
+    "description": "Custom solutions for small <br> and medium businesses",
+    "link": "/"
+  },
+  {
+    "name": "Mobile Applications",
+    "description": "Cross-platform development, <br> design and integration",
+    "link": "/"
+  }
+]

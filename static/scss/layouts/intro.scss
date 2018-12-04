@@ -1,0 +1,95 @@
+.intro {
+  padding: 70px 0 0;
+  @include tablets {
+    height: 100vh;
+    padding: 100px 0 0;
+  }
+
+  &__slide {
+    width: 100%;
+    background: -webkit-linear-gradient(to left, transparent, white);
+    background: linear-gradient(to left, transparent, white);
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    position: relative;
+    @include tablets {
+      min-height: 50%;
+    }
+
+    &--reverse {
+      background: -webkit-linear-gradient(to right, transparent, white);
+      background: linear-gradient(to right, transparent, white);
+      padding-right: 0;
+      border-top: 1px solid rgba($blue, .2);
+    }
+  }
+
+  &__content {
+    max-width: 1040px;
+    margin: 0 auto;
+    padding:  0 15px;
+    width: 100%;
+    text-align: center;
+    @include tablets {
+      text-align: left;
+      &--reverse {
+        margin-left: 50%;
+      }
+    }
+  }
+
+  h1 {
+    font-size: 26px;
+    max-width: 637px;
+    font-family: $sofia-semibold;
+    font-weight: 100;
+    line-height: 1.15;
+    margin: 20px 0 30px;
+    @include phones {
+      font-size: 40px;
+    }
+    @include tablets {
+      font-size: 60px;
+      margin: 0;
+    }
+  }
+
+  b {
+    color: $blue;
+    font-weight: 100;
+  }
+
+  p {
+    max-width: 380px;
+    font-family: $proxima;
+    font-size: 13px;
+    line-height: 1.5;
+    margin: 30px auto;
+    @include phones {
+      font-size: 18px;
+    }
+    @include tablets {
+      margin: 0 0 32px;
+    }
+  }
+
+  a {
+    background: $blue;
+    color: $white;
+    display: inline-block;
+    padding: 11px 28px;
+    width: 166px;
+    font-size: 13px;
+    text-decoration: none;
+    transition: background .2s;
+    text-align: center;
+    text-transform: uppercase;
+    &:hover {
+      background: $dark-pale;
+    }
+    @include tablets {
+      font-size: 18px;
+    }
+  }
+}
