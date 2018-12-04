@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import Spinner from './Spinner';
+import LazyLoad from "./LazyLoad";
 
 export default class ClutchWidget extends Component {
 
@@ -8,10 +9,11 @@ export default class ClutchWidget extends Component {
         this.state = {show: false};
     }
 
-    componentDidMount() {
+
+    handleLoad = () => {
         this.loadScript();
         this.delay();
-    }
+    };
 
     loadScript = () => {
         const wrapper = document.querySelector('head');
@@ -34,7 +36,7 @@ export default class ClutchWidget extends Component {
         };
 
         return (
-            <div className='clutch'>
+            <LazyLoad className='clutch' onLoad={this.handleLoad}>
                 <div className='clutch__content js-hook__clutch'>
                     {show ? null : <Spinner/>}
                     <div className="clutch-widget clutch-widget-desktop"
@@ -54,7 +56,7 @@ export default class ClutchWidget extends Component {
                          data-snippets="true"
                          data-clutchcompany-id="161995"/>
                 </div>
-            </div>
+            </LazyLoad>
         )
     }
 }

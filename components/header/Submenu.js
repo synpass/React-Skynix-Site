@@ -14,5 +14,5 @@ export default function Submenu(props) {
 
 Submenu.propTypes = {
     children: PropTypes.array,
-    height: PropTypes.number || PropTypes.string
+    height: PropTypes.string
 };
