@@ -3,6 +3,7 @@ import points from './configs/why-skynix.config.json';
 import LazyLoad from "../LazyLoad";
 import { WhySkynixPoint } from "./Why-Skynix-Point";
 import AddedValue from "./Added-Value";
+import Particle from "../Particle";
 
 export default class WhySkynix extends Component {
 
@@ -40,6 +41,9 @@ export default class WhySkynix extends Component {
                         />)}
                 </div>
                 <a href='/' className='why-skynix__link'>learn about our process</a>
+                <div className='why-skynix__particle'>
+                    <Particle/>
+                </div>
                 <AddedValue/>
             </LazyLoad>
         )

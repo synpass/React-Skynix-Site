@@ -1,11 +1,11 @@
 
-var ROWS = 100,
-    COLS = 300,
+var ROWS = 15,
+    COLS = 30,
     NUM_PARTICLES = (ROWS * COLS),
-    THICKNESS = Math.pow( 40, 2 ),
-    SPACING = 4,
+    THICKNESS = Math.pow( 80, 2 ),
+    SPACING = 17,
     MARGIN = 100,
-    DRAG = 0.95,
+    DRAG = 0.45,
     EASE = 0.25,
 
     /*
@@ -45,22 +45,21 @@ particle = {
     y: 0
 };
 
-export function init() {
+function init() {
+
+    console.log('init');
 
     container = document.getElementById( 'container' );
     canvas = document.createElement( 'canvas' );
 
     ctx = canvas.getContext( '2d' );
-    man = false;
+    man = true;
     tog = true;
 
     list = [];
 
     w = canvas.width = COLS * SPACING + MARGIN * 2;
     h = canvas.height = ROWS * SPACING + MARGIN * 2;
-
-    container.style.marginLeft = Math.round( w * -0.5 ) + 'px';
-    container.style.marginTop = Math.round( h * -0.5 ) + 'px';
 
     for ( i = 0; i < NUM_PARTICLES; i++ ) {
 
@@ -87,7 +86,7 @@ export function init() {
     container.appendChild( canvas );
 }
 
-export function step() {
+function step() {
 
     if ( stats ) stats.begin();
 
@@ -137,3 +136,6 @@ export function step() {
 
     requestAnimationFrame( step );
 }
+
+init();
+step();
