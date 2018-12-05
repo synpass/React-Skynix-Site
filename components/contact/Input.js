@@ -7,19 +7,35 @@ export default class Input extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            valid: !props.required
+            valid: !props.required,
+            invalidType: 'required'
         };
-
+        this.inputRef = React.createRef();
         this.handleChange = this.handleChange.bind(this);
     }
 
     handleChange(event) {
         const { value } = event.target;
-        const { name, onChange, required} = this.props;
-        const valid = required ? value.length > 0 : true;
+        const { name, onChange } = this.props;
+        const valid = this.inputRef.current.validity.valid;
 
         this.setState({value, valid});
+        if (!valid) this.getInvalidType(value);
+
         onChange(name, value, valid);
+    }
+
+    getInvalidType(value) {
+        let res;
+
+        const { type, required } = this.props;
+        if(required && value.length === 0) {
+            res = 'required'
+        } else {
+            res = type === 'email' ? 'email' : 'type'
+        }
+
+        this.setState({invalidType: res});
     }
 
     render() {
@@ -34,7 +50,7 @@ export default class Input extends Component {
             maxLength
         } = this.props;
 
-        const { valid } = this.state;
+        const { valid, invalidType } = this.state;
         const id = name + '-' + shortid.generate();
 
         let classes = ['contact-form__field', 'contact-form__field--text'];
@@ -45,6 +61,7 @@ export default class Input extends Component {
             <div className={classes.join(' ')}>
                 {type === 'textarea' ?
                     <textarea
+                        ref={this.inputRef}
                         id={id}
                         name={name}
                         onChange={this.handleChange}
@@ -55,6 +72,7 @@ export default class Input extends Component {
                     </textarea>
                     :
                     <input
+                        ref={this.inputRef}
                         type={type}
                         id={id}
                         name={name}
@@ -66,7 +84,7 @@ export default class Input extends Component {
                 }
                 <label htmlFor={id}>{label}</label>
 
-                {error && !valid ? <ErrorMsg/> : null}
+                {error && !valid ? <ErrorMsg type={invalidType}/> : null}
             </div>
         )
     }
@@ -80,7 +98,7 @@ Input.propTypes = {
     onChange: PropTypes.func,
     className: PropTypes.string,
     type: PropTypes.string,
-    maxLength: PropTypes.string
+    maxLength: PropTypes.string,
 };
 
 Input.defaultProps = {
