@@ -1,23 +1,27 @@
 import React from 'react';
-import {Animated} from "react-animated-css";
-import links from './social.config.json';
-import shortid from 'shortid'
+import News from "./News";
+import Social from "./Social";
+import Header from "../header/Header";
 
 export default function Footer() {
-    const social = Object.keys(links).map(key =>
-        <a href={links[key]} key={shortid.generate()}>{key}</a>
-    );
-
     return (
-        <Animated animationIn="fadeInUp" className="footer-wrapper">
-            <footer className="footer">
-                <div className='footer__links'>
-                    {social}
+        <div className='m-footer-wrapper'>
+            <footer className='m-footer' id='footer'>
+                <div className='m-footer__nav'>
+                    <Header isFooter={true}/>
                 </div>
-                <div className='footer__scroll'>
-                    Scroll to navigate
+                <div className='m-footer__cols'>
+                    <div className='m-footer__col m-footer__col--left'>
+                        <h4 className='m-footer__title'>Latest News</h4>
+                        <News/>
+                    </div>
+                    <div className='m-footer__col m-footer__col--right'>
+                        <h4 className='m-footer__title'>Skynix Social</h4>
+                        <Social/>
+                        <span className='m-footer__copy'>Skynix LLC 2018</span>
+                    </div>
                 </div>
             </footer>
-        </Animated>
+        </div>
     )
 }

@@ -26,3 +26,17 @@
   padding: 0 15px;
   margin: 0 auto;
 }
+
+@mixin grid-item {
+  border: 1px solid $lilac;
+  margin-left: -1px;
+  margin-top: -1px;
+  z-index: 1;
+  transition: box-shadow .2s;
+  background: $white;
+
+  &:hover {
+    z-index: 10;
+    box-shadow: 0 10px 120px 0 rgba(42, 42, 42, 0.15);
+  }
+}

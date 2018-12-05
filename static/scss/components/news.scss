@@ -1,0 +1,64 @@
+.news {
+  &__grid {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  &__link {
+    color: $blue;
+    text-decoration: none;
+    border-bottom: 1px solid $blue;
+    padding-bottom: 3px;
+    letter-spacing: .05em;
+    font: {
+      size: 14px;
+      family: $proxima-semibold;
+      weight: 100;
+    }
+    @include tablets {
+      font-size: 16px;
+    }
+  }
+
+  &-item {
+    display: flex;
+    width: 100%;
+    max-width: 350px;
+    margin: 0 auto;
+    text-decoration: none;
+    color: $dark;
+    @include phones {
+      width: 50%;
+      padding-right: 40px;
+    }
+    @include tablets {
+      width: 90%;
+      padding-right: 0;
+      margin: 0;
+    }
+    @include laptop {
+      width: 50%;
+      padding-right: 40px;
+    }
+
+    img {
+      width: 60px;
+      height: 60px;
+    }
+
+    p {
+      letter-spacing: .03em;
+      line-height: 22px;
+      padding-left: 10px;
+      max-width: 245px;
+      font: {
+        size: 12px;
+        family: $proxima;
+      }
+
+      @include tablets {
+        font-size: 14px;
+      }
+    }
+  }
+}
