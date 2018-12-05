@@ -39,7 +39,7 @@ export default class LazyLoad extends Component {
 
     render() {
         return(
-            <div ref={this.lazyRef}>
+            <div ref={this.lazyRef} id={this.props.id}>
                 <Animated {...this.props} isVisible={this.state.show}/>
             </div>
         )
@@ -48,6 +48,7 @@ export default class LazyLoad extends Component {
 
 LazyLoad.propTypes = {
     className: PropTypes.string,
+    id: PropTypes.string,
     onLoad: PropTypes.func,
     animationIn: PropTypes.string,
     animationDelay: PropTypes.number

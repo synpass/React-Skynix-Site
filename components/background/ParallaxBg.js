@@ -5,26 +5,31 @@ import PropTypes from 'prop-types';
 
 export default function ParallaxBg(props) {
 
+    const {show, className, slash, style} = props;
+
     const styles = {
-        opacity: +props.show
+        opacity: +show,
+        ...style
     };
 
     let classNames = ['bg'];
-    if (props.className) classNames.push(props.className);
+    if (className) classNames.push(className);
 
     return (
         <div className={classNames.join(' ')} id='bg' style={styles}>
             <div>
                 <div className='bg__elem bg__elem--bracket move'>
-                    <Bracket parallax={props.show}/>
+                    <Bracket parallax={show}/>
                 </div>
             </div>
             <div>
-                <div className='bg__elem bg__elem--slash'/>
+                <div className='bg__elem bg__elem--slash'>
+                    {slash ? <Bracket parallax={show} type='slash'/> : null}
+                </div>
             </div>
             <div>
                 <div className='bg__elem bg__elem--bracket-reverse move'>
-                    <Bracket parallax={props.show}/>
+                    <Bracket parallax={show}/>
                 </div>
             </div>
         </div>
@@ -33,8 +38,12 @@ export default function ParallaxBg(props) {
 
 ParallaxBg.propTypes = {
     show: PropTypes.bool,
-    className: PropTypes.string
+    className: PropTypes.string,
+    slash: PropTypes.bool,
+    style: PropTypes.object
 };
 ParallaxBg.defaultProps = {
-    show: false
+    show: false,
+    slash: false,
+    style: {}
 };

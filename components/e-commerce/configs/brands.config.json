@@ -1,0 +1,37 @@
+[
+  {
+    "id": 0,
+    "imgClass": "magento",
+    "img": "magento.svg",
+    "link": "/",
+    "linkTitle": "Magento 2"
+  },
+  {
+    "id": 2,
+    "imgClass": "woo",
+    "img": "woocommerce.png",
+    "link": "/",
+    "linkTitle": "Woocommerce"
+  },
+  {
+    "id": 4,
+    "imgClass": "xcart",
+    "img": "xcart.png",
+    "link": "/",
+    "linkTitle": "Xcart"
+  },
+  {
+    "id": 1,
+    "imgClass": "opencart",
+    "img": "oencart.png",
+    "link": "/",
+    "linkTitle": "Opencart"
+  },
+  {
+    "id": 3,
+    "imgClass": "shopify",
+    "img": "shopify.svg",
+    "link": "/",
+    "linkTitle": "Shopify"
+  }
+]

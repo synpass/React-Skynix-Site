@@ -1,0 +1,92 @@
+.ec-rate {
+  @include max-width;
+  position: relative;
+  z-index: 10;
+
+  h1 {
+    @include tablets {
+      line-height: 66px;
+    }
+  }
+
+  &__p {
+    letter-spacing: .03em;
+    line-height: 22px;
+    max-width: 558px;
+    padding: 22px 0 60px 100px;
+    font: {
+      size: 12px;
+      family: $proxima;
+      weight: 100;
+    }
+    @include tablets {
+      font-size: 14px;
+    }
+
+    b {
+      color: $blue;
+      font-family: $proxima-semibold;
+    }
+  }
+
+  &__subtitle {
+    padding: 20px 0;
+    margin: 0;
+    letter-spacing: .02em;
+    font: {
+      size: 22px;
+      family: $sofia-semibold;
+      weight: 100;
+    }
+    @include tablets {
+      font-size: 32px;
+      padding: 70px 0 42px;
+    }
+  }
+
+  &__columns {
+    display: flex;
+    max-width: 1200px;
+    align-items: flex-start;
+    flex-direction: column;
+    @include tablets {
+      flex-direction: row;
+    }
+
+    h4 {
+      margin: 0;
+      padding-right: 10px;
+      @include tablets {
+        width: 50%;
+      }
+    }
+
+    section {
+      font: {
+        size: 14px;
+        family: $proxima;
+        weight: 100;
+      }
+      @include tablets {
+        width: 40%;
+      }
+
+      p {
+        padding: 6px 0 15px 50px;
+        margin: 0;
+        letter-spacing: .03em;
+        line-height: 22px;
+      }
+      b {
+        color: $blue;
+        font-family: $proxima-semibold;
+      }
+    }
+  }
+
+  &__particle {
+    position: absolute;
+    right: 0;
+    top: -40px;
+  }
+}
