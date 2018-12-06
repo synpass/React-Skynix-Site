@@ -47,8 +47,6 @@ particle = {
 
 function init() {
 
-    console.log('init');
-
     container = document.getElementById( 'container' );
     canvas = document.createElement( 'canvas' );
 

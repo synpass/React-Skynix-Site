@@ -1,0 +1,42 @@
+.reviews {
+  @include max-width;
+
+  &__title {
+    font: {
+      size: 25px;
+      family: $sofia-semibold;
+      weight: 100;
+    }
+    @include tablets {
+      font-size: 32px;
+    }
+
+    b {
+      color: $blue;
+      font-weight: 100;
+    }
+  }
+
+  &__grid {
+    display: flex;
+  }
+
+  &__item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 33.33333%;
+    height: 105px;
+    @include grid-item;
+    @include tablets {
+      height: 145px;
+    }
+
+    img {
+      transform: scale(.5);
+      @include tablets {
+        transform: scale(1);
+      }
+    }
+  }
+}

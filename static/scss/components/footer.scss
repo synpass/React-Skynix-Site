@@ -1,47 +1,109 @@
-.footer {
-  display: flex;
-  justify-content: space-between;
-  width: 100%;
-  max-width: 1440px;
-  padding: 20px;
-  margin: 0 auto;
-  @include desktop {
-    padding: 40px;
-  }
+.m-footer {
+  @include max-width;
+  padding-top: 45px;
+  padding-bottom: 57px;
 
   &-wrapper {
-    background: $white;
-    background: -webkit-linear-gradient(to bottom, transparent, $white);
-    background: linear-gradient(to bottom, transparent, $white);
-    position: fixed;
     width: 100%;
-    bottom: 0;
-    left: 0;
+    border-top: 1px solid $lilac;
   }
 
-  &__links {
-    display: flex;
-    align-items: center;
-    a {
-      color: $dark-pale;
-      font-size: 14px;
-      margin-right: 35px;
-      font-weight: 700;
-      text-decoration: none;
-      &:hover {
-        color: $blue;
-      }
+  &__title {
+    width: 100%;
+    letter-spacing: .03em;
+    line-height: 28px;
+    font: {
+      family: $proxima-semibold;
+      size: 14px;
+      weight: 100;
+    }
+    @include tablets {
+      font-size: 18px;
     }
   }
 
-  &__scroll {
-    cursor: pointer;
-    color: $dark-pale;
-    font-size: 14px;
-    font-weight: 700;
-    display: none;
+  &__cols {
+    display: flex;
+    flex-direction: column;
+    @include tablets {
+      flex-direction: row;
+      justify-content: space-between;
+    }
+  }
+
+  &__col {
+    @include tablets {
+      &--left {
+        width: 62.5%;
+        padding-right: 30px;
+      }
+    }
+
+    &--right {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+    }
+  }
+
+  &__copy {
+    margin-top: auto;
+    line-height: 34px;
+    letter-spacing: .03em;
+    font: {
+      family: $proxima;
+      size: 11px;
+    }
+    @include tablets {
+      font-size: 14px;
+    }
+  }
+
+  &__nav {
+    width: 100%;
+    @include tablets {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    img {
+      width: 110px;
+    }
+  }
+
+  &__social {
+    display: flex;
+    width: 100%;
     @include phones {
-      display: block;
+      flex-wrap: wrap;
+    }
+
+    a {
+      display: flex;
+      flex: 1;
+      height: 50px;
+      align-items: center;
+      justify-content: center;
+      @include grid-item;
+      @include tablets {
+        min-width: 30%;
+        height: 100px;
+        width: 90px
+      }
+      @include laptop {
+        height: 50px;
+        min-width: 0;
+      }
+
+      svg {
+        width: 21px;
+        height: 18px;
+        fill: $quartz;
+      }
+
+      &:hover svg{
+        fill: $blue;
+      }
     }
   }
 }
