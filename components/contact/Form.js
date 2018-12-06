@@ -71,7 +71,7 @@ export default class Form extends Component {
                             value={name.value}
                             name='name'
                             required={true}
-                            label='How should we call you?'
+                            label='Your Name'
                         />
                         <Input
                             value={contact.value}
@@ -79,7 +79,8 @@ export default class Form extends Component {
                             onChange={this.handleChange}
                             name='contact'
                             required={true}
-                            label='How can we contact you?'
+                            label='Your Email?'
+                            type='email'
                         />
                         <Input
                             error={error}
@@ -87,7 +88,7 @@ export default class Form extends Component {
                             value={project.value}
                             maxLength="2000"
                             name='project'
-                            label='Tell us about your project'
+                            label='Your Inquiry'
                             type='textarea'
                         />
 

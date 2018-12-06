@@ -7,8 +7,9 @@ import Solutions from "../components/home-slides/Solutions"
 import WhySkynix from "../components/home-slides/WhySkynix";
 import Numbers from "../components/home-slides/Numbers";
 import Projects from "../components/home-slides/Projects";
-import ClutchBlock from "../components/home-slides/ClutchBlock";
 import ContactBlock from "../components/contact/ContactBlock";
+import FooterFixed from "../components/footer/FooterFixed";
+import Reviews from "../components/footer/Reviews";
 
 import meta from './index-meta.config.json';
 
@@ -55,8 +56,9 @@ export default class Index extends Component {
                 </div>
                 <Numbers/>
                 <Projects/>
-                <ClutchBlock/>
+                <Reviews/>
                 <ContactBlock/>
+                <FooterFixed/>
             </Page>
         )
     }

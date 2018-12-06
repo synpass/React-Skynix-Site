@@ -19,7 +19,7 @@ export default class LazyLoad extends Component {
         window.removeEventListener('scroll', this.handleScroll);
     }
 
-    handleScroll()  {
+    handleScroll() {
         if(this.lazyRef.current) {
             const componentOffsetTop = this.lazyRef.current.offsetTop;
             const baseHeight = window.scrollY + window.screen.height / 2;

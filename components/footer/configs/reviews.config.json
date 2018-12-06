@@ -1,0 +1,20 @@
+[
+  {
+    "id": 0,
+    "img": "clutch.png",
+    "name": "clutch",
+    "link": "https://clutch.co/profile/skynix/"
+  },
+  {
+    "id": 1,
+    "img": "upwork.png",
+    "name": "upwork",
+    "link": "https://www.upwork.com/agencies/~0147b06d43db598866"
+  },
+  {
+    "id": 2,
+    "img": "google.png",
+    "name": "google",
+    "link": "https://goo.gl/maps/Y1bCps1hKuB2"
+  }
+]
