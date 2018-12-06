@@ -13,6 +13,7 @@ export function WhySkynixPoint(props) {
 
     return (
         <Animated {...animation}>
+            <img src={'/static/images/why-skynix/' + props.img} />
             <h3>{props.title}</h3>
             <p>{props.subtitle}</p>
         </Animated>
@@ -24,6 +25,7 @@ WhySkynixPoint.propTypes = {
     title: PropTypes.string,
     subtitle: PropTypes.string,
     show: PropTypes.bool,
+    img: PropTypes.string
 };
 
 WhySkynixPoint.defaultProps = {
