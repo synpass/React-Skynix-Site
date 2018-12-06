@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import Submenu from "./Submenu";
 import PropTypes from 'prop-types';
 import { Animated } from "react-animated-css";
+import AnchorLink from 'react-anchor-link-smooth-scroll'
 
 export default class NavItem extends Component {
 
@@ -32,7 +33,14 @@ export default class NavItem extends Component {
     }
 
     render() {
-        const { children, name, contrast, order } = this.props;
+        const { 
+            children, 
+            name, 
+            contrast, 
+            order,
+            link,
+            anchor
+        } = this.props;
 
         const { height } = this.state;
 
@@ -46,7 +54,12 @@ export default class NavItem extends Component {
 
         return (
             <li onMouseLeave={this.hide} onMouseEnter={this.show}>
-                <a className={linkClasses.join(' ')}>{name} { children ? <span/> : null}</a>
+                { anchor ? 
+                    <AnchorLink className={linkClasses.join(' ')} offset='-150' href={link}>{name}</AnchorLink> : 
+                    <a className={linkClasses.join(' ')} href={link}>
+                        {name} { children ? <span/> : null}
+                    </a>
+                }
                 { children ? <button className={expandClasses.join(' ')} onClick={this.toggle}/> : null }
                 { children ? <Submenu children={children} height={height}/> : null }
             </li>
@@ -58,5 +71,12 @@ NavItem.propTypes = {
     children: PropTypes.array,
     name: PropTypes.string.isRequired,
     contrast: PropTypes.bool,
-    order: PropTypes.number.isRequired
+    order: PropTypes.number.isRequired,
+    anchor: PropTypes.bool,
+    link: PropTypes.string
 };
+
+NavItem.defaultProps = {
+    anchor: false,
+    link: "/"
+}

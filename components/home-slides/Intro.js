@@ -2,6 +2,7 @@ import React from 'react';
 import config from './configs/intro.config.json';
 import {Animated} from "react-animated-css";
 import ReactHtmlParser from 'react-html-parser';
+import AnchorLink from 'react-anchor-link-smooth-scroll'
 
 export default function Intro() {
     return (
@@ -14,7 +15,7 @@ export default function Intro() {
             <Animated animationIn="fadeIn" animationInDelay={800} className="intro__slide intro__slide--reverse">
                 <Animated animationIn="fadeInUp" animationInDelay={1200} className='intro__content intro__content--reverse'>
                     <p>{ReactHtmlParser(config.description)}</p>
-                    <a href="/">let's talk</a>
+                    <AnchorLink href='#contact' offset='-150'>let's talk</AnchorLink>
                 </Animated>
             </Animated>
         </div>
