@@ -59,6 +59,18 @@
     }
   }
 
+  &__nav {
+    width: 100%;
+    @include tablets {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    img {
+      width: 110px;
+    }
+  }
+
   &__social {
     display: flex;
     width: 100%;

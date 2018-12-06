@@ -47,7 +47,7 @@ export default class Index extends Component {
 
     render() {
         return (
-            <Page loading={false} meta={meta}>
+            <Page loading={true} meta={meta}>
                 <ParallaxBg show={this.state.parallaxBg}/>
                 <Intro/>
                 <Solutions/>

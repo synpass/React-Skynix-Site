@@ -1,14 +1,15 @@
 import React from 'react';
 import News from "./News";
 import Social from "./Social";
-import Header from "../header/Header";
+import Nav from "./Nav";
 
 export default function Footer() {
     return (
         <div className='m-footer-wrapper'>
             <footer className='m-footer' id='footer'>
                 <div className='m-footer__nav'>
-                    <Header isFooter={true}/>
+                    <img src="/static/images/skynix_logo_2018.svg"/>
+                    <Nav/>
                 </div>
                 <div className='m-footer__cols'>
                     <div className='m-footer__col m-footer__col--left'>

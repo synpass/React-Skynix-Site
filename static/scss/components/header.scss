@@ -7,11 +7,6 @@
   justify-content: space-between;
   align-items: center;
 
-  &--bottom {
-    padding-left: 0;
-    padding-right: 0;
-  }
-
   &-wrapper {
     position: fixed;
     width: 100%;
@@ -22,11 +17,6 @@
     @include tablets {
       background: -webkit-linear-gradient(to top, transparent, $white);
       background: linear-gradient(to top, transparent, $white);
-    }
-
-    &--bottom {
-      position: relative;
-      background: transparent;
     }
   }
 

@@ -1,6 +1,7 @@
 import React from 'react';
 import LazyLoad from "../LazyLoad";
-import reviews from './configs/reviews.config.json'
+import reviews from './configs/reviews.config.json';
+import PropTypes from 'prop-types';
 
 export default function Reviews() {
     return (
@@ -19,4 +20,10 @@ function ReviewItem(props) {
             <img src={'/static/images/reviews/' + props.img} className={props.imgClass}/>
         </a>
     )
+}
+
+ReviewItem.propTypes = {
+    img: PropTypes.string,
+    link: PropTypes.string,
+    imgClass: PropTypes.string
 }

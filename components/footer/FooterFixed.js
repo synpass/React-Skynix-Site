@@ -1,6 +1,3 @@
-/* todo: make footer's z-index bigger than projects slider */
-/* todo: smooth hiding animation when FooterFixed riches Footer */
-
 import React, {Component} from 'react';
 import {Animated} from "react-animated-css";
 import links from './configs/social.config.json';
@@ -27,7 +24,6 @@ export default class FooterFixed extends Component {
         const footerTop = document.getElementById('footer').offsetTop;
         const fixedTop = this.ref.current.offsetTop + window.scrollY + window.innerHeight;
         this.setState({show: fixedTop < footerTop})
-
     }
 
     render() {
