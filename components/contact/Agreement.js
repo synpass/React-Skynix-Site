@@ -14,7 +14,7 @@ export default class Agreement extends Component {
                     <label htmlFor={id} />
                     <span>I have read and accepted <a href='/'>Terms & Conditions</a> and <a href='/'>Privacy Policy</a></span>
                 </div>
-                {error && !value ?  <ErrorMsg/> : null}
+                {error && !value ?  <ErrorMsg type='required'/> : null}
             </div>
         );
     }

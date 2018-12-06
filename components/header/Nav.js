@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import shortid from 'shortid'
-import config from './navigation.config.json';
+import config from './configs/nav.config.json';
 import NavItem from './NavItem';
 
 export default class Nav extends Component {
@@ -23,7 +23,7 @@ export default class Nav extends Component {
 
         let menuClassName = ["nav__menu"],
             burgerClassName = ["burger"];
-
+    
         if (mobileMenu) {
             menuClassName.push("opened");
             burgerClassName.push("opened");

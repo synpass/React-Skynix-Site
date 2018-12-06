@@ -90,6 +90,12 @@ export default class Attachments extends Component {
     render() {
         const { loading, sizeError, formatError } = this.state;
         const { files } = this.props;
+        const type = formatError ? 'format' : 'maxSize';
+
+        const customErrors = {
+            maxSize: 'Max size is 10 mb',
+            format: 'Formats allowed: PDF, doc, docx, txt, ppt, pptx, pdf, png, jpg, jpeg, sketch.'
+        };
 
         const filesList = <ul>
             {files.map(file =>
@@ -114,8 +120,9 @@ export default class Attachments extends Component {
                         </div>
                     : null }
 
-                    {sizeError ? <ErrorMsg>Max size is 10 mb</ErrorMsg> : null}
-                    {formatError ? <ErrorMsg>Formats allowed: PDF, doc, docx, txt, ppt, pptx, pdf, png, jpg, jpeg, sketch.</ErrorMsg> : null}
+
+
+                    {sizeError || formatError ? <ErrorMsg type={type} custom={customErrors}/> : null}
 
                     {files.length > 0 ? filesList : null}
                 </div>
