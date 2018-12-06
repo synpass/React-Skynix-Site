@@ -1,12 +1,5 @@
-/*
- * todo: code style
- * todo: comments
- * todo: propTypes
- * todo: optimize variables
- * todo: add onResize listener for initial offset change (optional)
-*/
-
 import React, {Component} from 'react';
+import PropTypes from 'prop-types';
 
 export default class Sticky extends Component {
     constructor(props) {
@@ -16,6 +9,7 @@ export default class Sticky extends Component {
             limitTop: null,
             initialOffset: 0
         };
+        this.initialState = this.state;
         this.handleScroll = this.handleScroll.bind(this);
         this.ref = React.createRef();
     }
@@ -32,17 +26,17 @@ export default class Sticky extends Component {
     }
 
     handleScroll() {
-        if(window.innerWidth >= 768) {
-            const parent = document.getElementById(this.props.parent);
-            const componentOffsetTop = window.scrollY + this.props.offset;
-            const parentOffsetTop = parent.offsetTop;
+        const { parent, offset } = this.props;
+        const { initialOffset, limitTop } = this.state;
+        const { innerWidth, scrollY } = window;
 
+        if (innerWidth >= 768) {
+            const parentTop = document.getElementById(parent).offsetTop;
+            const stickyMaxTop = parentTop + offset;
+            const isSticky = initialOffset + scrollY >= stickyMaxTop;
 
-            this.setState({sticky: this.state.initialOffset + window.scrollY >= parentOffsetTop + this.props.offset});
-
-            if (!this.state.limitTop) {
-                this.setState({limitTop: parentOffsetTop + +this.props.offset });
-            }
+            this.setState({sticky: isSticky});
+            if (!limitTop) this.setState({limitTop: stickyMaxTop });
         }
     }
 
@@ -57,4 +51,22 @@ export default class Sticky extends Component {
 
         return <div className={classes.join(' ')} style={{...styles, ...style}} ref={this.ref}> {children} </div>;
     }
+}
+
+Sticky.propTypes = {
+    styles: PropTypes.object,
+    children: PropTypes.oneOfType([
+        PropTypes.string,
+        PropTypes.array,
+        PropTypes.element
+    ]),
+    className: PropTypes.string,
+    offset: PropTypes.number,
+    parent: PropTypes.string,
+};
+
+Sticky.defaultProps = {
+    className: '',
+    styles: {},
+    offset: 0
 }

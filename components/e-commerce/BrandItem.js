@@ -1,9 +1,6 @@
-/*
- * todo: propTypes
-*/
-
 import React from 'react';
 import { Animated } from "react-animated-css";
+import PropTypes from 'prop-types';
 
 export default function BrandItem(props) {
     const {show, img, imgClass, id, link, linkTitle} = props;
@@ -16,4 +13,13 @@ export default function BrandItem(props) {
             </a>
         </Animated>
     )
+}
+
+BrandItem.propTypes = {
+    show: PropTypes.bool,
+    img: PropTypes.string,
+    imgClass: PropTypes.string,
+    id: PropTypes.number.isRequired,
+    link: PropTypes.string,
+    linkTitle: PropTypes.string
 }
