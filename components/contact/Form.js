@@ -79,7 +79,7 @@ export default class Form extends Component {
                             onChange={this.handleChange}
                             name='contact'
                             required={true}
-                            label='Your Email?'
+                            label='Your Email'
                             type='email'
                         />
                         <Input
