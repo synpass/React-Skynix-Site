@@ -5,7 +5,7 @@ import LazyLoad from "../LazyLoad";
 
 export default function ContactBlock(){
     return (
-        <LazyLoad className='contact'>
+        <LazyLoad className='contact' id='contact'>
              <div className='contact__bg'>
                  <CirclesBg/>
              </div>
