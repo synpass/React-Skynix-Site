@@ -51,8 +51,8 @@ LazyLoad.propTypes = {
     id: PropTypes.string,
     onLoad: PropTypes.func,
     animationIn: PropTypes.string,
-    animationDelay: PropTypes.number
-
+    animationDelay: PropTypes.number,
+    id: PropTypes.string
 };
 
 LazyLoad.defaultProps = {
