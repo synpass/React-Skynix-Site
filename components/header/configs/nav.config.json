@@ -1,5 +1,14 @@
 [
   {
+    "name": "Services",
+    "children": [
+      {
+        "name": "E-commerce",
+        "link": "/ecommerce"
+      }
+    ]
+  },
+  {
     "name": "Request a Quote",
     "contrast": true,
     "link": "#contact",

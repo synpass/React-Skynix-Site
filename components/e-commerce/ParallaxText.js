@@ -17,15 +17,26 @@ export default class ParallaxText extends Component {
     }
 
     getColor(perc, from, to) {
-        return perc * from + (to - from) - (from * 1.8 * (1 - perc));
+        return from.map((e, i) => perc * e + (to[i] - e) - (e * 1.8 * (1 - perc))).join(', ');
     }
 
-    /* Our example: from rgb(213,186,34) to rgb(247,247,247) */
-    getStyles(perc) {
+    getTitleStyles(perc) {
+        const fromColor = [213,187,34];
+        const toColor = [247,247,247];
+
         return {
-            color: `rgb(${this.getColor(perc, 213, 247)}, ${this.getColor(perc, 187, 247)}, ${this.getColor(perc, 34, 247)})`,
-            fontSize: 140 * perc + 60 - 140 * (1 - perc)
+            color: `rgb(${this.getColor(perc, fromColor, toColor)})`,
+            fontSize: 140 * perc + 60 - 275 * (1 - perc)
         }
+    }
+
+    getScrollOpacity(perc) {
+        // How fast opacity tends to zero;
+        const sensitivity = 30;
+        //How opacity changes depending on percentage; 0.7 is a beginning delta, percentage is not zero at the beginning of scroll;
+        const dependency = 1 - (perc - 0.7);
+        const opacity = Math.pow(dependency, sensitivity);
+        return {opacity};
     }
 
     render() {
@@ -38,14 +49,15 @@ export default class ParallaxText extends Component {
                     bgImage={'blue'} 
                     strength={100} 
                     className='ec-intro__parallax' 
-                    renderLayer={percentage => (
+                    renderLayer={perc => (
                     <Sticky
                         parent='ecRate'
                         className='ec-intro__parallax-text'
                         offset={210}
-                        styles={isMobile ? {} :  this.getStyles(percentage)}
                     >
-                        e-commerce
+                        <h1   style={isMobile ? {} : this.getTitleStyles(perc)}>e-commerce</h1>
+                        <span style={isMobile ? {} : this.getScrollOpacity(perc)}>Scroll to navigate <i className='scroll-arrow'/></span>
+
                     </Sticky>
                 )}>
                     <div className='ec-intro__parallax-content'/>

@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import Nav from './Nav';
 import {Animated} from 'react-animated-css';
+import Link from 'next/link';
 
 export default function Header() {
     return (
@@ -8,7 +9,9 @@ export default function Header() {
             <Animated animationIn='fadeInDown'>
                 <header className='header'>
                     <div className='header__logo'>
-                        <img src='/static/images/skynix_logo_2018.svg'/>
+                        <Link href='/'>
+                            <a><img src='/static/images/skynix_logo_2018.svg'/></a>
+                        </Link>
                     </div>
                     <div className='header__nav'>
                         <Nav/>

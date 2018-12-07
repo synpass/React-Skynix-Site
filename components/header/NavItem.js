@@ -2,7 +2,8 @@ import React, {Component} from 'react';
 import Submenu from "./Submenu";
 import PropTypes from 'prop-types';
 import { Animated } from "react-animated-css";
-import AnchorLink from 'react-anchor-link-smooth-scroll'
+import AnchorLink from 'react-anchor-link-smooth-scroll';
+import Link from 'next/link';
 
 export default class NavItem extends Component {
 
@@ -56,9 +57,9 @@ export default class NavItem extends Component {
             <li onMouseLeave={this.hide} onMouseEnter={this.show}>
                 { anchor ? 
                     <AnchorLink className={linkClasses.join(' ')} offset='-150' href={link}>{name}</AnchorLink> : 
-                    <a className={linkClasses.join(' ')} href={link}>
-                        {name} { children ? <span/> : null}
-                    </a>
+                    <Link href={link}>
+                        <a className={linkClasses.join(' ')}>{name} { children ? <span/> : null}</a>
+                    </Link>
                 }
                 { children ? <button className={expandClasses.join(' ')} onClick={this.toggle}/> : null }
                 { children ? <Submenu children={children} height={height}/> : null }
