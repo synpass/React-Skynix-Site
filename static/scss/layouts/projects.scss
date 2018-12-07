@@ -35,11 +35,17 @@
 
 
   &__item {
-    height: 358px;
+    height: 400px;
     position: relative;
     background-size: cover;
     background-position: center;
     width: 100%;
+    @include laptop {
+      height: 27.97vw;
+    }
+    @include desktop {
+      height: 358px;
+    }
 
     &-wrapper {
       padding: 0 20px;
