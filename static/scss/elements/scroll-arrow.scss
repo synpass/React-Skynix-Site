@@ -1,0 +1,29 @@
+.scroll-arrow {
+  display: inline-block;
+  width: 2px;
+  height: 6px;
+  border-bottom: 2px solid $blue;
+  border-top: 2px solid $blue;
+  position: relative;
+  animation: arrow-dots 2s infinite;
+
+  &:before, &:after {
+    content: '';
+    width: 5px;
+    height: 1px;
+    background: $blue;
+    position: absolute;
+    display: block;
+    bottom: -6px;
+    animation: arrow 2s infinite;
+  }
+
+  &:before {
+    transform: rotate(40deg);
+    left: -3px;
+  }
+  &:after {
+    transform: rotate(-40deg);
+    right: -3px;
+  }
+}

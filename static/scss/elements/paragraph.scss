@@ -1,0 +1,53 @@
+.paragraph {
+  letter-spacing: .03em;
+  line-height: 22px;
+  max-width: 558px;
+  padding: 0 0 10px 50px;
+  margin-top: 22px;
+  position: relative;
+  font: {
+    size: 12px;
+    family: $proxima;
+    weight: 100;
+  }
+
+  @include tablets {
+    padding-left: 100px;
+    padding-bottom: 60px;
+    font-size: 14px;
+  }
+
+
+  b {
+    color: $blue;
+    font-family: $proxima-semibold;
+  }
+
+  &:before {
+    content: '';
+    width: 30px;
+    height: 1px;
+    background: $lilac;
+    position: absolute;
+    left: 0;
+    top: 12px;
+    @include tablets {
+      width: 80px;
+    }
+  }
+
+  &--large {
+    line-height: 28px;
+    letter-spacing: .02em;
+    font: {
+      size: 14px;
+      family: $proxima-semibold;
+      weight: 100;
+    }
+
+    @include tablets {
+      padding-bottom: 0;
+      font-size: 18px;
+    }
+  }
+}

@@ -94,4 +94,21 @@
     }
   }
 
+  &--static {
+    position: absolute;
+    opacity: .6;
+
+    #{$b}__elem--slash {
+      @include tablets {
+        margin: 0;
+      }
+    }
+    #{$b}__elem--bracket {
+      margin-right: -100px;
+    }
+    #{$b}__elem--bracket-reverse {
+      margin-left: -100px;
+    }
+  }
+
 }

@@ -48,6 +48,7 @@ export default class LazyLoad extends Component {
 
 LazyLoad.propTypes = {
     className: PropTypes.string,
+    id: PropTypes.string,
     onLoad: PropTypes.func,
     animationIn: PropTypes.string,
     animationDelay: PropTypes.number,

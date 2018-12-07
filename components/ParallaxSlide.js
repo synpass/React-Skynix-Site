@@ -1,14 +1,17 @@
 import React, {Component} from 'react';
 import { Animated } from "react-animated-css";
 import Bracket from "./background/Bracket";
+import PropTypes from 'prop-types';
 
 export default class ParallaxSlide extends Component {
     render() {
+        const { loaded, animate } = this.props;
+
         let classNames1 = ['bg__elem', 'bg__elem--bracket'];
         let classNames2 = ['bg__elem', 'bg__elem--bracket-reverse'];
         let classNames3 = ['bg__elem', 'bg__elem--slash'];
 
-        if(this.props.loaded) {
+        if(loaded && animate) {
             classNames1.push('move');
             classNames2.push('move');
         }
@@ -24,7 +27,7 @@ export default class ParallaxSlide extends Component {
                     animationOut="fadeOut"
                     animationInDelay={200}
                     animationOutDelay={500}
-                    isVisible={!this.props.loaded}>
+                    isVisible={animate ? !loaded : true}>
                     <div className={classNames3.join(' ')}>
                         <Bracket type='slash' parallax={true}/>
                     </div>
@@ -38,3 +41,8 @@ export default class ParallaxSlide extends Component {
         );
     }
 }
+
+ParallaxSlide.propTypes = {
+    loaded: PropTypes.bool,
+    animate: PropTypes.bool
+};

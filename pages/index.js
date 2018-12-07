@@ -13,17 +13,18 @@ import Reviews from "../components/footer/Reviews";
 
 import meta from './index-meta.config.json';
 
-
 export default class Index extends Component {
     constructor(props) {
         super(props);
         this.state = {
             parallaxBg: true,
-            parallaxBgTop: 0
+            parallaxBgTop: 0,
+            rendered: props.rendered
         };
         this.bgRef = React.createRef();
         this.handleScroll = this.handleScroll.bind(this);
     }
+
     componentDidMount() {
         window.addEventListener('scroll', this.handleScroll);
     }
@@ -33,22 +34,22 @@ export default class Index extends Component {
     }
 
     handleScroll() {
-        const componentOffsetTop = this.bgRef.current.offsetTop;
-        const windowScroll = window.scrollY + window.screen.height / 2;
+        const { parallaxBg } = this.state;
+        const { scrollY, screen } = window;
+        const { offsetTop: componentOffsetTop } =  this.bgRef.current;
+
+        const windowScroll = scrollY + screen.height / 2;
         const received = windowScroll > componentOffsetTop;
 
-        if (received && this.state.parallaxBg) {
-            this.setState({parallaxBg: false});
-        }
-        if (!received && !this.state.parallaxBg) {
-            this.setState({parallaxBg: true})
-        }
+        if (received && parallaxBg) this.setState({parallaxBg: false});
+        if (!received && !parallaxBg) this.setState({parallaxBg: true});
     }
 
     render() {
+        const { parallaxBg, rendered } = this.state;
         return (
-            <Page loading={true} meta={meta}>
-                <ParallaxBg show={this.state.parallaxBg}/>
+            <Page loading={!rendered} meta={meta} animate={true}>
+                <ParallaxBg show={parallaxBg}/>
                 <Intro/>
                 <Solutions/>
                 <div ref={this.bgRef}>

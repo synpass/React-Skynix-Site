@@ -27,7 +27,8 @@ export default class Page extends Component {
     }
 
     render() {
-        const {children, className, meta} = this.props;
+        const {children, className, meta, animate} = this.props;
+        const {loaded, preload} = this.state;
 
         const content = (
             <div>
@@ -51,12 +52,12 @@ export default class Page extends Component {
                     <meta name="viewport" content="initial-scale=1.0, width=device-width"/>
                 </Head>
                 <Meta {...meta}/>
-                <div style={{display: this.state.loaded ? 'block' : 'none'}}>
+                <div style={{display: loaded ? 'block' : 'none'}}>
                     {content}
                 </div>
 
-                <div style={{display: this.state.loaded ? 'none' : 'block'}}>
-                    <ParallaxSlide loaded={this.state.preload}/>
+                <div style={{display: loaded ? 'none' : 'block'}}>
+                    <ParallaxSlide loaded={preload} animate={animate}/>
                 </div>
             </div>
         )
@@ -66,5 +67,10 @@ export default class Page extends Component {
 Page.propTypes = {
     children: PropTypes.array,
     className: PropTypes.string,
-    meta: PropTypes.object
+    meta: PropTypes.object,
+    animate: PropTypes.bool
+};
+
+Page.defaultProps = {
+    animate: false
 };
