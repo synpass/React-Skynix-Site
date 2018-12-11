@@ -1,6 +1,5 @@
 import React, {Component} from 'react';
 import '../static/scss/app.scss';
-import Head from 'next/head'
 import PropTypes from 'prop-types';
 import Header from './header/Header';
 import Footer from './footer/Footer';
@@ -44,13 +43,6 @@ export default class Page extends Component {
 
         return (
             <div className={className}>
-                <Head>
-                    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"/>
-                    <link rel="stylesheet" href="owl-carousel/owl.theme.css"/>
-                    <link rel="stylesheet"
-                          href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css"/>
-                    <meta name="viewport" content="initial-scale=1.0, width=device-width"/>
-                </Head>
                 <Meta {...meta}/>
                 <div style={{display: loaded ? 'block' : 'none'}}>
                     {content}
