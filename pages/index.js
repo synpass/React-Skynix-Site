@@ -12,7 +12,7 @@ import FooterFixed from "../components/footer/FooterFixed";
 import Reviews from "../components/footer/Reviews";
 
 import meta from './index-meta.config.json';
-import Fullpage from "../components/Fullpage";
+import Fullpage from "../components/fullpage/Fullpage";
 
 export default class Index extends Component {
     constructor(props) {
@@ -66,6 +66,4 @@ export default class Index extends Component {
             </Page>
         )
     }
-
-
 }

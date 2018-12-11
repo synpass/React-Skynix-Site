@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import FullpageSlide from './Slide';
+import PropTypes from 'prop-types';
 
 export default class Fullpage extends Component {
     constructor(props) {
@@ -12,11 +14,11 @@ export default class Fullpage extends Component {
     }
 
     componentDidMount() {
-        window.addEventListener('mousewheel', this.handleWheel);
+        window.addEventListener('mousewheel', this.handleWheel, false); // Chrome/Safari/Opera
     }
 
     componentWillUnmount() {
-        window.removeEventListener('mousewheel', this.handleWheel)
+        window.removeEventListener('mousewheel', this.handleWheel, false)
     }
 
     finishScroll = () => this.setState({scrolling: false});
@@ -24,15 +26,16 @@ export default class Fullpage extends Component {
     getCurrSlide = () => document.getElementById('slide-' + this.state.currSlide);
 
 
-    getSlideScroll(direction, deltaY) {
+    getSlideScroll(direction) {
         const { offsetTop } = this.getCurrSlide();
-        const { height: windowHeight } = window.screen;
+        const { screen,  scrollY}  = window;
+        const deltaOffset = 200; //To make less sensitivity for transitions between slides
 
         switch(direction) {
             case 'bottom':
-                return  offsetTop > window.scrollY + windowHeight ;
+                return  offsetTop > scrollY + screen.height ;
             case 'top':
-                return offsetTop <= window.scrollY
+                return offsetTop <= scrollY + deltaOffset;
         }
     }
 
@@ -53,10 +56,11 @@ export default class Fullpage extends Component {
         if (shouldSlideScroll) {
             e.preventDefault();
             this.goTo(isNext ? currSlide + 1 : currSlide - 1);
-            setTimeout(this.finishScroll, 1800);
+            setTimeout(this.finishScroll, 1500);
         }
     }
 
+    /* State changing (slide id & loading) */
     goTo(id) {
         this.setState({
             scrolling: true,
@@ -65,6 +69,7 @@ export default class Fullpage extends Component {
         this.scrollTo();
     }
 
+    /* Smooth scrolling to id in state */
     scrollTo() {
         window.scroll({
             top: this.getCurrSlide().offsetTop,
@@ -79,12 +84,11 @@ export default class Fullpage extends Component {
 
         return <div className='fullpage'>{slidesArray}</div>
     }
-
 }
 
-function FullpageSlide(props) {
-    const { id, template } = props;
-    const slideId = 'slide-' + id;
-
-    return <div id={slideId}>{template}</div>
-}
+Fullpage.propTypes = {
+    children: PropTypes.oneOfType([
+        PropTypes.arrayOf(PropTypes.element),
+        PropTypes.element
+    ])
+};
