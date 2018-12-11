@@ -50,4 +50,8 @@
       font-size: 18px;
     }
   }
+
+  &--simple:before {
+    background: transparent;
+  }
 }

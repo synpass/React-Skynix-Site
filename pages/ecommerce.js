@@ -4,7 +4,7 @@ import Page from "../components/Page";
 import Rate from "../components/e-commerce/Rate";
 import ThemeDev from "../components/e-commerce/ThemeDev";
 import Brands from "../components/e-commerce/Brands";
-import ParallaxBg from "../components/background/ParallaxBg";
+import Platform from "../components/e-commerce/platform/Platform";
 
 export default class Ecommerce extends Component {
     render() {
@@ -14,6 +14,7 @@ export default class Ecommerce extends Component {
                 <Rate/>
                 <ThemeDev/>
                 <Brands/>
+                <Platform/>
             </Page>
         )
     }

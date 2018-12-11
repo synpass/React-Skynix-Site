@@ -6,7 +6,7 @@ export default class ThemeDev extends Component {
     render() {
         return (
             <LazyLoad className='ec-rate' animationIn='fadeInUp'>
-                <h3 className='ec-rate__subtitle'>Online Shop Theme Development</h3>
+                <h3 className='section-heading'>Online Shop Theme Development</h3>
                 <div className='ec-rate__columns'>
                     <h4 className='paragraph paragraph--large'>Refresh your brand identity, attract and retain more customers
                         by making their shopping experience with you a breeze</h4>
