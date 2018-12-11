@@ -73,7 +73,10 @@ NavItem.propTypes = {
     name: PropTypes.string.isRequired,
     contrast: PropTypes.bool,
     order: PropTypes.number.isRequired,
-    anchor: PropTypes.bool,
+    anchor: PropTypes.oneOfType([
+        PropTypes.bool,
+        PropTypes.string
+    ]),
     link: PropTypes.string
 };
 

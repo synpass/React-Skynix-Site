@@ -1,0 +1,84 @@
+.upwork-review {
+  display: flex;
+
+  &__logo {
+    margin-right:10px;
+    img {
+      width: 60px;
+      height: 60px;
+    }
+  }
+
+  &__comp-name {
+    color: $green;
+    font-size: 13px;
+    font-family: $gotham-medium;
+    line-height: 1.25;
+    margin-bottom: 2px;
+  }
+
+  &__span {
+    font-size: 13px;
+    line-height: 1.25;
+    white-space: nowrap;
+    font-family: $gotham;
+    color: $dark;
+  }
+
+  &__line {
+    background: $bg-grey;
+    position: relative;
+    height: 4px;
+    width: 100%;
+    margin: 6px 0 3px;
+    &:after {
+      content: '';
+      position: absolute;
+      width: 95%;
+      height: 100%;
+      top: 0;
+      left: 0;
+      background: $light-blue;
+    }
+  }
+
+  &__top-rated {
+    color: $light-blue;
+    font-size: 11px;
+    font-family: $gotham-medium;
+    line-height: 1.25;
+  }
+
+  &__hours {
+    font-family: $gotham-bold;
+    font-size: 13px;
+    color: $grey-upwork;
+  }
+
+  .glyphicon, [class^="air-icon-"], [class*=" air-icon-"] {
+    font-family: $air-icons;
+    speak: none;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    width: 14px;
+    height: 14px;
+    font-size: 14px;
+    line-height: 14px;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    margin-right: 10px;
+  }
+
+  .glyphicon {
+    position: relative;
+    top: 0;
+    display: inline-block;
+  }
+
+  .air-icon-top-rated:before {
+    content: "\e9ef";
+  }
+}
+
