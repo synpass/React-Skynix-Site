@@ -12,6 +12,7 @@ import FooterFixed from "../components/footer/FooterFixed";
 import Reviews from "../components/footer/Reviews";
 
 import meta from './index-meta.config.json';
+import Fullpage from "../components/Fullpage";
 
 export default class Index extends Component {
     constructor(props) {
@@ -50,15 +51,17 @@ export default class Index extends Component {
         return (
             <Page loading={!rendered} meta={meta} animate={true}>
                 <ParallaxBg show={parallaxBg}/>
-                <Intro/>
-                <Solutions/>
-                <div ref={this.bgRef}>
-                    <WhySkynix/>
-                </div>
-                <Numbers/>
-                <Projects/>
-                <Reviews/>
-                <ContactBlock/>
+                <Fullpage>
+                    <Intro/>
+                    <Solutions/>
+                    <div ref={this.bgRef}>
+                        <WhySkynix/>
+                        <Numbers/>
+                        <Projects/>
+                        <Reviews/>
+                        <ContactBlock/>
+                    </div>
+                </Fullpage>
                 <FooterFixed/>
             </Page>
         )
