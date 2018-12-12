@@ -28,3 +28,18 @@
     }
   }
 }
+
+.section-heading {
+  padding: 20px 0;
+  margin: 0;
+  letter-spacing: .02em;
+  font: {
+    size: 22px;
+    family: $sofia-semibold;
+    weight: 100;
+  }
+  @include tablets {
+    font-size: 32px;
+    padding: 70px 0 42px;
+  }
+}
