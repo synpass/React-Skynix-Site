@@ -9,6 +9,10 @@
     ]
   },
   {
+    "name": "Resources",
+    "link": "/resources"
+  },
+  {
     "name": "Request a Quote",
     "contrast": true,
     "link": "#contact",

@@ -1,0 +1,91 @@
+.catalog {
+  @include max-width;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  z-index: 9;
+
+  &-article {
+    width: 100%;
+    padding: 20px;
+    z-index: 9;
+    position: relative;
+    text-decoration: none;
+    color: $dark;
+    background: $white;
+    @include phones {
+      width: 50%;
+    }
+    @include tablets {
+      width: 33.3333%;
+    }
+
+    &__flex {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      height: 50px;
+    }
+
+    &__img {
+      width: 100%;
+      height: calc((100vw - 70px) * 0.58333);
+      background-size: 100%;
+      background-position: center;
+      background-repeat: no-repeat;
+      transition: background-size .3s;
+
+      @include phones {
+        height: calc((50vw - 55px)  * 0.58333);
+      }
+      @include laptop {
+        height: 210px;
+      }
+    }
+
+    &__author {
+      font: {
+        size: 13px;
+        family: $proxima-semibold;
+        weight: 100;
+      }
+    }
+
+    &__date {
+      font: {
+        size: 13px;
+        family: $proxima-semibold;
+        weight: 100;
+      }
+    }
+
+    &__title {
+      width: 100%;
+      text-align: center;
+      margin: 10px 0 0;
+      font: {
+        size: 14px;
+        family: $proxima-semibold;
+        weight: 100;
+      }
+      @include tablets {
+        font-size: 18px;
+      }
+    }
+
+    &__content {
+      font: {
+        size: 12px;
+        family: $proxima;
+        weight: 100;
+      }
+      @include tablets {
+        font-size: 14px;
+      }
+    }
+
+    &:hover &__img {
+        background-size: 110%;
+    }
+  }
+}
