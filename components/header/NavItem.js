@@ -56,7 +56,7 @@ export default class NavItem extends Component {
         return (
             <li onMouseLeave={this.hide} onMouseEnter={this.show}>
                 { anchor ? 
-                    <AnchorLink className={linkClasses.join(' ')} offset='-150' href={link}>{name}</AnchorLink> : 
+                    <AnchorLink className={linkClasses.join(' ')} offset='-150' href={link}>{name}</AnchorLink> :
                     <Link href={link}>
                         <a className={linkClasses.join(' ')}>{name} { children ? <span/> : null}</a>
                     </Link>
@@ -82,5 +82,5 @@ NavItem.propTypes = {
 
 NavItem.defaultProps = {
     anchor: false,
-    link: "/"
-}
+    link: ""
+};

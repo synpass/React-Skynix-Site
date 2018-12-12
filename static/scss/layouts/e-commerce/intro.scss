@@ -20,36 +20,40 @@
       }
     }
     &-text {
-      position: absolute !important;
+      position: fixed !important;
       left: 50%;
       top: 50%;
-      z-index: -1;
+      z-index: 1;
       border-radius: 50%;
       transform: translate(-50%, -50%);
       text-align: center;
-      @include tablets {
-        position: fixed !important;
-      }
       &.sticky {
         position: absolute !important;
       }
+    }
 
-      h1 {
-        font-size: 32px;
-        font-family: $sofia-semibold;
-        font-weight: 100;
-        color: $blue;
-        margin: 0;
+    &-title {
+      font-size: 20px;
+      font-family: $sofia-semibold;
+      font-weight: 100;
+      color: $blue;
+      margin: 0;
+      @include laptop {
+        font-size: 60px;
       }
+    }
 
-      span {
+    &-subtitle {
+      font-size: 11px;
+      @include tablets {
         font-size: 14px;
-
-        i {
-          vertical-align: 3px;
-          margin-left: 9px;
-        }
       }
+
+      i {
+        vertical-align: 3px;
+        margin-left: 9px;
+      }
+
     }
   }
 }

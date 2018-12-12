@@ -5,7 +5,10 @@ import Header from './header/Header';
 import Footer from './footer/Footer';
 import {Animated} from "react-animated-css";
 import ParallaxSlide from "./ParallaxSlide";
+import ContactBlock from "../components/contact/ContactBlock";
+
 import Meta from "./Meta";
+import Head from 'next/head'
 
 export default class Page extends Component {
     constructor(props) {
@@ -26,7 +29,8 @@ export default class Page extends Component {
     }
 
     render() {
-        const {children, className, meta, animate} = this.props;
+        const {children, className, meta, animate, isLoaded} = this.props;
+
         const {loaded, preload} = this.state;
 
         const content = (
@@ -36,6 +40,7 @@ export default class Page extends Component {
                         {children}
                     </div>
                 </div>
+                <ContactBlock/>
                 <Footer/>
                 <Header/>
             </div>
@@ -43,12 +48,20 @@ export default class Page extends Component {
 
         return (
             <div className={className}>
+                <Head>
+                    <meta name="robots" content="noindex, unfollow"/>
+                    <meta name="viewport" content="initial-scale=1.0, width=device-width"/>
+                    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"/>
+                    <link rel="stylesheet" href="owl-carousel/owl.theme.css"/>
+                    <link rel="stylesheet"
+                          href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css"/>
+                </Head>
                 <Meta {...meta}/>
-                <div style={{display: loaded ? 'block' : 'none'}}>
+                <div style={{display: loaded && isLoaded? 'block' : 'none'}}>
                     {content}
                 </div>
 
-                <div style={{display: loaded ? 'none' : 'block'}}>
+                <div style={{display: loaded && isLoaded ? 'none' : 'block'}}>
                     <ParallaxSlide loaded={preload} animate={animate}/>
                 </div>
             </div>
@@ -60,9 +73,11 @@ Page.propTypes = {
     children: PropTypes.array,
     className: PropTypes.string,
     meta: PropTypes.object,
-    animate: PropTypes.bool
+    animate: PropTypes.bool,
+    isLoaded: PropTypes.bool
 };
 
 Page.defaultProps = {
-    animate: false
+    animate: false,
+    isLoaded: true
 };
