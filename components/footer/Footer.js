@@ -3,7 +3,7 @@ import News from "./News";
 import Social from "./Social";
 import Nav from "./Nav";
 
-export default function Footer() {
+export default function Footer(props) {
     return (
         <div className='m-footer-wrapper'>
             <footer className='m-footer' id='footer'>
@@ -14,7 +14,7 @@ export default function Footer() {
                 <div className='m-footer__cols'>
                     <div className='m-footer__col m-footer__col--left'>
                         <h4 className='m-footer__title'>Latest News</h4>
-                        <News/>
+                        <News limit={4} onLoad={props.onLoad} page='1'/>
                     </div>
                     <div className='m-footer__col m-footer__col--right'>
                         <h4 className='m-footer__title'>Skynix Social</h4>

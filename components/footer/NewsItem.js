@@ -1,22 +1,19 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import ReactHtmlParser from 'react-html-parser';
 
 export default function NewsItem(props) {
-    const { img, link, title} = props;
+    const {imageUrl, title} = props;
+
     return (
-        <a href={link} className='news-item'>
-            <img src={'/static/images/posts/' + img}/>
-            <p>{title}</p>
+        <a className='news-item'>
+            <div className='news-item__img' style={{backgroundImage: `url(${imageUrl}`}}/>
+            <p>{ReactHtmlParser(title.rendered)}</p>
         </a>
     )
 }
 
 NewsItem.propTypes = {
-    img: PropTypes.string,
-    link: PropTypes.string.isRequired,
-    title: PropTypes.string.isRequired
-};
-
-NewsItem.defaultProps = {
-    img: 'post1.png'
+    imageUrl: PropTypes.string,
+    title: PropTypes.objectOf(PropTypes.string)
 };

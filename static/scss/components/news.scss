@@ -42,9 +42,11 @@
       padding-right: 40px;
     }
 
-    img {
+    &__img {
       width: 60px;
       height: 60px;
+      background-size: cover;
+      background-position: center;
     }
 
     p {

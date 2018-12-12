@@ -15,7 +15,8 @@ export default class Page extends Component {
         super(props);
         this.state = {
             preload: false,
-            loaded: !props.loading
+            loaded: !props.loading,
+            footerLoaded: false
         };
     }
 
@@ -28,10 +29,12 @@ export default class Page extends Component {
         }.bind(this), 3000);
     }
 
+    footerLoaded = () => this.setState({footerLoaded: true});
+
     render() {
         const {children, className, meta, animate, isLoaded} = this.props;
 
-        const {loaded, preload} = this.state;
+        const {loaded, preload, footerLoaded} = this.state;
 
         const content = (
             <div>
@@ -41,7 +44,7 @@ export default class Page extends Component {
                     </div>
                 </div>
                 <ContactBlock/>
-                <Footer/>
+                <Footer onLoad={this.footerLoaded} page={1}/>
                 <Header/>
             </div>
         );
@@ -57,11 +60,11 @@ export default class Page extends Component {
                           href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css"/>
                 </Head>
                 <Meta {...meta}/>
-                <div style={{display: loaded && isLoaded? 'block' : 'none'}}>
+                <div style={{display: loaded && isLoaded && footerLoaded? 'block' : 'none'}}>
                     {content}
                 </div>
 
-                <div style={{display: loaded && isLoaded ? 'none' : 'block'}}>
+                <div style={{display: loaded && isLoaded && footerLoaded ? 'none' : 'block'}}>
                     <ParallaxSlide loaded={preload} animate={animate}/>
                 </div>
             </div>

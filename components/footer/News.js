@@ -1,14 +1,25 @@
 import React from 'react';
-import news from './configs/news.config.json';
 import NewsItem from "./NewsItem";
+import PropTypes from 'prop-types';
+import PostsWrapper from '../resources/PostsWrapper';
 
-export default function News() {
+function NewsWrapped(props) {
+    const { items } = props;
     return (
         <div className='news'>
             <div className='news__grid'>
-                {news.map(item => <NewsItem {...item} key={item.id}/>)}
+                {items.length > 0 ? items.map(item => <NewsItem {...item} key={item.id}/>) : null}
             </div>
             <a href='/' className='news__link'>view all posts</a>
         </div>
-    )
+    );
 }
+
+const News = PostsWrapper(NewsWrapped);
+
+export default News;
+
+
+News.propTypes = {
+    items: PropTypes.array,
+};

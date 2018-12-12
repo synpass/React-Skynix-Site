@@ -27,5 +27,8 @@ class ResourcesWrapper extends Component {
     }
 }
 
+ResourcesWrapper.defaultProps = {
+    page: 1
+};
 
 export default Resources;
