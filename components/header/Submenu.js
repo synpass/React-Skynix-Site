@@ -9,7 +9,7 @@ export default function Submenu(props) {
     return (
         <AnimateHeight duration={500} height={height} className="nav__submenu">
             {children.map((item) =>
-                <Link href={item.link}><a className='nav-link nav-link--submenu' key={shortid.generate()}>{item.name}</a></Link>
+                <Link key={shortid.generate()} href={item.link}><a className='nav-link nav-link--submenu'>{item.name}</a></Link>
             )}
         </AnimateHeight>
     )

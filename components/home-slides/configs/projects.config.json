@@ -2,22 +2,30 @@
   {
     "id": 1,
     "title": "Bikebiz",
-    "img": "bikebiz.png",
-    "description": "Motorcycles of all brands and all kinds. The best choice. All that is necessary for your motorcycle you can find here. Also you can find here the equipment and spare parts, the best place to pump you and your motorcycle.",
+    "img": "bikebizprj.jpg",
+    "description": "Revamped and modern e-commerce store based on a highly customized Magento 2 platform. Complementary order management application based on Javascript Vue.js framework and Magento API. This application is picking up new orders from Magento, allowing staff process them using intuitive, super fast interface and workflow.",
     "link": "/"
   },
   {
     "id": 2,
-    "title": "Laravel logic updates",
-    "img": "laravel.png",
-    "description": "The Estonia startup required some assistance in adjusting and modifying the logic on this Laravel project. Our developers took this as first priority items to ensure all works perfectly and as per the expectations.",
+    "title": "Ddrops",
+    "img": "ddrpprj.jpg",
+    "description": "A transformed Shopify-based online presence with Magento 2 Enterprise Cloud Edition platform, with the goal of allowing Ddrops benefit from platform advancements, improved performance and security practices. Revamped design with modern layouts, refined brand identity, expanded international presence, optimized operations resulted in improved customer service and webshop access experience.",
     "link": "/"
   },
   {
     "id": 3,
-    "title": "iNeedTaxRelief landing pages",
-    "img": "ineedtax.png",
-    "description": "A custom logic Landing page is able to be nice, pleasant, easy-to-navigate, and ye-catchy! Check it out, maybe you are interested in having similar? If so - ping Skynix LLC to get it delivered for you.",
+    "title": "Life in Cache",
+    "img": "licprj.jpg",
+    "description": "A solid SaaS solution allowing individuals and businesses securely store and share all sorts of sensitive information.",
+    "link": "/"
+  },
+  {
+    "id": 4,
+    "title": "EMAC",
+    "img": "emacprj.jpg",
+    "description": "A global job management system that is aimed at tracking business processes while gaining productivity. It makes control over business processes faster and easier without adding hassle to your life. Founded in Sydney, Australia, nowadays it has grown into a multinational company with hundreds of clients all over the world. EMAC is developed with Yii framework, and this allows to make emphasis on the simplicity and accessibility. ",
     "link": "/"
   }
+
 ]

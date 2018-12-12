@@ -15,10 +15,8 @@ export default class Sticky extends Component {
     }
 
     componentDidMount() {
-        if(window.innerWidth >= 768) {
-            this.setState({initialOffset: this.ref.current.offsetTop});
-            window.addEventListener('scroll', this.handleScroll);
-        }
+        this.setState({initialOffset: this.ref.current.offsetTop});
+        window.addEventListener('scroll', this.handleScroll);
     }
 
     componentWillUnmount() {
@@ -28,16 +26,15 @@ export default class Sticky extends Component {
     handleScroll() {
         const { parent, offset } = this.props;
         const { initialOffset, limitTop } = this.state;
-        const { innerWidth, scrollY } = window;
+        const { scrollY } = window;
 
-        if (innerWidth >= 768) {
-            const parentTop = document.getElementById(parent).offsetTop;
-            const stickyMaxTop = parentTop + offset;
-            const isSticky = initialOffset + scrollY >= stickyMaxTop;
+        const parentTop = document.getElementById(parent).offsetTop;
+        const stickyMaxTop = parentTop + offset;
+        const isSticky = initialOffset + scrollY >= stickyMaxTop;
 
-            this.setState({sticky: isSticky});
-            if (!limitTop) this.setState({limitTop: stickyMaxTop });
-        }
+        this.setState({sticky: isSticky});
+        if (!limitTop) this.setState({limitTop: stickyMaxTop });
+
     }
 
     render() {
@@ -69,4 +66,4 @@ Sticky.defaultProps = {
     className: '',
     styles: {},
     offset: 0
-}
+};

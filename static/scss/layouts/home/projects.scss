@@ -5,9 +5,13 @@
   padding-bottom: 72px;
   padding-top: 74px;
   z-index: 10;
+  overflow: visible;
   @include laptop {
     .owl-stage {
       padding-left: 15px !important;
+    }
+    .owl-stage-outer {
+      overflow: visible;
     }
   }
 
@@ -69,7 +73,7 @@
       flex-direction: column;
       align-items: flex-start;
       @include tablets {
-        padding: 73px 72px 45px;
+        padding: 53px 72px 45px;
       }
       @include laptop {
         opacity: 0;
@@ -87,7 +91,7 @@
       }
 
       h3 {
-        margin: 0 0 35px;
+        margin: 0 0 25px;
         color: $white;
         letter-spacing: 0.02em;
         z-index: 1;

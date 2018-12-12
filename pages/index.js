@@ -7,11 +7,11 @@ import Solutions from "../components/home-slides/Solutions"
 import WhySkynix from "../components/home-slides/WhySkynix";
 import Numbers from "../components/home-slides/Numbers";
 import Projects from "../components/home-slides/Projects";
-import ContactBlock from "../components/contact/ContactBlock";
 import FooterFixed from "../components/footer/FooterFixed";
 import Reviews from "../components/footer/Reviews";
 
 import meta from './index-meta.config.json';
+import Fullpage from "../components/fullpage/Fullpage";
 
 export default class Index extends Component {
     constructor(props) {
@@ -50,19 +50,18 @@ export default class Index extends Component {
         return (
             <Page loading={!rendered} meta={meta} animate={true}>
                 <ParallaxBg show={parallaxBg}/>
-                <Intro/>
-                <Solutions/>
-                <div ref={this.bgRef}>
-                    <WhySkynix/>
-                </div>
-                <Numbers/>
-                <Projects/>
-                <Reviews/>
-                <ContactBlock/>
+                <Fullpage>
+                    <Intro/>
+                    <Solutions/>
+                    <div ref={this.bgRef}>
+                        <WhySkynix/>
+                        <Numbers/>
+                        <Projects/>
+                        <Reviews/>
+                    </div>
+                </Fullpage>
                 <FooterFixed/>
             </Page>
         )
     }
-
-
 }

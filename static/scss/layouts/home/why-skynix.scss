@@ -6,6 +6,7 @@
   justify-content: center;
   @include max-width;
   position: relative;
+  padding-top: 150px;
 
   &__heading {
     @include max-width;
