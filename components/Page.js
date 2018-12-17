@@ -73,7 +73,10 @@ export default class Page extends Component {
 }
 
 Page.propTypes = {
-    children: PropTypes.array,
+    children: PropTypes.oneOfType([
+        PropTypes.array,
+        PropTypes.object
+    ]),
     className: PropTypes.string,
     meta: PropTypes.object,
     animate: PropTypes.bool,

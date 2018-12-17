@@ -42,50 +42,48 @@ export default class Input extends Component {
         const {
             required,
             name,
-            label,
             className,
             type,
             error,
             value,
-            maxLength
+            id,
+            maxLength,
+            pattern
         } = this.props;
 
         const { valid, invalidType } = this.state;
-        const id = name + '-' + shortid.generate();
-
-        let classes = ['contact-form__field', 'contact-form__field--text'];
-        if (required) classes.push('required');
-        if (className) classes.push(className);
+        let _id = id ? id : name + '-' + shortid.generate(),
+            _pattern = pattern ? pattern : null;
 
         return (
-            <div className={classes.join(' ')}>
+            <>
                 {type === 'textarea' ?
                     <textarea
                         ref={this.inputRef}
-                        id={id}
+                        id={_id}
                         name={name}
                         onChange={this.handleChange}
                         required={required}
                         value={value}
-                        maxLength={maxLength}
-                        className={value.length > 0 ? 'filled' : ''}>
+                        pattern={_pattern}
+                        className={className}>
                     </textarea>
                     :
                     <input
                         ref={this.inputRef}
                         type={type}
-                        id={id}
+                        id={_id}
                         name={name}
                         value={value}
-                        maxLength={maxLength}
+                        pattern={_pattern}
                         onChange={this.handleChange}
                         required={required}
+                        className={className}
+                        maxLength={maxLength}
                     />
                 }
-                <label htmlFor={id}>{label}</label>
-
                 {error && !valid ? <ErrorMsg type={invalidType}/> : null}
-            </div>
+            </>
         )
     }
 }
@@ -94,11 +92,11 @@ Input.propTypes = {
     name: PropTypes.string.isRequired,
     required: PropTypes.bool,
     error:  PropTypes.bool,
-    label: PropTypes.string,
     onChange: PropTypes.func,
     className: PropTypes.string,
     type: PropTypes.string,
-    maxLength: PropTypes.string,
+    pattern: PropTypes.string,
+    maxLength: PropTypes.string
 };
 
 Input.defaultProps = {

@@ -21,14 +21,24 @@ export default class MyApp extends App {
         this.setState({rendered: true});
     }
     articleLoaded = () => this.setState({articleLoaded: true});
+    _parseGetParams(gets) {
+        let $_GET = {};
+        let __GET = gets.split("&");
+        for(let i=0; i<__GET.length; i++) {
+            let getVar = __GET[i].split("=");
+            $_GET[getVar[0]] = typeof(getVar[1])=="undefined" ? "" : getVar[1];
+        }
+        return $_GET;
+    }
     render () {
-        const {Component, pageProps} = this.props;
-        let thisRouter = this.props.router.asPath.split("/");
-
-        if(/article/ig.test(thisRouter[1]) && thisRouter[2]){
+        const {Component, pageProps, router} = this.props;
+        let thisRouter = router.asPath.split("?");
+        if(/article/ig.test(thisRouter[0])){
+            let slug = this._parseGetParams(thisRouter[1]).slug;
+            if(!slug) return false;
             return (
                 <Page>
-                    <BlogArticle limit={1} onLoad={this.articleLoaded} slug={thisRouter[2]}/>
+                    <BlogArticle limit={1} onLoad={this.articleLoaded} slug={slug}/>
                 </Page>
             )
         }
