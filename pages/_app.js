@@ -33,7 +33,7 @@ export default class MyApp extends App {
     render () {
         const {Component, pageProps, router} = this.props;
         let thisRouter = router.asPath.split("?");
-        if(/article/ig.test(thisRouter[0])){
+        if(/article/ig.test(thisRouter[0]) && thisRouter[1]){
             let slug = this._parseGetParams(thisRouter[1]).slug;
             if(!slug) return false;
             return (
