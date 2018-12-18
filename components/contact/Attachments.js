@@ -113,7 +113,7 @@ export default class Attachments extends Component {
                 <div className='attachments'>
                     { files.length < 3 ?
                         <div className='attachments__submit'>
-                            <input disabled={loading} type='file' id='fileInput' onChange={this.handleAddFile} ref={this.fileInput}/>
+                            <input disabled={loading} type='file' multiple id='fileInput' onChange={this.handleAddFile} ref={this.fileInput}/>
                             <label htmlFor='fileInput'>
                                 <img src="/static/images/attach.svg"/>
                                 <span>attachments</span>

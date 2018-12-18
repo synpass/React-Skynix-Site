@@ -97,16 +97,13 @@ const Service = {
         return this.get(API_MEDIA + '/' + id).then(result => result);
     },
     getInTouch(data){
-        const headers = new Headers();
-        headers.append('Content-Type', 'multipart/form-data');
+       const headers = new Headers();
+       headers.append('Content-Type', 'multipart/form-data');
         return fetch(API_IN_TOUCH,
             {
                 method: 'POST',
                 headers: headers,
-
-                body: data,
-                contentType: false,
-                processData: false,
+                body: data
             }
 
         ).then(res => {
