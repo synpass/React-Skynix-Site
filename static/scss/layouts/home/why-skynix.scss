@@ -81,9 +81,6 @@
     margin: 0 auto;
     display: block;
     transition: box-shadow .2s;
-    &.hiden {
-      display: none;
-    }
     font: {
       family: $proxima-semibold;
       weight: 100;

@@ -46,7 +46,7 @@ export default class Solutions extends Component {
                     <div className='solutions__content'>
                         {SolutionItems}
                     </div>
-                    <a href="/" className="solutions__link hiden">learn about the technologies we master</a>
+                    <a href="/" className="solutions__link hidden">learn about the technologies we master</a>
                 </div>
             </LazyLoad>
         )
