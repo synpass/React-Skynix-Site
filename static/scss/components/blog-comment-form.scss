@@ -1,0 +1,153 @@
+.blog-comment-form{
+  margin: 0 5px;
+  font-weight: 500;
+
+  &__title {
+    margin: 15px 0;
+    font-size: 30px;
+    font-family: SofiaPro;
+    font-weight: 800;
+    color: $grey-dark;
+  }
+  &__form-group {
+    margin: 0 0 45px;
+    position: relative;
+  }
+  &__textarea {
+    width: 100%;
+    min-height: 20vh;
+    box-sizing: border-box;
+    padding: 2% 3%;
+    outline: none;
+    overflow: auto;
+    resize: none;
+    border: 1px solid hsla(0,0%,46.7%,.25);
+    color: $dark-pale;
+    font-size: 20px;
+
+    &~label {
+      display: none;
+    }
+  }
+  &__input {
+    width: 100%;
+    padding: 10px 0 5px;
+    display: block;
+    outline: none;
+    border: none;
+    border-bottom: 1px solid hsla(0,0%,46.7%,.25);
+    color: $dark-pale;
+    font-size: 20px;
+
+    &:-webkit-autofill {
+      -webkit-text-fill-color: $dark-pale;
+      -webkit-box-shadow: 0 0 0 1000px $white inset;
+    }
+    &.dirty,
+    &:focus {
+      &~label{
+        top: -13px;
+        font-size: 14px;
+        color: $blue2;
+      }
+
+    }
+    &:focus{
+      &~.blog-comment-form__input-bar{
+        &:after,
+        &:before {
+          width: 50%;
+        }
+      }
+    }
+  }
+  &__label{
+    position: absolute;
+    pointer-events: none;
+    top: 10px;
+    color: hsla(0,0%,46.7%,.8);
+    -webkit-transition: top .4s, font-size .4s;
+    transition: top .4s,font-size .4s;
+    font-family: SofiaPro;
+    font-size: 20px;
+
+    &--textarea {
+      top: 18px;
+      left: 25px;
+    }
+    span {
+      color: $red;
+    }
+  }
+  &__error-message {
+    display: none;
+    position: absolute;
+    bottom: -20px;
+    font-size: 12px;
+    color: $red;
+
+    &--show {
+      display: block
+    }
+  }
+  &__input-bar {
+    width: 100%;
+    position: relative;
+    display: block;
+
+    &:after {
+      right: 50%;
+    }
+    &:before {
+      left: 50%;
+    }
+    &:after,
+    &:before {
+      width: 0;
+      height: 1px;
+      position: absolute;
+      bottom: 1px;
+      background: $blue2;
+      transition: all .4s;
+      content: "";
+    }
+  }
+  &__submit-button {
+    width: 225px;
+    height: 40px;
+    margin: 0 auto 40px;
+    display: block;
+    line-height: 40px;
+    text-transform: uppercase;
+    text-align: center;
+    border-radius: 20px;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    background: $blue2;
+    color: $white;
+    font-weight: 700;
+    font-size: 14px;
+
+    &:focus,
+    &:hover {
+      background: $blue;
+    }
+    &:disabled {
+      background-color: $blue3;
+      cursor: auto
+    }
+  }
+  @include tablets {
+    &__input{
+      width: 325px;
+    }
+    &__input-bar {
+      width: 325px;
+    }
+    &__submit-button {
+      margin: 0 0 40px
+    }
+
+  }
+}

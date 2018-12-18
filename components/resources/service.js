@@ -56,6 +56,35 @@ const Service = {
                 }
             );
     },
+    getArticleBySlug(slug) {
+        let totals;
+        return fetch(API_POSTS + '?slug=' + slug)
+        .then(res => {
+            totals = res.headers.get('x-wp-totalpages');
+            return res.json()
+        }).then(
+            (result) => {
+                if(result.message) {
+                    return {
+                        success: false,
+                        error: result.message
+                    }
+                } else {
+                    return {
+                        success: true,
+                        data: result,
+                        totals
+                    }
+                }
+            },
+            (error) => {
+                return {
+                    success: false,
+                    error
+                }
+            }
+        );
+    },
 
     getAuthor(id) {
         return this.get(API_USERS + '/' + id).then(result => result);
