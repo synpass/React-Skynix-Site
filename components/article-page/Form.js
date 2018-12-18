@@ -65,7 +65,7 @@ export default class Form extends Component {
         const error = this.state.showError;
         const {comment, author, email, submit, comment_post_ID, comment_parent} = this.state;
         return (
-            <form /*action='https://skynix.company/wp-comments-post.php'*/
+            <form
                   onSubmit={this.handleSubmit} noValidate
                   method='post'
                   className='blog-comment-form'

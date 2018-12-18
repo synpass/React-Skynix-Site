@@ -24,15 +24,11 @@ function ArticleWrapped(props) {
 
                     </div>
                 </div>
-                {(item.comment_status ==='open') ? <Comments /> : null}
+                {/*(item.comment_status ==='open') ? <Comments /> : null*/}
             </div>
         )
     );
 }
-
-// const updateDataBlogArticle = (value) => {
-//     this.setState({ comment_status: value })
-// };
 const BlogArticle = Articles(ArticleWrapped);
 
 export default BlogArticle;
