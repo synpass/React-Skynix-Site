@@ -1,9 +1,12 @@
 import fetch from 'isomorphic-fetch';
 
-const API = 'https://staging.cms.skynix.co/wp-json/wp/v2';
-const API_POSTS = API + '/posts';
-const API_USERS = API + '/users';
-const API_MEDIA = API + '/media';
+const API           = 'https://staging.cms.skynix.co/wp-json';
+const SLUG1         = '/wp/v2';
+const SLUG2         = '/skynix/v1';
+const API_POSTS     = API + SLUG1 +'/posts';
+const API_USERS     = API + SLUG1 +'/users';
+const API_MEDIA     = API + SLUG1 +'/media';
+const API_IN_TOUCH  = API + SLUG2 +'/contact';
 
 const Service = {
 
@@ -63,6 +66,46 @@ const Service = {
 
     getPostMedia(id) {
         return this.get(API_MEDIA + '/' + id).then(result => result);
+    },
+    getInTouch(data){
+        const headers = new Headers();
+        headers.append('Content-Type', 'multipart/form-data');
+        return fetch(API_IN_TOUCH,
+            {
+                method: 'POST',
+                headers: headers,
+
+                body: data,
+                contentType: false,
+                processData: false,
+            }
+
+        ).then(res => {
+            console.log('************ res= ', res);
+            return res.json()
+        }).then(
+            (result) => {
+                console.log('************ result= ', result);
+                if(result.message) {
+                    return {
+                        success: false,
+                        error: result.message
+                    }
+                } else {
+                    return {
+                        success: true,
+                        data: result
+                    }
+                }
+            },
+            (error) => {
+                console.log('************ error= ', error);
+                return {
+                    success: false,
+                    error
+                }
+            }
+        );
     }
 };
 

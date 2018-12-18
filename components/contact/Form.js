@@ -3,6 +3,7 @@ import Spinner from '../Spinner';
 import Attachments from "./Attachments";
 import Input from "./Input";
 import Agreement from "./Agreement";
+import Service from '../resources/service';
 
 export default class Form extends Component {
     constructor(props) {
@@ -23,6 +24,7 @@ export default class Form extends Component {
             files: [],
             agreement: false,
             showError: false,
+            formId: '1252',
         };
 
         this.baseState = this.state;
@@ -52,9 +54,55 @@ export default class Form extends Component {
 
         if (isValid) {
             this.setState({...this.baseState});
+            let formData = new FormData();
+            let formData1 = {};
+            formData.append( 'name', this.state.name.value);
+            formData.append( 'contact', this.state.contact.value);
+            formData.append( 'project', this.state.project.value ? this.state.project.value : null);
+
+            formData1['name'] = this.state.name.value;
+            formData1['contact'] = this.state.contact.value;
+            formData1['project'] = this.state.project.value ? this.state.project.value : null;
+            formData1['attachment_1'] = '';
+            formData1['attachment_2'] = '';
+            formData1['attachment_3'] = '';
+
+            formData.append( 'attachment_1', '');
+            formData.append( 'attachment_2', '');
+            formData.append( 'attachment_3', '');
+            for(let i=0; i<this.state.files.length; i++){
+                formData1[`attachment_${i+1}`] = this.state.files[i].data;
+                formData.append( `attachment_${i+1}`, this.state.files[i].data);
+            }
+             formData1['agreement'] = this.state.agreement;
+             formData1['formId'] = this.state.formId;
+
+            formData.append( 'agreement', this.state.agreement);
+            formData.append( 'formId', this.state.formId);
+            console.log('formData1 ===========', formData1);
+
+            Service.getInTouch(formData)
+            .then(response => {
+
+                const {success, data, error} = response;
+
+                if (success) {
+                    console.log('2 success data ==', data);
+
+                } else {
+                    this.setState({
+                        isLoaded: true,
+                        error
+                    });
+
+                    onLoad();
+                }
+            })
         } else {
+            console.log('No isValid');
             this.setState({showError: true});
         }
+        console.log('2handleSubmit this.baseState', this.state);
     }
 
     render() {

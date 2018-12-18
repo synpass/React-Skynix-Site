@@ -10,7 +10,7 @@ export default function ContactBlock(){
                  <CirclesBg/>
              </div>
              <div className='contact__title'>
-                 <h2 className='heading'>get in <b>touch</b></h2>
+                 <h2 className='heading'>get <b>in touch</b></h2>
                  <h4 className='heading__sub'>YOUR SEARCH FOR YOUR DREAM TEAM ENDS HERE</h4>
              </div>
 
