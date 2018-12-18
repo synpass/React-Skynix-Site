@@ -59,7 +59,7 @@ export default class Form extends Component {
             //let formData = new FormData();
 
             var data = new FormData(jQuery('.contact-form')[0]);
-       
+
             //let formData1 = {};
             // formData.append( 'name', this.state.name.value);
             // formData.append( 'contact', this.state.contact.value);
@@ -82,8 +82,8 @@ export default class Form extends Component {
             //  formData1['agreement'] = this.state.agreement;
             //  formData1['formId'] = this.state.formId;
 
-            // formData.append( 'agreement', this.state.agreement);
-            // formData.append( 'formId', this.state.formId);
+            data.append( 'agreement', this.state.agreement);
+            data.append( 'formId', this.state.formId);
             // console.log('this.state.formId ===========', this.state.formId);
             // console.log('formData1 ===========', formData1);
 
