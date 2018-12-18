@@ -59,8 +59,8 @@ export default class Form extends Component {
             //let formData = new FormData();
 
             var data = new FormData(jQuery('.contact-form')[0]);
-            console.log('jQuery = ',jQuery('.contact-form')[0]);
-            let formData1 = {};
+       
+            //let formData1 = {};
             // formData.append( 'name', this.state.name.value);
             // formData.append( 'contact', this.state.contact.value);
             // formData.append( 'project', this.state.project.value ? this.state.project.value : null);
@@ -144,6 +144,7 @@ export default class Form extends Component {
                             name='project'
                             label='Your Inquiry'
                             type='textarea'
+                            parentClass='contact-form__field--big'
                         />
 
                         {/*<Attachments onChange={this.handleAttachmentsChange} files={files}/>*/}

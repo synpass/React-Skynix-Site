@@ -71,11 +71,21 @@
     padding: 27px 0 17px;
     display: flex;
     flex-direction: column;
+    &--big{
+      width: 100%;
+    }
+
     @include tablets {
       width: calc(50% - 10px);
+      &--big{
+        width: 100%;
+      }
     }
     @include laptop {
       width: calc(50% - 40px);
+      &--big{
+        width: 100%;
+      }
     }
 
     &--text {

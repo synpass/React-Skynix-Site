@@ -47,7 +47,8 @@ export default class Input extends Component {
             type,
             error,
             value,
-            maxLength
+            maxLength,
+            parentClass
         } = this.props;
 
         const { valid, invalidType } = this.state;
@@ -56,9 +57,11 @@ export default class Input extends Component {
         let classes = ['contact-form__field', 'contact-form__field--text'];
         if (required) classes.push('required');
         if (className) classes.push(className);
+        if(parentClass) classes.push(parentClass);
 
         return (
-            <div className={classes.join(' ')}>
+
+            <div className={classes.join(' ')} >
                 {type === 'textarea' ?
                     <textarea
                         ref={this.inputRef}

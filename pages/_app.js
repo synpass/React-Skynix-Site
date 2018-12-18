@@ -2,7 +2,7 @@
 /*
  * Overriding App component.
  * Now it is used only for defining should we show preloading intro animation (state rendered) or not
- * Feel free to remove this file if you don't need this animation anymore
+ * Feel free to remove code with animation  if you don't need this animation anymore
 */
 
 import React from 'react'
