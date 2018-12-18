@@ -146,6 +146,9 @@
     position: absolute;
     bottom: 70px;
     margin-left: 15px;
+    &.hiden {
+      display: none;
+    }
     font: {
       family: $proxima-semibold;
       weight: 100;
