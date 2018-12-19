@@ -75,10 +75,10 @@ export default class Form extends Component {
             // formData.append( 'attachment_1', '');
             // formData.append( 'attachment_2', '');
             // formData.append( 'attachment_3', '');
-            // for(let i=0; i<this.state.files.length; i++){
-            //     formData1[`attachment_${i+1}`] = this.state.files[i].data;
-            //     formData.append( `attachment_${i+1}`, this.state.files[i].data);
-            // }
+            for(let i=0; i<this.state.files.length; i++){
+                //formData1[`attachment_${i+1}`] = this.state.files[i].data;
+                data.append( `attachment_${i+1}`, this.state.files[i].data);
+            }
             //  formData1['agreement'] = this.state.agreement;
             //  formData1['formId'] = this.state.formId;
 
