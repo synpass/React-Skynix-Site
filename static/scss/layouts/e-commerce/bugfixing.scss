@@ -1,0 +1,43 @@
+.ec-bugfixing {
+  @include max-width;
+  position: relative;
+  z-index: 10;
+  &__paragraph {
+    font-size: 14px;
+    line-height: 28px;
+    max-width: 100%;
+    padding-bottom: 14px;
+    margin-top: 8px;
+    margin-bottom: 0;
+    @include tablets {
+      font-size: 18px;
+    }
+  }
+  p {
+    margin-top: 0;
+    margin-bottom: 0;
+    padding-left: 50px;
+    color: #525252;
+    font: {
+      size: 12px;
+      family: $proxima;
+      weight: 600;
+    }
+    line-height: 30px;
+    @include tablets {
+      padding-left: 100px;
+    }
+    b {
+      color: $blue;
+      font-family: $proxima-semibold;
+    }
+  }
+  &__particle {
+    position: absolute;
+    right: 0;
+    top: -40px;
+  }
+  &__padding-bottom {
+    padding-bottom: 60px;
+  }
+}

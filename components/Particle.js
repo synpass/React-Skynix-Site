@@ -9,7 +9,7 @@ export default class Particle extends Component {
 
     render() {
         return (
-            <div id='container'/>
+            <div className='container-animation'/>
         )
     }
 }
