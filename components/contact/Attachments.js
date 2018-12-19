@@ -40,8 +40,7 @@ export default class Attachments extends Component {
             } else {
                 this.setState({loading: true});
                 reader.onload = this.handleReaderLoaded.bind(this);
-                //reader.readAsDataURL(file);
-                reader.readAsBinaryString(file);
+                reader.readAsArrayBuffer(file);
             }
         }
     }
