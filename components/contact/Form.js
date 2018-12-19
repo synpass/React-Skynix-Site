@@ -44,9 +44,6 @@ export default class Form extends Component {
     handleAttachmentsChange = (files) => this.setState({files});
 
     handleAgreementsChange = () => this.setState({agreement: !this.state.agreement});
-    onLoad() {
-        this.setState({show: true});
-    }
     showMask(e){
         if(e && (/Error/i).test(e)){
             this.setState({'errorForm': `Error: ${e.response.status}`});

@@ -74,7 +74,6 @@
     &--big{
       width: 100%;
     }
-
     @include tablets {
       width: calc(50% - 10px);
       &--big{
