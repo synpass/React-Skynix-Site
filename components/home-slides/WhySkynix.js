@@ -40,7 +40,7 @@ export default class WhySkynix extends Component {
                             show={this.state.show}
                         />)}
                 </div>
-                <a href='/' className='why-skynix__link'>learn about our process</a>
+                <a href='/' className='why-skynix__link hidden'>learn about our process</a>
                 <div className='why-skynix__particle'>
                     <Particle/>
                 </div>

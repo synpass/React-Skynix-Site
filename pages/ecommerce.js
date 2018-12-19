@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import ParallaxText from "../components/e-commerce/ParallaxText";
+import ParallaxText from "../components/ParallaxText";
 import Page from "../components/Page";
 import Rate from "../components/e-commerce/Rate";
 import ThemeDev from "../components/e-commerce/ThemeDev";
