@@ -1,0 +1,92 @@
+.ec-offlinecommerce {
+  @include max-width;
+  position: relative;
+  z-index: 10;
+  &__paragraph {
+    font-size: 14px;
+    line-height: 28px;
+    max-width: 650px;
+    padding-bottom: 14px;
+    margin-top: 8px;
+    margin-bottom: 0;
+    @include tablets {
+      font-size: 18px;
+    }
+  }
+  &__particle {
+    position: absolute;
+    right: 0;
+    top: -40px;
+  }
+  &__circle {
+    position: absolute;
+    z-index: 2;
+    top: 215px;
+    right: 415px;
+    border-radius: 50%;
+    width: 80px;
+    height: 80px;
+    background-color: #dbdbff;
+    border:33px solid #223fd5;
+  }
+  &__cart{
+    position: absolute;
+    z-index: 1;
+    top: 65px;
+    right: 240px;
+    border-radius: 50%;
+    width: 220px;
+    height: 220px;
+    background-color: #f1f1ff;
+    &:before {
+      content: "";
+      position: absolute;
+      top: -20px;
+      bottom: -20px;
+      left: -20px;
+      right: -20px;
+      border-radius: 50%;
+      border: 2px solid #f1f1ff;
+    }
+    &:after{
+      content: "";
+      position: absolute;
+      top: calc(50% - 30px);
+      left: calc(50% - 27px);
+      width: 55px;
+      height: 60px;
+      background: url("/static/images/cart.svg") no-repeat;
+      background-size: 100%;
+    }
+  }
+  &__home{
+    position: absolute;
+    z-index: 1;
+    top: 65px;
+    right: 50px;
+    border-radius: 50%;
+    width: 220px;
+    height: 220px;
+    background-color: #223fd5;
+    &:before {
+      content: "";
+      position: absolute;
+      top: -20px;
+      bottom: -20px;
+      left: -20px;
+      right: -20px;
+      border-radius: 50%;
+      border: 2px solid #223fd5;
+    }
+    &:after{
+      content: "";
+      position: absolute;
+      top: calc(50% - 23px);
+      left: calc(50% - 30px);
+      width: 60px;
+      height: 46px;
+      background: url("/static/images/home.svg") no-repeat;
+      background-size: 100%;
+    }
+  }
+}
