@@ -21,10 +21,10 @@ export default class Form extends Component {
                 value: '',
                 isValid: true
             },
-            //files: [],
+            files: [],
             agreement: false,
             showError: false,
-            formId: '1252',
+            formId: '521',
         };
 
         this.baseState = this.state;
@@ -114,7 +114,6 @@ export default class Form extends Component {
     render() {
         const error = this.state.showError;
         const {name, project, agreement, contact, files} = this.state;
-
         return (
             <div className='contact-form__wrapper'>
                 <form className='contact-form' onSubmit={this.handleSubmit} noValidate>
@@ -147,7 +146,7 @@ export default class Form extends Component {
                             parentClass='contact-form__field--big'
                         />
 
-                        {/*<Attachments onChange={this.handleAttachmentsChange} files={files}/>*/}
+                        <Attachments onChange={this.handleAttachmentsChange} files={files}/>
                     </div>
                     <div className='contact-form__submit'>
                         <button type='submit'>
