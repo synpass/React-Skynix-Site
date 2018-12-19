@@ -60,6 +60,7 @@ export default class Form extends Component {
 
             var data = new FormData(jQuery('.contact-form')[0]);
 
+
             //let formData1 = {};
             // formData.append( 'name', this.state.name.value);
             // formData.append( 'contact', this.state.contact.value);
@@ -87,23 +88,28 @@ export default class Form extends Component {
             // console.log('this.state.formId ===========', this.state.formId);
             // console.log('formData1 ===========', formData1);
 
-            Service.getInTouch(data)
-            .then(response => {
 
-                const {success, data, error} = response;
+            this.setState({data: Service.getInTouch(data)});
+            console.log('000000000000000', this.state);
+console.log('1111111111111', this.state.data);
+            // Service.getInTouch(data)
+            // .then(response => {
+            //     console.log('response', response);
+            //     const {success, data, error} = response;
+            //
+            //     if (success) {
+            //         console.log('2 success data ==', data);
+            //
+            //     } else {
+            //         this.setState({
+            //             isLoaded: true,
+            //             error
+            //         });
+            //
+            //         this.onLoad();
+            //     }
+            // });
 
-                if (success) {
-                    console.log('2 success data ==', data);
-
-                } else {
-                    this.setState({
-                        isLoaded: true,
-                        error
-                    });
-
-                    this.onLoad();
-                }
-            })
         } else {
             console.log('No isValid');
             this.setState({showError: true});
@@ -116,6 +122,7 @@ export default class Form extends Component {
         const {name, project, agreement, contact, files} = this.state;
         return (
             <div className='contact-form__wrapper'>
+                <div class="contact-form__mask">Thank you for your inquiry! Someone from our team will contact you shortly.</div>
                 <form className='contact-form' onSubmit={this.handleSubmit} noValidate>
                     <div className='contact-form__body'>
                         <Input
