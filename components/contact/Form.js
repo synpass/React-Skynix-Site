@@ -71,9 +71,7 @@ export default class Form extends Component {
             }
             data.append( 'agreement', this.state.agreement);
             data.append( 'formId', this.state.formId);
-
             Service.getInTouch(data, this.showMask, this);
-
         } else {
             this.setState({showError: true});
         }
@@ -82,6 +80,7 @@ export default class Form extends Component {
     render() {
         const error = this.state.showError;
         const {name, project, agreement, contact, files} = this.state;
+
         return (
             <div className='contact-form__wrapper'>
                 <div className={"contact-form__mask " + (this.state.isShowMask ? '' : 'hidden ') + (this.state.errorForm === null ? '' : 'error')}>

@@ -98,7 +98,6 @@ export default class Attachments extends Component {
         };
 
         const filesList = <ul>
-
             {files.map(file =>
                 <AttachmentFile
                     {...file}

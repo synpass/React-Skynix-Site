@@ -60,7 +60,7 @@ export default class Input extends Component {
         if (parentClass) classes.push(parentClass);
 
         return (
-            <div className={classes.join(' ')} >
+            <div className={classes.join(' ')}>
                 {type === 'textarea' ?
                     <textarea
                         ref={this.inputRef}
