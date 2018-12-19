@@ -25,6 +25,8 @@ export default class Form extends Component {
             agreement: false,
             showError: false,
             formId: '521',
+            isShowMask: false,
+            errorForm: null,
         };
 
         this.baseState = this.state;
@@ -45,6 +47,15 @@ export default class Form extends Component {
     onLoad() {
         this.setState({show: true});
     }
+    showMask(e){
+        if(e && (/Error/i).test(e)){
+            this.setState({'errorForm': `Error: ${e.response.status}`});
+        }
+        this.setState({'isShowMask': true});
+        setTimeout(function () {
+            this.setState({'isShowMask': false});
+        }.bind(this), 5000);
+    }
     handleSubmit(event) {
         const formInputs = ['name', 'contact', 'project'];
         event.preventDefault();
@@ -56,65 +67,19 @@ export default class Form extends Component {
 
         if (isValid) {
             this.setState({...this.baseState});
-            //let formData = new FormData();
+            let data = new FormData(jQuery('.contact-form')[0]);
 
-            var data = new FormData(jQuery('.contact-form')[0]);
-
-
-            //let formData1 = {};
-            // formData.append( 'name', this.state.name.value);
-            // formData.append( 'contact', this.state.contact.value);
-            // formData.append( 'project', this.state.project.value ? this.state.project.value : null);
-            //
-            // formData1['name'] = this.state.name.value;
-            // formData1['contact'] = this.state.contact.value;
-            // formData1['project'] = this.state.project.value ? this.state.project.value : null;
-            // formData1['attachment_1'] = '';
-            // formData1['attachment_2'] = '';
-            // formData1['attachment_3'] = '';
-
-            // formData.append( 'attachment_1', '');
-            // formData.append( 'attachment_2', '');
-            // formData.append( 'attachment_3', '');
             for(let i=0; i<this.state.files.length; i++){
-                //formData1[`attachment_${i+1}`] = this.state.files[i].data;
                 data.append( `attachment_${i+1}`, this.state.files[i].data);
             }
-            //  formData1['agreement'] = this.state.agreement;
-            //  formData1['formId'] = this.state.formId;
-
             data.append( 'agreement', this.state.agreement);
             data.append( 'formId', this.state.formId);
-            // console.log('this.state.formId ===========', this.state.formId);
-            // console.log('formData1 ===========', formData1);
 
-
-            this.setState({data: Service.getInTouch(data)});
-            console.log('000000000000000', this.state);
-console.log('1111111111111', this.state.data);
-            // Service.getInTouch(data)
-            // .then(response => {
-            //     console.log('response', response);
-            //     const {success, data, error} = response;
-            //
-            //     if (success) {
-            //         console.log('2 success data ==', data);
-            //
-            //     } else {
-            //         this.setState({
-            //             isLoaded: true,
-            //             error
-            //         });
-            //
-            //         this.onLoad();
-            //     }
-            // });
+            Service.getInTouch(data, this.showMask, this);
 
         } else {
-            console.log('No isValid');
             this.setState({showError: true});
         }
-        console.log('2handleSubmit this.baseState', this.state);
     }
 
     render() {
@@ -122,7 +87,9 @@ console.log('1111111111111', this.state.data);
         const {name, project, agreement, contact, files} = this.state;
         return (
             <div className='contact-form__wrapper'>
-                <div class="contact-form__mask">Thank you for your inquiry! Someone from our team will contact you shortly.</div>
+                <div className={"contact-form__mask " + (this.state.isShowMask ? '' : 'hidden ') + (this.state.errorForm === null ? '' : 'error')}>
+                    {this.state.errorForm === null ? 'Thank you for your inquiry! Someone from our team will contact you shortly.' : this.state.errorForm}
+                </div>
                 <form className='contact-form' onSubmit={this.handleSubmit} noValidate>
                     <div className='contact-form__body'>
                         <Input

@@ -1,5 +1,4 @@
 import fetch from 'isomorphic-fetch';
-
 import axios  from 'axios';
 
 const API           = 'https://staging.cms.skynix.co/wp-json';
@@ -98,65 +97,14 @@ const Service = {
     getPostMedia(id) {
         return this.get(API_MEDIA + '/' + id).then(result => result);
     },
-    getInTouch(data){
-       // const headers = new Headers();
-       // headers.append('Content-Type', 'multipart/form-data');
-
-        // $.ajax({
-        //     url: API_IN_TOUCH,
-        //     data: data,
-        //     cache: false,
-        //     contentType: false,
-        //     processData: false,
-        //     method: 'POST',
-        //     success: function(res){
-        //         console.log(res);
-        //     }
-        // });
-
-
-        axios.post(API_IN_TOUCH, data).then( response =>{
-            console.log('response ', response);
-            return response
+    getInTouch(data, f, callbackThis){
+        axios.post(API_IN_TOUCH, data).then(response =>{
+            f.call(callbackThis, response);
+            return false;
         }).catch(err =>{
-            console.log('err ', err);
-            return err
+            f.call(callbackThis, err);
+            return false;
         });
-
-
-        // return fetch(API_IN_TOUCH,
-        //     {
-        //         method: 'POST',
-        //         headers: headers,
-        //         body: data
-        //     }
-        //
-        // ).then(res => {
-        //     console.log('************ res= ', res);
-        //     return res.json()
-        // }).then(
-        //     (result) => {
-        //         console.log('************ result= ', result);
-        //         if(result.message) {
-        //             return {
-        //                 success: false,
-        //                 error: result.message
-        //             }
-        //         } else {
-        //             return {
-        //                 success: true,
-        //                 data: result
-        //             }
-        //         }
-        //     },
-        //     (error) => {
-        //         console.log('************ error= ', error);
-        //         return {
-        //             success: false,
-        //             error
-        //         }
-        //     }
-        // );
     }
 };
 
