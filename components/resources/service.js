@@ -1,9 +1,13 @@
 import fetch from 'isomorphic-fetch';
+import axios  from 'axios';
 
-const API = 'https://staging.cms.skynix.co/wp-json/wp/v2';
-const API_POSTS = API + '/posts';
-const API_USERS = API + '/users';
-const API_MEDIA = API + '/media';
+const API           = 'https://staging.cms.skynix.co/wp-json';
+const SLUG1         = '/wp/v2';
+const SLUG2         = '/skynix/v1';
+const API_POSTS     = API + SLUG1 +'/posts';
+const API_USERS     = API + SLUG1 +'/users';
+const API_MEDIA     = API + SLUG1 +'/media';
+const API_IN_TOUCH  = API + SLUG2 +'/contact';
 
 const Service = {
 
@@ -92,6 +96,15 @@ const Service = {
 
     getPostMedia(id) {
         return this.get(API_MEDIA + '/' + id).then(result => result);
+    },
+    getInTouch(data, f, callbackThis){
+        axios.post(API_IN_TOUCH, data).then(response =>{
+            f.call(callbackThis, response);
+            return false;
+        }).catch(err =>{
+            f.call(callbackThis, err);
+            return false;
+        });
     }
 };
 

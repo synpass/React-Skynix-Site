@@ -3,6 +3,7 @@ import Spinner from '../Spinner';
 import Attachments from "./Attachments";
 import Input from "./Input";
 import Agreement from "./Agreement";
+import Service from '../resources/service';
 
 export default class Form extends Component {
     constructor(props) {
@@ -23,6 +24,9 @@ export default class Form extends Component {
             files: [],
             agreement: false,
             showError: false,
+            formId: '1252',
+            isShowMask: false,
+            errorForm: null,
         };
 
         this.baseState = this.state;
@@ -40,7 +44,15 @@ export default class Form extends Component {
     handleAttachmentsChange = (files) => this.setState({files});
 
     handleAgreementsChange = () => this.setState({agreement: !this.state.agreement});
-
+    showMask(e){
+        if(e && (/Error/i).test(e)){
+            this.setState({'errorForm': `Error: ${e.response.status}`});
+        }
+        this.setState({'isShowMask': true});
+        setTimeout(function () {
+            this.setState({'isShowMask': false});
+        }.bind(this), 5000);
+    }
     handleSubmit(event) {
         const formInputs = ['name', 'contact', 'project'];
         event.preventDefault();
@@ -52,6 +64,13 @@ export default class Form extends Component {
 
         if (isValid) {
             this.setState({...this.baseState});
+            let data = new FormData(jQuery('.contact-form')[0]);
+            this.state.files.forEach(function (value, i) {
+                data.append( `attachment_${i+1}`, value.data);
+            });
+            data.append( 'agreement', this.state.agreement);
+            data.append( 'formId', this.state.formId);
+            Service.getInTouch(data, this.showMask, this);
         } else {
             this.setState({showError: true});
         }
@@ -63,6 +82,9 @@ export default class Form extends Component {
 
         return (
             <div className='contact-form__wrapper'>
+                <div className={"contact-form__mask " + (this.state.isShowMask ? '' : 'hidden ') + (this.state.errorForm === null ? '' : 'error')}>
+                    {this.state.errorForm === null ? 'Thank you for your inquiry! Someone from our team will contact you shortly.' : this.state.errorForm}
+                </div>
                 <form className='contact-form' onSubmit={this.handleSubmit} noValidate>
                     <div className='contact-form__body'>
                         <Input
@@ -90,6 +112,7 @@ export default class Form extends Component {
                             name='project'
                             label='Your Inquiry'
                             type='textarea'
+                            parentClass='contact-form__field--big'
                         />
 
                         <Attachments onChange={this.handleAttachmentsChange} files={files}/>

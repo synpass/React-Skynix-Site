@@ -71,11 +71,20 @@
     padding: 27px 0 17px;
     display: flex;
     flex-direction: column;
+    &--big{
+      width: 100%;
+    }
     @include tablets {
       width: calc(50% - 10px);
+      &--big{
+        width: 100%;
+      }
     }
     @include laptop {
       width: calc(50% - 40px);
+      &--big{
+        width: 100%;
+      }
     }
 
     &--text {
@@ -146,6 +155,7 @@
   }
 
   &__wrapper {
+    position: relative;
     .field-error {
       padding: 5px 0;
       color: $red;
@@ -154,5 +164,23 @@
         size: 11px;
       }
     }
+  }
+  &__mask{
+    display: flex;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 24px;
+    padding: 0 15px;
+    z-index: 10;
+    background: $blue;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    font-family: "SofiaPro";
+    font-size: 18px;
+    font-weight: 100;
+    color: $white;
   }
 }
