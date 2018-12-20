@@ -12,6 +12,7 @@ export default function OfflineCommerce() {
             <div className="ec-offlinecommerce__circle" />
             <div className="ec-offlinecommerce__cart" />
             <div className="ec-offlinecommerce__home" />
+            <div className="ec-offlinecommerce__padding-bottom" />
         </LazyLoad>
     )
 }
