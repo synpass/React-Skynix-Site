@@ -10,7 +10,8 @@ export default class Ecommerce extends Component {
     render() {
         return (
             <Page>
-                <ParallaxText/>
+                <ParallaxText stickyParent='posts'>e-commerce</ParallaxText>
+                <div id='posts'/>
                 <Rate/>
                 <ThemeDev/>
                 <Brands/>
