@@ -10,7 +10,7 @@ function NewsWrapped(props) {
             <div className='news__grid'>
                 {items.length > 0 ? items.map(item => <NewsItem {...item} key={item.id}/>) : null}
             </div>
-            <a href='/' className='news__link'>view all posts</a>
+            <a href='/resources' className='news__link'>view all posts</a>
         </div>
     );
 }
