@@ -24,7 +24,7 @@ export default class Form extends Component {
             files: [],
             agreement: false,
             showError: false,
-            formId: '521',
+            formId: '1252',
             isShowMask: false,
             errorForm: null,
         };
@@ -65,10 +65,9 @@ export default class Form extends Component {
         if (isValid) {
             this.setState({...this.baseState});
             let data = new FormData(jQuery('.contact-form')[0]);
-
-            for(let i=0; i<this.state.files.length; i++){
-                data.append( `attachment_${i+1}`, this.state.files[i].data);
-            }
+            this.state.files.forEach(function (value, i) {
+                data.append( `attachment_${i+1}`, value.data);
+            });
             data.append( 'agreement', this.state.agreement);
             data.append( 'formId', this.state.formId);
             Service.getInTouch(data, this.showMask, this);
