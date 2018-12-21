@@ -8,6 +8,7 @@ const API_POSTS     = API + SLUG1 +'/posts';
 const API_USERS     = API + SLUG1 +'/users';
 const API_MEDIA     = API + SLUG1 +'/media';
 const API_IN_TOUCH  = API + SLUG2 +'/contact';
+const postperpage = 6;
 
 const Service = {
 
@@ -33,7 +34,7 @@ const Service = {
     getCatalogByPage(page) {
         let totals;
 
-        return fetch(API_POSTS + '?page=' + page)
+        return fetch(API_POSTS + '?per_page=' + postperpage + '&page=' + page)
             .then(res => {
                 totals = res.headers.get('x-wp-totalpages');
                 return res.json()
