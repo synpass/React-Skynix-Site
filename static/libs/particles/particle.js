@@ -25,7 +25,7 @@ var ROWS = 15,
     mouse,
     stats,
     list,
-    ctx,
+    canvastelement,
     tog,
     man,
     dx, dy,
@@ -35,7 +35,8 @@ var ROWS = 15,
     i, n,
     w, h,
     p, s,
-    r, c
+    r, c,
+    z, xl
 ;
 
 particle = {
@@ -44,13 +45,11 @@ particle = {
     x: 0,
     y: 0
 };
-
+container = document.getElementsByClassName( 'container-animation' );
+for (z = 0; z < container.length; z++) {
 function init() {
-
-    container = document.getElementById( 'container' );
     canvas = document.createElement( 'canvas' );
 
-    ctx = canvas.getContext( '2d' );
     man = true;
     tog = true;
 
@@ -68,9 +67,9 @@ function init() {
         list[i] = p;
     }
 
-    container.addEventListener( 'mousemove', function(e) {
+    container[z].addEventListener( 'mousemove', function(e) {
 
-        bounds = container.getBoundingClientRect();
+        bounds = this.getBoundingClientRect();
         mx = e.clientX - bounds.left;
         my = e.clientY - bounds.top;
         man = true;
@@ -81,7 +80,8 @@ function init() {
         document.body.appendChild( ( stats = new Stats() ).domElement );
     }
 
-    container.appendChild( canvas );
+    container[z].appendChild( canvas );
+    canvastelement = document.getElementsByTagName( 'canvas' );
 }
 
 function step() {
@@ -116,8 +116,8 @@ function step() {
         }
 
     } else {
-
-        b = ( a = ctx.createImageData( w, h ) ).data;
+    for(xl = 0; xl < canvastelement.length; xl++) {
+        b = ( a = canvastelement[xl].getContext( '2d' ).createImageData( w, h ) ).data;
 
         for ( i = 0; i < NUM_PARTICLES; i++ ) {
 
@@ -127,7 +127,8 @@ function step() {
             b[n = ( ~~p.x + ( ~~p.y * w ) ) * 4] = 34, b[n+3] = 205;
         }
 
-        ctx.putImageData( a, 0, 0 );
+        canvastelement[xl].getContext( '2d' ).putImageData( a, 0, 0 );
+    }
     }
 
     if ( stats ) stats.end();
@@ -137,3 +138,4 @@ function step() {
 
 init();
 step();
+}
