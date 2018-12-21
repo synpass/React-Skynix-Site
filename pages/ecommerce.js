@@ -4,8 +4,8 @@ import Page from "../components/Page";
 import Rate from "../components/e-commerce/Rate";
 import ThemeDev from "../components/e-commerce/ThemeDev";
 import Brands from "../components/e-commerce/Brands";
+import OfflineCommerce from "../components/e-commerce/OfflineCommerce";
 import Platform from "../components/e-commerce/platform/Platform";
-
 export default class Ecommerce extends Component {
     render() {
         return (
@@ -16,6 +16,7 @@ export default class Ecommerce extends Component {
                 <ThemeDev/>
                 <Brands/>
                 <Platform/>
+                <OfflineCommerce/>
             </Page>
         )
     }
