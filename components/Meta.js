@@ -6,6 +6,7 @@ export default function Meta(props) {
     return (
         <Head>
             <title>{props.title}</title>
+            <link rel="icon" type="image/vnd.microsoft.icon" href="../static/images/favicon.ico" />
             <meta name="description"        content={props.description}/>
             <meta property="og:url"         content={props.ogURL}/>
             <meta property="og:type"        content={props.ogType}/>
