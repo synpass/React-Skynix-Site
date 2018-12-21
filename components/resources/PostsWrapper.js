@@ -61,8 +61,7 @@ const PostsWrapper = (WrappedComponent) => {
                         this.getAdditionalData(data, totals);
                     } else {
                         this.setState({
-                            isLoaded: true,
-                            error
+                            isLoaded: true
                         });
 
                         onLoad();
