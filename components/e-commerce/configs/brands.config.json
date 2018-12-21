@@ -17,21 +17,21 @@
     "id": 4,
     "imgClass": "xcart",
     "img": "xcart.png",
-    "link": "/",
+    "link": "",
     "linkTitle": "Xcart"
   },
   {
     "id": 1,
     "imgClass": "opencart",
     "img": "oencart.png",
-    "link": "/",
+    "link": "",
     "linkTitle": "Opencart"
   },
   {
     "id": 3,
     "imgClass": "shopify",
     "img": "shopify.svg",
-    "link": "/",
+    "link": "",
     "linkTitle": "Shopify"
   }
 ]
