@@ -1,5 +1,4 @@
 import React, {Component} from 'react';
-import ParallaxText from "../components/ParallaxText";
 import Page from "../components/Page";
 import Rate from "../components/e-commerce/Rate";
 import DataMigration from "../components/e-commerce/DataMigration";
@@ -13,8 +12,6 @@ export default class Ecommerce extends Component {
     render() {
         return (
             <Page>
-                <ParallaxText stickyParent='posts'>e-commerce</ParallaxText>
-                <div id='posts'/>
                 <Rate/>
                 <ThemeDev/>
                 <Brands/>
