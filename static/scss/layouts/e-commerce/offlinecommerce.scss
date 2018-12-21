@@ -78,9 +78,6 @@
     width: 220px;
     height: 220px;
     background-color: $blue;
-    @include tablets {
-      
-    }
     &:before {
       content: "";
       position: absolute;
