@@ -1,0 +1,99 @@
+.ec-datamigration {
+  @include max-width;
+  position: relative;
+  z-index: 10;
+  &__disable-line {
+    &:before {
+      display: none;
+    }
+  }
+  .section-heading {
+    line-height: 40px;
+  }
+  .paragraph {
+    margin-top:8px;
+    margin-bottom: 26px;
+    max-width: 100%;
+    @include laptop {
+      max-width: 558px;
+      margin-bottom: 46px;
+    }
+  }
+  p {
+    margin-top: 8px;
+    margin-bottom: 20px;
+    max-width: 600px;
+    color: $grey-dark;
+    font-size: 14px;
+    line-height: 22px;
+    @include laptop {
+      max-width: 400px;
+    }
+  }
+  &__link {
+    color: $blue;
+    display: inline-block;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 16px;
+    letter-spacing: 0.8px;
+    padding: 15px 30px;
+    text-decoration: none;
+    transition: all 0.6s;
+    border: 1px solid $blue;
+    &:hover {
+      background-color:$blue;
+      color: $white;
+    }
+  }
+  ul {
+    display: flex;
+    width: 330px;
+    padding: 0;
+    margin-bottom: 60px;
+    margin-top: 0;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    justify-content:space-between;
+    list-style:none;
+    margin-left: 70px;
+    @include laptop {
+      margin-left: 0;
+    }
+    li {
+      padding-left: 18px;
+      width: 40%;
+      display: block;
+      color: $dark-pale;
+      font-size: 18px;
+      line-height: 34px;
+      position: relative;
+      &:after {
+        content: "";
+        width: 4px;
+        height: 4px;
+        border-radius:50%;
+        background-color: $blue;
+        position: absolute;
+        left: 0;
+        top: 15px;
+      }
+    }
+  }
+  &__container {
+    display: flex;
+    max-width: 1200px;
+    align-items: flex-start;
+    justify-content:space-between;
+    flex-direction: column;
+    @include laptop {
+      flex-direction: row;
+    }
+  }
+  &__columns-right {
+    max-width:100%;
+    @include laptop {
+      max-width:480px;
+    }
+  }
+}
