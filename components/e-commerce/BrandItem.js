@@ -7,10 +7,13 @@ export default function BrandItem(props) {
     return (
         <Animated className='ec-brands__item' isVisible={show} animationInDelay={id * 250}>
             <img src={'/static/images/brands/' + img} className={imgClass}/>
-            <a href={link}>
-                <span>More about staging with {linkTitle}</span>
-                <img src='/static/images/arrow-blue.svg'/>
-            </a>
+            { link
+                ?   <a href={link}>
+                        <span>More about starting with {linkTitle}</span>
+                        <img src='/static/images/arrow-blue.svg'/>
+                    </a>
+                : null
+              }
         </Animated>
     )
 }
