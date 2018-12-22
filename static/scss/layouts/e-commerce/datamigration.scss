@@ -9,6 +9,10 @@
   }
   .section-heading {
     line-height: 40px;
+    margin-top: 0;
+    @include laptop {
+      margin-top: -150px;
+    }
   }
   .paragraph {
     margin-top:8px;

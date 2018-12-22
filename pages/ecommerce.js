@@ -17,8 +17,8 @@ export default class Ecommerce extends Component {
                 <Brands/>
                 <Platform/>
                 <DataMigration/>
-                <OfflineCommerce/>
                 <BugFixing/>
+                <OfflineCommerce/>
             </Page>
         )
     }
