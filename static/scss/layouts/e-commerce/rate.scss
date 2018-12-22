@@ -4,6 +4,7 @@
   z-index: 10;
 
   h2 {
+    padding-top: 120px;
     @include tablets {
       line-height: 66px;
     }
