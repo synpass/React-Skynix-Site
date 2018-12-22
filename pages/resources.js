@@ -3,6 +3,7 @@ import Page from "../components/Page";
 import ParallaxText from "../components/ParallaxText";
 import Catalog from "../components/resources/Catalog";
 import { withRouter } from 'next/router'
+import TitleHeader from "../components/resources/TitleHeader";
 
 const Resources = withRouter((props) => {
     return <ResourcesWrapper page={props.router.query.page}/>
@@ -19,8 +20,7 @@ class ResourcesWrapper extends Component {
     render() {
         return (
             <Page loading={true} isLoaded={this.state.isLoaded}>
-                <ParallaxText stickyParent='posts'>resources</ParallaxText>
-                <div id='posts'/>
+                <TitleHeader/>
                 <Catalog onLoad={this.onPageLoaded} page={this.props.page}/>
             </Page>
         )
