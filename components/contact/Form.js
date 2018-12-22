@@ -49,6 +49,7 @@ export default class Form extends Component {
             this.setState({'errorForm': `Error: ${e.response.status}`});
         }
         this.setState({'isShowMask': true});
+
         setTimeout(function () {
             this.setState({'isShowMask': false});
         }.bind(this), 5000);
@@ -82,10 +83,10 @@ export default class Form extends Component {
 
         return (
             <div className='contact-form__wrapper'>
-                <div className={"contact-form__mask " + (this.state.isShowMask ? '' : 'hidden ') + (this.state.errorForm === null ? '' : 'error')}>
-                    {this.state.errorForm === null ? 'Thank you for your inquiry! Someone from our team will contact you shortly.' : this.state.errorForm}
-                </div>
                 <form className='contact-form' onSubmit={this.handleSubmit} noValidate>
+                    <div className={"contact-form__mask " + (this.state.isShowMask ? '' : 'disablemask ') + (this.state.errorForm === null ? '' : 'error')}>
+                        {this.state.errorForm === null ? 'Thank you for your inquiry! Someone from our team will contact you shortly.' : this.state.errorForm}
+                    </div>
                     <div className='contact-form__body'>
                         <Input
                             error={error}
