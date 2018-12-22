@@ -18,6 +18,10 @@ export default class Projects extends Component {
         this.setState({activeSlide: index});
     }
 
+    componentDidMount() {
+        require("../../static/libs/KeyNavSlider");
+    }
+
     render() {
         const lazyLoadProps = {
             className: 'projects',
