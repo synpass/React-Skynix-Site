@@ -15,7 +15,7 @@ export default class CatalogArticle extends Component {
         const { title, content, date,  authorName, imageUrl, slug} = this.props;
         const parsed = content.rendered.replace(/<[^>]*>/g, '');
         return (
-            <a href="#" className='catalog-article' onClick={() => this._openArticle(slug)}>
+            <a href={'/article?slug=' + slug} className='catalog-article' onClick={() => this._openArticle(slug)}>
                 <div className='catalog-article__img' style={{backgroundImage: `url(${imageUrl})`}}/>
                 <div className='catalog-article__flex'>
                     <div className='catalog-article__date'><Moment format="D MMM YYYY" withTitle>{date}</Moment></div>
