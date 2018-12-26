@@ -9,9 +9,9 @@ export default class ThemeDev extends Component {
         };
         return (
             <Animated {...animation}>
-                <div className='ec-rate'>
+                <div className='ec-themedev'>
                     <h3 className='section-heading'>Online Shop Theme Development</h3>
-                    <div className='ec-rate__columns'>
+                    <div className='ec-themedev__columns'>
                         <h4 className='paragraph paragraph--large'>Refresh your brand identity, attract and retain more customers
                             by making their shopping experience with you a breeze</h4>
 
