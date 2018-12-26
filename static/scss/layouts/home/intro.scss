@@ -7,21 +7,27 @@
 
   &__slide {
     width: 100%;
-    background: -webkit-linear-gradient(to left, transparent, white);
-    background: linear-gradient(to left, transparent, white);
+    background: $white;
     display: flex;
     justify-content: center;
     flex-direction: column;
     position: relative;
     @include tablets {
       min-height: 50%;
+      background: -webkit-linear-gradient(to left, transparent, white);
+      background: linear-gradient(to left, transparent, white);
     }
 
     &--reverse {
-      background: -webkit-linear-gradient(to right, transparent, white);
-      background: linear-gradient(to right, transparent, white);
+      background: $white;
       padding-right: 0;
-      border-top: 1px solid rgba($blue, .2);
+      border-top: 0;
+      @include tablets {
+        min-height: 50%;
+        background: -webkit-linear-gradient(to right, transparent, white);
+        background: linear-gradient(to right, transparent, white);
+        border-top: 1px solid rgba($blue, .2);
+      }
     }
   }
 
