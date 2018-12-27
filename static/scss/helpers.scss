@@ -4,3 +4,13 @@
 .error{
 	background: $red;;
 }
+#__next {
+	overflow-x: hidden;
+	&>div {
+		max-width: 1060px;
+		margin: 0 auto;
+		@include desktop {
+			max-width: 100%;
+		}
+	}
+}
