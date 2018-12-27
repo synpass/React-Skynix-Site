@@ -9,6 +9,7 @@ import React from 'react'
 import App, {Container} from 'next/app'
 import BlogArticle from "../components/article-page/BlogArticle";
 import Page from "../components/Page";
+import meta from './index-meta.config.json';
 export default class MyApp extends App {
     constructor(props) {
         super(props);
@@ -37,7 +38,7 @@ export default class MyApp extends App {
             let slug = this._parseGetParams(thisRouter[1]).slug;
             if(!slug) return false;
             return (
-                <Page>
+                <Page meta={meta}>
                     <BlogArticle limit={1} onLoad={this.articleLoaded} slug={slug}/>
                 </Page>
             )
