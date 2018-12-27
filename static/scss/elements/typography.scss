@@ -26,6 +26,7 @@
     &-item{
         text-transform: uppercase;
         margin: 5px 15px 0px;
+        white-space: nowrap;
         &:first-of-type{
             margin-left: 0;
         }
