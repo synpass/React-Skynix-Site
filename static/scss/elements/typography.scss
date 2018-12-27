@@ -18,6 +18,18 @@
     margin: 5px 0 0;
     color: $quartz;
     letter-spacing: 0.5em;
+    &-line{
+        display: flex;
+        flex-wrap: nowrap;
+        width: 115%;
+    }
+    &-item{
+        text-transform: uppercase;
+        margin: 5px 15px 0px;
+        &:first-of-type{
+            margin-left: 0;
+        }
+    }
     font: {
       family: $proxima;
       weight: 100;
