@@ -1,14 +1,15 @@
 {
+  "ogURL": "https://staging.skynix.co",
   "title": "Skynix LLC - Software & Web development services company",
   "description": "☑ The code can work for you! ☑ Skynix is a one-stop partner for all kinds of software & web development services. Powerful digital solutions right ➔ here!",
   "ogTitle": "Skynix LLC - Software & Web development services company",
   "ogDescription": "☑ The code can work for you! ☑ Skynix is a one-stop partner for all kinds of software & web development services. Powerful digital solutions and leading-edge technologies - at your disposal",
-  "ogImage": "",
-  "ogSiteName": "",
+  "ogImage": "../static/images/og-skynix-logo.jpg",
+  "ogSiteName": "Skynix LLC",
   "ogImgAlt": "Skynix LLC is ukrainian software & web development services company",
   "twitterCard": "summary_large_image",
   "twitterTitle": "Skynix LLC - Software & Web development services company",
   "twitterDescription": "☑ The code can work for you! ☑ Skynix is a one-stop partner for all kinds of software & web development services. Powerful digital solutions and leading-edge technologies - at your disposal",
-  "twitterImage": "",
+  "twitterImage": "../static/images/og-skynix-logo.jpg",
   "twitterImageAlt": "Skynix LLC is ukrainian software & web development services company"
 }

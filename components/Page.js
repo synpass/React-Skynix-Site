@@ -52,7 +52,7 @@ export default class Page extends Component {
         return (
             <div className={className}>
                 <Head>
-                    <meta name="robots" content="noindex, unfollow"/>
+                    <meta name="robots" content="noindex, nofollow"/>
                     <meta name="viewport" content="initial-scale=1.0, width=device-width"/>
                     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"/>
                     <link rel="stylesheet" href="owl-carousel/owl.theme.css"/>

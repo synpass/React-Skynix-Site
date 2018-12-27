@@ -10,7 +10,7 @@ export default function Header() {
                 <header className='header'>
                     <div className='header__logo'>
                         <Link href='/'>
-                            <a><img src='/static/images/skynix_logo_2018.svg' alt='logo' rel='canonilal'/></a>
+                            <a><img src='/static/images/skynix_logo_2018.svg' alt='Skynix LLC logo' rel='canonical'/></a>
                         </Link>
                     </div>
                     <div className='header__nav'>
