@@ -4,10 +4,10 @@
 .error{
 	background: $red;;
 }
-#__next {
+.width-adaptive-fixed {
 	overflow-x: hidden;
 	&>div {
-		max-width: 1060px;
+		max-width: 1080px;
 		margin: 0 auto;
 		@include desktop {
 			max-width: 100%;
