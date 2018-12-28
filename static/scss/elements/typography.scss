@@ -22,6 +22,14 @@
         display: flex;
         flex-wrap: nowrap;
         width: 115%;
+        position: absolute;
+        left: -40px;
+        -webkit-animation: moveleft 2s ease-out;
+        animation: move left 2s ease-out;
+        @keyframes moveleft{
+            from {left: 0;}
+            to {left: -40px;}
+        }
     }
     &-item{
         text-transform: uppercase;
