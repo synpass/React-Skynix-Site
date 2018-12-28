@@ -14,6 +14,7 @@ export default class Page extends Component {
     constructor(props) {
         super(props);
         this.state = {
+            showLoader: true,
             preload: false,
             loaded: !props.loading,
             footerLoaded: false
@@ -21,6 +22,11 @@ export default class Page extends Component {
     }
 
     componentDidMount() {
+        if(window.sessionStorage.getItem('loader')) {
+            this.setState({showLoader: false})
+        } else{
+            window.sessionStorage.setItem('loader', true)
+        }
         setTimeout(function () {
             this.setState({preload: true})
         }.bind(this), 1100);
@@ -34,7 +40,7 @@ export default class Page extends Component {
     render() {
         const {children, className, meta, animate, isLoaded} = this.props;
 
-        const {loaded, preload, footerLoaded} = this.state;
+        const {loaded, preload, footerLoaded, showLoader} = this.state;
 
         const content = (
             <div>
@@ -81,11 +87,11 @@ export default class Page extends Component {
 
                 </Head>
                 <Meta {...meta}/>
-                <div style={{display: loaded && isLoaded && footerLoaded? 'block' : 'none'}}>
+                <div style={{display: !showLoader || (loaded && isLoaded && footerLoaded)? 'block' : 'none'}}>
                     {content}
                 </div>
 
-                <div style={{display: loaded && isLoaded && footerLoaded ? 'none' : 'block'}}>
+                <div style={{display: !showLoader || (loaded && isLoaded && footerLoaded) ? 'none' : 'block'}}>
                     <ParallaxSlide loaded={preload} animate={animate}/>
                 </div>
             </div>

@@ -2,11 +2,13 @@ import React, { Component } from 'react';
 import ReactHtmlParser from 'react-html-parser';
 import truncate from 'html-truncate';
 import Moment from 'react-moment';
+import Service from "./service";
 
 export default class CatalogArticle extends Component {
     constructor(props) {
         super(props);
     }
+
     _openArticle(e){
         let params = window.location.origin +'/article?slug='+e;
         document.location.href = params;
@@ -27,3 +29,5 @@ export default class CatalogArticle extends Component {
         )
     }
 }
+
+

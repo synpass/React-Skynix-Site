@@ -9,7 +9,7 @@ export default function Pagination(props) {
         mapping.push(i)
     }
 
-    const pages = mapping.map(e => <Page navLink={navLink} page={e} isActive={e === +current}/>);
+    const pages = mapping.map(e => <Page navLink={navLink} page={e} isActive={e === +current} key={e}/>);
 
     return <div className='pagination'>{pages}</div>
 }

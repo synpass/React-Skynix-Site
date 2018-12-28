@@ -7,15 +7,15 @@ function NewsWrapped(props) {
     const { items } = props;
     return (
         <div className='news'>
-            <div className='news__grid'>
-                {items.length > 0 ? items.map(item => <NewsItem {...item} key={item.id}/>) : null}
-            </div>
-            <a href='/resources' className='news__link'>view all posts</a>
+            {/*<div className='news__grid'>*/}
+                {/*{items.length > 0 ? items.map(item => <NewsItem {...item} key={item.id}/>) : null}*/}
+            {/*</div>*/}
+            {/*<a href='/resources' className='news__link'>view all posts</a>*/}
         </div>
     );
 }
 
-const News = PostsWrapper(NewsWrapped);
+const News = NewsWrapped;
 
 export default News;
 
