@@ -37,7 +37,7 @@ export default class Page extends Component {
         const {loaded, preload, footerLoaded} = this.state;
 
         const content = (
-            <div className="width-adaptive-fixed">
+            <div className="content__adaptive">
                 <div>
                     <div className="content-wrapper">
                         <div className="content">
