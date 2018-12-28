@@ -37,15 +37,17 @@ export default class Page extends Component {
         const {loaded, preload, footerLoaded} = this.state;
 
         const content = (
-            <div>
-                <div className="content-wrapper">
-                    <div className="content">
-                        {children}
+            <div className="content__adaptive">
+                <div>
+                    <div className="content-wrapper">
+                        <div className="content">
+                            {children}
+                        </div>
                     </div>
+                    <ContactBlock/>
+                    <Footer onLoad={this.footerLoaded} page={1}/>
+                    <Header/>
                 </div>
-                <ContactBlock/>
-                <Footer onLoad={this.footerLoaded} page={1}/>
-                <Header/>
             </div>
         );
 
