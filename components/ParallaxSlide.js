@@ -6,7 +6,7 @@ import PropTypes from 'prop-types';
 export default class ParallaxSlide extends Component {
     render() {
         const { loaded, animate } = this.props;
-        var animt = false;
+        
         let classNames1 = ['bg__elem', 'bg__elem--bracket'];
         let classNames2 = ['bg__elem', 'bg__elem--bracket-reverse'];
         let classNames3 = ['bg__elem', 'bg__elem--slash'];
