@@ -7,7 +7,9 @@
 	position: relative;
 	font-family: $proxima;
 	.paragraph {
-		max-width: 100%;
+		font-family: $proxima;
+		font-weight: 400;
+		color: $dark-pale;
 		margin-top: 0;
 		margin-bottom: 10px;
 		@include laptop {
@@ -23,6 +25,9 @@
 		@include laptop {
 			flex-direction: row;
 		}
+	}
+	.section-heading {
+		font-weight: 400;
 	}
 	&__col {
 		flex:1;
