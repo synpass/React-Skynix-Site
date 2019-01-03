@@ -54,16 +54,18 @@ export default class NavItem extends Component {
 
 
         return (
-            <li onMouseLeave={this.hide} onMouseEnter={this.show}>
-                { anchor ? 
-                    <AnchorLink className={linkClasses.join(' ')} offset='-150' href={link}>{name}</AnchorLink> :
-                    <Link href={link}>
-                        <a className={linkClasses.join(' ')}>{name} { children ? <span/> : null}</a>
-                    </Link>
-                }
-                { children ? <button className={expandClasses.join(' ')} onClick={this.toggle}/> : null }
-                { children ? <Submenu children={children} height={height}/> : null }
-            </li>
+            <Animated animationIn='fadeInDown' animationInDelay={400}>
+                <li onMouseLeave={this.hide} onMouseEnter={this.show}>
+                    { anchor ? 
+                        <AnchorLink className={linkClasses.join(' ')} offset='-150' href={link}>{name}</AnchorLink> :
+                        <Link href={link}>
+                            <a className={linkClasses.join(' ')}>{name} { children ? <span/> : null}</a>
+                        </Link>
+                    }
+                    { children ? <button className={expandClasses.join(' ')} onClick={this.toggle}/> : null }
+                    { children ? <Submenu children={children} height={height}/> : null }
+                </li>
+            </Animated>
         )
     }
 }
