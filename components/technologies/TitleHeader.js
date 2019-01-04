@@ -1,6 +1,5 @@
 import React, {Component} from 'react';
 import {Animated} from "react-animated-css";
-import Particle from "../Particle";
 import TextLoop from "react-text-loop";
 
 export default function TitleHeader() {
