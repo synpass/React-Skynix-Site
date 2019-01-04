@@ -21,6 +21,8 @@ export default function Meta(props) {
             <meta property="twitter:description" content={props.twitterDescription}/>
             <meta property="twitter:image"       content={props.twitterImage}/>
             <meta property="twitter:image:alt"   content={props.twitterImageAlt}/>
+            <meta name="keywords"   content={props.keywordsSeo}/>
+            <link rel="canonical" href={props.canonicalUrl}/>
         </Head>
     )
 }
@@ -39,7 +41,9 @@ Meta.propTypes = {
     twitterTitle: PropTypes.string,
     twitterDescription: PropTypes.string,
     twitterImage: PropTypes.string,
-    twitterImageAlt: PropTypes.string
+    twitterImageAlt: PropTypes.string,
+    keywordsSeo: PropTypes.string,
+    canonicalUrl: PropTypes.string
 };
 
 Meta.defaultProps = {
