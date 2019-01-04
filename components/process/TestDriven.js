@@ -3,7 +3,23 @@ import LazyLoad from "../LazyLoad";
 
 export default class TestDriven extends Component {
 	componentDidMount() {
-		require("../../static/libs/testdriven");
+		const script = document.createElement("script");
+		script.type = 'text/javascript';
+		const appendChild = (
+			$('#td-title .item-wave').hover(function testDriven() {
+				let titledata = $(this).data('wavetitle');
+				let i;
+				$('#td-title .item-wave, #td-content .content-show').removeClass('active');
+				for (i = 0; i < 9; i++ ) {
+					$('#td-title').removeClass('step-' + i);
+				}
+				$('#td-title').removeClass('active');
+				$(this).addClass('active');
+				$('#td-title').addClass('step-' + titledata);
+				$('#td-content .content-show[data-wavecontainer=' + titledata + ']').addClass('active');
+			}));
+		script.async = true;
+		document.body.appendChild(script);
 	}
 	render () {
 		return (
