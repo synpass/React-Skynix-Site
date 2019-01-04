@@ -18,6 +18,9 @@
     margin: 5px 0 0;
     color: $quartz;
     letter-spacing: 0.5em;
+    &-item{
+        text-transform: uppercase;
+    }
     font: {
       family: $proxima;
       weight: 100;
