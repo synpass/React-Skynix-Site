@@ -14,7 +14,7 @@ export default function Bracket(props){
 
     let bracketSet = mappingArray.map((e, i) => {
         return (
-            <div data-depth={(i + 1) * 0.1} //Parallax property
+            <div data-depth={(i + 1) * .28} //Parallax property
                  className={classes.concat(['slide-' + i]).join(' ')}
                  key={shortid.generate()}>
                 <img src={'/static/images/' + config[type]}/>
