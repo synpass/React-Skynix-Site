@@ -15,6 +15,7 @@ import Fullpage from "../components/fullpage/Fullpage";
 
 export default class Index extends Component {
     constructor(props) {
+        console.log(props)
         super(props);
         this.state = {
             parallaxBg: true,

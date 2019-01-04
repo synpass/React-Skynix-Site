@@ -9,8 +9,11 @@ import React from 'react'
 import App, {Container} from 'next/app'
 import BlogArticle from "../components/article-page/BlogArticle";
 import Page from "../components/Page";
+import Service from "../components/resources/service";
+import Index from "./resources";
 export default class MyApp extends App {
     constructor(props) {
+        console.log(props)
         super(props);
         this.state = {
             rendered: false,
@@ -32,16 +35,16 @@ export default class MyApp extends App {
     }
     render () {
         const {Component, pageProps, router} = this.props;
-        let thisRouter = router.asPath.split("?");
-        if(/article/ig.test(thisRouter[0]) && thisRouter[1]){
-            let slug = this._parseGetParams(thisRouter[1]).slug;
-            if(!slug) return false;
-            return (
-                <Page>
-                    <BlogArticle limit={1} onLoad={this.articleLoaded} slug={slug}/>
-                </Page>
-            )
-        }
+        // let thisRouter = router.asPath.split("?");
+        // if(/article/ig.test(thisRouter[0]) && thisRouter[1]){
+        //     let slug = this._parseGetParams(thisRouter[1]).slug;
+        //     if(!slug) return false;
+        //     return (
+        //         <Page>
+        //             <BlogArticle limit={1} onLoad={this.articleLoaded} slug={slug}/>
+        //         </Page>
+        //     )
+        // }
 
         return (
             <Container>
@@ -50,3 +53,47 @@ export default class MyApp extends App {
         )
     }
 }
+
+// MyApp.getInitialProps = async ({ query }) => {
+//     let limit = 0;
+//     let property;
+//     await Service.getCatalogByPage(1)
+//         .then(async(response) => {
+//             console.log(response)
+//
+//             const {success, error, totals} = response;
+//             let {data} = response;
+//
+//             if (success) {
+//                 if (limit) {
+//                     data = data.reverse();
+//                     data.splice(0, data.length - limit);
+//                 }
+//
+//                 let promises = [];
+//
+//                 data.forEach(item => {
+//                     promises.push(Service.getPostMedia(item.featured_media));
+//                     promises.push(Service.getAuthor(item.author));
+//                 });
+//
+//                 await Promise.all(promises).then(response => {
+//
+//                     data.map((item, i) => {
+//                         const {success: mediaSuccess, data: mediaData} = response[2 * i];
+//                         const {success: authorSuccess, data: authorData} = response[2 * i + 1];
+//
+//                         if (mediaSuccess) item.imageUrl = mediaData.source_url;
+//                         if (authorSuccess) item.authorName = authorData.name;
+//                     });
+//
+//                 })
+//                 property = {
+//                     newsItems: data,
+//                     newsTotals: totals
+//                 }
+//             }
+//         })
+//
+//     return property;
+// }

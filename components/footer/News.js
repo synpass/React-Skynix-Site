@@ -5,6 +5,7 @@ import PostsWrapper from '../resources/PostsWrapper';
 
 function NewsWrapped(props) {
     const { items } = props;
+    console.log(props)
     return (
         <div className='news'>
             {/*<div className='news__grid'>*/}

@@ -5,13 +5,15 @@ import ArticleBody from "../article-page/ArticleBody";
 import Comments from '../article-page/Comments.js';
 import Articles from '../article-page/Articles.js';
 import PropTypes from 'prop-types';
+import Service from "../resources/service";
 
 
-function ArticleWrapped(props) {
-    const { articleItems } = props;
-    if(!articleItems)return false;
+function BlogArticle(props) {
+    console.log('ARTICLE')
+
+    if(!props)return false;
     return (
-        articleItems.map(item =>
+        props.articleItems.map(item =>
             <div key={item.id}>
                 <div className='blog-article' >
                     <ArticleHeader {...item}/>
@@ -21,7 +23,6 @@ function ArticleWrapped(props) {
                             <Social/>
                         </div>
                         <ArticleBody {...item}/>
-
                     </div>
                 </div>
                 {/*(item.comment_status ==='open') ? <Comments /> : null*/}
@@ -29,7 +30,6 @@ function ArticleWrapped(props) {
         )
     );
 }
-const BlogArticle = Articles(ArticleWrapped);
 
 export default BlogArticle;
 
