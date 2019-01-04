@@ -3,23 +3,18 @@ import LazyLoad from "../LazyLoad";
 
 export default class TestDriven extends Component {
 	componentDidMount() {
-		const script = document.createElement("script");
-		script.type = 'text/javascript';
-		const appendChild = (
+		const script = (
 			$('#td-title .item-wave').hover(function testDriven() {
 				let titledata = $(this).data('wavetitle');
-				let i;
-				$('#td-title .item-wave, #td-content .content-show').removeClass('active');
-				for (i = 0; i < 9; i++ ) {
-					$('#td-title').removeClass('step-' + i);
-				}
-				$('#td-title').removeClass('active');
+				let title = $('#td-title');
+				let contentItem = $('#td-content').find('.content-show');
+				title.find('.item-wave').removeClass('active');
+				contentItem.removeClass('active');
+				title.attr('class', 'pr-testdriven__wave-area');
+				title.addClass('step-' + titledata);
 				$(this).addClass('active');
-				$('#td-title').addClass('step-' + titledata);
-				$('#td-content .content-show[data-wavecontainer=' + titledata + ']').addClass('active');
+				$('#td-content').find('.content-show[data-wavecontainer=' + titledata + ']').addClass('active');
 			}));
-		script.async = true;
-		document.body.appendChild(script);
 	}
 	render () {
 		return (
