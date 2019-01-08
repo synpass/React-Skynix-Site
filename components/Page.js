@@ -6,6 +6,7 @@ import Footer from './footer/Footer';
 import {Animated} from "react-animated-css";
 import ParallaxSlide from "./ParallaxSlide";
 import ContactBlock from "../components/contact/ContactBlock";
+import JsonLd from '../components/JsonLd';
 
 import Meta from "./Meta";
 import Head from 'next/head'
@@ -51,9 +52,30 @@ export default class Page extends Component {
             </div>
         );
 
+        let data = {
+            "@context":"http:\/\/schema.org",
+            "@type":"Organization",
+            "legalName": "Skynix LLC",
+            "url":"https:\/\/skynix.co",
+            "logo":"https:\/\/skynix.co\/static\/images\/skynix_logo_2018.svg",
+            "contactPoint":{
+                "@type":"ContactPoint",
+                "telephone":"+380680783755",
+                "url":"https:\/\/skynix.co/#contact",
+                "contactType":"customer support"
+                },
+            "sameAs":[
+        "https:\/\/www.facebook.com\/SkynixLLC\/",
+        "https:\/\/twitter.com\/SkynixLLC",
+        "https:\/\/www.instagram.com\/skynixllc\/",
+        "https:\/\/www.youtube.com\/channel\/UCh9-x-GicQl51jFGmM0RoKw",
+        "https:\/\/www.linkedin.com\/company\/skynix\/"
+        ]}
+
         return (
             <div className={className}>
                 <Head>
+                    <JsonLd data={data} />
                     <meta name="robots" content="noindex, nofollow"/>
                     <meta name="viewport" content="initial-scale=1.0, width=device-width"/>
                     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"/>
