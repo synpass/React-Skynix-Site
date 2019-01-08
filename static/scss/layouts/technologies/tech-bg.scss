@@ -1,0 +1,32 @@
+.tech{
+    
+    &__bg{
+        
+        &-pos1{
+            position: absolute;
+            max-width: 1230px;
+            z-index: 0;
+            width: 100%;
+            padding: 0px 15px;
+            top: 100px;
+            
+            span{
+                font-size: 12.5vw;
+                font-family: "SofiaProBold";
+                color: #f7f7f7;
+                white-space: nowrap;
+                display: block;  
+            } 
+        }
+        &-pos2{
+            background-image: url(/static/images/arrows-bg.png);
+            background-repeat: no-repeat;
+            background-position: 90%;
+            z-index: 1;
+            display: block;
+            position: relative;
+        }
+        
+    }
+    
+}
