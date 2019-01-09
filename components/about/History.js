@@ -8,8 +8,8 @@ export default function History() {
 	};
 	return (
 		<Animated {...animation} className='as-history'>
-					<h2 className='section-heading'>history</h2>
-					<p className="paragraph paragraph--large">Skynix LLC was established in 
+					<h2 className='section-heading as-history__heading'>history</h2>
+					<p className="paragraph paragraph--large as-history__paragraph">Skynix LLC was established in 
 					2015 and has been operating worldwide from a cozy office in the beautiful 
 					capital of Ukraine. In under a year our team grew from four to over 
 					twenty tech thirsty individuals, happy to serve our partners from Oceania, 
