@@ -1,11 +1,6 @@
 .contact {
   @include max-width;
   position: relative;
-  padding-top: 20px;
-  @include tablets {
-    padding-top: 100px;
-  }
-
   &__bg {
     margin-left: -15%;
     display: block;
