@@ -21,7 +21,7 @@ export default class FooterFixed extends Component {
 
     handleScroll() {
         const { show } = this.state;
-        const footerTop = document.getElementById('footer').offsetTop;
+        const footerTop = window.innerHeight + 50;
         const fixedTop = this.ref.current.offsetTop + window.scrollY + window.innerHeight;
         this.setState({show: fixedTop < footerTop})
     }
