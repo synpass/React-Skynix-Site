@@ -1,9 +1,13 @@
 import React from 'react';
-import LazyLoad from "../LazyLoad";
+import {Animated} from "react-animated-css";
 
 export default function History() {
+	const animation = {
+		animationIn: 'fadeInLeft',
+		animationInDelay: 1100
+	};
 	return (
-		<LazyLoad className='as-history'>
+		<Animated {...animation} className='as-history'>
 					<h2 className='section-heading'>history</h2>
 					<p className="paragraph paragraph--large">Skynix LLC was established in 
 					2015 and has been operating worldwide from a cozy office in the beautiful 
@@ -11,6 +15,6 @@ export default function History() {
 					twenty tech thirsty individuals, happy to serve our partners from Oceania, 
 					Europe, and the Americas. In the future this will expand to allow for many 
 					more diverse collaborations around the globe.</p>
-		</LazyLoad>
+		</Animated>
 	)
 }
