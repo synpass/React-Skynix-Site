@@ -9,13 +9,13 @@
   }
 
   &__body {
-    padding: 25px 20px;
+    padding: 15px 20px;
     background: $white;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
     @include tablets {
-      padding: 45px 80px 59px;
+      padding: 45px 80px 15px;
       width: calc(880 / 990 * 100% );
     }
   }
