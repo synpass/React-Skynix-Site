@@ -21,6 +21,10 @@
     "link": "/process"
   },
   {
+    "name": "about skynix",
+    "link": "/about-skynix"
+  },
+  {
     "name": "Request a Quote",
     "contrast": true,
     "link": "#contact",
