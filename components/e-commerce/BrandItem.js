@@ -34,5 +34,6 @@ BrandItem.propTypes = {
     imgClass: PropTypes.string,
     id: PropTypes.number.isRequired,
     link: PropTypes.string,
-    linkTitle: PropTypes.string
+    linkTitle: PropTypes.string,
+    name: PropTypes.string
 }
