@@ -15,6 +15,6 @@ export default class Clutch extends Component {
     };
 
     render() {
-        return <div className="clutch-widget" data-url="https://clutch.co" data-widget-type="1" data-height="62" data-clutchcompany-id="161995"/>
+        return <div className="clutch-widget" data-url="https://clutch.co" data-widget-type="1" data-height="42" data-clutchcompany-id="161995"/>
     }
 }
