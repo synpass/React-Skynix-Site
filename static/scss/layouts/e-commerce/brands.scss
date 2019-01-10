@@ -7,10 +7,21 @@
         margin-top: 50px;
     }
   }
-
+  &-pos0{
+      margin-top: 15px;
+      @include laptop {
+        margin-top: 120px;
+      }  
+  }
   &__row {
     display: flex;
     flex-wrap: wrap;
+    &-reverse{
+        @include laptop{
+            flex-flow: wrap-reverse;
+            flex-direction: row-reverse;
+        }
+    }
   }
 
   &__item {
@@ -26,6 +37,11 @@
     justify-content: center;
     background: $white;
     cursor: pointer;
+    &-pos1{
+        @include laptop{
+            flex: none;     
+        }
+    }
     @include tablets {
       min-width: 33.3333%;
       height: 200px;
