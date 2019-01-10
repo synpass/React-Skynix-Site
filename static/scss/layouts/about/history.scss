@@ -6,7 +6,7 @@
 	margin: 0 auto;
 	position: relative;
 	font-family: $proxima;
-	.paragraph {
+	&__paragraph {
 		font-family: $proxima;
 		max-width: 100%;
 		font-weight: 400;
@@ -17,7 +17,7 @@
 			margin-bottom: 15px;
 		}
 	}
-	.section-heading {
+	&__heading {
 		font-weight: 400;
 	}
 }
