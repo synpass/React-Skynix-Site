@@ -3,17 +3,49 @@
 	z-index: 2;
 	width: 100%;
 	padding: 0 15px;
-	margin: 0 auto;
+	margin: 40px auto 20px;
 	position: relative;
 	font-family: $proxima;
+	@include tablets {
+		margin: 100px auto 40px;
+	}
 	* {
 		margin: 0;
 		padding: 0;
 	}
+	&__heading {
+		padding-bottom: 20px;
+		@include tablets {
+			padding-bottom: 40px;
+		}
+	}
+	.owl-item {
+		padding: 10px;
+	}
+	.owl-nav {
+		@include max-width;
+		display: flex;
+		justify-content: flex-end;
+		padding-top: 30px;
+		.owl-prev, .owl-next {
+			height: 22px;
+			background: url('/static/images/carousel/arrow.svg') no-repeat center;
+			color: rgba(0,0,0,0);
+			&.disabled {
+				background-image: url('/static/images/carousel/arrow-grey.svg');
+			}
+		}
+		.owl-prev {
+			margin-right: 20px;
+		}
+		.owl-next {
+			transform: scaleX(-1);
+		}
+	}
 	&__col {
-		width: 33%;
 		padding: 15px;
-		box-shadow: rgba(28, 28, 28, 0.05) 0px 0px 40px 18px;
+		height: 100%;
+		box-shadow: rgba(28, 28, 28, 0.05) 0px 0px 8px 3px;
 		img {
 			width: 100%;
 		}
@@ -21,18 +53,68 @@
 	&__name {
 		padding-top: 10px;
 		padding-bottom: 10px;
-		line-height: 36px;
-		font-size: 28px;
+		line-height: 30px;
+		font-size: 24px;
 		font-family: $gotham-medium;
+		@include tablets {
+			line-height: 36px;
+			font-size: 28px;
+		}
 	}
 	&__position {
-		font-size:20px;
-		line-height: 26px;
-		padding-bottom: 20px;
+		font-size:17px;
+		line-height: 23px;
+		padding-bottom: 15px;
 		color: $grey-dark;
+		@include tablets {
+			font-size:20px;
+			line-height: 26px;
+			padding-bottom: 20px;
+		}
 	}
 	&__description {
-		font-size:18px;
-		line-height: 21px;
+		font-size:16px;
+		line-height: 19px;
+		@include tablets {
+			font-size:18px;
+			line-height: 21px;
+		}
+	}
+	&__social {
+		list-style: none;
+		padding-top: 20px;
+		li {
+			display: inline-block;
+			margin-right:10px;
+			@include tablets {
+				margin-right:15px;
+			}
+			&:last-child {
+				margin-top: 0;
+			}
+		}
+		.facebook-ico{
+			background: url("/static/images/about/social/facebook.svg") no-repeat;
+		}
+		.linkedin-ico{
+			background: url("/static/images/about/social/linkedin.svg") no-repeat;
+		}
+		.skype-ico{
+			background: url("/static/images/about/social/skype.svg") no-repeat;
+		}
+		a {
+			width: 50px;
+			height: 50px;
+			display: inline-block;
+			background-size: 100%;
+			transition: all 0.6s;
+			@include tablets {
+				width: 30px;
+				height: 30px;
+			}
+			&:hover {
+				transform: scale(1.2);
+			}
+		}
 	}
 }
