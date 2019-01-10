@@ -1,5 +1,4 @@
 import {Animated} from "react-animated-css";
-import Particle from "../Particle";
 import FrontBrands from "./FrontBrands"
 
 export default function ElegantFrontend() {
