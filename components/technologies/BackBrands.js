@@ -1,7 +1,6 @@
 import React, {Component} from 'react';
 import LazyLoad from "../LazyLoad";
 import { Animated } from "react-animated-css";
-import brands from './configs/back-brands.config.json';
 import TechBrandItem from "./TechBrandItem";
 
 export default class Brands extends Component {
@@ -19,7 +18,7 @@ export default class Brands extends Component {
         return (
             <LazyLoad className='ec-brands ec-brands__tech' onLoad={this.onLoad}>
                 <div className='ec-brands__row'>
-                   {brands.map(brand => <TechBrandItem {...brand} show={this.state.show} key={brand.id}/>)}
+                  <TechBrandItem/>
                 </div>
             </LazyLoad>
         )

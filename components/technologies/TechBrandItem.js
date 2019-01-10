@@ -1,39 +1,13 @@
 import React from 'react';
 import { Animated } from "react-animated-css";
 import PropTypes from 'prop-types';
+import brands from './configs/back-brands.config.json';
+import BrandItem from "../e-commerce/BrandItem";
 
-export default function TechBrandItem(props) {
-    const {children, show, img, imgClass, id, link, linkTitle, name} = props;
+export default function TechBrandItem() {
     return (
-        <Animated className='ec-brands__item' isVisible={show} animationInDelay={id * 250}>
-            <img src={'/static/images/brands/' + img} className={imgClass}/>
-            { children ?
-                <div className="ec-brands__item-wrap">
-                    <ul>
-                        { children.map((item) => 
-                            <li>{item.name}</li>)
-                        }
-                    </ul>
-                </div>
-            : null }   
-            { link
-                ?   <a href={link}>
-                        <span>More about starting with {linkTitle}</span>
-                        <img src='/static/images/arrow-blue.svg'/>
-                    </a>
-                : null
-              }
-        </Animated>
+        <React.Fragment>
+            {brands.map(brand => <BrandItem {...brand} key={brand.id}/>)}
+        </React.Fragment>
     )
-}
-
-TechBrandItem.propTypes = {
-    children: PropTypes.array,
-    show: PropTypes.bool,
-    img: PropTypes.string,
-    imgClass: PropTypes.string,
-    id: PropTypes.number.isRequired,
-    link: PropTypes.string,
-    linkTitle: PropTypes.string,
-    name: PropTypes.string.isRequired,
 }
