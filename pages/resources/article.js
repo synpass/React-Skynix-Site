@@ -17,10 +17,10 @@ export default class ArticlePage extends Component {
     articleLoaded = () => this.setState({articleLoaded: true});
     render() {
         console.log('render')
-        const{slug} = this.props;
+        const{slug, articleItems, news} = this.props;
         return (
-            <Page>
-                <BlogArticle articleItems={this.props.articleItems} totals={this.props.totals} limit={1} onLoad={this.articleLoaded} slug={slug}/>
+            <Page newsItems={news}>
+                <BlogArticle articleItems={articleItems} limit={1} onLoad={this.articleLoaded} slug={slug}/>
             </Page>
         )
     }
@@ -69,6 +69,42 @@ ArticlePage.getInitialProps = async ({ query }) => {
                 }
             }
         })
+
+    await Service.getCatalogByPage(1)
+        .then(async (response) => {
+
+            const {success, error, totals} = response;
+            let {data} = response;
+
+            if (success) {
+                if (limit) {
+                    data = data.reverse();
+                    data.splice(0, data.length - limit);
+                }
+
+                let promises = [];
+
+                data.forEach(item => {
+                    promises.push(Service.getPostMedia(item.featured_media));
+                    promises.push(Service.getAuthor(item.author));
+                });
+
+                await Promise.all(promises).then(response => {
+
+                    data.map((item, i) => {
+                        const {success: mediaSuccess, data: mediaData} = response[2 * i];
+                        const {success: authorSuccess, data: authorData} = response[2 * i + 1];
+
+                        if (mediaSuccess) item.imageUrl = mediaData.source_url;
+                        if (authorSuccess) item.authorName = authorData.name;
+                    });
+
+                })
+                property.news = data;
+                property.newsTotals = totals;
+
+            }
+        });
 
     return property;
 }

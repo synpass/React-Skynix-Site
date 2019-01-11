@@ -6,25 +6,23 @@ import { withRouter } from 'next/router'
 import TitleHeader from "../../components/resources/TitleHeader";
 import CatalogArticle from "../../components/resources/CatalogArticle";
 import Service from "../../components/resources/service";
+import Document from "next/document";
 
 const Index = withRouter((props) => {
-    console.log('here')
-    console.log(props)
-    return <ResourcesWrapper page={props.router.query.page} items={props.items} totals={props.totals}/>
+    return <ResourcesWrapper page={props.router.query.page} items={props.items} totals={props.totals} newsItems={props.news}/>
 });
 
 class ResourcesWrapper extends Component {
     constructor(props) {
         super(props);
-        console.log('Blog')
-        console.log(props)
     }
+
 
     onPageLoaded = () => this.setState({isLoaded: true, footerLoaded: true});
 
     render() {
         return (
-            <Page>
+            <Page newsItems={this.props.newsItems}>
                 <TitleHeader/>
                 <Catalog onLoad={this.onPageLoaded} page={this.props.page} items={this.props.items} totals={this.props.totals}/>
             </Page>
@@ -34,44 +32,52 @@ class ResourcesWrapper extends Component {
 
 Index.getInitialProps = async ({ query }) => {
     let limit = 0;
-    let property;
-    await Service.getCatalogByPage(query.page!==undefined?query.page:1)
-        .then(async(response) => {
-            console.log(response)
+    let property,
+        page = query.page!==undefined?['1', query.page]:['1'];
 
-            const {success, error, totals} = response;
-            let {data} = response;
+    for(let i=0; i<=page.length; i++){
+        await Service.getCatalogByPage(page[i])
+            .then(async(response) => {
 
-            if (success) {
-                if (limit) {
-                    data = data.reverse();
-                    data.splice(0, data.length - limit);
-                }
+                const {success, error, totals} = response;
+                let {data} = response;
 
-                let promises = [];
+                if (success) {
+                    if (limit) {
+                        data = data.reverse();
+                        data.splice(0, data.length - limit);
+                    }
 
-                data.forEach(item => {
-                    promises.push(Service.getPostMedia(item.featured_media));
-                    promises.push(Service.getAuthor(item.author));
-                });
+                    let promises = [];
 
-                await Promise.all(promises).then(response => {
-
-                    data.map((item, i) => {
-                        const {success: mediaSuccess, data: mediaData} = response[2 * i];
-                        const {success: authorSuccess, data: authorData} = response[2 * i + 1];
-
-                        if (mediaSuccess) item.imageUrl = mediaData.source_url;
-                        if (authorSuccess) item.authorName = authorData.name;
+                    data.forEach(item => {
+                        promises.push(Service.getPostMedia(item.featured_media));
+                        promises.push(Service.getAuthor(item.author));
                     });
 
-                })
-                property = {
-                    items: data,
-                    totals: totals
+                    await Promise.all(promises).then(response => {
+
+                        data.map((item, i) => {
+                            const {success: mediaSuccess, data: mediaData} = response[2 * i];
+                            const {success: authorSuccess, data: authorData} = response[2 * i + 1];
+
+                            if (mediaSuccess) item.imageUrl = mediaData.source_url;
+                            if (authorSuccess) item.authorName = authorData.name;
+                        });
+
+                    })
+
+                    property = {
+                        items: data,
+                        totals: totals
+                    }
+                    if(page[i]==='1'){
+                        property.news = data;
+                        property.newsTotals = totals;
+                    }
                 }
-            }
-        })
+            })
+    }
 
     return property;
 }

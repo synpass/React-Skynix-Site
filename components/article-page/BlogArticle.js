@@ -3,13 +3,10 @@ import ArticleHeader from "../article-page/ArticleHeader";
 import Social from "../article-page/Social";
 import ArticleBody from "../article-page/ArticleBody";
 import Comments from '../article-page/Comments.js';
-import Articles from '../article-page/Articles.js';
 import PropTypes from 'prop-types';
-import Service from "../resources/service";
 
 
 function BlogArticle(props) {
-    console.log('ARTICLE')
 
     if(!props)return false;
     return (
