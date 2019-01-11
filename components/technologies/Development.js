@@ -1,5 +1,4 @@
 import {Animated} from "react-animated-css";
-import Particle from "../Particle";
 import DevelopmentBrands from "./DevelopmentBrands"
 
 export default function Development() {
