@@ -2,64 +2,46 @@
   {
     "id": 0,
     "imgClass": "aws",
-    "img": "aws-logo.png",
-    "link": "/",
-    "linkTitle": "Aws"
+    "img": "aws-logo.png"
   },
   {
     "id": 1,
     "imgClass": "microsoft-azure",
-    "img": "azure-logo.png",
-    "link": "/",
-    "linkTitle": "Microsoft Azure"
+    "img": "azure-logo.png"
   },
   {
     "id": 2,
     "imgClass": "google-cloud",
-    "img": "google-cloud-logo.png",
-    "link": "/",
-    "linkTitle": "Google Cloud"
+    "img": "google-cloud-logo.png"
   },
   {
     "id": 3,
     "imgClass": "docker",
-    "img": "docker-logo.png",
-    "link": "/",
-    "linkTitle": "Docker"
+    "img": "docker-logo.png"
   },
   {
     "id": 4,
     "imgClass": "bitbucket",
-    "img": "bitbucket-logo.png",
-    "link": "/",
-    "linkTitle": "Bitbucket"
+    "img": "bitbucket-logo.png"
   },
   {
     "id": 5,
     "imgClass": "confluence",
-    "img": "confluence-logo.png",
-    "link": "/",
-    "linkTitle": "Confluence"
+    "img": "confluence-logo.png"
   },
   {
     "id": 6,
     "imgClass": "jira",
-    "img": "jira-logo.png",
-    "link": "/",
-    "linkTitle": "Jira Software"
+    "img": "jira-logo.png"
   },
   {
     "id": 7,
     "imgClass": "bamboo",
-    "img": "bamboo-logo.png",
-    "link": "/",
-    "linkTitle": "Bamboo"
+    "img": "bamboo-logo.png"
   },
   {
     "id": 8,
     "imgClass": "jenkins",
-    "img": "jenkins-logo.png",
-    "link": "/",
-    "linkTitle": "Jenkins"
+    "img": "jenkins-logo.png"
   }
 ]
