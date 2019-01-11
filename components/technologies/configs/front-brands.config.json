@@ -1,69 +1,67 @@
-[
+[   
+  {
+    "id": 12,
+    "imgClass": "jquery",
+    "img": "jquery-logo.png"
+  },
+  {
+    "id": 11,
+    "imgClass": "vue",
+    "img": "vue-logo.png"
+  },
+  {
+    "id": 10,
+    "imgClass": "angular",
+    "img": "angular-logo.png"
+  },
+  {
+    "id": 9,
+    "imgClass": "ember",
+    "img": "ember-logo.png"
+  },
+  {
+    "id": 8,
+    "imgClass": "react",
+    "img": "react-logo.png"
+  },
+  {
+    "id": 7,
+    "imgClass": "node",
+    "img": "node-logo.png"
+  },
   {
     "id": 6,
     "imgClass": "sencha",
-    "img": "sencha-logo.png",
-    "link": "/",
-    "linkTitle": "Sencha"
+    "img": "sencha-logo.png"
   },
   {
     "id": 5,
     "imgClass": "phone-gap",
-    "img": "phonegap-logo.png",
-    "link": "/",
-    "linkTitle": "PhoneGap"
+    "img": "phonegap-logo.png"
   },
   {
     "id": 4,
     "imgClass": "apache-cordova",
-    "img": "apache-cordova-logo.png",
-    "link": "/",
-    "linkTitle": "Apache Cordova"
+    "img": "apache-cordova-logo.png"
   },
   {
     "id": 3,
     "imgClass": "ionic",
-    "img": "ionic-logo.png",
-    "link": "/",
-    "linkTitle": "Ionic"
+    "img": "ionic-logo.png"
   },
   {
     "id": 2,
     "imgClass": "bootstrap",
-    "img": "bootstrap-logo.png",
-    "link": "/",
-    "linkTitle": "Bootstrap"
+    "img": "bootstrap-logo.png"
   },
   {
     "id": 1,
     "imgClass": "adobe-air",
-    "img": "adobe-air-logo.png",
-    "link": "/",
-    "linkTitle": "Adobe Air"
+    "img": "adobe-air-logo.png"
   },
   {
     "id": 0,
     "imgClass": "js",
-    "img": "js-logo.png",
-    "children":[
-       {
-        "name": "Node"
-       },
-       {
-        "name": "React"
-       },
-       {
-        "name": "Ember"
-       },
-       {
-        "name": "Angular"
-       },
-       {
-        "name": "Vue"
-       },
-       {
-        "name": "jQuery"
-       }
-    ]
+    "img": "js-logo.png"
   }
 ]

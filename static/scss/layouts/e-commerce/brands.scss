@@ -55,6 +55,19 @@
       @include laptop {
         transform: scale(1);
       }
+        
+      &.react,&.jquery{
+          width: 100%;
+          height: auto;
+          max-width: 215px;
+      }
+        
+      &.vue{
+          width: 100%;
+          height: auto;
+          max-width: 160px;  
+      } 
+      
       &.magento {
         width: 226px;
         height: 78px;
