@@ -18,7 +18,7 @@ export default class DevelopmentBrands extends Component {
     render() {
         return (
             <LazyLoad className='ec-brands' onLoad={this.onLoad}>
-                <div className='ec-brands__row'>
+                <div className='ec-brands__row tech__block-nohover'>
                     {brands.map(brand => <BrandItem {...brand} show={this.state.show} key={brand.id}/>)}
                 </div>
             </LazyLoad>
