@@ -25,6 +25,9 @@
             z-index: 1;
             display: block;
             position: relative;
+            &--top{
+                background-position: 80% 25%;
+            }
         }
         
     }
