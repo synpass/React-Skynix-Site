@@ -1,0 +1,119 @@
+.pr-competitivepricing {
+	max-width: 1230px;
+	z-index: 2;
+	width: 100%;
+	padding: 0 15px;
+	margin: 0 auto;
+	position: relative;
+	font-family: $proxima;
+	.paragraph {
+		font-family: $proxima;
+		max-width: 100%;
+		font-weight: 400;
+		color: $dark-pale;
+		margin-top: 0;
+		margin-bottom: 10px;
+		@include laptop {
+			max-width: 600px;
+			margin-bottom: 15px;
+		}
+	}
+	&__row {
+		margin-top: 50px;
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+		@include laptop {
+			flex-direction: row;
+		}
+	}
+	.section-heading {
+		font-weight: 400;
+	}
+	&__col {
+		flex:1;
+	}
+	&__padding-left {
+		padding-left: 0;
+		@include laptop {
+			padding-left: 80px;
+		}
+	}
+	&__hidden-line {
+		&:before {
+			display: none;
+		}
+	}
+	&__info-hidden {
+		position: absolute;
+		display: none;
+		margin-top:15px;
+		left: 0;
+		padding: 20px 30px;
+		background-color: $white;
+		width: 100%;
+		z-index: 1;
+		text-align: left;
+		box-shadow: 0 10px 120px rgba(42, 42, 42, 0.2);
+		border: 1px solid $lilac;
+		@include laptop {
+			top: -90px;
+			left: 50px;
+			width: 620px;
+			padding: 60px 90px;
+			margin-top: 0;
+		}
+		* {
+			margin: 0;
+			padding: 0;
+		}
+		&:before {
+			display: none;
+			content: '';
+			position: absolute;
+			top: 64px;
+			left: 0;
+			width: 0;
+			height: 0;
+			border-top: 36px solid transparent;
+			border-bottom: 36px solid transparent;
+			border-right: 36px solid $white;
+			transform: translateX(-50%);
+			@include laptop {
+				display: block;
+			}
+		}
+		p {
+			padding-top: 25px;
+			color: $grey-dark;
+			font-size: 14px;
+			font-weight: 400;
+			line-height: 22px;
+		}
+	}
+	&__info {
+		width: 24px;
+		height: 24px;
+		display: inline-block;
+		margin-left: 10px;
+		border:1px solid $blue;
+		border-radius: 50%;
+		color: $blue;
+		text-align: center;
+		font-size: 18px;
+		font-weight: 400;
+		line-height: 24px;
+		cursor: pointer;
+		@include laptop {
+			position: relative;
+		}
+		&:hover {
+			.pr-competitivepricing__info-hidden {
+				display: block;
+			}
+		}
+	}
+	&__inline {
+		display: inline;
+	}
+}

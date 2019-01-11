@@ -6,6 +6,7 @@ import Footer from './footer/Footer';
 import {Animated} from "react-animated-css";
 import ParallaxSlide from "./ParallaxSlide";
 import ContactBlock from "../components/contact/ContactBlock";
+import JsonLd from '../components/JsonLd';
 
 import Meta from "./Meta";
 import Head from 'next/head'
@@ -74,6 +75,7 @@ export default class Page extends Component {
         return (
             <div className={className}>
                 <Head>
+                    <JsonLd data={data} />
                     <meta name="robots" content="noindex, nofollow"/>
                     <meta name="viewport" content="initial-scale=1.0, width=device-width"/>
                     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"/>

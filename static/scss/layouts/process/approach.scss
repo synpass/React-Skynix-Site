@@ -1,0 +1,25 @@
+.pr-approach {
+	max-width: 1230px;
+	width: 100%;
+	padding: 0 15px;
+	margin: 80px auto 0;
+	position: relative;
+	font-family: $proxima;
+	z-index: 2;
+	@include tablets {
+		margin: 160px auto 0;
+	}
+	.heading__sub {
+		text-transform: uppercase;
+	}
+	.paragraph {
+		margin-top: 50px;
+		margin-bottom: 0;
+		color: $grey-dark;
+	}
+	&__particle {
+		position: absolute;
+		top: 0px;
+		right: 0;
+	}
+}

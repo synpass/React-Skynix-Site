@@ -113,10 +113,9 @@ export default class Form extends Component {
                             name='project'
                             label='Your Inquiry'
                             type='textarea'
-                            parentClass='contact-form__field--big'
                         />
-
                         <Attachments onChange={this.handleAttachmentsChange} files={files}/>
+                        <Agreement error={error} value={agreement} onChange={this.handleAgreementsChange}/>
                     </div>
                     <div className='contact-form__submit'>
                         <button type='submit'>
@@ -124,7 +123,6 @@ export default class Form extends Component {
                             <span>send</span>
                         </button></div>
                 </form>
-                <Agreement error={error} value={agreement} onChange={this.handleAgreementsChange}/>
             </div>
         )
     }

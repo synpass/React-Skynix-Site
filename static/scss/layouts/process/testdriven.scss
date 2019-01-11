@@ -1,0 +1,295 @@
+.pr-testdriven {
+	max-width: 1440px;
+	width: 100%;
+	padding: 0 15px;
+	margin: 0 auto;
+	position: relative;
+	font-family: $proxima;
+	&__fon-title-area {
+		max-width: 700px;
+		width: 100%;
+		text-align: center;
+		margin: 25px auto;
+		@include tablets {
+			margin: 0px auto 80px;
+		}
+		.fon-title {
+			color: $grey-light;
+			font-family: $sofia-semibold;
+			font-size: 110px;
+			font-weight: 400;
+			line-height: 22px;
+			margin:0;
+			@include tablets {
+				font-size: 200px;
+			}
+		}
+	}
+	&__content {
+		max-width: 580px;
+		width: 100%;
+		margin: 10px auto;
+		padding: 20px 30px;
+		box-shadow: 0 10px 120px rgba(42, 42, 42, 0.2);
+		border: 1px solid $lilac;
+		background-color: $white;
+		@include laptop {
+			margin: 120px auto 50px;
+			padding: 60px 80px;
+		}
+		* {
+			margin: 0;
+			padding: 0;
+		}
+		.content-show {
+			opacity: 1;
+			height: auto;
+			overflow: hidden;
+			transition: all 1s;
+			@include laptop {
+				height: 0;
+				opacity: 0;
+			}
+			&.active {
+				height: auto;
+				opacity: 1;
+			}
+		}
+		.content-title {
+			color: $blue;
+			font-size: 18px;
+			font-weight: 700;
+			line-height: 34px;
+			padding-bottom: 10px;
+			padding-top: 25px;
+			@include laptop {
+				padding-bottom: 20px;
+				padding-top: 0;
+			}
+		}
+		ul {
+			padding-left: 15px;
+		}
+		li, p {
+			color: $grey-dark;
+			font-size: 14px;
+			font-weight: 400;
+			line-height: 22px;
+		}
+	}
+	&__wave-area {
+		width: 1020px;
+		margin: 0 auto;
+		height: 165px;
+		display: none;
+		background-image: url("/static/images/process/testdriven/step/first-step.png"); 
+		background-repeat: no-repeat;
+		background-size: 100% 100%;
+		position: relative;
+		transition: all 0.8s;
+		@include laptop {
+			display: block;
+		}
+		@include desktop {
+			width: 100%;
+		}
+		&.step-1 {
+			background-image: url("/static/images/process/testdriven/step/step1.png");
+		}
+		&.step-2 {
+			background-image: url("/static/images/process/testdriven/step/step2.png");
+		}
+		&.step-3 {
+			background-image: url("/static/images/process/testdriven/step/step3.png");
+		}
+		&.step-4 {
+			background-image: url("/static/images/process/testdriven/step/step4.png");
+		}
+		&.step-5 {
+			background-image: url("/static/images/process/testdriven/step/step5.png");
+		}
+		&.step-6 {
+			background-image: url("/static/images/process/testdriven/step/step6.png");
+		}
+		&.step-7 {
+			background-image: url("/static/images/process/testdriven/step/step7.png");
+		}
+		&.step-8 {
+			background-image: url("/static/images/process/testdriven/step/step8.png");
+		}
+		.item-wave {
+			position: absolute;
+			width: 150px;
+			height: 150px;
+			cursor: pointer;
+			&:before {
+				content: '';
+				position: absolute;
+				top: 0;
+				left: calc(50% - 5px);
+				width: 10px;
+				height: 10px;
+				border-radius: 50%;
+				background: $blue;
+				transition: all 0.4s;
+			}
+			&.active {
+				&:before {
+					content: '';
+					position: absolute;
+					width: 100px;
+					height: 100px;
+					border-radius: 50%;
+					border: 2px solid $blue;
+					z-index: 2;
+					top: -45px;
+					left: calc(50% - 50px);
+				}
+				.wave-title {
+					top: 45px;
+					color: $blue;
+					&.text-top {
+						bottom: 190px;
+						top: auto;
+					}
+				}
+			}
+			.wave-title {
+				color: $dark-pale;
+				font-size: 14px;
+				line-height: 18px;
+				font-weight: 700;
+				width: 200px;
+				position: absolute;
+				left: calc(50% - 100px);
+				text-align: center;
+				top: 0;
+				transition: all 0.4s;
+				@include desktop {
+					font-size: 18px;
+					line-height: 28px;
+				}
+				&.text-top {
+					bottom: 145px;
+					top: auto;
+				}
+			}
+			&.active {
+				color: $blue;
+				font-weight: 700;
+			}
+			&:nth-child(1) {
+				left: 62px;
+				top: 7px;
+				@include desktop{
+					left: 111px;
+					top: 7px;
+				}
+				&.active, &:hover {
+					&:before {
+						background: url("/static/images/process/testdriven/projectkickoff.svg") no-repeat center center, #fff;
+						background-size: 55% 55%;
+					}
+				}
+			}
+			&:nth-child(2) {
+				left: 184px;
+				top: 63px;
+				@include desktop{
+					left: 280px;
+					top: 63px;
+				}
+				&.active, &:hover {
+					&:before {
+						background: url("/static/images/process/testdriven/development.svg") no-repeat center center, #fff;
+						background-size: 55% 55%;
+					}
+				}
+			}
+			&:nth-child(3) {
+				left: 334px;
+				top: 103px;
+				@include desktop{
+					left: 483px;
+					top: 103px;
+				}
+				&.active, &:hover {
+					&:before {
+						background: url("/static/images/process/testdriven/networking.svg") no-repeat center center, #fff;
+						background-size: 55% 55%;
+					}
+				}
+			}
+			&:nth-child(4) {
+				left: 472px;
+				top: 65px;
+				@include desktop{
+					left: 673px;
+					top: 65px;
+				}
+				&.active, &:hover {
+					&:before {
+						background: url("/static/images/process/testdriven/cloud-computing.svg") no-repeat center center, #fff;
+						background-size: 55% 55%;
+					}
+				}
+			}
+			&:nth-child(5) {
+				left: 568px;
+				top: 36px;
+				@include desktop{
+					left: 802px;
+					top: 36px;
+				}
+				&.active, &:hover {
+					&:before {
+						background: url("/static/images/process/testdriven/checklist.svg") no-repeat center center, #fff;
+						background-size: 55% 55%;
+					}
+				}
+			}
+			&:nth-child(6) {
+				left: 671px;
+				top: 27px;
+				@include desktop{
+					left: 942px;
+					top: 27px;
+				}
+				&.active, &:hover {
+					&:before {
+						background: url("/static/images/process/testdriven/data.svg") no-repeat center center, #fff;
+						background-size: 55% 55%;
+					}
+				}
+			}
+			&:nth-child(7) {
+				left: 752px;
+				top: 38px;
+				@include desktop{
+					left: 1054px;
+					top: 38px;
+				}
+				&.active, &:hover {
+					&:before {
+						background: url("/static/images/process/testdriven/flag.svg") no-repeat center center, #fff;
+						background-size: 55% 55%;
+					}
+				}
+			}
+			&:nth-child(8) {
+				left: 817px;
+				top: 61px;
+				@include desktop{
+					left: 1155px;
+					top: 61px;
+				}
+				&.active, &:hover {
+					&:before {
+						background: url("/static/images/process/testdriven/cloud-computing.svg") no-repeat center center, #fff;
+						background-size: 55% 55%;
+					}
+				}
+			}
+		}
+	}
+}

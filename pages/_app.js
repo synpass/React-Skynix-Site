@@ -8,9 +8,11 @@ import React from 'react'
 import App, {Container} from 'next/app'
 import BlogArticle from "../components/article-page/BlogArticle";
 import Page from "../components/Page";
+
 import Service from "../components/resources/service";
 import Index from "./resources";
 import Document from "next/document";
+import meta from './index-meta.config.json';
 
 export default class MyApp extends App {
     constructor(props) {
@@ -90,6 +92,7 @@ export default class MyApp extends App {
         }
         return $_GET;
     }
+
 
     render() {
         const {Component, pageProps, newsItems} = this.props

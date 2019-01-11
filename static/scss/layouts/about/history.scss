@@ -1,0 +1,23 @@
+.as-history {
+	max-width: 1230px;
+	z-index: 2;
+	width: 100%;
+	padding: 0 15px;
+	margin: 0 auto;
+	position: relative;
+	font-family: $proxima;
+	&__paragraph {
+		font-family: $proxima;
+		max-width: 100%;
+		font-weight: 400;
+		color: $dark-pale;
+		margin-top: 0;
+		margin-bottom: 10px;
+		@include laptop {
+			margin-bottom: 15px;
+		}
+	}
+	&__heading {
+		font-weight: 400;
+	}
+}

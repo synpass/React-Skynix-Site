@@ -1,6 +1,5 @@
 import React from 'react';
 import LazyLoad from "../LazyLoad";
-import Particle from "../Particle";
 import { Animated } from 'react-animated-css';
 
 export default function OfflineCommerce() {

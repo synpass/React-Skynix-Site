@@ -7,11 +7,23 @@
 
 @import "e-commerce/intro";
 @import "e-commerce/rate";
+@import "e-commerce/themedev";
 @import "e-commerce/brands";
 @import "e-commerce/platform";
 @import "e-commerce/offlinecommerce";
 @import "e-commerce/bugfixing";
 @import "e-commerce/datamigration";
+
+@import "process/partnership";
+@import "process/testdriven";
+@import "process/engagement";
+@import "process/competitivepricing";
+@import "process/approach";
+
+@import "about/history";
+@import "about/skynixteam";
+
+@import "privacypolicy/privacypolicycontent";
 
 @import "contact";
 
@@ -24,4 +36,5 @@
 @import  "article/blog-article";
 @import  "article/blog-article-share";
 
-
+@import "technologies/tech-bg.scss";
+@import "technologies/tech-block.scss";

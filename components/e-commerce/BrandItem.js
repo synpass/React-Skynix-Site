@@ -6,7 +6,7 @@ export default function BrandItem(props) {
     const {show, img, imgClass, id, link, linkTitle} = props;
     return (
         <Animated className='ec-brands__item' isVisible={show} animationInDelay={id * 250}>
-            <img src={'/static/images/brands/' + img} className={imgClass}/>
+            <img src={'/static/images/brands/' + img} className={imgClass}/> 
             { link
                 ?   <a href={link}>
                         <span>More about starting with {linkTitle}</span>
