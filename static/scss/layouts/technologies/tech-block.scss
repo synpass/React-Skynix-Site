@@ -9,6 +9,9 @@
         &-pos1{
             padding-top: 100px;
             .brand{
+                &:hover{
+                    cursor:default;
+                }
                 &:last-child{
                     flex: none;
                 }
@@ -22,6 +25,11 @@
         &-pos3{
             position: relative;
             z-index: 10;
+        }
+        &-nohover{
+            .brands{
+                cursor: default;
+            }
         }
         .heading{
             font-size: 32px;
