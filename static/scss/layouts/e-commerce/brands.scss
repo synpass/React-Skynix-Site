@@ -63,6 +63,24 @@
         width: 227px;
         height: 65px;
       }
+        
+      &.wordpress-logo, {
+        width: 100%;
+        height: auto;
+        max-width: 200px;
+      }
+        
+      &.laravel-logo {
+        width: 100%;
+        height: auto;
+        max-width: 150px;
+      }
+      
+      &.zend-logo{
+        width: 100%;
+        height: auto;
+        max-width: 400px;  
+      }
     }
     div {
         opacity: 0;
@@ -82,13 +100,13 @@
         li{
             list-style: none;
             margin: 10px 0px;
+            
+            img{
+                max-width: 50px;
+                width: 100%;
+            }
             &:first-child{
                 margin: 0;
-            }
-            &:before {
-                content: "•";
-                color: $blue;
-                margin: 0px 10px;
             }
         }
     }
