@@ -4,7 +4,7 @@ import {Animated} from "react-animated-css";
 export default function Ideology() {
 	const animation = {
 		animationIn: 'fadeInRight',
-		animationInDelay: 1500
+		animationInDelay: 1000
 	};
 	return (
 		<Animated {...animation} className='as-history'>

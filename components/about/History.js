@@ -4,7 +4,7 @@ import {Animated} from "react-animated-css";
 export default function History() {
 	const animation = {
 		animationIn: 'fadeInLeft',
-		animationInDelay: 1100
+		animationInDelay: 600
 	};
 	return (
 		<Animated {...animation} className='as-history'>

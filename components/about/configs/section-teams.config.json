@@ -1,0 +1,262 @@
+[
+	{
+		"idTeam": 1,
+		"imageTeam": "/static/images/about/teams/Kristina-Antypova.jpg",
+		"nameTeam": "Kristina Antypova",
+		"positionTeam": "Marketing and Project Manager",
+		"shortBioTeam": "Agile planner and manager for multidisciplinary and cross-functional teams, with passion for marketing and a British MBA background.",
+		"facebookLinksTeam": "https://www.facebook.com/SkynixUkraine/",
+		"linkedinLinksTeam": "https://www.linkedin.com/in/kristina-antypova-834196a4/",
+		"skypeLinksTeam": ""
+	},
+	{
+		"idTeam": 2,
+		"imageTeam": "/static/images/about/teams/bogdan-k.jpg",
+		"nameTeam": "Bogdan Kushlyk",
+		"positionTeam": "Business Development Manager",
+		"shortBioTeam": "Strong skills in planning, market analysis, and project management. Proven as an effective communicator able to make different teams co-work.",
+		"facebookLinksTeam": "https://www.facebook.com/SkynixUkraine/",
+		"linkedinLinksTeam": "https://www.linkedin.com/in/bogdan-k-b6831059/",
+		"skypeLinksTeam": ""
+	},
+	{
+		"idTeam": 3,
+		"imageTeam": "/static/images/about/teams/verokika_reznik.jpg",
+		"nameTeam": "Veronika Reznik",
+		"positionTeam": "Project Manager",
+		"shortBioTeam": "",
+		"facebookLinksTeam": "https://www.facebook.com/veronika.reznik.1",
+		"linkedinLinksTeam": "https://www.linkedin.com/in/veronika-reznik-033148bb/",
+		"skypeLinksTeam": ""
+	},
+	{
+		"idTeam": 4,
+		"imageTeam": "/static/images/about/teams/k_prokopova.jpg",
+		"nameTeam": "Kateryna Prokopova",
+		"positionTeam": "Office Manager",
+		"shortBioTeam": "Specialist in the fields of international information, communications and relations.",
+		"facebookLinksTeam": "https://www.facebook.com/kat.prokopova",
+		"linkedinLinksTeam": "https://www.linkedin.com/in/kateryna-prokopova-1a0997161",
+		"skypeLinksTeam": ""
+	},
+	{
+		"idTeam": 5,
+		"imageTeam": "/static/images/about/teams/Natalia-Yakimenko.jpg",
+		"nameTeam": "Natalia Yakimenko",
+		"positionTeam": "Chief Accountant",
+		"shortBioTeam": "",
+		"facebookLinksTeam": "https://www.facebook.com/SkynixUkraine/",
+		"linkedinLinksTeam": "",
+		"skypeLinksTeam": ""
+	},
+	{
+		"idTeam": 6,
+		"imageTeam": "/static/images/about/teams/o-prozhoga.jpg",
+		"nameTeam": "Oleksii Prozhoha",
+		"positionTeam": "Chief Technology Officer",
+		"shortBioTeam": "Highly-skilled software developer with more than 16 years of professional experience and an incredible attention to detail.",
+		"facebookLinksTeam": "https://www.facebook.com/alekseyyp",
+		"linkedinLinksTeam": "https://www.linkedin.com/in/alekseyyp",
+		"skypeLinksTeam": "skype:skynixukraine?call"
+	},
+	{
+		"idTeam": 7,
+		"imageTeam": "/static/images/about/teams/v-prozhoga.jpg",
+		"nameTeam": "Vitaliy Prozhoga",
+		"positionTeam": "Front End Developer",
+		"shortBioTeam": "",
+		"facebookLinksTeam": "https://www.facebook.com/SkynixUkraine/",
+		"linkedinLinksTeam": "",
+		"skypeLinksTeam": ""
+	},
+	{
+		"idTeam": 8,
+		"imageTeam": "/static/images/about/teams/Olha-Hrybuk.jpg",
+		"nameTeam": "Olha Hrybuk",
+		"positionTeam": "PHP / Magento Developer",
+		"shortBioTeam": "",
+		"facebookLinksTeam": "https://www.facebook.com/SkynixUkraine/",
+		"linkedinLinksTeam": "",
+		"skypeLinksTeam": ""
+	},
+	{
+		"idTeam": 9,
+		"imageTeam": "/static/images/about/teams/alex-griban.jpg",
+		"nameTeam": "Oleksii Griban",
+		"positionTeam": "Back End Developer",
+		"shortBioTeam": "",
+		"facebookLinksTeam": "https://www.facebook.com/SkynixUkraine/",
+		"linkedinLinksTeam": "",
+		"skypeLinksTeam": ""
+	},
+	{
+		"idTeam": 10,
+		"imageTeam": "/static/images/about/teams/Anastasiia-Kachura.jpg",
+		"nameTeam": "Anastasia Kachura",
+		"positionTeam": "Lead Front End Developer",
+		"shortBioTeam": "",
+		"facebookLinksTeam": "https://www.facebook.com/SkynixUkraine/",
+		"linkedinLinksTeam": "",
+		"skypeLinksTeam": ""
+	},
+	{
+		"idTeam": 11,
+		"imageTeam": "/static/images/about/teams/Yurii-Geivakh.jpg",
+		"nameTeam": "Yurii Geivakh",
+		"positionTeam": "Front End Developer",
+		"shortBioTeam": "",
+		"facebookLinksTeam": "https://www.facebook.com/SkynixUkraine/",
+		"linkedinLinksTeam": "",
+		"skypeLinksTeam": ""
+	},
+	{
+		"idTeam": 12,
+		"imageTeam": "/static/images/about/teams/Oleksandr-Malamud.jpg",
+		"nameTeam": "Oleksandr Malamud",
+		"positionTeam": "Front End Developer",
+		"shortBioTeam": "",
+		"facebookLinksTeam": "https://www.facebook.com/SkynixUkraine/",
+		"linkedinLinksTeam": "",
+		"skypeLinksTeam": ""
+	},
+	{
+		"idTeam": 13,
+		"imageTeam": "/static/images/about/teams/v-litvinov.jpg",
+		"nameTeam": "Vladymir Litvinov",
+		"positionTeam": "SEO Specialist",
+		"shortBioTeam": "",
+		"facebookLinksTeam": "https://www.facebook.com/SkynixUkraine/",
+		"linkedinLinksTeam": "",
+		"skypeLinksTeam": ""
+	},
+	{
+		"idTeam": 14,
+		"imageTeam": "/static/images/about/teams/Anton-Matyunin.jpg",
+		"nameTeam": "Anton Matyunin",
+		"positionTeam": "DevOps Engineer",
+		"shortBioTeam": "",
+		"facebookLinksTeam": "https://www.facebook.com/SkynixUkraine/",
+		"linkedinLinksTeam": "",
+		"skypeLinksTeam": ""
+	},
+	{
+		"idTeam": 15,
+		"imageTeam": "/static/images/about/teams/Anton-Lykhatskyi.jpg",
+		"nameTeam": "Anton Lykhatskyi",
+		"positionTeam": "Front End Developer",
+		"shortBioTeam": "",
+		"facebookLinksTeam": "https://www.facebook.com/SkynixUkraine/",
+		"linkedinLinksTeam": "",
+		"skypeLinksTeam": ""
+	},
+	{
+		"idTeam": 16,
+		"imageTeam": "/static/images/about/teams/i-luchko.jpg",
+		"nameTeam": "Igor Luchko",
+		"positionTeam": "Back End Developer",
+		"shortBioTeam": "",
+		"facebookLinksTeam": "https://www.facebook.com/SkynixUkraine/",
+		"linkedinLinksTeam": "",
+		"skypeLinksTeam": ""
+	},
+	{
+		"idTeam": 17,
+		"imageTeam": "/static/images/about/teams/borys-l.jpg",
+		"nameTeam": "Boris Lemeshko",
+		"positionTeam": "Back End Developer",
+		"shortBioTeam": "",
+		"facebookLinksTeam": "https://www.facebook.com/SkynixUkraine/",
+		"linkedinLinksTeam": "",
+		"skypeLinksTeam": ""
+	},
+	{
+		"idTeam": 18,
+		"imageTeam": "/static/images/about/teams/Maksim-Sukhar.jpg",
+		"nameTeam": "Maksim Sukhar",
+		"positionTeam": "QA Engineer",
+		"shortBioTeam": "",
+		"facebookLinksTeam": "https://www.facebook.com/SkynixUkraine/",
+		"linkedinLinksTeam": "",
+		"skypeLinksTeam": ""
+	},
+	{
+		"idTeam": 19,
+		"imageTeam": "/static/images/about/teams/Volodymyr-Babak-.jpg",
+		"nameTeam": "Volodymyr Babak",
+		"positionTeam": "Back End Developer",
+		"shortBioTeam": "",
+		"facebookLinksTeam": "https://www.facebook.com/SkynixUkraine/",
+		"linkedinLinksTeam": "",
+		"skypeLinksTeam": ""
+	},
+	{
+		"idTeam": 20,
+		"imageTeam": "/static/images/about/teams/Tetiana-Dmitrenko.jpg",
+		"nameTeam": "Tetiana Dmitrenko",
+		"positionTeam": "Front End Developer",
+		"shortBioTeam": "",
+		"facebookLinksTeam": "https://www.facebook.com/SkynixUkraine/",
+		"linkedinLinksTeam": "",
+		"skypeLinksTeam": ""
+	},
+	{
+		"idTeam": 21,
+		"imageTeam": "/static/images/about/teams/Maryna-Skrypnyk.jpg",
+		"nameTeam": "Maryna Skrypnyk",
+		"positionTeam": "Front End Developer",
+		"shortBioTeam": "",
+		"facebookLinksTeam": "https://www.facebook.com/SkynixUkraine/",
+		"linkedinLinksTeam": "",
+		"skypeLinksTeam": ""
+	},
+	{
+		"idTeam": 22,
+		"imageTeam": "/static/images/about/teams/o-bulba.jpg",
+		"nameTeam": "Oleksii Bulba",
+		"positionTeam": "Back End Developer",
+		"shortBioTeam": "",
+		"facebookLinksTeam": "https://www.facebook.com/SkynixUkraine/",
+		"linkedinLinksTeam": "",
+		"skypeLinksTeam": ""
+	},
+	{
+		"idTeam": 23,
+		"imageTeam": "/static/images/about/teams/oleg-m.jpg",
+		"nameTeam": "Oleg Pristashkin",
+		"positionTeam": "Back End Developer",
+		"shortBioTeam": "",
+		"facebookLinksTeam": "https://www.facebook.com/SkynixUkraine/",
+		"linkedinLinksTeam": "",
+		"skypeLinksTeam": ""
+	},
+	{
+		"idTeam": 24,
+		"imageTeam": "/static/images/about/teams/o-lihachov.jpg",
+		"nameTeam": "Oleksii Lihachov",
+		"positionTeam": "Front End Developer",
+		"shortBioTeam": "",
+		"facebookLinksTeam": "https://www.facebook.com/SkynixUkraine/",
+		"linkedinLinksTeam": "",
+		"skypeLinksTeam": ""
+	},
+	{
+		"idTeam": 25,
+		"imageTeam": "/static/images/about/teams/d-bondaletov.jpg",
+		"nameTeam": "Denis Bondaletov",
+		"positionTeam": "System Administrator",
+		"shortBioTeam": "",
+		"facebookLinksTeam": "https://www.facebook.com/SkynixUkraine/",
+		"linkedinLinksTeam": "",
+		"skypeLinksTeam": ""
+	},
+	{
+		"idTeam": 26,
+		"imageTeam": "/static/images/about/teams/Helena-Sajuk.jpg",
+		"nameTeam": "Helena Sajuk",
+		"positionTeam": "QA Engineer",
+		"shortBioTeam": "",
+		"facebookLinksTeam": "https://www.facebook.com/SkynixUkraine/",
+		"linkedinLinksTeam": "",
+		"skypeLinksTeam": ""
+	}
+]
