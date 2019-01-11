@@ -15,6 +15,7 @@ const Index = withRouter((props) => {
 class ResourcesWrapper extends Component {
     constructor(props) {
         super(props);
+        this.state = {isLoaded: false}
     }
 
 

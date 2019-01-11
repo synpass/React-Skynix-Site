@@ -7,7 +7,6 @@ export default function NewsItem(props) {
 
 
     function _openArticle(e){
-        console.log('Open article')
         let params = window.location.origin +'/'+e;
         document.location.href = params;
     }

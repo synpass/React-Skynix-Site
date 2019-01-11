@@ -1,5 +1,4 @@
 import Document, { Head, Main, NextScript } from 'next/document';
-import Service from "../components/resources/service";
 
 export default class MyDocument extends Document {
     static async getInitialProps(ctx) {

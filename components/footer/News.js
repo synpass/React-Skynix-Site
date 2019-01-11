@@ -2,7 +2,7 @@ import React from 'react';
 import NewsItem from "./NewsItem";
 import PropTypes from 'prop-types';
 
-function NewsWrapped(props) {
+function News(props) {
     const { items } = props;
 
     return (
@@ -14,8 +14,6 @@ function NewsWrapped(props) {
         </div>
     );
 }
-
-const News = NewsWrapped;
 
 export default News;
 
