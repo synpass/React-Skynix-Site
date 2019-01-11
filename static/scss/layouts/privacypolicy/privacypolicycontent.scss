@@ -1,0 +1,28 @@
+.pp-content {
+	max-width: 1230px;
+	width: 100%;
+	padding: 0 15px;
+	margin: 60px auto 0;
+	position: relative;
+	font-family: $proxima;
+	* {
+		margin: 0;
+		padding: 0;
+	}
+	p, li {
+		font-size: 16px;
+		line-height: 20px;
+	}
+	p, ul {
+		margin-bottom: 20px;
+	}
+	ul, ol {
+		padding-left: 25px;
+	}
+	h3 {
+		font-size: 20px;
+		line-height: 24px;
+		margin-bottom: 10px;
+		font-family: $proxima-semibold;
+	}
+}

@@ -10,7 +10,7 @@ export default function Header() {
                     <Animated animationIn='fadeInDown'>
                         <div className='header__logo'>
                             <Link href='/'>
-                                <a><img src='/static/images/skynix_logo_2018.svg' alt='Skynix LLC logo' rel='canonical'/></a>
+                                <a><img src='/static/images/skynix_logo_2018.svg' alt='Skynix LLC logo'/></a>
                             </Link>
                         </div>
                     </Animated>
