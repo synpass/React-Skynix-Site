@@ -133,7 +133,7 @@
 				background: $blue;
 				transition: all 0.4s;
 			}
-			&.active, &:hover {
+			&.active {
 				&:before {
 					content: '';
 					position: absolute;

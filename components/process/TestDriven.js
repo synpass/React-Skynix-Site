@@ -4,16 +4,16 @@ import LazyLoad from "../LazyLoad";
 export default class TestDriven extends Component {
 	componentDidMount() {
 		const script = (
-			$('#td-title .item-wave').hover(function testDriven() {
+			$('.js-hook__td-title').find('.item-wave').hover(function testDriven() {
 				let titledata = $(this).data('wavetitle');
-				let title = $('#td-title');
-				let contentItem = $('#td-content').find('.content-show');
+				let title = $('.js-hook__td-title');
+				let contentItem = $('.js-hook__td-content').find('.content-show');
 				title.find('.item-wave').removeClass('active');
 				contentItem.removeClass('active');
-				title.attr('class', 'pr-testdriven__wave-area');
+				title.attr('class', 'pr-testdriven__wave-area js-hook__td-title');
 				title.addClass('step-' + titledata);
 				$(this).addClass('active');
-				$('#td-content').find('.content-show[data-wavecontainer=' + titledata + ']').addClass('active');
+				$('.js-hook__td-content').find('.content-show[data-wavecontainer=' + titledata + ']').addClass('active');
 			}));
 	}
 	render () {
@@ -24,7 +24,7 @@ export default class TestDriven extends Component {
 						<h2 className="section-heading">agile test driven development</h2>
 					</div>
 
-					<div id="td-title" className='pr-testdriven__wave-area step-1'>
+					<div className='pr-testdriven__wave-area step-1 js-hook__td-title'>
 						<div className='item-wave active' data-wavetitle="1">
 							<h4 className='wave-title text-top'>Project Kickoff</h4>
 						</div>
@@ -55,7 +55,7 @@ export default class TestDriven extends Component {
 						</div>
 					</div>
 
-					<div id="td-content" className="pr-testdriven__content">
+					<div className="pr-testdriven__content js-hook__td-content">
 
 						<div className="content-show active" data-wavecontainer="1" >
 							<h5 className="content-title">Project Kickoff</h5>
