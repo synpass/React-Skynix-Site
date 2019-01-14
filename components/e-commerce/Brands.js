@@ -8,7 +8,6 @@ export default class Brands extends Component {
         super(props);
         this.state = {show: false};
         this.onLoad = this.onLoad.bind(this);
-        this.brands;
     }
     onLoad() {
         this.setState({show: true});
