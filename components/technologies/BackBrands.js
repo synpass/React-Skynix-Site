@@ -17,7 +17,7 @@ export default class Brands extends Component {
     render() {
         return (
             <LazyLoad className='ec-brands ec-brands__tech' onLoad={this.onLoad}>
-                <div className='ec-brands__row tech__block-nohover'>
+                <div className='ec-brands__row'>
                   <TechBrandItem/>
                 </div>
             </LazyLoad>
