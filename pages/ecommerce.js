@@ -7,6 +7,8 @@ import Brands from "../components/e-commerce/Brands";
 import OfflineCommerce from "../components/e-commerce/OfflineCommerce";
 import Platform from "../components/e-commerce/platform/Platform";
 import BugFixing from "../components/e-commerce/BugFixing";
+import brands from '../components/e-commerce/configs/brands.config.json';
+
 
 export default class Ecommerce extends Component {
     render() {
@@ -14,7 +16,7 @@ export default class Ecommerce extends Component {
             <Page>
                 <Rate/>
                 <ThemeDev/>
-                <Brands/>
+                <Brands brands={brands}/>
                 <Platform/>
                 <DataMigration/>
                 <BugFixing/>

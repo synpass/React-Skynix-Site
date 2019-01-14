@@ -1,5 +1,7 @@
 import {Animated} from "react-animated-css";
 import DevelopmentBrands from "./DevelopmentBrands"
+import brands from './configs/development-brands.config.json';
+import Brands from "../e-commerce/Brands";
 
 export default function Development() {
     const animation = {
@@ -18,7 +20,7 @@ export default function Development() {
                 reliable architecture, and your customers never have to face any<br/>
                 downtimes, technical or security difficulties.
             </p>
-            <DevelopmentBrands/>
+            <Brands brands={brands}/>
         </div>
     </Animated>
     )
