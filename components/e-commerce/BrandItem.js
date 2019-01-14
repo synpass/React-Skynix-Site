@@ -5,7 +5,7 @@ import PropTypes from 'prop-types';
 export default function BrandItem(props) {
     const {show, img, imgClass, id, link, linkTitle} = props;
     return (
-        <Animated className='ec-brands__item' isVisible={show} animationInDelay={id * 250}>
+        <Animated className={'ec-brands__item' + (link ? "" : " brand cursor--default")} isVisible={show} animationInDelay={id * 250}>
             <img src={'/static/images/brands/' + img} className={imgClass}/> 
             { link
                 ?   <a href={link}>
