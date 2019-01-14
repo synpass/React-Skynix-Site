@@ -1,5 +1,4 @@
 import {Animated} from "react-animated-css";
-import DevelopmentBrands from "./DevelopmentBrands"
 import brands from './configs/development-brands.config.json';
 import Brands from "../e-commerce/Brands";
 
