@@ -12,7 +12,7 @@ import meta from './index-meta.config.json';
 export default class Process extends Component {
 	render() {
 		return (
-			<Page meta={meta}>
+			<Page meta={meta} newsItems={this.props.newsItems}>
 				<Approach/>
 				<TestDriven/>
 				<Competitivepricing/>

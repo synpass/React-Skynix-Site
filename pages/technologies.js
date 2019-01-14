@@ -7,7 +7,7 @@ import ElegantFrontend from "../components/technologies/ElegantFrontend";
 export default class Technologies extends Component {
     render() {
         return (
-            <Page>
+            <Page newsItems={this.props.newsItems}>
                 <TitleHeader/>
                 <RichBackend/>
                 <ElegantFrontend/>

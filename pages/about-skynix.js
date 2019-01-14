@@ -10,7 +10,7 @@ import Modal from "../components/about/libs/Modal.js";
 export default class AboutSkynix extends Component {
     render() {
         return (
-            <Page>
+            <Page newsItems={this.props.newsItems}>
                 <TitleHeader/>
                 <History/>
                 <Ideology/>

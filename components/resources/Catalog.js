@@ -3,29 +3,39 @@ import CatalogArticle from "./CatalogArticle";
 import {Animated} from "react-animated-css";
 import PropTypes from 'prop-types';
 import Pagination from "../Pagination";
-import PostsWrapper from './PostsWrapper';
 
-function CatalogWrapped(props) {
-    const {page, items, totals} = props;
-    const animation = {
-        animationIn: 'fadeInUp',
-        animationInDelay: 600
-    };
-    return (
-        <Animated {...animation}>
+
+class Catalog extends Component {
+    constructor(props) {
+        super(props);
+
+        this.animation = {
+            animationIn: 'fadeInUp',
+            animationInDelay: 600
+        };
+    }
+
+    componentDidMount(){
+        this.setState({
+            isLoaded: true,
+        });
+
+        this.props.onLoad();
+    }
+
+    render() {
+        return(
             <div className='catalog'>
-                {items.map(item => <CatalogArticle {...item} key={item.id}/>)}
+                {this.props.items.map(item => <CatalogArticle {...item} key={item.id}/>)}
                 <Pagination
-                    current={page}
-                    total={totals}
+                    current={this.props.page}
+                    total={this.props.totals}
                     navLink='/resources'
                 />
             </div>
-        </Animated>
-    );
+        )
+    }
 }
-
-const Catalog = PostsWrapper(CatalogWrapped);
 
 export default Catalog;
 
@@ -35,7 +45,7 @@ Catalog.propTypes = {
         PropTypes.number
     ]),
     items: PropTypes.array,
-    totals:  PropTypes.oneOfType([
+    totals: PropTypes.oneOfType([
         PropTypes.string,
         PropTypes.number
     ])

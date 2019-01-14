@@ -9,9 +9,12 @@ import Platform from "../components/e-commerce/platform/Platform";
 import BugFixing from "../components/e-commerce/BugFixing";
 
 export default class Ecommerce extends Component {
+    constructor(props) {
+        super(props);
+    }
     render() {
         return (
-            <Page>
+            <Page newsItems={this.props.newsItems}>
                 <Rate/>
                 <ThemeDev/>
                 <Brands/>

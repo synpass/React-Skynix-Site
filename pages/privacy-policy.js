@@ -6,7 +6,7 @@ import PrivacyPolicyContent from "../components/privacypolicy/PrivacyPolicyConte
 export default class PrivacyPolicy extends Component {
     render() {
         return (
-            <Page>
+            <Page newsItems={this.props.newsItems}>
                 <TitleHeader/>
                 <PrivacyPolicyContent/>
             </Page>
