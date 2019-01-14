@@ -33,9 +33,10 @@ export default class Page extends Component {
     footerLoaded = () => this.setState({footerLoaded: true});
 
     render() {
-        const {children, className, meta, animate, isLoaded} = this.props;
+        const {children, className, meta, animate, isLoaded, newsItems} = this.props;
 
         const {loaded, preload, footerLoaded} = this.state;
+        console.log(this.props)
 
         const content = (
             <div className="content__adaptive">
@@ -46,7 +47,7 @@ export default class Page extends Component {
                         </div>
                     </div>
                     <ContactBlock/>
-                    <Footer onLoad={this.footerLoaded} page={1}/>
+                    <Footer onLoad={this.footerLoaded} page={1} items={newsItems}/>
                     <Header/>
                 </div>
             </div>
@@ -63,14 +64,14 @@ export default class Page extends Component {
                 "telephone":"+380680783755",
                 "url":"https:\/\/skynix.co/#contact",
                 "contactType":"customer support"
-                },
+            },
             "sameAs":[
-        "https:\/\/www.facebook.com\/SkynixLLC\/",
-        "https:\/\/twitter.com\/SkynixLLC",
-        "https:\/\/www.instagram.com\/skynixllc\/",
-        "https:\/\/www.youtube.com\/channel\/UCh9-x-GicQl51jFGmM0RoKw",
-        "https:\/\/www.linkedin.com\/company\/skynix\/"
-        ]}
+                "https:\/\/www.facebook.com\/SkynixLLC\/",
+                "https:\/\/twitter.com\/SkynixLLC",
+                "https:\/\/www.instagram.com\/skynixllc\/",
+                "https:\/\/www.youtube.com\/channel\/UCh9-x-GicQl51jFGmM0RoKw",
+                "https:\/\/www.linkedin.com\/company\/skynix\/"
+            ]}
 
         return (
             <div className={className}>

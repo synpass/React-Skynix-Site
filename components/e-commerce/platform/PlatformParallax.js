@@ -5,7 +5,7 @@ import PlatformParallaxSlide from "./PlatformParallaxItem";
 export default function PlatformParallax () {
     return (
         <div className='platform-parallax'>
-            {images.map(e => <PlatformParallaxSlide {...e} />)}
+            {images.map(e => <PlatformParallaxSlide {...e} key={e}/>)}
         </div>
     )
 }

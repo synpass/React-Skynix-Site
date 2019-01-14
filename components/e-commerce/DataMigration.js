@@ -27,7 +27,7 @@ export default function DataMigration() {
                         <li>Woocommerce</li>
                         <li>3Dcart</li>
                     </ul>
-                    <a class="ec-datamigration__link" href="#">More about Magento 1 to Magento 2 migration</a>
+                    <a className="ec-datamigration__link" href="#">More about Magento 1 to Magento 2 migration</a>
                 </div>
             </div>
         </LazyLoad>
