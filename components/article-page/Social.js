@@ -2,7 +2,8 @@ import React, {Component} from 'react';
 
 export default class Social extends Component{
     render(){
-        const url = window.location.href;
+         const url = '';
+
         const sLinks = [
             {className: 'facebook', target: '_blank', href:`https://www.facebook.com/sharer/sharer.php?u=${url}`},
             {className: 'gplus', target: '_blank', href:`https://plus.google.com/share?url=${url}`},
@@ -23,6 +24,6 @@ export default class Social extends Component{
                 )
             }
         );
-        return <div className='blog-article-share__icons'>{ listSocialLinks }</div>;
+        return <div className='blog-article-share__icons'>{listSocialLinks}</div>;
     }
 }

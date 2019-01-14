@@ -2,13 +2,18 @@ import React, {Component} from 'react';
 import Page from "../../components/Page";
 import BlogArticle from "../../components/article-page/BlogArticle";
 import Service from "../../components/resources/service";
-import Resources from "./index";
-export default class ArticlePage extends Component {
+import { withRouter } from 'next/router'
+
+
+const ArticlePage = withRouter((props) => {
+    const{slug, articleItems, news} = props;
+    return <ArticleWrap page={props.router.query.page} slug={slug} article={articleItems} news={news}/>
+});
+
+
+class ArticleWrap extends Component {
     constructor(props) {
         super(props);
-        console.log(props)
-
-
         this.state = {
             articleLoaded: false,
         };
@@ -16,18 +21,18 @@ export default class ArticlePage extends Component {
 
     articleLoaded = () => this.setState({articleLoaded: true});
     render() {
-        console.log('render')
-        const{slug, articleItems, news} = this.props;
+        const{slug, article, news} = this.props;
+        console.log(this.props)
         return (
             <Page newsItems={news}>
-                <BlogArticle articleItems={articleItems} limit={1} onLoad={this.articleLoaded} slug={slug}/>
+                <BlogArticle article={article} limit={1} onLoad={this.articleLoaded} slug={slug}/>
             </Page>
         )
     }
 }
 
+
 ArticlePage.getInitialProps = async ({ query }) => {
-    // console.log(query)
     let property,
         limit = query.limit || 0;
     await Service.getArticleBySlug(query.slug)
@@ -108,3 +113,6 @@ ArticlePage.getInitialProps = async ({ query }) => {
 
     return property;
 }
+
+
+export default ArticlePage;

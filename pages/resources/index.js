@@ -1,12 +1,9 @@
 import React, {Component} from 'react';
 import Page from "../../components/Page";
-import ParallaxText from "../../components/ParallaxText";
 import Catalog from "../../components/resources/Catalog";
 import { withRouter } from 'next/router'
 import TitleHeader from "../../components/resources/TitleHeader";
-import CatalogArticle from "../../components/resources/CatalogArticle";
 import Service from "../../components/resources/service";
-import Document from "next/document";
 
 const Index = withRouter((props) => {
     return <ResourcesWrapper page={props.router.query.page} items={props.items} totals={props.totals} newsItems={props.news}/>
@@ -18,12 +15,11 @@ class ResourcesWrapper extends Component {
         this.state = {isLoaded: false}
     }
 
-
     onPageLoaded = () => this.setState({isLoaded: true, footerLoaded: true});
 
     render() {
         return (
-            <Page newsItems={this.props.newsItems}>
+            <Page newsItems={this.props.newsItems} loading={true} isLoaded={this.state.isLoaded}>
                 <TitleHeader/>
                 <Catalog onLoad={this.onPageLoaded} page={this.props.page} items={this.props.items} totals={this.props.totals}/>
             </Page>
@@ -33,8 +29,9 @@ class ResourcesWrapper extends Component {
 
 Index.getInitialProps = async ({ query }) => {
     let limit = 0;
-    let property,
+    let property = {},
         page = query.page!==undefined?['1', query.page]:['1'];
+
 
     for(let i=0; i<=page.length; i++){
         await Service.getCatalogByPage(page[i])
@@ -68,10 +65,9 @@ Index.getInitialProps = async ({ query }) => {
 
                     })
 
-                    property = {
-                        items: data,
-                        totals: totals
-                    }
+                    property.items = data;
+                    property.totals= totals
+
                     if(page[i]==='1'){
                         property.news = data;
                         property.newsTotals = totals;

@@ -15,6 +15,14 @@ class Catalog extends Component {
         };
     }
 
+    componentDidMount(){
+        this.setState({
+            isLoaded: true,
+        });
+
+        this.props.onLoad();
+    }
+
     render() {
         return(
             <div className='catalog'>

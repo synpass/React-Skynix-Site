@@ -11,9 +11,6 @@ import BugFixing from "../components/e-commerce/BugFixing";
 export default class Ecommerce extends Component {
     constructor(props) {
         super(props);
-        console.log('CONSTRUCTOR')
-        console.log(props)
-        console.log()
     }
     render() {
         return (

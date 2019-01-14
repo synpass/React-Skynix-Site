@@ -14,7 +14,7 @@ export default class MyApp extends App {
 
         this.state = {
             rendered: false,
-            articleLoaded: true
+            articleLoaded: false
         }
     }
 

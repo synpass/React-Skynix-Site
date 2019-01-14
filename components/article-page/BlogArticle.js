@@ -7,10 +7,9 @@ import PropTypes from 'prop-types';
 
 
 function BlogArticle(props) {
-
     if(!props)return false;
     return (
-        props.articleItems.map(item =>
+        props.article.map(item =>
             <div key={item.id}>
                 <div className='blog-article' >
                     <ArticleHeader {...item}/>

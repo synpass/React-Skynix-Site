@@ -33,7 +33,7 @@ export default class Page extends Component {
     footerLoaded = () => this.setState({footerLoaded: true});
 
     render() {
-        const {children, className, meta, animate, isLoaded} = this.props;
+        const {children, className, meta, animate, isLoaded, newsItems} = this.props;
 
         const {loaded, preload, footerLoaded} = this.state;
 
@@ -46,7 +46,7 @@ export default class Page extends Component {
                         </div>
                     </div>
                     <ContactBlock/>
-                    <Footer onLoad={this.footerLoaded} page={1}/>
+                    <Footer onLoad={this.footerLoaded} page={1} articles={newsItems}/>
                     <Header/>
                 </div>
             </div>
