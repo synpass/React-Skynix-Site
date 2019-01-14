@@ -36,6 +36,7 @@ export default class Page extends Component {
         const {children, className, meta, animate, isLoaded, newsItems} = this.props;
 
         const {loaded, preload, footerLoaded} = this.state;
+        console.log(this.props)
 
         const content = (
             <div className="content__adaptive">
@@ -46,7 +47,7 @@ export default class Page extends Component {
                         </div>
                     </div>
                     <ContactBlock/>
-                    <Footer onLoad={this.footerLoaded} page={1} articles={newsItems}/>
+                    <Footer onLoad={this.footerLoaded} page={1} items={newsItems}/>
                     <Header/>
                 </div>
             </div>
