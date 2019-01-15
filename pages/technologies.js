@@ -5,6 +5,7 @@ import RichBackend from "../components/technologies/RichBackend";
 import ElegantFrontend from "../components/technologies/ElegantFrontend";
 import Development from "../components/technologies/Development";
 import QualityAssurance from "../components/technologies/QualityAssurance";
+import Engine from "../components/technologies/Engine";
 
 export default class Technologies extends Component {
     render() {
@@ -15,6 +16,7 @@ export default class Technologies extends Component {
                 <ElegantFrontend/>
                 <Development/>
                 <QualityAssurance/>
+                <Engine/>
             </Page>
         )
     }
