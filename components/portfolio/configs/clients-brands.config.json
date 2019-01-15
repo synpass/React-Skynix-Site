@@ -1,0 +1,47 @@
+[
+  {
+    "id": 0,
+    "imgClass": "bikebiz-logo",
+    "img": "bikebiz-logo.png"
+  },
+  {
+    "id": 1,
+    "imgClass": "tradetested-logo",
+    "img": "tradetested-logo.png"
+  },
+  {
+    "id": 2,
+    "imgClass": "ddrops-logo",
+    "img": "ddrops-logo.svg"
+  },
+  {
+    "id": 3,
+    "imgClass": "dampe-logo",
+    "img": "dampe-logo.svg"
+  },
+  {
+    "id": 4,
+    "imgClass": "viazoi-logo",
+    "img": "viazoi-logo.png"
+  },
+  {
+    "id": 5,
+    "imgClass": "unidencellular-logo",
+    "img": "unidencellular-logo.png"
+  },
+  {
+    "id": 6,
+    "imgClass": "santen-logo",
+    "img": "santen-logo.png"
+  },
+  {
+    "id": 7,
+    "imgClass": "aftereden-logo",
+    "img": "aftereden-logo.svg"
+  },
+  {
+    "id": 8,
+    "imgClass": "trovagene-logo",
+    "img": "trovagene-logo.png"
+  }
+]
