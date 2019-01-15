@@ -32,8 +32,8 @@ export default class Nav extends Component {
 
         return (
             <nav className="nav">
-                <ul className={menuClassName.join(" ")}>{navItems}</ul>
                 <Animated animationIn='fadeInDown' animationInDelay={400}>
+                    <ul className={menuClassName.join(" ")}>{navItems}</ul>
                     <button className={burgerClassName.join(" ")} onClick={this.toggleMobileMenu}>
                         <span/><span/><span/>
                     </button>
