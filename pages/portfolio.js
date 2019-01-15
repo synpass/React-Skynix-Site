@@ -5,7 +5,7 @@ import Experience from "../components/portfolio/Experience";
 export default class Portfolio extends Component {
     render() {
         return (
-            <Page newsItems={this.props.newsItems}>
+            <Page>
                 <Experience/>
             </Page>
         )
