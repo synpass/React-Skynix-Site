@@ -2,12 +2,11 @@ import React, {Component} from 'react';
 import {Animated} from "react-animated-css";
 import WorldMap from "./WorldMap";
 
-export default class Experience extends Component {
-    render(){
-    return(
+export default function Experience() {
+	return (
         <Animated 
         animationIn= "fadeInDown"
-        animationInDelay= {400}>>
+        animationInDelay= {400}>
             <div className='ec-titleheader'>
                 <h1 className='heading ec-titleheader__heading'><b>skynix</b> experience</h1>
                 <h3 className='paragraph'>
@@ -20,5 +19,4 @@ export default class Experience extends Component {
         </Animated>
         )
     }
-    
-}
+

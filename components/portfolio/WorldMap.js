@@ -1897,12 +1897,10 @@ class Map extends Component{
     }
 }
 
-export default class WorldMap extends Component {
-    render() {
-        return(
+export default function Experience() {
+	return (
             <div className="experience__map">
                 <Map/>
             </div>
         )
     }
-}
