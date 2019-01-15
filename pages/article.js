@@ -3,10 +3,11 @@ import Page from "../components/Page";
 import BlogArticle from "../components/article-page/BlogArticle";
 import Service from "../components/resources/service";
 import { withRouter } from 'next/router'
+import meta from './index-meta.config.json';
+
 
 
 const ArticlePage = withRouter((props) => {
-    console.log('Article page')
     const{slug, articleItems, news} = props;
     return <ArticleWrap page={props.router.query.page} slug={slug} article={articleItems} news={news}/>
 });
@@ -23,9 +24,9 @@ class ArticleWrap extends Component {
     articleLoaded = () => this.setState({articleLoaded: true});
     render() {
         const{slug, article, news} = this.props;
-        console.log(this.props)
+
         return (
-            <Page newsItems={news}>
+            <Page meta={meta} newsItems={news}>
                 <BlogArticle article={article} limit={1} onLoad={this.articleLoaded} slug={slug}/>
             </Page>
         )
