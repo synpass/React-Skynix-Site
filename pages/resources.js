@@ -1,13 +1,13 @@
 import React, {Component} from 'react';
-import Page from "../../components/Page";
-import Catalog from "../../components/resources/Catalog";
+import Page from "../components/Page";
+import Catalog from "../components/resources/Catalog";
 import { withRouter } from 'next/router'
-import TitleHeader from "../../components/resources/TitleHeader";
-import Service from "../../components/resources/service";
+import TitleHeader from "../components/resources/TitleHeader";
+import Service from "../components/resources/service";
+import truncate from 'html-truncate';
 
-const Index = withRouter((props) => {
-    console.log('Resources')
-    return <ResourcesWrapper page={props.router.query.page} items={props.items} totals={props.totals} newsItems={props.news}/>
+const Resources = withRouter((props) => {
+    return <ResourcesWrapper page={props.router.query.page} items={props.items} totals={props.totals} news={props.news}/>
 });
 
 class ResourcesWrapper extends Component {
@@ -20,7 +20,7 @@ class ResourcesWrapper extends Component {
 
     render() {
         return (
-            <Page newsItems={this.props.newsItems} loading={true} isLoaded={this.state.isLoaded}>
+            <Page news={this.props.news} loading={true} isLoaded={this.state.isLoaded}>
                 <TitleHeader/>
                 <Catalog onLoad={this.onPageLoaded} page={this.props.page} items={this.props.items} totals={this.props.totals}/>
             </Page>
@@ -28,7 +28,7 @@ class ResourcesWrapper extends Component {
     }
 }
 
-Index.getInitialProps = async ({ query }) => {
+Resources.getInitialProps = async ({ query }) => {
     let limit = 0;
     let property = {},
         page = query.page!==undefined?['1', query.page]:['1'];
@@ -62,16 +62,25 @@ Index.getInitialProps = async ({ query }) => {
 
                             if (mediaSuccess) item.imageUrl = mediaData.source_url;
                             if (authorSuccess) item.authorName = authorData.name;
+
+                            if(item.content) {
+                                item.content.rendered = item.content.rendered.replace(/<[^>]*>/g, '').slice(0,91);
+                            }
+
+                            if(item.excerpt) delete item.excerpt
                         });
 
                     })
 
-                    property.items = data;
-                    property.totals= totals
+                    property.items  = data;
+                    property.totals = totals
 
                     if(page[i]==='1'){
-                        property.news = data;
-                        property.newsTotals = totals;
+                        property.news = data.map(news=>Object.assign({}, news));
+
+                        property.news.map(info=>{
+                            if(info.content) delete info.content
+                        })
                     }
                 }
             })
@@ -85,4 +94,4 @@ ResourcesWrapper.defaultProps = {
     page: 1
 };
 
-export default Index;
+export default Resources;

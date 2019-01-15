@@ -6,7 +6,6 @@ import { withRouter } from 'next/router'
 
 
 const ArticlePage = withRouter((props) => {
-    console.log('Article page')
     const{slug, articleItems, news} = props;
     return <ArticleWrap page={props.router.query.page} slug={slug} article={articleItems} news={news}/>
 });
@@ -23,7 +22,6 @@ class ArticleWrap extends Component {
     articleLoaded = () => this.setState({articleLoaded: true});
     render() {
         const{slug, article, news} = this.props;
-        console.log(this.props)
         return (
             <Page newsItems={news}>
                 <BlogArticle article={article} limit={1} onLoad={this.articleLoaded} slug={slug}/>
@@ -106,6 +104,12 @@ ArticlePage.getInitialProps = async ({ query }) => {
                     });
 
                 })
+
+                data.forEach(news=>{
+                    if(news.content) delete news.content
+                    if(news.excerpt) delete news.excerpt
+                })
+
                 property.news = data;
                 property.newsTotals = totals;
 

@@ -25,7 +25,7 @@ export default class MyApp extends App {
         if (Component.getInitialProps) {
             pageProps = await Component.getInitialProps(ctx)
             return {pageProps}
-        } else if (!router.route.includes('/resources')) {
+        } else {
 
             await Service.getCatalogByPage(1)
                 .then(async (response) => {
@@ -57,6 +57,12 @@ export default class MyApp extends App {
                             });
 
                         })
+
+                        data.forEach(news=>{
+                            if(news.content) delete news.content
+                            if(news.excerpt) delete news.excerpt
+                        })
+
                         pageProps = {
                             newsItems: data,
                             newsTotals: totals
@@ -66,11 +72,10 @@ export default class MyApp extends App {
         }
 
         return pageProps
+        return pageProps
     }
 
     async componentDidMount() {
-        let limit = 0;
-        let property;
 
         this.setState({rendered: true});
     }

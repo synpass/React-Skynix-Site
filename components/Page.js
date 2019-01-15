@@ -33,10 +33,9 @@ export default class Page extends Component {
     footerLoaded = () => this.setState({footerLoaded: true});
 
     render() {
-        const {children, className, meta, animate, isLoaded, newsItems} = this.props;
+        const {children, className, meta, animate, isLoaded, newsItems, news} = this.props;
 
         const {loaded, preload, footerLoaded} = this.state;
-        console.log(this.props)
 
         const content = (
             <div className="content__adaptive">
@@ -47,7 +46,7 @@ export default class Page extends Component {
                         </div>
                     </div>
                     <ContactBlock/>
-                    <Footer onLoad={this.footerLoaded} page={1} items={newsItems}/>
+                    <Footer onLoad={this.footerLoaded} page={1} items={newsItems||news}/>
                     <Header/>
                 </div>
             </div>
