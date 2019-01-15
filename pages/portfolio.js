@@ -2,12 +2,10 @@ import React, {Component} from 'react';
 import Page from "../components/Page";
 import Experience from "../components/portfolio/Experience";
 
-export default class Portfolio extends Component {
-    render() {
-        return (
-            <Page>
-                <Experience/>
-            </Page>
-        )
-    }
+export default function Portfolio(props) {
+	return (
+        <Page newsItems={props.newsItems}>
+            <Experience/>
+        </Page>
+	)
 }
