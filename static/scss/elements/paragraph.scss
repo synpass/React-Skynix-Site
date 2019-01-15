@@ -5,6 +5,13 @@
   padding: 0 0 10px 50px;
   margin-top: 22px;
   position: relative;
+  &-size1{
+    font-size: 12px;
+    line-height: 18px;
+    letter-spacing: normal;
+    margin-top: 40px;
+    display: block;
+  }
   font: {
     size: 12px;
     family: $proxima;
