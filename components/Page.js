@@ -14,12 +14,14 @@ import Head from 'next/head'
 export default class Page extends Component {
     constructor(props) {
         super(props);
+
         this.state = {
             preload: false,
             loaded: !props.loading,
             footerLoaded: false
         };
     }
+
 
     componentDidMount() {
         setTimeout(function () {
@@ -33,8 +35,7 @@ export default class Page extends Component {
     footerLoaded = () => this.setState({footerLoaded: true});
 
     render() {
-        const {children, className, meta, animate, isLoaded, newsItems, news} = this.props;
-
+        const {children, className, meta, animate, isLoaded, newsItems, news, showLoader} = this.props;
         const {loaded, preload, footerLoaded} = this.state;
 
         const content = (
@@ -108,7 +109,7 @@ export default class Page extends Component {
                     {content}
                 </div>
 
-                <div style={{display: loaded && isLoaded && footerLoaded ? 'none' : 'block'}}>
+                <div style={{display:!showLoader || (loaded && isLoaded && footerLoaded) ? 'none' : 'block'}}>
                     <ParallaxSlide loaded={preload} animate={animate}/>
                 </div>
             </div>

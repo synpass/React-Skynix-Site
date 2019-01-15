@@ -1,8 +1,18 @@
 import React, {Component} from 'react';
 
 export default class Social extends Component{
+    constructor(props) {
+        super(props);
+
+        this.state = { url: '' };
+    }
+
+    componentDidMount(){
+        this.setState({url: window.location.href})
+    }
+
     render(){
-         const url = '';
+        const {url} = this.state;
 
         const sLinks = [
             {className: 'facebook', target: '_blank', href:`https://www.facebook.com/sharer/sharer.php?u=${url}`},

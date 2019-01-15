@@ -4,7 +4,7 @@ import Catalog from "../components/resources/Catalog";
 import { withRouter } from 'next/router'
 import TitleHeader from "../components/resources/TitleHeader";
 import Service from "../components/resources/service";
-import truncate from 'html-truncate';
+import meta from './index-meta.config.json';
 
 const Resources = withRouter((props) => {
     return <ResourcesWrapper page={props.router.query.page} items={props.items} totals={props.totals} news={props.news}/>
@@ -16,11 +16,12 @@ class ResourcesWrapper extends Component {
         this.state = {isLoaded: false}
     }
 
+
     onPageLoaded = () => this.setState({isLoaded: true, footerLoaded: true});
 
     render() {
         return (
-            <Page news={this.props.news} loading={true} isLoaded={this.state.isLoaded}>
+            <Page meta={meta} news={this.props.news} loading={true} isLoaded={this.state.isLoaded}>
                 <TitleHeader/>
                 <Catalog onLoad={this.onPageLoaded} page={this.props.page} items={this.props.items} totals={this.props.totals}/>
             </Page>
@@ -34,7 +35,7 @@ Resources.getInitialProps = async ({ query }) => {
         page = query.page!==undefined?['1', query.page]:['1'];
 
 
-    for(let i=0; i<=page.length; i++){
+    for(let i=0; i<page.length; i++){
         await Service.getCatalogByPage(page[i])
             .then(async(response) => {
 

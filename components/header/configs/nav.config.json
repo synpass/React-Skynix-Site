@@ -17,6 +17,10 @@
     "link": "/resources"
   },
   {
+    "name": "Portfolio",
+    "link": "/portfolio"
+  },
+  {
     "name": "Process",
     "link": "/process"
   },
