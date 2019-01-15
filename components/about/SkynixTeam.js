@@ -27,7 +27,7 @@ export default function SkynixTeam(props) {
 		}
 	};
 
-	let team = values.map(value => <SectionTeams {...value} key={value.id} />);
+	let team = values.map((value,i) => <SectionTeams {...value} key={value.idTeam} />);
 
 	return (
 		<LazyLoad className='as-skynixteam'>
@@ -40,7 +40,7 @@ export default function SkynixTeam(props) {
 }
 
 SkynixTeam.propTypes = {
-	idTeam: PropTypes.number.isRequired,
+	idTeam: PropTypes.number,
 	imageTeam: PropTypes.string,
 	nameTeam: PropTypes.string,
 	positionTeam: PropTypes.string,
