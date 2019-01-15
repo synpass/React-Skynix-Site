@@ -6,7 +6,6 @@ import TestDriven from "../components/process/TestDriven";
 import Competitivepricing from "../components/process/CompetitivePricing";
 import Engagement from "../components/process/Engagement";
 import Partnership from "../components/process/Partnership";
-
 import meta from './index-meta.config.json';
 
 export default class Process extends Component {

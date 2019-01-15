@@ -6,11 +6,13 @@ import Ideology from "../components/about/Ideology";
 import SkynixTeam from "../components/about/SkynixTeam";
 import Careers from "../components/about/Careers";
 import Modal from "../components/about/libs/Modal.js";
+import meta from './index-meta.config.json';
+
 
 export default class AboutSkynix extends Component {
     render() {
         return (
-            <Page newsItems={this.props.newsItems}>
+            <Page meta={meta} newsItems={this.props.newsItems}>
                 <TitleHeader/>
                 <History/>
                 <Ideology/>
