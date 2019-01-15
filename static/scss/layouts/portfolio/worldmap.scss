@@ -1,0 +1,26 @@
+.experience{
+    &__map{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        
+        &-circle,
+        &-mask{
+            pointer-events: all;    
+        }
+        
+        &-link{
+            pointer-events: none;    
+        }
+        
+        &-country{
+            pointer-events: visible;
+            fill: $grey;
+            stroke-width: 1;
+            &:hover{
+                fill: $grey-dark2;   
+            }
+            
+        }
+    }
+}
