@@ -30,7 +30,7 @@ export default class Form extends Component {
         };
 
         this.baseState = this.state;
-
+        this.loadingEvent = false;
         this.handleChange = this.handleChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
     }
@@ -51,10 +51,11 @@ export default class Form extends Component {
         this.setState({'isShowMask': true});
 
         setTimeout(function () {
-            this.setState({'isShowMask': false});
+            this.setState({'isShowMask': false, 'loadingEvent': false});
         }.bind(this), 5000);
     }
     handleSubmit(event) {
+        this.setState({'loadingEvent': true});
         const formInputs = ['name', 'contact', 'project'];
         event.preventDefault();
 
@@ -74,6 +75,7 @@ export default class Form extends Component {
             Service.getInTouch(data, this.showMask, this);
         } else {
             this.setState({showError: true});
+            this.setState({'loadingEvent': false});
         }
     }
 
@@ -119,8 +121,11 @@ export default class Form extends Component {
                     </div>
                     <div className='contact-form__submit'>
                         <button type='submit'>
-                            <img src='/static/images/ios-send.svg'/>
-                            <span>send</span>
+                            {   
+                                this.state.loadingEvent
+                                ? <div><span>loading</span><div className='loader'><div/><div/><div/><div/><div/><div/><div/></div></div>
+                                : <div><img src='/static/images/ios-send.svg'/><br/><span>send</span></div>
+                            }
                         </button></div>
                 </form>
             </div>
