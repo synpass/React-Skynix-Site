@@ -14,7 +14,8 @@ export default class MyApp extends App {
 
         this.state = {
             rendered: false,
-            articleLoaded: false
+            articleLoaded: false,
+            showLoader: false
         }
     }
 
@@ -69,10 +70,14 @@ export default class MyApp extends App {
     }
 
     async componentDidMount() {
-        let limit = 0;
-        let property;
-
         this.setState({rendered: true});
+
+        //Saves/gets to/from sessionStorage information about loader
+        if (window.sessionStorage.getItem('loader')) {
+            this.setState({showLoader: true})
+        } else {
+            window.sessionStorage.setItem('loader', true)
+        }
     }
 
     articleLoaded = () => this.setState({articleLoaded: true});

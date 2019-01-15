@@ -8,6 +8,7 @@ import OfflineCommerce from "../components/e-commerce/OfflineCommerce";
 import Platform from "../components/e-commerce/platform/Platform";
 import BugFixing from "../components/e-commerce/BugFixing";
 import brands from '../components/e-commerce/configs/brands.config.json';
+import meta from './index-meta.config.json';
 
 
 export default class Ecommerce extends Component {
@@ -16,7 +17,7 @@ export default class Ecommerce extends Component {
     }
     render() {
         return (
-            <Page newsItems={this.props.newsItems}>
+            <Page meta={meta} newsItems={this.props.newsItems}>
                 <Rate/>
                 <ThemeDev/>
                 <Brands brands={brands}/>
