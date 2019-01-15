@@ -1,20 +1,29 @@
 import React, {Component} from 'react';
-import ParallaxText from "../components/ParallaxText";
 import Page from "../components/Page";
 import Rate from "../components/e-commerce/Rate";
+import DataMigration from "../components/e-commerce/DataMigration";
 import ThemeDev from "../components/e-commerce/ThemeDev";
 import Brands from "../components/e-commerce/Brands";
+import OfflineCommerce from "../components/e-commerce/OfflineCommerce";
 import Platform from "../components/e-commerce/platform/Platform";
+import BugFixing from "../components/e-commerce/BugFixing";
+import brands from '../components/e-commerce/configs/brands.config.json';
+
 
 export default class Ecommerce extends Component {
+    constructor(props) {
+        super(props);
+    }
     render() {
         return (
-            <Page>
-                <ParallaxText/>
+            <Page newsItems={this.props.newsItems}>
                 <Rate/>
                 <ThemeDev/>
-                <Brands/>
+                <Brands brands={brands}/>
                 <Platform/>
+                <DataMigration/>
+                <BugFixing/>
+                <OfflineCommerce/>
             </Page>
         )
     }

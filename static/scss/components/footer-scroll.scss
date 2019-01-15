@@ -11,12 +11,14 @@
 
   &-wrapper {
     background: $white;
-    background: -webkit-linear-gradient(to bottom, transparent, $white);
-    background: linear-gradient(to bottom, transparent, $white);
     position: fixed;
     width: 100%;
     bottom: 0;
     left: 0;
+    @include tablets {
+      background: -webkit-linear-gradient(to bottom, transparent, $white);
+      background: linear-gradient(to bottom, transparent, $white);
+    }
   }
 
   &__links {

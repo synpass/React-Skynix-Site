@@ -1,0 +1,19 @@
+.ec-titleheader {
+  @include max-width;
+  position: relative;
+  z-index: 10;
+  &__heading {
+    padding-top: 120px;
+    @include tablets {
+      line-height: 66px;
+    }
+  }
+  &__particle {
+    position: absolute;
+    right: 0;
+    top: -40px;
+  }
+  &__padding-bottom {
+    padding-bottom: 100px;
+  }
+}

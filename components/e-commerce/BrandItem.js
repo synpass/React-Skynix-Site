@@ -5,12 +5,15 @@ import PropTypes from 'prop-types';
 export default function BrandItem(props) {
     const {show, img, imgClass, id, link, linkTitle} = props;
     return (
-        <Animated className='ec-brands__item' isVisible={show} animationInDelay={id * 250}>
-            <img src={'/static/images/brands/' + img} className={imgClass}/>
-            <a href={link}>
-                <span>More about staging with {linkTitle}</span>
-                <img src='/static/images/arrow-blue.svg'/>
-            </a>
+        <Animated className={'ec-brands__item' + (link ? "" : " brand cursor--default")} isVisible={show} animationInDelay={id * 250}>
+            <img src={'/static/images/brands/' + img} className={imgClass}/> 
+            { link
+                ?   <a href={link}>
+                        <span>More about starting with {linkTitle}</span>
+                        <img src='/static/images/arrow-blue.svg'/>
+                    </a>
+                : null
+              }
         </Animated>
     )
 }

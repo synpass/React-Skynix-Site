@@ -12,7 +12,7 @@ export default class Agreement extends Component {
                 <div className='agreement'>
                     <input type='checkbox' checked={value} id={id} onChange={onChange}/>
                     <label htmlFor={id} />
-                    <span>I have read and accepted <a href='/'>Terms & Conditions</a> and <a href='/'>Privacy Policy</a></span>
+                    <span>I have read and accepted <a href='/terms-conditions'>Terms & Conditions</a> and <a href='/privacy-policy'>Privacy Policy</a></span>
                 </div>
                 {error && !value ?  <ErrorMsg type='required'/> : null}
             </div>

@@ -1,7 +1,16 @@
 .content {
-  width: 100%;
-  position: relative;
-  margin: 0 auto;
-  overflow: hidden;
-  padding: 0 0 100px;
+	width: 100%;
+	position: relative;
+	margin: 0 auto;
+	padding: 0 0 100px;
+	&__adaptive {
+		overflow-x: hidden;
+		&>div {
+			max-width: 1080px;
+			margin: 0 auto;
+			@include desktop {
+				max-width: 100%;
+			}
+		}
+	}
 }

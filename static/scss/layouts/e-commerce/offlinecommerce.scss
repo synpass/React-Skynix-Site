@@ -1,0 +1,153 @@
+.ec-offlinecommerce {
+  @include max-width;
+  position: relative;
+  z-index: 10;
+  &__paragraph {
+    font-size: 14px;
+    line-height: 28px;
+    max-width: 650px;
+    padding-bottom: 14px;
+    margin-top: 8px;
+    margin-bottom: 0;
+    @include tablets {
+      font-size: 18px;
+    }
+    @include laptop {
+      max-width: 520px;
+    }
+    @include desktop {
+      max-width: 650px;
+    }
+  }
+  &__particle {
+    position: absolute;
+    right: 0;
+    top: -40px;
+  }
+  &__circle {
+    position: absolute;
+    z-index: 2;
+    bottom: 15px;
+    right: 230px;
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    background-color: $violet-light1;
+    border:24px solid $blue;
+    @include phones {
+      right: 415px;
+      width: 80px;
+      height: 80px;
+      bottom: 30px;
+      border: 33px solid $blue;
+    }
+    @include tablets {
+      font-size: 18px;
+      max-width: 580px;
+    }
+  }
+  &__cart{
+    position: absolute;
+    z-index: 1;
+    bottom: 25px;
+    right: 135px;
+    border-radius: 50%;
+    width: 130px;
+    height: 130px;
+    background-color: $violet-light2;
+    @include phones {
+      width: 220px;
+      height: 220px;
+      right: 230px;
+    }
+    &:before {
+      content: "";
+      position: absolute;
+      top: -10px;
+      bottom: -10px;
+      left: -10px;
+      right: -10px;
+      border-radius: 50%;
+      border: 2px solid $violet-light2;
+      @include phones {
+        top: -20px;
+        bottom: -20px;
+        left: -20px;
+        right: -20px;
+      }
+    }
+    &:after{
+      content: "";
+      position: absolute;
+      top: calc(50% - 23px);
+      left: calc(50% - 23px);
+      width: 46px;
+      height: 46px;
+      background: url("/static/images/cart.svg") no-repeat;
+      background-size: 100%;
+      @include phones {
+        top: calc(50% - 34px);
+        left: calc(50% - 34px);
+        width: 68px;
+        height: 68px;
+      }
+    }
+  }
+  &__home{
+    position: absolute;
+    z-index: 2;
+    bottom: 25px;
+    right: 30px;
+    border-radius: 50%;
+    width: 130px;
+    height: 130px;
+    background-color: $blue;
+    @include phones {
+      width: 220px;
+      height: 220px;
+      right: 50px;
+    }
+    &:before {
+      content: "";
+      position: absolute;
+      top: -10px;
+      bottom: -10px;
+      left: -10px;
+      right: -10px;
+      border-radius: 50%;
+      border: 2px solid $blue;
+      @include phones {
+        top: -20px;
+        bottom: -20px;
+        left: -20px;
+        right: -20px;
+      }
+    }
+    &:after{
+      content: "";
+      position: absolute;
+      top: calc(50% - 23px);
+      left: calc(50% - 23px);
+      width: 46px;
+      height: 46px;
+      background: url("/static/images/home.svg") no-repeat;
+      background-size: 100%;
+      @include phones {
+        top: calc(50% - 34px);
+        left: calc(50% - 34px);
+        width: 68px;
+        height: 68px;
+      }
+    }
+  }
+  &__padding-bottom {
+      padding-bottom: 200px;
+    @include phones {
+      padding-bottom: 270px;
+      margin-bottom: -100px;
+    }
+    @include laptop {
+      padding-bottom: 100px;
+    }
+  }
+}

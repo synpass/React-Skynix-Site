@@ -18,6 +18,10 @@ export default class Projects extends Component {
         this.setState({activeSlide: index});
     }
 
+    componentDidMount() {
+        require("../../static/libs/KeyNavSlider");
+    }
+
     render() {
         const lazyLoadProps = {
             className: 'projects',
@@ -47,7 +51,7 @@ export default class Projects extends Component {
                         <ProjectSlide {...project} key={project.id} index={project.id}/>
                     )}
                 </OwlCarousel>
-                <a href='/' className='projects__link hidden'>view more works</a>
+                <a href='/portfolio' className='projects__link'>view more works</a>
             </LazyLoad>
         )
     }

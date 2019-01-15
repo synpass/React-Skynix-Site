@@ -4,9 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "next",
+    "dev": "node server.js",
     "build": "next build",
-    "start": "next start"
+    "start": "NODE_ENV=production node server.js"
   },
   "repository": {
     "type": "git",
@@ -17,34 +17,36 @@
   "dependencies": {
     "@zeit/next-css": "^1.0.1",
     "axios": "^0.18.0",
+    "express": "^4.16.4",
     "next": "^7.0.2",
     "react": "^16.6.3",
-    "react-dom": "^16.6.3"
+    "react-dom": "^16.6.3",
+    "react-text-loop": "^2.0.1"
   },
   "devDependencies": {
     "@zeit/next-sass": "^1.0.1",
     "css-loader": "^1.0.1",
     "html-truncate": "^1.2.2",
+    "isomorphic-fetch": "^2.2.1",
+    "moment": "^2.22.2",
     "next-routes": "^1.4.2",
     "node-sass": "^4.10.0",
+    "owl.carousel": "^2.3.4",
     "parallax-js": "^3.1.0",
     "prop-types": "^15.6.2",
     "react-anchor-link-smooth-scroll": "^1.0.11",
     "react-animate-height": "^2.0.7",
     "react-animated-css": "^1.0.4",
     "react-html-parser": "^2.0.2",
+    "react-loader": "^2.4.5",
+    "react-moment": "^0.8.4",
     "react-owl-carousel2": "^0.3.0",
-    "react-plx": "^1.3.9",
     "react-parallax": "^2.0.1",
+    "react-plx": "^1.3.9",
     "react-scroll-parallax": "^1.3.5",
     "react-slick": "^0.23.2",
     "react-sticky": "^6.0.3",
     "shortid": "^2.2.14",
-    "style-loader": "^0.23.1",
-    "react-loader": "^2.4.5",
-    "moment": "^2.22.2",
-    "isomorphic-fetch": "^2.2.1",
-    "react-moment": "^0.8.4",
-    "owl.carousel": "^2.3.4"
+    "style-loader": "^0.23.1"
   }
 }

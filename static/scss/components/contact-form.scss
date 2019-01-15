@@ -2,19 +2,20 @@
   display: flex;
   width: 100%;
   flex-direction: column;
+  position: relative;
   box-shadow: 0 0 40px 18px rgba(28, 28, 28, 0.05);
   @include tablets {
     flex-direction: row;
   }
 
   &__body {
-    padding: 25px 20px;
+    padding: 15px 20px;
     background: $white;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
     @include tablets {
-      padding: 45px 80px 59px;
+      padding: 45px 80px 15px;
       width: calc(880 / 990 * 100% );
     }
   }
@@ -167,11 +168,13 @@
   }
   &__mask{
     display: flex;
+    transition: width 1.2s;
+    opacity: 1;
     position: absolute;
     top: 0;
-    left: 0;
+    width: 100%;
     right: 0;
-    bottom: 24px;
+    bottom: 0px;
     padding: 0 15px;
     z-index: 10;
     background: $blue;
@@ -182,5 +185,10 @@
     font-size: 18px;
     font-weight: 100;
     color: $white;
+    &.disablemask {
+      opacity: 0;
+      z-index: -1;
+      width: calc(110 / 990 * 100%);
+    }
   }
 }

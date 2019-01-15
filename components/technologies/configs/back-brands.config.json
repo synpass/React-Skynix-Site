@@ -1,0 +1,42 @@
+[
+  {
+    "id": 0,
+    "imgClass": "php-logo",
+    "img": "php-logo.png"
+  },
+  {
+    "id": 1,
+    "imgClass": "adobe-manager",
+    "img": "adobe-manager.png"
+  },
+  {
+    "id": 2,
+    "imgClass": "node-logo",
+    "img": "node-logo.png"
+  },
+  {
+    "id": 3,
+    "imgClass": "magento",
+    "img": "magento.svg"
+  },
+  {
+    "id": 4,
+    "imgClass": "yii-logo",
+    "img": "yii-logo.png"
+  },
+  {
+    "id": 5,
+    "imgClass": "wordpress-logo",
+    "img": "wordpress-logo.png"
+  },
+  {
+    "id": 6,
+    "imgClass": "laravel-logo",
+    "img": "laravel-logo.png"
+  },
+  {
+    "id": 7,
+    "imgClass": "zend-logo",
+    "img": "zend-logo.png"
+  }
+]

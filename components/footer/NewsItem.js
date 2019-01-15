@@ -1,20 +1,19 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import ReactHtmlParser from 'react-html-parser';
+import {Link} from '../../routes'
 
 export default function NewsItem(props) {
     const {imageUrl, title, slug} = props;
 
 
-    function _openArticle(e){
-        let params = window.location.origin +'/article?slug='+e;
-        document.location.href = params;
-    }
     return (
-        <a className='news-item' onClick={() => _openArticle(slug)}>
-            <div className='news-item__img' style={{backgroundImage: `url(${imageUrl}`}}/>
-            <p>{ReactHtmlParser(title.rendered)}</p>
-        </a>
+        <Link route="article" params={{slug:slug}}>
+            <span className='news-item'>
+                <div className='news-item__img' style={{backgroundImage: `url(${imageUrl}`}}/>
+                <p>{ReactHtmlParser(title.rendered)}</p>
+            </span>
+        </Link>
     )
 }
 

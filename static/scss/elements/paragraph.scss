@@ -4,7 +4,17 @@
   max-width: 558px;
   padding: 0 0 10px 50px;
   margin-top: 22px;
-  position: relative;
+  position: relative;   
+  &-size1{
+    font-size: 12px;
+    line-height: 18px;
+    letter-spacing: normal;
+    margin-top: 40px;
+    display: block;
+  }
+  &-pos1{
+    margin-top: 0;
+  }
   font: {
     size: 12px;
     family: $proxima;
@@ -15,6 +25,9 @@
     padding-left: 100px;
     padding-bottom: 60px;
     font-size: 14px;
+    &-size2{
+        font-size: 16px; 
+    }
   }
 
 

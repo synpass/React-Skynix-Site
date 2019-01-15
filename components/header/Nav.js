@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import shortid from 'shortid'
 import config from './configs/nav.config.json';
 import NavItem from './NavItem';
+import { Animated } from "react-animated-css";
 
 export default class Nav extends Component {
     constructor(props) {
@@ -32,9 +33,11 @@ export default class Nav extends Component {
         return (
             <nav className="nav">
                 <ul className={menuClassName.join(" ")}>{navItems}</ul>
-                <button className={burgerClassName.join(" ")} onClick={this.toggleMobileMenu}>
-                    <span/><span/><span/>
-                </button>
+                <Animated animationIn='fadeInDown' animationInDelay={400}>
+                    <button className={burgerClassName.join(" ")} onClick={this.toggleMobileMenu}>
+                        <span/><span/><span/>
+                    </button>
+                </Animated>
             </nav>
         )
     }
