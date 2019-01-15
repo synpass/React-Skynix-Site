@@ -2,6 +2,7 @@ import React from 'react';
 import News from "./News";
 import Social from "./Social";
 import Nav from "./Nav";
+import {CookieBanner} from '@palmabit/react-cookie-law';
 
 export default function Footer(props) {
     return (
@@ -22,6 +23,14 @@ export default function Footer(props) {
                         <span className='m-footer__copy'>Skynix LLC 2018</span>
                     </div>
                 </div>
+                <CookieBanner
+                  message="Cookie banner messate"
+                  policyLink="/privacy-policy"
+                  onAccept = {() => {}}
+                  onAcceptPreferences = {() => {}}
+                  onAcceptStatistics = {() => {}}
+                  onAcceptMarketing = {() => {}}
+                />
             </footer>
         </div>
     )
