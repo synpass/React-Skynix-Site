@@ -5,6 +5,9 @@
   padding: 0 0 10px 50px;
   margin-top: 22px;
   position: relative;
+  &-pos1{
+    margin-top: 0;      
+  }
   font: {
     size: 12px;
     family: $proxima;
