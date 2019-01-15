@@ -1,0 +1,32 @@
+[
+  {
+    "id": 0,
+    "imgClass": "jira",
+    "img": "jira-logo.png"
+  },
+  {
+    "id": 1,
+    "imgClass": "atlassian",
+    "img": "atlassian-logo.svg"
+  },
+  {
+    "id": 2,
+    "imgClass": "bitbucket",
+    "img": "bitbucket-logo.png"
+  },
+  {
+    "id": 3,
+    "imgClass": "slack",
+    "img": "slack-logo.png"
+  },
+  {
+    "id": 4,
+    "imgClass": "confluence",
+    "img": "confluence-logo.png"
+  },
+  {
+    "id": 5,
+    "imgClass": "service-logo",
+    "img": "service-logo.png"
+  }
+]
