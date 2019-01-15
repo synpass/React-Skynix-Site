@@ -15,10 +15,10 @@
         
         &-country{
             pointer-events: visible;
-            fill: #c0c0c0;
+            fill: $grey;
             stroke-width: 1;
             &:hover{
-                fill: #646e74;    
+                fill: $grey-dark2;   
             }
             
         }
