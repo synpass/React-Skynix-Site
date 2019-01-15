@@ -1,11 +1,12 @@
 import React, {Component} from 'react';
-import Page from "../../components/Page";
-import BlogArticle from "../../components/article-page/BlogArticle";
-import Service from "../../components/resources/service";
+import Page from "../components/Page";
+import BlogArticle from "../components/article-page/BlogArticle";
+import Service from "../components/resources/service";
 import { withRouter } from 'next/router'
 
 
 const ArticlePage = withRouter((props) => {
+    console.log('Article page')
     const{slug, articleItems, news} = props;
     return <ArticleWrap page={props.router.query.page} slug={slug} article={articleItems} news={news}/>
 });

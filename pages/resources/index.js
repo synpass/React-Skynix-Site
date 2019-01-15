@@ -6,6 +6,7 @@ import TitleHeader from "../../components/resources/TitleHeader";
 import Service from "../../components/resources/service";
 
 const Index = withRouter((props) => {
+    console.log('Resources')
     return <ResourcesWrapper page={props.router.query.page} items={props.items} totals={props.totals} newsItems={props.news}/>
 });
 
