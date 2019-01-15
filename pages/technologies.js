@@ -6,6 +6,7 @@ import ElegantFrontend from "../components/technologies/ElegantFrontend";
 import Development from "../components/technologies/Development";
 import QualityAssurance from "../components/technologies/QualityAssurance";
 import Engine from "../components/technologies/Engine";
+import ProjectManagement from "../components/technologies/ProjectManagement";
 
 export default class Technologies extends Component {
     render() {
@@ -17,6 +18,7 @@ export default class Technologies extends Component {
                 <Development/>
                 <QualityAssurance/>
                 <Engine/>
+                <ProjectManagement/>
             </Page>
         )
     }
