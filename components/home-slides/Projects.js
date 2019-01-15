@@ -51,7 +51,7 @@ export default class Projects extends Component {
                         <ProjectSlide {...project} key={project.id} index={project.id}/>
                     )}
                 </OwlCarousel>
-                <a href='/' className='projects__link'>view more works</a>
+                <a href='/portfolio' className='projects__link'>view more works</a>
             </LazyLoad>
         )
     }

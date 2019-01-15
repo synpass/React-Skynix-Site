@@ -25,6 +25,14 @@
             z-index: 1;
             display: block;
             position: relative;
+            &--top{
+                background-position: 80% 25%;
+            }
+        }
+        &-pos3{
+            position: relative;
+            margin-left: 50%;
+            margin-bottom: -2%;
         }
         
     }
