@@ -14,12 +14,14 @@ import Head from 'next/head'
 export default class Page extends Component {
     constructor(props) {
         super(props);
+
         this.state = {
             preload: false,
             loaded: !props.loading,
             footerLoaded: false
         };
     }
+
 
     componentDidMount() {
         setTimeout(function () {
@@ -33,10 +35,10 @@ export default class Page extends Component {
     footerLoaded = () => this.setState({footerLoaded: true});
 
     render() {
-        const {children, className, meta, animate, isLoaded, newsItems} = this.props;
+
+        const {children, className, meta, animate, isLoaded, newsItems, showLoader} = this.props;
 
         const {loaded, preload, footerLoaded} = this.state;
-        console.log(this.props)
 
         const content = (
             <div className="content__adaptive">
@@ -80,7 +82,6 @@ export default class Page extends Component {
                     <meta name="robots" content="noindex, nofollow"/>
                     <meta name="viewport" content="initial-scale=1.0, width=device-width"/>
                     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"/>
-                    <link rel="stylesheet" href="owl-carousel/owl.theme.css"/>
                     <link rel="stylesheet"
                           href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css"/>
                     <link rel="apple-touch-icon-precomposed" sizes="57x57" href="../static/images/favicon/apple-touch-icon-57x57.png" />
@@ -110,7 +111,7 @@ export default class Page extends Component {
                     {content}
                 </div>
 
-                <div style={{display: loaded && isLoaded && footerLoaded ? 'none' : 'block'}}>
+                <div style={{display:!showLoader || (loaded && isLoaded && footerLoaded) ? 'none' : 'block'}}>
                     <ParallaxSlide loaded={preload} animate={animate}/>
                 </div>
             </div>
