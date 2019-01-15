@@ -80,7 +80,6 @@ export default class Page extends Component {
                     <meta name="robots" content="noindex, nofollow"/>
                     <meta name="viewport" content="initial-scale=1.0, width=device-width"/>
                     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"/>
-                    <link rel="stylesheet" href="owl-carousel/owl.theme.css"/>
                     <link rel="stylesheet"
                           href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css"/>
                     <link rel="apple-touch-icon-precomposed" sizes="57x57" href="../static/images/favicon/apple-touch-icon-57x57.png" />
