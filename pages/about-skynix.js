@@ -10,16 +10,16 @@ import meta from './index-meta.config.json';
 
 
 export default class AboutSkynix extends Component {
-	render() {
-		return (
-			<Page meta={meta} newsItems={this.props.newsItems}>
-				<TitleHeader/>
-				<History/>
-				<Ideology/>
-				<SkynixTeam/>
-				<Careers/>
-				<Modal/>
-			</Page>
-		)
-	}
+    render() {
+        return (
+            <Page meta={meta} newsItems={this.props.newsItems}>
+                <TitleHeader/>
+                <History/>
+                <Ideology/>
+                <SkynixTeam/>
+                <Careers/>
+                <Modal/>
+            </Page>
+        )
+    }
 }
