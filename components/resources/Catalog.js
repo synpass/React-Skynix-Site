@@ -24,16 +24,22 @@ class Catalog extends Component {
     }
 
     render() {
-        return(
-            <div className='catalog'>
-                {this.props.items.map(item => <CatalogArticle {...item} key={item.id}/>)}
-                <Pagination
-                    current={this.props.page}
-                    total={this.props.totals}
-                    navLink='/resources'
-                />
-            </div>
-        )
+        const {items} = this.props;
+        if(items!==undefined) {
+            return (
+                <div className='catalog'>
+
+                    {items.map(item => <CatalogArticle {...item} key={item.id}/>)}
+                    <Pagination
+                        current={this.props.page}
+                        total={this.props.totals}
+                        navLink='/resources'
+                    />
+                </div>
+            )
+        } else{
+            return null
+        }
     }
 }
 
