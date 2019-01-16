@@ -52,20 +52,17 @@ export default class NavItem extends Component {
         let expandClasses = ["expand"];
         if(height === 'auto') expandClasses.push("opened");
 
-
         return (
-            <Animated animationIn='fadeInDown' animationInDelay={400}>
-                <li onMouseLeave={this.hide} onMouseEnter={this.show}>
-                    { anchor ? 
-                        <AnchorLink className={linkClasses.join(' ')} offset='-150' href={link}>{name}</AnchorLink> :
-                        <Link href={link}>
-                            <a className={linkClasses.join(' ')}>{name} { children ? <span/> : null}</a>
-                        </Link>
-                    }
-                    { children ? <button className={expandClasses.join(' ')} onClick={this.toggle}/> : null }
-                    { children ? <Submenu children={children} height={height}/> : null }
-                </li>
-            </Animated>
+            <li onMouseLeave={this.hide} onMouseEnter={this.show}>
+                { anchor ? 
+                    <AnchorLink className={linkClasses.join(' ')} offset='-150' href={link}>{name}</AnchorLink> :
+                    <Link href={link}>
+                        <a className={linkClasses.join(' ')}>{name} { children ? <span/> : null}</a>
+                     </Link>
+                }
+                { children ? <button className={expandClasses.join(' ')} onClick={this.toggle}/> : null }
+                { children ? <Submenu children={children} height={height}/> : null }
+            </li>
         )
     }
 }
