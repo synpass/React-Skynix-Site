@@ -24,12 +24,19 @@ export default function Footer(props) {
                     </div>
                 </div>
                 <CookieBanner
-                  message="Cookie banner messate"
+                  message="We use cookies to personalize our service and to improve your experience on the website and its subdomains. We also use this information for analytics."
                   policyLink="/privacy-policy"
+                  location="bottom"
                   onAccept = {() => {}}
                   onAcceptPreferences = {() => {}}
                   onAcceptStatistics = {() => {}}
                   onAcceptMarketing = {() => {}}
+                  styles={{
+                    dialog: {},
+                    message:{},
+                    container:{},
+                    button:{}
+                  }}
                 />
             </footer>
         </div>
