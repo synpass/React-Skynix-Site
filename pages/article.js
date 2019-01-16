@@ -107,6 +107,12 @@ ArticlePage.getInitialProps = async ({ query }) => {
                     });
 
                 })
+
+                data.forEach(news=>{
+                    if(news.content) delete news.content
+                    if(news.excerpt) delete news.excerpt
+                })
+
                 property.news = data;
                 property.newsTotals = totals;
 

@@ -12,7 +12,7 @@ export default class CatalogArticle extends Component {
 
     render() {
         const { title, content, date,  authorName, imageUrl, slug} = this.props;
-        const parsed = content.rendered.replace(/<[^>]*>/g, '');
+
         return (
             <Link route="article" params={{slug:slug}}>
                 <a className='catalog-article'>
@@ -22,7 +22,7 @@ export default class CatalogArticle extends Component {
                         <div className='catalog-article__author'>{authorName}</div>
                     </div>
                     <h4 className='catalog-article__title'>{ReactHtmlParser(title.rendered)}</h4>
-                    <p className='catalog-article__content'>{ReactHtmlParser(truncate(parsed, 90))}</p>
+                    <p className='catalog-article__content'>{ReactHtmlParser(truncate(content.rendered, 90))}</p>
                 </a>
             </Link>
 

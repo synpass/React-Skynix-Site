@@ -11,6 +11,8 @@ import FooterFixed from "../components/footer/FooterFixed";
 import Reviews from "../components/footer/Reviews";
 import meta from './index-meta.config.json';
 import Fullpage from "../components/fullpage/Fullpage";
+import Service from "../components/resources/service";
+import Resources from "./resources";
 
 export default class Index extends Component {
     constructor(props) {
@@ -48,7 +50,7 @@ export default class Index extends Component {
     render() {
         const { parallaxBg, rendered } = this.state;
         return (
-            <Page loading={!rendered} meta={meta} animate={true} newsItems={this.props.newsItems} showLoader={this.props.showLoader}>
+            <Page loading={!rendered} meta={meta} animate={true} newsItems={this.props.newsItems|| this.props.news} showLoader={this.props.showLoader}>
                 <ParallaxBg show={parallaxBg}/>
                 <Fullpage>
                     <Intro/>
