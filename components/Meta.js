@@ -3,6 +3,8 @@ import PropTypes from 'prop-types';
 import Head from 'next/head'
 
 export default function Meta(props) {
+    const type = props.ogType;
+    console.log(type)
     return (
         <Head>
             <title>{props.title}</title>
@@ -15,6 +17,20 @@ export default function Meta(props) {
             <meta property="og:site_name"   content='Skynix LLC'/>
             <meta property="og:image:alt"   content={props.ogImgAlt}/>
 
+            <meta property="og:locale"   content={props.ogLocale}/>
+            <meta property="og:updated_time"   content={props.metaModifiedTime}/>
+            <meta property="og:image:width"   content={props.ogWidth}/>
+            <meta property="og:image:height"   content={props.ogHeight}/>
+            {
+                props.ogType == 'article'
+                    ? <React.Fragment>
+                        <meta property="article:tag"   content={props.metaTag}/>
+                        <meta property="article:section"   content={props.metaSection}/>
+                        <meta property="article:published_time"   content={props.metaPublishedTime}/>
+                        <meta property="article:modified_time"   content={props.metaModifiedTime}/>
+                       </React.Fragment>
+                    : null
+            }
             <meta property="twitter:card"        content={props.twitterCard}/>
             <meta property="twitter:site"        content={props.twitterSite}/>
             <meta property="twitter:title"       content={props.twitterTitle}/>
@@ -43,7 +59,15 @@ Meta.propTypes = {
     twitterImage: PropTypes.string,
     twitterImageAlt: PropTypes.string,
     keywordsSeo: PropTypes.string,
-    canonicalUrl: PropTypes.string
+    canonicalUrl: PropTypes.string,
+
+    ogLocale: PropTypes.string,
+    metaModifiedTime: PropTypes.string,
+    ogWidth: PropTypes.string,
+    ogHeight: PropTypes.string,
+    metaTag: PropTypes.string,
+    metaSection: PropTypes.string,
+    metaPublishedTime: PropTypes.string
 };
 
 Meta.defaultProps = {

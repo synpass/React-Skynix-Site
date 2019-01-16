@@ -22,7 +22,12 @@ class ArticleWrap extends Component {
     articleLoaded = () => this.setState({articleLoaded: true});
     render() {
         const{slug, article, news} = this.props;
-        const meta = article[0].acf;
+        const acf = article[0].acf;
+        const canonical = {canonicalUrl: 'https://skynix.co/resources/' + article[0].slug};
+        const metaTime = {metaPublishedTime: article[0].date, metaModifiedTime: article[0].modified};
+        const sameMeta ={ogLocale: 'en_US', ogType: 'article'};
+
+        const meta = {...acf , ...canonical, ...sameMeta, ...metaTime};
         return (
             <Page meta={meta} newsItems={news}>
                 <BlogArticle article={article} limit={1} onLoad={this.articleLoaded} slug={slug}/>
