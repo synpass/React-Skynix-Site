@@ -3,8 +3,6 @@ import PropTypes from 'prop-types';
 import Head from 'next/head'
 
 export default function Meta(props) {
-    const type = props.ogType;
-    console.log(type)
     return (
         <Head>
             <title>{props.title}</title>
