@@ -123,7 +123,7 @@ export default class Form extends Component {
                         <button type='submit'>
                             {   
                                 this.state.loadingEvent
-                                ? <div><span>loading</span><div className='loader'><div/><div/><div/><div/><div/><div/><div/></div></div>
+                                ? <div><span>loading</span><div className='loader'><div/><div/><div/><div/></div></div>
                                 : <div><img src='/static/images/ios-send.svg'/><br/><span>send</span></div>
                             }
                         </button></div>
