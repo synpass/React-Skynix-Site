@@ -6,8 +6,9 @@ import { withRouter } from 'next/router'
 
 
 const ArticlePage = withRouter((props) => {
-    const{slug, articleItems, news} = props;
-    return <ArticleWrap page={props.router.query.page} slug={slug} article={articleItems} news={news}/>
+    const{slug, articleItems, news, showLoader} = props;
+
+    return <ArticleWrap page={props.router.query.page} slug={slug} article={articleItems} news={news} showLoader={showLoader}/>
 });
 
 
@@ -21,7 +22,7 @@ class ArticleWrap extends Component {
 
     articleLoaded = () => this.setState({articleLoaded: true});
     render() {
-        const{slug, article, news} = this.props;
+        const{slug, article, news, showLoader} = this.props;
         const acf = article[0].acf;
         const canonical = {canonicalUrl: 'https://skynix.co/resources/' + article[0].slug};
         const metaTime = {metaPublishedTime: article[0].date, metaModifiedTime: article[0].modified};
@@ -29,7 +30,7 @@ class ArticleWrap extends Component {
 
         const meta = {...acf , ...canonical, ...sameMeta, ...metaTime};
         return (
-            <Page meta={meta} newsItems={news}>
+            <Page meta={meta} newsItems={news} showLoader={showLoader}>
                 <BlogArticle article={article} limit={1} onLoad={this.articleLoaded} slug={slug}/>
             </Page>
         )

@@ -1880,17 +1880,17 @@ class Map extends Component{
 				<circle id="Oval-Copy-5557" cx="346" cy="58" r="2"></circle>
 				<circle id="Oval-Copy-5553" cx="346" cy="66" r="2"></circle>
 			</g>
-            <circle r="3" cx="426" cy="128" fill="#0000ff" stroke="#0000ff" stroke-width="1" className="experience__map-circle" ref="jsHookUkraineCircle"/>
-			<path d="m 426 128 Q 670 40 692 300" stroke="#0000ff" stroke-width="1" fill="transparent" ref="jsHookLink1" id="australiaLine" className="experience__map-link"/>
-            <circle r="3" cx="692" cy="300" fill="#0000ff" stroke="#0000ff" stroke-width="1" className="experience__map-circle" ref="jsHookCircle1"/>
-            <path d="m 426 128 Q 475 145 468 203" stroke="#0000ff" stroke-width="1" fill="transparent" ref="jsHookLink2"  id="arabiaLine" className="experience__map-link"/>
-            <circle r="3" cx="468" cy="203" fill="#0000ff" stroke="#0000ff" stroke-width="1" ref="jsHookCircle2" className="experience__map-circle" />
-            <path d="m 426 128 Q 395 110 354 122" stroke="#0000ff" stroke-width="1" fill="transparent" ref="jsHookLink3"  id="ukLine" className="experience__map-link"/>
-            <circle r="3" cx="354" cy="122" fill="#0000ff" stroke="#0000ff" stroke-width="1" ref="jsHookCircle3" className="experience__map-circle" /> 
-            <path d="m 426 128 Q 300 -20 115 95" stroke="#0000ff" stroke-width="1" fill="transparent" ref="jsHookLink4"  id="canadaLine" className="experience__map-link"/>
-            <circle r="3" cx="114" cy="97" fill="#0000ff" stroke="#0000ff" stroke-width="1" ref="jsHookCircle4" className="experience__map-circle" />
-            <path d="m 426 128 Q 260 0 145 145" stroke="#0000ff" stroke-width="1" fill="transparent" ref="jsHookLink5" id="usaLine" className="experience__map-link"/>
-            <circle r="3" cx="145" cy="145" fill="#0000ff" stroke="#0000ff" stroke-width="1" ref="jsHookCircle5" className="experience__map-circle" />
+            <circle r="3" cx="426" cy="128" fill="#0000ff" stroke="#0000ff" strokeWidth="1" className="experience__map-circle" ref="jsHookUkraineCircle"/>
+			<path d="m 426 128 Q 670 40 692 300" stroke="#0000ff" strokeWidth="1" fill="transparent" ref="jsHookLink1" id="australiaLine" className="experience__map-link"/>
+            <circle r="3" cx="692" cy="300" fill="#0000ff" stroke="#0000ff" strokeWidth="1" className="experience__map-circle" ref="jsHookCircle1"/>
+            <path d="m 426 128 Q 475 145 468 203" stroke="#0000ff" strokeWidth="1" fill="transparent" ref="jsHookLink2"  id="arabiaLine" className="experience__map-link"/>
+            <circle r="3" cx="468" cy="203" fill="#0000ff" stroke="#0000ff" strokeWidth="1" ref="jsHookCircle2" className="experience__map-circle" />
+            <path d="m 426 128 Q 395 110 354 122" stroke="#0000ff" strokeWidth="1" fill="transparent" ref="jsHookLink3"  id="ukLine" className="experience__map-link"/>
+            <circle r="3" cx="354" cy="122" fill="#0000ff" stroke="#0000ff" strokeWidth="1" ref="jsHookCircle3" className="experience__map-circle" /> 
+            <path d="m 426 128 Q 300 -20 115 95" stroke="#0000ff" strokeWidth="1" fill="transparent" ref="jsHookLink4"  id="canadaLine" className="experience__map-link"/>
+            <circle r="3" cx="114" cy="97" fill="#0000ff" stroke="#0000ff" strokeWidth="1" ref="jsHookCircle4" className="experience__map-circle" />
+            <path d="m 426 128 Q 260 0 145 145" stroke="#0000ff" strokeWidth="1" fill="transparent" ref="jsHookLink5" id="usaLine" className="experience__map-link"/>
+            <circle r="3" cx="145" cy="145" fill="#0000ff" stroke="#0000ff" strokeWidth="1" ref="jsHookCircle5" className="experience__map-circle" />
 		</g>
 	</svg>
         )

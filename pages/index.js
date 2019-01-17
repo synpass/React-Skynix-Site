@@ -18,7 +18,6 @@ export default class Index extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            showLoader: false,
             parallaxBg: true,
             parallaxBgTop: 0,
             rendered: props.rendered
@@ -49,6 +48,7 @@ export default class Index extends Component {
 
     render() {
         const { parallaxBg, rendered } = this.state;
+
         return (
             <Page loading={!rendered} meta={meta} animate={true} newsItems={this.props.newsItems|| this.props.news} showLoader={this.props.showLoader}>
                 <ParallaxBg show={parallaxBg}/>

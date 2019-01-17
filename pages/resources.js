@@ -7,11 +7,12 @@ import Service from "../components/resources/service";
 import meta from './index-meta.config.json';
 
 const Resources = withRouter((props) => {
-    return <ResourcesWrapper page={props.router.query.page} items={props.items} totals={props.totals} news={props.news}/>
+    return <ResourcesWrapper page={props.router.query.page} items={props.items} totals={props.totals} news={props.news} showLoader={props.showLoader}/>
 });
 
 class ResourcesWrapper extends Component {
     constructor(props) {
+        console.log(props)
         super(props);
         this.state = {isLoaded: false}
     }
@@ -21,7 +22,7 @@ class ResourcesWrapper extends Component {
 
     render() {
         return (
-            <Page meta={meta} news={this.props.news} loading={true} isLoaded={this.state.isLoaded}>
+            <Page meta={meta} news={this.props.news} loading={true} isLoaded={this.state.isLoaded} showLoader={this.props.showLoader}>
                 <TitleHeader/>
                 <Catalog onLoad={this.onPageLoaded} page={this.props.page} items={this.props.items} totals={this.props.totals}/>
             </Page>
