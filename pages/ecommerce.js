@@ -17,7 +17,7 @@ export default class Ecommerce extends Component {
     }
     render() {
         return (
-            <Page meta={meta} newsItems={this.props.newsItems}>
+            <Page meta={meta} newsItems={this.props.newsItems} showLoader={this.props.showLoader}>
                 <Rate/>
                 <ThemeDev/>
                 <Brands brands={brands}/>

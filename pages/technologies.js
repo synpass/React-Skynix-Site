@@ -11,7 +11,7 @@ import ProjectManagement from "../components/technologies/ProjectManagement";
 
 export default function Technologies(props) {
 	return (
-        <Page meta={meta} newsItems={props.newsItems}>
+        <Page meta={meta} newsItems={props.newsItems} showLoader={props.showLoader}>
             <TitleHeader/>
             <RichBackend/>
             <ElegantFrontend/>

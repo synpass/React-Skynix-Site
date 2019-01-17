@@ -6,7 +6,7 @@ import TermsConditionsContent from "../components/termsconditions/TermsCondition
 export default class TermsConditions extends Component {
     render() {
         return (
-            <Page newsItems={this.props.newsItems}>
+            <Page newsItems={this.props.newsItems} showLoader={this.props.showLoader}>
                 <TitleHeader/>
                 <TermsConditionsContent/>
             </Page>
