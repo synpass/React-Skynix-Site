@@ -28,7 +28,7 @@ export default class Page extends Component {
             this.setState({preload: true})
         }.bind(this), 1100);
         setTimeout(function () {
-            $('#js-hook-preloader').addClass('full');
+            $('.preloader-area').addClass('full');
         }.bind(this), 2800);
         setTimeout(function () {
             this.setState({loaded: true})
