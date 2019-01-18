@@ -14,8 +14,7 @@ export default function Meta(props) {
             <meta property="og:description" content={props.ogDescription}/>
             <meta property="og:image"       content={props.ogImage}/>
             <meta property="og:site_name"   content='Skynix LLC'/>
-            <meta property="og:image:alt"   content={props.ogImgAlt}/>
-
+            <meta property="og:image:alt"   content={props.ogImageAlt}/>
             <meta property="og:locale"   content={props.ogLocale}/>
             <meta property="og:updated_time"   content={props.metaModifiedTime}/>
             <meta property="og:image:width"   content={props.ogWidth}/>
@@ -51,7 +50,7 @@ Meta.propTypes = {
     ogTitle: PropTypes.string,
     ogDescription: PropTypes.string,
     ogImage: PropTypes.string,
-    ogImgAlt: PropTypes.string,
+    ogImageAlt: PropTypes.string,
     twitterCard: PropTypes.string,
     twitterSite: PropTypes.string,
     twitterTitle: PropTypes.string,
