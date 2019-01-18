@@ -29,6 +29,7 @@ class ArticleWrap extends Component {
         const sameMeta ={ogLocale: 'en_US', ogType: 'article'};
 
         const meta = {...acf , ...canonical, ...sameMeta, ...metaTime};
+        console.log(meta)
         return (
             <Page meta={meta} newsItems={news} showLoader={showLoader}>
                 <BlogArticle article={article} limit={1} onLoad={this.articleLoaded} slug={slug}/>
