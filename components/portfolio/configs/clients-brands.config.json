@@ -1,47 +1,62 @@
 [
   {
     "id": 0,
-    "imgClass": "bikebiz-logo",
-    "img": "bikebiz-logo.png"
+    "imgClass": "cl1-logo",
+    "img": "cl1-logo.svg"
   },
   {
     "id": 1,
-    "imgClass": "tradetested-logo",
-    "img": "tradetested-logo.png"
+    "imgClass": "cl2-logo",
+    "img": "cl2-logo.png"
   },
   {
     "id": 2,
-    "imgClass": "ddrops-logo",
-    "img": "ddrops-logo.svg"
+    "imgClass": "cl3-logo",
+    "img": "cl3-logo.svg"
   },
   {
     "id": 3,
-    "imgClass": "dampe-logo",
-    "img": "dampe-logo.svg"
+    "imgClass": "cl4-logo",
+    "img": "cl4-logo.svg"
   },
   {
     "id": 4,
-    "imgClass": "viazoi-logo",
-    "img": "viazoi-logo.png"
+    "imgClass": "cl5-logo",
+    "img": "cl5-logo.png"
   },
   {
     "id": 5,
-    "imgClass": "unidencellular-logo",
-    "img": "unidencellular-logo.png"
+    "imgClass": "cl6-logo",
+    "img": "cl6-logo.svg"
   },
   {
     "id": 6,
-    "imgClass": "santen-logo",
-    "img": "santen-logo.png"
+    "imgClass": "cl7-logo",
+    "img": "cl7-logo.svg"
   },
   {
     "id": 7,
-    "imgClass": "aftereden-logo",
-    "img": "aftereden-logo.svg"
+    "imgClass": "cl8-logo",
+    "img": "cl8-logo.svg"
   },
   {
     "id": 8,
-    "imgClass": "trovagene-logo",
-    "img": "trovagene-logo.png"
+    "imgClass": "cl9-logo",
+    "img": "cl9-logo.png"
+  },
+  {
+    "id": 9,
+    "imgClass": "cl10-logo",
+    "img": "cl10-logo.png"
+  },
+  {
+    "id": 10,
+    "imgClass": "cl11-logo",
+    "img": "cl11-logo.svg"
+  },
+  {
+    "id": 11,
+    "imgClass": "cl12-logo",
+    "img": "cl12-logo.svg"
   }
 ]
