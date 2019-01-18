@@ -116,7 +116,7 @@ export default class Page extends Component {
                     <ParallaxSlide loaded={preload} animate={animate}/>
                 </div>
 
-                <div id="js-hook-preloader" className="preloader-area" style={{display: loaded && isLoaded && footerLoaded ? 'none' : 'block'}}>
+                <div className="preloader-area" style={{display: loaded && isLoaded && footerLoaded ? 'none' : 'block'}}>
                     <div className="preloader-line"/>
                 </div>
             </div>
