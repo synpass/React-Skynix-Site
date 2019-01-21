@@ -69,57 +69,63 @@
       } 
       
       &.magento {
-        width: 226px;
-        height: 78px;
+          width: 226px;
+          height: 78px;
       }
 
       &.woo {
-        width: 258px;
-        height: 52px;
+          width: 258px;
+          height: 52px;
       }
 
       &.xcart {
-        width: 208px;
-        height: 60px;
+          width: 208px;
+          height: 60px;
       }
 
       &.opencart {
-        width: 246px;
-        height: 48px;
+          width: 246px;
+          height: 48px;
       }
 
       &.shopify {
-        width: 227px;
-        height: 65px;
+          width: 227px;
+          height: 65px;
       }
         
       &.wordpress-logo, {
-        width: 100%;
-        height: auto;
-        max-width: 200px;
+          width: 100%;
+          height: auto;
+          max-width: 200px;
       }
         
       &.laravel-logo {
-        width: 100%;
-        height: auto;
-        max-width: 150px;
+          width: 100%;
+          height: auto;
+          max-width: 150px;
       }
       
       &.zend-logo{
-        width: 100%;
-        height: auto;
-        max-width: 400px;  
+          width: 100%;
+          height: auto;
+          max-width: 400px;  
       }
       &.service-logo{
-        width: 100%;
-        height: auto;
-        max-width: 300px;   
+          width: 100%;
+          height: auto;
+          max-width: 300px;   
       }
         
-       &.tradetested-logo,&.viazoi-logo,&.trovagene-logo{
-        width: 100%;
-        height: auto;
-        max-width: 350px;   
+       &.cl2-logo,&.cl5-logo{
+          width: 100%;
+          height: auto;
+          max-width: 350px;   
+      }
+        
+      &.cl1-logo,&.cl6-logo,&.cl9-logo{
+          width: 100%;
+          height: auto;
+          max-width: 300px;  
       }
     }
     div {
