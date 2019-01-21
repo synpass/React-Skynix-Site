@@ -6,6 +6,7 @@ import Ideology from "../components/about/Ideology";
 import SkynixTeam from "../components/about/SkynixTeam";
 import Careers from "../components/about/Careers";
 import Modal from "../components/about/libs/Modal.js";
+import Numbers from "../components/home-slides/Numbers";
 import meta from './index-meta.config.json';
 
 
@@ -17,7 +18,7 @@ export default class AboutSkynix extends Component {
                 <History/>
                 <Ideology/>
                 <SkynixTeam/>
-                <Careers/>
+                <Numbers heading="careers" about="Join us!" config="jobs"/>
                 <Modal/>
             </Page>
         )

@@ -11,7 +11,7 @@ export function NumberItem(props) {
 
     return (
         <Animated {...animation}>
-            <h4>{props.value}</h4>
+            <h4 class={props.textSize}>{props.value}</h4>
             <span>{props.text}</span>
         </Animated>
     )
