@@ -1,0 +1,7 @@
+User-Agent: *
+
+Disallow:
+
+Host: https://skynix.co
+
+Sitemap: https://skynix.co/sitemap.xml
