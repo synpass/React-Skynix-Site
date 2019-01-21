@@ -1,0 +1,30 @@
+.preloader-area {
+	position: fixed;
+	z-index: 20;
+	top: 0;
+	left: 0;
+	right: 0;
+	height: 2px;
+	overflow: hidden;
+	.preloader-line {
+		width: 0;
+		position: absolute;
+		background-color: $blue;
+		top: 0;
+		bottom: 0;
+		left: 0;
+		animation: preloaderline 4.1s infinite;
+		&.full{
+			width: 100%;
+			animation: none;
+		}
+	}
+	@keyframes preloaderline {
+		from {
+			width: 0;
+		}
+		to {
+			width: 100%;
+		}
+	}
+}
