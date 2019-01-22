@@ -1,6 +1,6 @@
 let hostname;
 
-if (!process.env.NODE_ENV || process.env.NODE_ENV === 'development') {
+if (process.env.NODE_ENV !== 'production') {
 	hostname = 'https://staging.skynix.co';
 } else {
 	hostname = 'https://skynix.co';
