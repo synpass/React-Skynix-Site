@@ -18,7 +18,7 @@ export default class AboutSkynix extends Component {
                 <History/>
                 <Ideology/>
                 <SkynixTeam/>
-                <Numbers heading="careers" about="Join us!" config="jobs"/>
+                <Numbers heading="careers" about="JOIN US" config="jobs"/>
                 <Modal/>
             </Page>
         )

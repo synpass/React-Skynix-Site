@@ -37,7 +37,7 @@ export default class Numbers extends Component {
         return (
             <LazyLoad {...lazyLoadProps} onLoad={this.onLoad}>
                 <div className='numbers__heading'>
-                    <h1 className='heading'><b>Skynix</b>  {this.props.heading} </h1>
+                    <h1 className='heading'><b>skynix</b>  {this.props.heading} </h1>
                     <h5 className='heading__sub'>{this.props.about}</h5>
                 </div>
 
