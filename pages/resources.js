@@ -5,6 +5,7 @@ import { withRouter } from 'next/router'
 import TitleHeader from "../components/resources/TitleHeader";
 import Service from "../components/resources/service";
 import meta from './index-meta.config.json';
+import url from '../domain.config'
 
 const Resources = withRouter((props) => {
     return <ResourcesWrapper page={props.router.query.page} items={props.items} totals={props.totals} news={props.news} showLoader={props.showLoader}/>
@@ -12,7 +13,6 @@ const Resources = withRouter((props) => {
 
 class ResourcesWrapper extends Component {
     constructor(props) {
-        console.log(props)
         super(props);
         this.state = {isLoaded: false}
     }
@@ -22,7 +22,7 @@ class ResourcesWrapper extends Component {
 
     render() {
         return (
-            <Page meta={meta} news={this.props.news} loading={true} isLoaded={this.state.isLoaded} showLoader={this.props.showLoader}>
+            <Page meta={meta} news={this.props.news} loading={true} isLoaded={this.state.isLoaded} showLoader={this.props.showLoader} canonical={url + '/resources'}>
                 <TitleHeader/>
                 <Catalog onLoad={this.onPageLoaded} page={this.props.page} items={this.props.items} totals={this.props.totals}/>
             </Page>
