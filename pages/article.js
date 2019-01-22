@@ -32,7 +32,7 @@ class ArticleWrap extends Component {
         const meta = {...acf , ...canonical, ...sameMeta, ...metaTime}
 
         return (
-            <Page meta={meta} newsItems={news} showLoader={showLoader}>
+            <Page meta={meta} newsItems={news} showLoader={showLoader} canonical={canonical.canonicalUrl}>
                 <BlogArticle article={article} limit={1} onLoad={this.articleLoaded} slug={slug}/>
             </Page>
         )
