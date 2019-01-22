@@ -32,7 +32,7 @@ export default class Numbers extends Component {
             data = numbers;
         }else if(this.props.config == "jobs"){
             data = jobs;
-            fontSize = 'medium';
+            fontSize = 'numbers__heading--medium';
         }
         return (
             <LazyLoad {...lazyLoadProps} onLoad={this.onLoad}>

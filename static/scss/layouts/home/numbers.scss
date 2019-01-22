@@ -1,12 +1,5 @@
 .numbers {
 
-    .numbers__grid .section h4.medium{
-        font-size: 18px;
-        @include tablets {
-            font-size: 35px;
-          }
-    }
-
   &__heading {
     @include max-width;
     margin-bottom: 30px;
@@ -52,7 +45,16 @@
         @include tablets {
           font-size: 60px;
         }
+
+        &.numbers__heading--medium{
+            font-size: 18px;
+            @include tablets {
+                font-size: 35px;
+          }
+        }
       }
+
+      
 
       span {
         font: {
