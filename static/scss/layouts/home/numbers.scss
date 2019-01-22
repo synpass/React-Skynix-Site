@@ -45,7 +45,16 @@
         @include tablets {
           font-size: 60px;
         }
+
+        &.numbers__heading--medium{
+            font-size: 18px;
+            @include tablets {
+                font-size: 35px;
+          }
+        }
       }
+
+      
 
       span {
         font: {
