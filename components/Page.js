@@ -98,6 +98,12 @@ export default class Page extends Component {
                     <link rel="icon" type="image/png" href="../static/images/favicon/favicon-32x32.png" sizes="32x32" />
                     <link rel="icon" type="image/png" href="../static/images/favicon/favicon-16x16.png" sizes="16x16" />
                     <link rel="icon" type="image/png" href="../static/images/favicon/favicon-128.png" sizes="128x128" />
+                    <link rel="preload" href="../static/fonts/gotham/gotham-bold.woff2" as="font" type="font/woff2"/>
+                    <link rel="preload" href="../static/fonts/gotham/gotham-regular.woff2" as="font" type="font/woff2"/>
+                    <link rel="preload" href="../static/fonts/gotham/gotham-medium.woff2" as="font" type="font/woff2"/>
+                    <link rel="preload" href="../static/fonts/SofiaPro/SofiaProMedium.ttf" as="font" type="font/ttf"/>
+                    <link rel="preload" href="../static/fonts/SofiaPro/SofiaProRegular.ttf" as="font" type="font/ttf"/>
+                    <link rel="preload" href="../static/fonts/SofiaPro/SofiaProSemiBold.ttf" as="font" type="font/ttf"/>
                     <meta name="application-name" content="&nbsp;"/>
                     <meta name="msapplication-TileColor" content="#FFFFFF" />
                     <meta name="msapplication-TileImage" content="mstile-144x144.png" />
