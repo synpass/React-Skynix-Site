@@ -1,7 +1,8 @@
 import fetch from 'isomorphic-fetch';
 import axios  from 'axios';
+import {cmsHost} from '../../domain.config'
 
-const API           = 'https://staging.cms.skynix.co/wp-json';
+const API           =  `${cmsHost}/wp-json`;
 const SLUG1         = '/wp/v2';
 const SLUG2         = '/skynix/v1';
 const API_POSTS     = API + SLUG1 +'/posts';
