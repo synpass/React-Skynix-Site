@@ -107,7 +107,7 @@ export default class Page extends Component {
                     <meta name="msapplication-square310x310logo" content="mstile-310x310.png" />
 
                 </Head>
-                <Meta {...meta}/>
+                <Meta {...meta} canonicalUrl={this.props.canonical}/>
                 <div style={{display: loaded && isLoaded && footerLoaded? 'block' : 'none'}}>
                     {content}
                 </div>

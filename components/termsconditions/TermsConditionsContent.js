@@ -8,7 +8,7 @@ export default function TitleHeader() {
     };
     return(
         <Animated {...animation}>
-            <div class="pp-content">
+            <div className="pp-content">
                 <h3>1. Terms</h3>
                 <p>By accessing this web site, you are agreeing to be bound by these web site Terms and Conditions of Use, all
                 applicable laws and regulations, and agree that you are responsible for compliance with any applicable local laws.

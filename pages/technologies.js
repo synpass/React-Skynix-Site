@@ -8,10 +8,11 @@ import meta from './index-meta.config.json';
 import QualityAssurance from "../components/technologies/QualityAssurance";
 import Engine from "../components/technologies/Engine";
 import ProjectManagement from "../components/technologies/ProjectManagement";
+import url from '../domain.config'
 
 export default function Technologies(props) {
 	return (
-        <Page meta={meta} newsItems={props.newsItems} showLoader={props.showLoader}>
+        <Page meta={meta} newsItems={props.newsItems} showLoader={props.showLoader} canonical={url + '/technologies'}>
             <TitleHeader/>
             <RichBackend/>
             <ElegantFrontend/>

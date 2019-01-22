@@ -3,6 +3,7 @@ import Page from "../components/Page";
 import BlogArticle from "../components/article-page/BlogArticle";
 import Service from "../components/resources/service";
 import { withRouter } from 'next/router'
+import url from '../domain.config'
 
 
 const ArticlePage = withRouter((props) => {
@@ -24,7 +25,7 @@ class ArticleWrap extends Component {
     render() {
         const{slug, article, news, showLoader} = this.props;
         const acf = article[0].acf;
-        const canonical = {canonicalUrl: 'https://skynix.co/resources/' + article[0].slug};
+        const canonical = {canonicalUrl: url + '/resources/' + article[0].slug};
         const metaTime = {metaPublishedTime: article[0].date, metaModifiedTime: article[0].modified};
         const sameMeta ={ogLocale: 'en_US', ogType: 'article'};
 
