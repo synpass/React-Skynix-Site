@@ -5,15 +5,15 @@ let gtmId = '<gtmId>'; // production: GTM-MV4FKFF, staging: GTM-N6CK5NF
 hostname = 'https://staging.skynix.co'
 cmsHost = 'https://staging.cms.skynix.co'
 
-let contactFormid;
+let contactFormId;
 
 if (hostname == 'https://skynix.co') {
-    contactFormid = '1252'
+    contactFormId = '1841'
 }else if (hostname == 'https://staging.skynix.co') {
-    contactFormid = '1841'
+    contactFormId = '1252'
 }
 
-export {contactFormid}
+export {contactFormId}
 export {cmsHost} 
 export {gtmId}
 
