@@ -38,7 +38,7 @@ export default function Meta(props) {
             <meta property="twitter:image:alt"   content={props.twitterImageAlt}/>
             <meta name="keywords"   content={props.keywordsSeo}/>
             <link rel="canonical" href={props.canonicalUrl}/>
-            <GoogleTagManager gtmId={'gtmId'} />
+            <GoogleTagManager gtmId={gtmId} />
         </Head>
     )
 }
