@@ -1,15 +1,8 @@
-let hostname;
-let cmsHost;
+let hostname = 'https://<hostName>';
+let cmsHost = 'https://<cmsHost>';
 
 
-if (process.env.NODE_ENV !== 'production') {
-    hostname = 'https://staging.skynix.co';
-    cmsHost = 'https://staging.cms.skynix.co';
-} else {
-    hostname = 'https://skynix.co';
-    cmsHost = 'https://cms.skynix.co';
-}
-export {cmsHost} 
+export {cmsHost}; 
 
 export default hostname
 
