@@ -4,6 +4,7 @@ import Attachments from "./Attachments";
 import Input from "./Input";
 import Agreement from "./Agreement";
 import Service from '../resources/service';
+import {contactFormId} from '../../domain.config'
 
 export default class Form extends Component {
     constructor(props) {
@@ -24,7 +25,7 @@ export default class Form extends Component {
             files: [],
             agreement: false,
             showError: false,
-            formId: '1252',
+            formId: contactFormId,
             isShowMask: false,
             errorForm: null,
         };
