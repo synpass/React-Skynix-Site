@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import GoogleTagManager from './GoogleTagManager';
 import Head from 'next/head'
+import {gtmId} from '../domain.config'
 
 export default function Meta(props) {
     return (
@@ -37,7 +38,7 @@ export default function Meta(props) {
             <meta property="twitter:image:alt"   content={props.twitterImageAlt}/>
             <meta name="keywords"   content={props.keywordsSeo}/>
             <link rel="canonical" href={props.canonicalUrl}/>
-            <GoogleTagManager gtmId='GTM-N6CK5NF' />
+            <GoogleTagManager gtmId={gtmId} />
         </Head>
     )
 }
