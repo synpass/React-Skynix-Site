@@ -29,7 +29,7 @@ export default class Page extends Component {
         }.bind(this), 1100);
         setTimeout(function () {
             $('.preloader-area').addClass('full');
-        }.bind(this), 2800);
+        }.bind(this), 4000); 
         setTimeout(function () {
             this.setState({loaded: true})
         }.bind(this), 3000);
@@ -118,7 +118,7 @@ export default class Page extends Component {
                     {content}
                 </div>
 
-                <div style={{display:!showLoader || (loaded && isLoaded && footerLoaded) ? 'none' : 'block'}}>
+                <div style={{display:!showLoader && (loaded && isLoaded && footerLoaded) ? 'none' : 'block'}}>
                     <ParallaxSlide loaded={preload} animate={animate}/>
                 </div>
 
