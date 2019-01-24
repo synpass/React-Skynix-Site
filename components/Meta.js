@@ -3,16 +3,13 @@ import PropTypes from 'prop-types';
 import GoogleTagManager from './GoogleTagManager';
 import Head from 'next/head'
 import {gtmId} from '../domain.config'
-import url from '../domain.config'
+import {verificationTag} from '../tag.config'
 
 export default function Meta(props) {
-
-    let verificationTag = <meta name="google-site-verification" content="FlDemIsHOASC9MN0KDPB0CEXkeXIrY65prKuDGO9s-4" />
-
     return (
         <Head>
             <title>{props.title}</title>
-            {url == "https://skynix.co" ? verificationTag : null}
+            {verificationTag}
             <meta name="description"        content={props.description}/>
             <meta property="og:url"         content={props.ogURL}/>
             <meta property="og:type"        content={props.ogType}/>
