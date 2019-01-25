@@ -7,11 +7,12 @@ import {Animated} from "react-animated-css";
 import ParallaxSlide from "./ParallaxSlide";
 import ContactBlock from "../components/contact/ContactBlock";
 import JsonLd from '../components/JsonLd';
+import {connect} from "react-redux"
 
 import Meta from "./Meta";
 import Head from 'next/head'
 
-export default class Page extends Component {
+class Page extends Component {
     constructor(props) {
         super(props);
 
@@ -21,7 +22,6 @@ export default class Page extends Component {
             footerLoaded: false
         };
     }
-
 
     componentDidMount() {
         setTimeout(function () {
@@ -39,6 +39,7 @@ export default class Page extends Component {
 
     render() {
         const {children, className, meta, animate, isLoaded, newsItems, news, showLoader} = this.props;
+        //let showLoader = this.props.animatedLoader;
         const {loaded, preload, footerLoaded} = this.state;
 
         const content = (
@@ -118,7 +119,7 @@ export default class Page extends Component {
                     {content}
                 </div>
 
-                <div style={{display:!showLoader && (loaded && isLoaded && footerLoaded) ? 'none' : 'block'}}>
+                 <div style={{display:/*!showLoader && */(loaded && isLoaded && footerLoaded) || !this.props.animatedLoader ? 'none' : 'block'}}>
                     <ParallaxSlide loaded={preload} animate={animate}/>
                 </div>
 
@@ -145,3 +146,5 @@ Page.defaultProps = {
     animate: false,
     isLoaded: true
 };
+
+export default connect(state => state)(Page);

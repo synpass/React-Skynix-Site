@@ -9,12 +9,20 @@ import Modal from "../components/about/libs/Modal.js";
 import Numbers from "../components/home-slides/Numbers";
 import meta from './index-meta.config.json';
 import url from '../domain.config'
+import {connect} from "react-redux"
 
 
-export default class AboutSkynix extends Component {
+class AboutSkynix extends Component {
+
+    componentWillUnmount() {
+        if(this.props.animatedLoader == true){
+            this.props.dispatch({type: 'animatedLoader', payload: false})
+        }
+    }
+
     render() {
         return (
-            <Page meta={meta} newsItems={this.props.newsItems} showLoader={this.props.showLoader} canonical= {url + '/about-skynix'}>
+            <Page meta={meta} loading={true} newsItems={this.props.newsItems} showLoader={this.props.showLoader} canonical= {url + '/about-skynix'}>
                 <TitleHeader/>
                 <History/>
                 <Ideology/>
@@ -25,3 +33,5 @@ export default class AboutSkynix extends Component {
         )
     }
 }
+
+export default connect(state => state)(AboutSkynix);

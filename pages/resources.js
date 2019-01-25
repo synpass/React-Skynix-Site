@@ -6,6 +6,7 @@ import TitleHeader from "../components/resources/TitleHeader";
 import Service from "../components/resources/service";
 import meta from './index-meta.config.json';
 import url from '../domain.config'
+import {connect} from "react-redux"
 
 const Resources = withRouter((props) => {
     return <ResourcesWrapper page={props.router.query.page} items={props.items} totals={props.totals} news={props.news} showLoader={props.showLoader}/>
@@ -17,6 +18,11 @@ class ResourcesWrapper extends Component {
         this.state = {isLoaded: false}
     }
 
+    componentWillUnmount() {
+        if(this.props.animatedLoader == true){
+            this.props.dispatch({type: 'animatedLoader', payload: false})
+        }
+    }
 
     onPageLoaded = () => this.setState({isLoaded: true, footerLoaded: true});
 
@@ -97,3 +103,4 @@ ResourcesWrapper.defaultProps = {
 };
 
 export default Resources;
+connect(state => state)(ResourcesWrapper);

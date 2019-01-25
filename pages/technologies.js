@@ -9,17 +9,29 @@ import QualityAssurance from "../components/technologies/QualityAssurance";
 import Engine from "../components/technologies/Engine";
 import ProjectManagement from "../components/technologies/ProjectManagement";
 import url from '../domain.config'
+import {connect} from "react-redux"
 
-export default function Technologies(props) {
-	return (
-        <Page meta={meta} newsItems={props.newsItems} showLoader={props.showLoader} canonical={url + '/technologies'}>
-            <TitleHeader/>
-            <RichBackend/>
-            <ElegantFrontend/>
-            <Development/>
-            <QualityAssurance/>
-            <Engine/>
-            <ProjectManagement/>
-        </Page>
-	)
+class Technologies extends Component{
+
+    componentWillUnmount() {
+        console.log(this.props)
+        if(this.props.animatedLoader == true){
+            this.props.dispatch({type: 'animatedLoader', payload: false})
+        }
+    }
+    render() {
+	    return (
+            <Page meta={meta} loading={true} newsItems={this.props.newsItems} showLoader={this.props.showLoader} canonical={url + '/technologies'}>
+                <TitleHeader/>
+                <RichBackend/>
+                <ElegantFrontend/>
+                <Development/>
+                <QualityAssurance/>
+                <Engine/>
+                <ProjectManagement/>
+            </Page>
+        )
+    }
 }
+
+export default connect(state => state)(Technologies);

@@ -4,6 +4,7 @@ import BlogArticle from "../components/article-page/BlogArticle";
 import Service from "../components/resources/service";
 import { withRouter } from 'next/router'
 import url from '../domain.config'
+import {connect} from "react-redux"
 
 
 const ArticlePage = withRouter((props) => {
@@ -21,6 +22,12 @@ class ArticleWrap extends Component {
         };
     }
 
+    componentWillUnmount() {
+        if(this.props.animatedLoader == true){
+            this.props.dispatch({type: 'animatedLoader', payload: false})
+        }
+    }
+
     articleLoaded = () => this.setState({articleLoaded: true});
     render() {
         const{slug, article, news, showLoader} = this.props;
@@ -32,7 +39,7 @@ class ArticleWrap extends Component {
         const meta = {...acf , ...canonical, ...sameMeta, ...metaTime}
 
         return (
-            <Page meta={meta} newsItems={news} showLoader={showLoader} canonical={canonical.canonicalUrl}>
+            <Page meta={meta} loading={true} newsItems={news} showLoader={showLoader} canonical={canonical.canonicalUrl}>
                 <BlogArticle article={article} limit={1} onLoad={this.articleLoaded} slug={slug}/>
             </Page>
         )
@@ -128,5 +135,5 @@ ArticlePage.getInitialProps = async ({ query }) => {
     return property;
 }
 
-
+connect(state => state)(ArticleWrap);
 export default ArticlePage;
