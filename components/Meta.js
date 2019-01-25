@@ -3,11 +3,13 @@ import PropTypes from 'prop-types';
 import GoogleTagManager from './GoogleTagManager';
 import Head from 'next/head'
 import {gtmId} from '../domain.config'
+import {verificationTag} from '../tag.config'
 
 export default function Meta(props) {
     return (
         <Head>
             <title>{props.title}</title>
+            {verificationTag}
             <meta name="description"        content={props.description}/>
             <meta property="og:url"         content={props.ogURL}/>
             <meta property="og:type"        content={props.ogType}/>
@@ -39,6 +41,7 @@ export default function Meta(props) {
             <meta name="keywords"   content={props.keywordsSeo}/>
             <link rel="canonical" href={props.canonicalUrl}/>
             <GoogleTagManager gtmId={gtmId} />
+
         </Head>
     )
 }
