@@ -4,7 +4,7 @@ import TitleHeader from "../components/technologies/TitleHeader";
 import RichBackend from "../components/technologies/RichBackend";
 import ElegantFrontend from "../components/technologies/ElegantFrontend";
 import Development from "../components/technologies/Development";
-import meta from './index-meta.config.json';
+import meta from './tech-meta.config.json';
 import QualityAssurance from "../components/technologies/QualityAssurance";
 import Engine from "../components/technologies/Engine";
 import ProjectManagement from "../components/technologies/ProjectManagement";

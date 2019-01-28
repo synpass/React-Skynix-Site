@@ -7,7 +7,7 @@ import SkynixTeam from "../components/about/SkynixTeam";
 import Careers from "../components/about/Careers";
 import Modal from "../components/about/libs/Modal.js";
 import Numbers from "../components/home-slides/Numbers";
-import meta from './index-meta.config.json';
+import meta from './about-meta.config.json';
 import url from '../domain.config'
 
 

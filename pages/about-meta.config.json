@@ -1,0 +1,16 @@
+{
+    "ogURL": "https://staging.skynix.co",
+    "title": "Skynix LLC - Software & Web development services company",
+    "description": "Meet Skynix! These people turn your dreams into practical solutions. Want to join the wizard team? ➔ Check the available vacancies",
+    "ogTitle": "Skynix development team - Vacancies available! | Skynix LLC",
+    "ogDescription": "These people turn your dreams into practical solutions! Want to join? ➔ Contact us, we are looking for talents!",
+    "ogImage": "../static/images/og-skynix-logo.jpg",
+    "ogSiteName": "Skynix LLC",
+    "ogImageAlt": "Meet Skynix development team! We have available vacancies",
+    "twitterCard": "summary_large_image",
+    "twitterTitle": "Skynix development team - Vacancies available! | Skynix LLC",
+    "twitterDescription": "These people turn your dreams into practical solutions! Want to join? ➔ Contact us, we are looking for talants!",
+    "twitterImage": "../static/images/og-skynix-logo.jpg",
+    "twitterImageAlt": "Meet Skynix development team! We have available vacancies",
+    "keywordsSeo": "keywords home"
+  }
