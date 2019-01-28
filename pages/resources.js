@@ -22,7 +22,6 @@ class ResourcesWrapper extends Component {
     onPageLoaded = () => this.setState({isLoaded: true, footerLoaded: true});
 
     render() {
-        console.log(this.props)
         return (
             <Page meta={meta} news={this.props.news} loading={true} isLoaded={this.state.isLoaded} showLoader={this.props.showLoader} canonical={url + '/resources'}>
                 <TitleHeader/>
@@ -98,4 +97,4 @@ ResourcesWrapper.defaultProps = {
     page: 1
 };
 
-export default connect(state => state)(Resources);
+export default Resources;

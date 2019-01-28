@@ -130,5 +130,4 @@ ArticlePage.getInitialProps = async ({ query }) => {
     return property;
 }
 
-connect(state => state)(ArticleWrap);
 export default ArticlePage;

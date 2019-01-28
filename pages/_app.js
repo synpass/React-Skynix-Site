@@ -11,10 +11,12 @@ import {createStore} from "redux";
 import {Provider} from "react-redux";
 import withRedux from "next-redux-wrapper";
 
-const reducer = (state = {animatedLoader: true}, action) => {
+const reducer = (state = {animatedLoader: true, headerAnimation: true}, action) => {
     switch (action.type) {
         case 'animatedLoader':
             return {...state, animatedLoader: action.payload};
+        case 'headerAnimation':
+            return {...state, headerAnimation: action.payload};   
         default:
             return state
     }
@@ -70,7 +72,7 @@ class MyApp extends App {
                                 const {success: authorSuccess, data: authorData} = response[2 * i + 1];
 
                                 if (mediaSuccess) item.imageUrl = mediaData.source_url;
-                                if (authorSuccess) item.authorName = authorData.name;
+                                if (authorSuccess) item.authorName = authorData.name; 
                             });
 
                         })
@@ -82,7 +84,7 @@ class MyApp extends App {
 
                         pageProps = {
                             newsItems: data,
-                            newsTotals: totals
+                             newsTotals: totals
                         }
                     }
                 })

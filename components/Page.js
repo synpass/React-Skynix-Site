@@ -58,7 +58,7 @@ class Page extends Component {
                     </div>
                     <ContactBlock/>
                     <Footer onLoad={this.footerLoaded} page={1} items={newsItems||news}/>
-                    <Header/> 
+                    
                 </div>
             </div>
         );
@@ -124,7 +124,7 @@ class Page extends Component {
                 <div style={{display: loaded && isLoaded && footerLoaded? 'block' : 'none'}}>
                     {content}
                 </div>
-
+               <Header/> 
                  <div style={{display:/*!showLoader && */(loaded && isLoaded && footerLoaded) || !this.props.animatedLoader ? 'none' : 'block'}}>
                     <ParallaxSlide loaded={preload} animate={animate}/>
                 </div>
