@@ -3,6 +3,7 @@
     &__bg{
         
         &-pos1{
+            display: flex;
             position: absolute;
             max-width: 1230px;
             z-index: 0;
@@ -30,6 +31,7 @@
             }
         }
         &-pos3{
+            filter: saturate(10);
             position: relative;
             margin-left: 50%;
             margin-bottom: -2%;
