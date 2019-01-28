@@ -18,15 +18,11 @@ class ResourcesWrapper extends Component {
         this.state = {isLoaded: false}
     }
 
-    componentWillUnmount() {
-        if(this.props.animatedLoader == true){
-            this.props.dispatch({type: 'animatedLoader', payload: false})
-        }
-    }
 
     onPageLoaded = () => this.setState({isLoaded: true, footerLoaded: true});
 
     render() {
+        console.log(this.props)
         return (
             <Page meta={meta} news={this.props.news} loading={true} isLoaded={this.state.isLoaded} showLoader={this.props.showLoader} canonical={url + '/resources'}>
                 <TitleHeader/>
@@ -102,5 +98,4 @@ ResourcesWrapper.defaultProps = {
     page: 1
 };
 
-export default Resources;
-connect(state => state)(ResourcesWrapper);
+export default connect(state => state)(Resources);

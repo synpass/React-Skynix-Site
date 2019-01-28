@@ -10,11 +10,6 @@ import meta from './index-meta.config.json';
 import url from '../domain.config'
 
 class Process extends Component {
-    componentWillUnmount() {
-        if(this.props.animatedLoader == true){
-            this.props.dispatch({type: 'animatedLoader', payload: false})
-        }
-    }
 	render() {
 		return (
 			<Page meta={meta} newsItems={this.props.newsItems} loading={true} showLoader={this.props.showLoader} canonical={url + "/process"}>

@@ -7,11 +7,6 @@ import url from '../domain.config'
 import {connect} from "react-redux"
 
 class Portfolio extends Component {
-    componentWillUnmount() {
-        if(this.props.animatedLoader == true){
-            this.props.dispatch({type: 'animatedLoader', payload: false})
-        }
-    }
 
     render() {
 	    return (

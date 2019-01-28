@@ -32,9 +32,6 @@ class Index extends Component {
     }
 
     componentWillUnmount() {
-            if(this.props.animatedLoader == true){
-            this.props.dispatch({type: 'animatedLoader', payload: false})
-        }
         window.removeEventListener('scroll', this.handleScroll);
     }
 

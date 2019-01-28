@@ -13,12 +13,6 @@ import {connect} from "react-redux"
 
 class Technologies extends Component{
 
-    componentWillUnmount() {
-        console.log(this.props)
-        if(this.props.animatedLoader == true){
-            this.props.dispatch({type: 'animatedLoader', payload: false})
-        }
-    }
     render() {
 	    return (
             <Page meta={meta} loading={true} newsItems={this.props.newsItems} showLoader={this.props.showLoader} canonical={url + '/technologies'}>

@@ -22,11 +22,6 @@ class ArticleWrap extends Component {
         };
     }
 
-    componentWillUnmount() {
-        if(this.props.animatedLoader == true){
-            this.props.dispatch({type: 'animatedLoader', payload: false})
-        }
-    }
 
     articleLoaded = () => this.setState({articleLoaded: true});
     render() {

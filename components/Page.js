@@ -35,6 +35,12 @@ class Page extends Component {
         }.bind(this), 3000);
     }
 
+    componentWillUnmount() {
+        if(this.props.animatedLoader == true){
+            this.props.dispatch({type: 'animatedLoader', payload: false})
+        }
+    }
+
     footerLoaded = () => this.setState({footerLoaded: true});
 
     render() {
@@ -52,7 +58,7 @@ class Page extends Component {
                     </div>
                     <ContactBlock/>
                     <Footer onLoad={this.footerLoaded} page={1} items={newsItems||news}/>
-                    <Header/>
+                    <Header/> 
                 </div>
             </div>
         );

@@ -17,11 +17,7 @@ class Ecommerce extends Component {
     constructor(props) {
         super(props);
     }
-    componentWillUnmount() {
-        if(this.props.animatedLoader == true){
-            this.props.dispatch({type: 'animatedLoader', payload: false})
-        }
-    }
+    
     render() {
         return (
             <Page meta={meta} loading={true} newsItems={this.props.newsItems} showLoader={this.props.showLoader} canonical={url + "/ecommerce"}>

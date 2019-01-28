@@ -14,11 +14,6 @@ import {connect} from "react-redux"
 
 class AboutSkynix extends Component {
 
-    componentWillUnmount() {
-        if(this.props.animatedLoader == true){
-            this.props.dispatch({type: 'animatedLoader', payload: false})
-        }
-    }
 
     render() {
         return (
