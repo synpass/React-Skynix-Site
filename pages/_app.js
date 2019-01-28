@@ -72,7 +72,7 @@ class MyApp extends App {
                                 const {success: authorSuccess, data: authorData} = response[2 * i + 1];
 
                                 if (mediaSuccess) item.imageUrl = mediaData.source_url;
-                                if (authorSuccess) item.authorName = authorData.name; 
+                                if (authorSuccess) item.authorName = authorData.name;
                             });
 
                         })
@@ -84,7 +84,7 @@ class MyApp extends App {
 
                         pageProps = {
                             newsItems: data,
-                             newsTotals: totals
+                            newsTotals: totals
                         }
                     }
                 })
