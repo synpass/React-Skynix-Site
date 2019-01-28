@@ -7,11 +7,12 @@ import {Animated} from "react-animated-css";
 import ParallaxSlide from "./ParallaxSlide";
 import ContactBlock from "../components/contact/ContactBlock";
 import JsonLd from '../components/JsonLd';
+import {connect} from "react-redux"
 
 import Meta from "./Meta";
 import Head from 'next/head'
 
-export default class Page extends Component {
+class Page extends Component {
     constructor(props) {
         super(props);
 
@@ -21,7 +22,6 @@ export default class Page extends Component {
             footerLoaded: false
         };
     }
-
 
     componentDidMount() {
         setTimeout(function () {
@@ -35,10 +35,17 @@ export default class Page extends Component {
         }.bind(this), 3000);
     }
 
+    componentWillUnmount() {
+        if(this.props.animatedLoader == true){
+            this.props.dispatch({type: 'animatedLoader', payload: false})
+        }
+    }
+
     footerLoaded = () => this.setState({footerLoaded: true});
 
     render() {
         const {children, className, meta, animate, isLoaded, newsItems, news, showLoader} = this.props;
+        //let showLoader = this.props.animatedLoader;
         const {loaded, preload, footerLoaded} = this.state;
 
         const content = (
@@ -51,7 +58,7 @@ export default class Page extends Component {
                     </div>
                     <ContactBlock/>
                     <Footer onLoad={this.footerLoaded} page={1} items={newsItems||news}/>
-                    <Header/>
+                    
                 </div>
             </div>
         );
@@ -117,8 +124,8 @@ export default class Page extends Component {
                 <div style={{display: loaded && isLoaded && footerLoaded? 'block' : 'none'}}>
                     {content}
                 </div>
-
-                <div style={{display:!showLoader && (loaded && isLoaded && footerLoaded) ? 'none' : 'block'}}>
+               <Header/> 
+                 <div style={{display:/*!showLoader && */(loaded && isLoaded && footerLoaded) || !this.props.animatedLoader ? 'none' : 'block'}}>
                     <ParallaxSlide loaded={preload} animate={animate}/>
                 </div>
 
@@ -145,3 +152,5 @@ Page.defaultProps = {
     animate: false,
     isLoaded: true
 };
+
+export default connect(state => state)(Page);

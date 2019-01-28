@@ -1,6 +1,5 @@
 import Page from "../components/Page";
 import React, {Component} from 'react';
-
 import ParallaxBg from "../components/background/ParallaxBg";
 import Intro from "../components/home-slides/Intro";
 import Solutions from "../components/home-slides/Solutions"
@@ -14,8 +13,9 @@ import Fullpage from "../components/fullpage/Fullpage";
 import Service from "../components/resources/service";
 import Resources from "./resources";
 import url from '../domain.config'
+import {connect} from "react-redux"
 
-export default class Index extends Component {
+class Index extends Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -51,7 +51,7 @@ export default class Index extends Component {
         const { parallaxBg, rendered } = this.state;
 
         return (
-            <Page loading={!rendered} meta={meta} canonical={url} animate={true} newsItems={this.props.newsItems|| this.props.news} showLoader={this.props.showLoader}>
+            <Page loading={true} meta={meta} canonical={url} animate={true} newsItems={this.props.newsItems|| this.props.news} showLoader={this.props.showLoader}>
                 <ParallaxBg show={parallaxBg}/>
                 <Fullpage>
                     <Intro/>
@@ -68,3 +68,5 @@ export default class Index extends Component {
         )
     }
 }
+
+export default connect(state => state)(Index);

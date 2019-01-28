@@ -10,15 +10,17 @@ import BugFixing from "../components/e-commerce/BugFixing";
 import brands from '../components/e-commerce/configs/brands.config.json';
 import meta from './ecommerce-meta.config.json';
 import url from '../domain.config'
+import {connect} from "react-redux"
 
 
-export default class Ecommerce extends Component {
+class Ecommerce extends Component {
     constructor(props) {
         super(props);
     }
+    
     render() {
         return (
-            <Page meta={meta} newsItems={this.props.newsItems} showLoader={this.props.showLoader} canonical={url + "/ecommerce"}>
+            <Page meta={meta} loading={true} newsItems={this.props.newsItems} showLoader={this.props.showLoader} canonical={url + "/ecommerce"}>
                 <Rate/>
                 <ThemeDev/>
                 <Brands brands={brands}/>
@@ -30,3 +32,5 @@ export default class Ecommerce extends Component {
         )
     }
 }
+
+export default connect(state => state)(Ecommerce);

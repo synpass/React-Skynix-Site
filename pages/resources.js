@@ -6,6 +6,7 @@ import TitleHeader from "../components/resources/TitleHeader";
 import Service from "../components/resources/service";
 import meta from './resources-meta.config.json';
 import url from '../domain.config'
+import {connect} from "react-redux"
 
 const Resources = withRouter((props) => {
     return <ResourcesWrapper page={props.router.query.page} items={props.items} totals={props.totals} news={props.news} showLoader={props.showLoader}/>

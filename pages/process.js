@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import Page from "../components/Page";
-
+import {connect} from "react-redux"
 import Approach from "../components/process/Approach";
 import TestDriven from "../components/process/TestDriven";
 import Competitivepricing from "../components/process/CompetitivePricing";
@@ -9,10 +9,10 @@ import Partnership from "../components/process/Partnership";
 import meta from './process-meta.config.json';
 import url from '../domain.config'
 
-export default class Process extends Component {
+class Process extends Component {
 	render() {
 		return (
-			<Page meta={meta} newsItems={this.props.newsItems} showLoader={this.props.showLoader} canonical={url + "/process"}>
+			<Page meta={meta} newsItems={this.props.newsItems} loading={true} showLoader={this.props.showLoader} canonical={url + "/process"}>
 				<Approach/>
 				<TestDriven/>
 				<Competitivepricing/>
@@ -22,3 +22,5 @@ export default class Process extends Component {
 		)
 	}
 }
+
+export default connect(state => state)(Process);

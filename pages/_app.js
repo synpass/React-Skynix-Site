@@ -7,8 +7,26 @@
 import React from 'react'
 import App, {Container} from 'next/app'
 import Service from "../components/resources/service";
+import {createStore} from "redux";
+import {Provider} from "react-redux";
+import withRedux from "next-redux-wrapper";
 
-export default class MyApp extends App {
+const reducer = (state = {animatedLoader: true, headerAnimation: true}, action) => {
+    switch (action.type) {
+        case 'animatedLoader':
+            return {...state, animatedLoader: action.payload};
+        case 'headerAnimation':
+            return {...state, headerAnimation: action.payload};   
+        default:
+            return state
+    }
+};
+
+const makeStore = (initialState, options) => {
+    return createStore(reducer, initialState);
+};
+
+class MyApp extends App {
     constructor(props) {
         super(props);
 
@@ -78,14 +96,13 @@ export default class MyApp extends App {
 
   componentDidMount() {
         this.setState({rendered: true});
-
         //Saves/gets to/from sessionStorage information about loader
         if (window.sessionStorage.getItem('loader')) {
           this.setState({showLoader: false})
         } else {
             window.sessionStorage.setItem('loader', true)
             this.setState({showLoader: false})
-        }
+        } 
     }
 
     articleLoaded = () => this.setState({articleLoaded: true});
@@ -102,12 +119,16 @@ export default class MyApp extends App {
 
 
     render() {
-        const {Component, pageProps, newsItems} = this.props
+        const {Component, pageProps, newsItems, store} = this.props
 
         return (
             <Container>
-                <Component {...pageProps} newsItems={newsItems} {...this.state} />
+                <Provider store={store}>
+                    <Component {...pageProps} newsItems={newsItems} {...this.state} />
+                </Provider>
             </Container>
         )
     }
 }
+
+export default withRedux(makeStore)(MyApp);

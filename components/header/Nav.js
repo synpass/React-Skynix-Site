@@ -3,8 +3,9 @@ import shortid from 'shortid'
 import config from './configs/nav.config.json';
 import NavItem from './NavItem';
 import { Animated } from "react-animated-css";
+import {connect} from "react-redux";
 
-export default class Nav extends Component {
+class Nav extends Component {
     constructor(props) {
         super(props);
         this.state = { mobileMenu: false };
@@ -16,6 +17,7 @@ export default class Nav extends Component {
     }
 
     render() {
+
         const { mobileMenu } = this.state;
 
         const navItems = config.map((item, i) =>
@@ -32,7 +34,7 @@ export default class Nav extends Component {
 
         return (
             <nav className="nav">
-                <Animated animationIn='fadeInDown' animationInDelay={400}>
+                <Animated animationIn={this.props.headerAnimation ? 'fadeInDown' : ''} animationInDelay={400}>
                     <ul className={menuClassName.join(" ")}>{navItems}</ul>
                     <button className={burgerClassName.join(" ")} onClick={this.toggleMobileMenu}>
                         <span/><span/><span/>
@@ -42,3 +44,5 @@ export default class Nav extends Component {
         )
     }
 }
+
+export default connect(state => state)(Nav);

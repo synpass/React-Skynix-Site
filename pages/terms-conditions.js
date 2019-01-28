@@ -3,14 +3,17 @@ import Page from "../components/Page";
 import TitleHeader from "../components/termsconditions/TitleHeader";
 import TermsConditionsContent from "../components/termsconditions/TermsConditionsContent";
 import url from '../domain.config'
+import {connect} from "react-redux"
 
-export default class TermsConditions extends Component {
+class TermsConditions extends Component {
     render() {
         return (
-            <Page newsItems={this.props.newsItems} showLoader={this.props.showLoader} canonical={url + '/terms-conditions'}>
+            <Page loading={true} newsItems={this.props.newsItems} showLoader={this.props.showLoader} canonical={url + '/terms-conditions'}>
                 <TitleHeader/>
                 <TermsConditionsContent/>
             </Page>
         )
     }
 }
+
+export default connect(state => state)(TermsConditions);
