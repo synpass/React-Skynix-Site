@@ -4,7 +4,7 @@ import Catalog from "../components/resources/Catalog";
 import { withRouter } from 'next/router'
 import TitleHeader from "../components/resources/TitleHeader";
 import Service from "../components/resources/service";
-import meta from './index-meta.config.json';
+import meta from './resources-meta.config.json';
 import url from '../domain.config'
 
 const Resources = withRouter((props) => {
