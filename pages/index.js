@@ -67,7 +67,10 @@ class Index extends Component {
                 "https:\/\/twitter.com\/SkynixLLC",
                 "https:\/\/www.instagram.com\/skynixllc\/",
                 "https:\/\/www.youtube.com\/channel\/UCh9-x-GicQl51jFGmM0RoKw",
-                "https:\/\/www.linkedin.com\/company\/skynix\/"
+                "https:\/\/www.linkedin.com\/company\/skynix\/",
+                "https://www.crunchbase.com/organization/skynix-llc", 
+                "https://clutch.co/profile/skynix",
+                "https://www.upwork.com/o/companies/~0147b06d43db598866/"
             ]}
 
         return (
