@@ -16,7 +16,6 @@ app.prepare().then(() => {
 
 })
 
-app.use(express.static('public'));
 
 
 
