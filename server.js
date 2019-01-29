@@ -14,26 +14,9 @@ app.prepare().then(() => {
     })
     express().use(handler).listen(3000)
 
-
-    const robotsOptions = {
-        root: __dirname + '/static/',
-        headers: {
-          'Content-Type': 'text/plain;charset=UTF-8',
-        }
-      };
-      server.get('/robots.txt', (req, res) => (
-        res.status(200).sendFile('robots.txt', robotsOptions)
-      ));
-      
-      const sitemapOptions = {
-        root: __dirname + '/static/',
-        headers: {
-          'Content-Type': 'text/xml;charset=UTF-8',
-        }
-      };
-      server.get('/sitemap.xml', (req, res) => (
-        res.status(200).sendFile('sitemap.xml', sitemapOptions)
-      ));
 })
+
+app.use(express.static('public'));
+
 
 
