@@ -30,11 +30,45 @@ class ArticleWrap extends Component {
         const canonical = {canonicalUrl: url + '/resources/' + article[0].slug};
         const metaTime = {metaPublishedTime: article[0].date, metaModifiedTime: article[0].modified};
         const sameMeta ={ogLocale: 'en_US', ogType: 'article'};
+        const schema = {
+            "@context":"http:\/\/schema.org",
+            "@type":"BlogPosting",
+            "url": canonical,
+            "headline": article[0].title.rendered,
+            "datePublished": article[0].date,
+            "dateModified": article[0].modified,
+            "description": article[0].acf.description,
+            "mainEntityOfPage": {
+                "@type": "WebPage",
+                "@id": canonical
+            },
+            "publisher": {
+                "@type": "Organization",
+                "@id": url,
+                "name": "Skynix LLC"
+            },
+            "image": {
+                "@type": "ImageObject",
+                "url": article[0].imageurl,
+                "width": "1134",
+                "height": "567",
+            },
+            "author": {
+                "@type": "Person",
+                "name": article[0].authorName,
+                "image": {
+                    "@type": "ImageObject",
+                    "url": article[0].avatar,
+                    "height": "96",
+                    "width": "96"
+                }
+            }
+        }
 
         const meta = {...acf , ...canonical, ...sameMeta, ...metaTime}
 
         return (
-            <Page meta={meta} loading={true} newsItems={news} showLoader={showLoader} canonical={canonical.canonicalUrl}>
+            <Page meta={meta} loading={true} newsItems={news} showLoader={showLoader} canonical={canonical.canonicalUrl} schemaData={schema}>
                 <BlogArticle article={article} limit={1} onLoad={this.articleLoaded} slug={slug}/>
             </Page>
         )
