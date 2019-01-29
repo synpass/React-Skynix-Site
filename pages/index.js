@@ -53,13 +53,13 @@ class Index extends Component {
         let schemaData = {
             "@context":"http:\/\/schema.org",
             "@type":"Organization",
-            "legalName": "Skynix LLC",
+            "name": "Skynix LLC",
             "url":"https:\/\/skynix.co",
             "logo":"https:\/\/skynix.co\/static\/images\/skynix_logo_2018.svg",
             "contactPoint":{
                 "@type":"ContactPoint",
                 "telephone":"+380680783755",
-                "url":"https:\/\/skynix.co/#contact",
+                "url":"https:\/\/skynix.co/",
                 "contactType":"customer support"
             },
             "sameAs":[
