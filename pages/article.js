@@ -33,14 +33,14 @@ class ArticleWrap extends Component {
         const schema = {
             "@context":"http:\/\/schema.org",
             "@type":"BlogPosting",
-            "url": canonical,
+            "url": canonical.canonicalUrl,
             "headline": article[0].title.rendered,
             "datePublished": article[0].date,
             "dateModified": article[0].modified,
             "description": article[0].acf.description,
             "mainEntityOfPage": {
                 "@type": "WebPage",
-                "@id": canonical
+                "@id": canonical.canonicalUrl
             },
             "publisher": {
                 "@type": "Organization",
