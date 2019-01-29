@@ -11,7 +11,7 @@ import {createStore} from "redux";
 import {Provider} from "react-redux";
 import withRedux from "next-redux-wrapper";
 
-const reducer = (state = {animatedLoader: true, headerAnimation: true, posts: 'void'}, action) => {
+const reducer = (state = {animatedLoader: true, headerAnimation: true, posts: {}}, action) => {
     switch (action.type) {
         case 'animatedLoader':
             return {...state, animatedLoader: action.payload};
@@ -46,7 +46,7 @@ class MyApp extends App {
         if (Component.getInitialProps) {
             pageProps = await Component.getInitialProps(ctx)
             return {pageProps}
-        } else if(ctx.store.getState().posts == "void"){ // void is default value
+        } else if(!ctx.store.getState().posts.hasOwnProperty("newsItems")){ 
             await Service.getCatalogByPage(1)
                 .then(async (response) => {
 
