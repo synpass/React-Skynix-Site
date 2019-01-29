@@ -40,16 +40,17 @@ class ArticleWrap extends Component {
             "description": article[0].acf.description,
             "mainEntityOfPage": {
                 "@type": "WebPage",
-                "@id": canonical
+                "@id": canonical.canonicalUrl
             },
             "publisher": {
                 "@type": "Organization",
                 "@id": url,
-                "name": "Skynix LLC"
+                "name": "Skynix LLC",
+                "logo": url + "/static/images/skynix_logo_2018.svg"
             },
             "image": {
                 "@type": "ImageObject",
-                "url": article[0].imageurl,
+                "url": article[0].imageUrl,
                 "width": "1134",
                 "height": "567",
             },
