@@ -50,8 +50,31 @@ class Index extends Component {
     render() {
         const { parallaxBg, rendered } = this.state;
 
+        let schemaData = {
+            "@context":"http:\/\/schema.org",
+            "@type":"Organization",
+            "name": "Skynix LLC",
+            "url":"https:\/\/skynix.co",
+            "logo":"https:\/\/skynix.co\/static\/images\/skynix_logo_2018.svg",
+            "contactPoint":{
+                "@type":"ContactPoint",
+                "telephone":"+380680783755",
+                "url":"https:\/\/skynix.co/",
+                "contactType":"customer support"
+            },
+            "sameAs":[
+                "https:\/\/www.facebook.com\/SkynixLLC\/",
+                "https:\/\/twitter.com\/SkynixLLC",
+                "https:\/\/www.instagram.com\/skynixllc\/",
+                "https:\/\/www.youtube.com\/channel\/UCh9-x-GicQl51jFGmM0RoKw",
+                "https:\/\/www.linkedin.com\/company\/skynix\/",
+                "https://www.crunchbase.com/organization/skynix-llc", 
+                "https://clutch.co/profile/skynix",
+                "https://www.upwork.com/o/companies/~0147b06d43db598866/"
+            ]}
+
         return (
-            <Page loading={true} meta={meta} canonical={url} animate={true} newsItems={this.props.newsItems|| this.props.news} showLoader={this.props.showLoader}>
+            <Page loading={true} meta={meta} canonical={url} animate={true} newsItems={this.props.newsItems|| this.props.news} showLoader={this.props.showLoader} schemaData={schemaData}>
                 <ParallaxBg show={parallaxBg}/>
                 <Fullpage>
                     <Intro/>
