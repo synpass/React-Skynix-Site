@@ -33,7 +33,7 @@ class ArticleWrap extends Component {
         const schema = {
             "@context":"http:\/\/schema.org",
             "@type":"BlogPosting",
-            "url": canonical,
+            "url": canonical.canonicalUrl,
             "headline": article[0].title.rendered,
             "datePublished": article[0].date,
             "dateModified": article[0].modified,
