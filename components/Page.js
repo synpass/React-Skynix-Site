@@ -8,6 +8,7 @@ import ParallaxSlide from "./ParallaxSlide";
 import ContactBlock from "../components/contact/ContactBlock";
 import JsonLd from '../components/JsonLd';
 import {connect} from "react-redux"
+import url from '../domain.config'
 
 import Meta from "./Meta";
 import Head from 'next/head'
@@ -67,7 +68,7 @@ class Page extends Component {
             <div className={className}>
                 <Head>
                     {this.props.schemaData ? <JsonLd data={this.props.schemaData} /> : null}
-                    <meta name="robots" content="noindex, nofollow"/>
+                    { url === "https://staging.skynix.co" ? <meta name="robots" content="noindex, nofollow"/> : null }
                     <meta name="viewport" content="initial-scale=1.0, width=device-width"/>
                     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"/>
                     <link rel="stylesheet"
