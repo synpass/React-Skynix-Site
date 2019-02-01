@@ -4,28 +4,34 @@
     "title": "Bikebiz",
     "img": "bikebizprj.jpg",
     "description": "Revamped and modern e-commerce store based on a highly customized Magento 2 platform. Complementary order management application based on Javascript Vue.js framework and Magento API. This application is picking up new orders from Magento, allowing staff process them using intuitive, super fast interface and workflow.",
-    "link": "/"
+    "link": "https://skynix.co/resources/bikebiz",
+    "goTo": "https://bikebiz.com.au",
+    "phrase": "learn more"
   },
   {
     "id": 2,
     "title": "Ddrops",
     "img": "ddrpprj.jpg",
     "description": "A transformed Shopify-based online presence with Magento 2 Enterprise Cloud Edition platform, with the goal of allowing Ddrops benefit from platform advancements, improved performance and security practices. Revamped design with modern layouts, refined brand identity, expanded international presence, optimized operations resulted in improved customer service and webshop access experience.",
-    "link": "/"
+    "link": "https://staging-5em2ouy-4wzynjtjglljs.us-3.magentosite.cloud/us_en/",
+    "phrase": "go to staging"
   },
   {
     "id": 3,
     "title": "Life in Cache",
     "img": "licprj.jpg",
     "description": "A solid SaaS solution allowing individuals and businesses securely store and share all sorts of sensitive information.",
-    "link": "/"
+    "link": "https://lifeincache.com",
+    "phrase": "go to website and sign up for free"
   },
   {
     "id": 4,
     "title": "EMAC",
     "img": "emacprj.jpg",
     "description": "A global job management system that is aimed at tracking business processes while gaining productivity. It makes control over business processes faster and easier without adding hassle to your life. Founded in Sydney, Australia, nowadays it has grown into a multinational company with hundreds of clients all over the world. EMAC is developed with Yii framework, and this allows to make emphasis on the simplicity and accessibility. ",
-    "link": "/"
+    "link": "https://skynix.co/resources/benefits-of-yii-framework-on-the-example-of-emac-project-skynix-llc",
+    "phrase": "learn more",
+    "goTo": "https://www.emac.com.au/"
   }
 
 ]
