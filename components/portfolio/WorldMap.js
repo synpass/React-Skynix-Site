@@ -22,13 +22,17 @@ class Map extends Component{
           .from(this.refs.jsHookLink5,1,{drawSVG:"0%"})       
           .from(this.refs.jsHookCircle5,1,{opacity:0});
         
+           /*
+           map on hover animation
+
            map.onmouseover = function(){
                 TweenMax.to(map, .2, {scale:1.2});
            }
            
            map.onmouseleave = function(){
                 TweenMax.to(map, .2, {scale:1});
-           }
+                
+           } */
     }
     render(){
         return(
