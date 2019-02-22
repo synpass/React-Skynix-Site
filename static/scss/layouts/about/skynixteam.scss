@@ -20,7 +20,13 @@
 		}
 	}
 	.owl-item {
-		padding: 10px;
+        padding: 10px;
+        
+        img{
+            width: 80%;
+            display: block;
+            margin: 0 auto;
+        }
 	}
 	.owl-nav {
 		@include max-width;
@@ -43,49 +49,51 @@
 		}
 	}
 	&__col {
-		padding: 15px;
+		padding: 10px;
 		height: 100%;
 		box-shadow: rgba(28, 28, 28, 0.05) 0px 0px 8px 3px;
 		img {
-			width: 100%;
+            width: 80%;
+            display: block;
+            margin: 0 auto;
 		}
 	}
 	&__name {
 		padding-top: 10px;
 		padding-bottom: 10px;
 		line-height: 30px;
-		font-size: 24px;
+		font-size: 16px;
 		font-family: $gotham-medium;
 		@include tablets {
 			line-height: 36px;
-			font-size: 28px;
+			font-size: 22px;
 		}
 	}
 	&__position {
-		font-size:17px;
+		font-size:13px;
 		line-height: 23px;
 		padding-bottom: 15px;
 		color: $grey-dark;
 		@include tablets {
-			font-size:20px;
+			font-size:17px;
 			line-height: 26px;
 			padding-bottom: 20px;
 		}
 	}
 	&__description {
-		font-size:16px;
+		font-size:13px;
 		line-height: 19px;
 		@include tablets {
-			font-size:18px;
+			font-size:16px;
 			line-height: 21px;
 		}
 	}
 	&__social {
 		list-style: none;
-		padding-top: 20px;
+		padding-top: 15px;
 		li {
 			display: inline-block;
-			margin-right:10px;
+			margin-right:15px;
 			@include tablets {
 				margin-right:15px;
 			}
@@ -103,14 +111,14 @@
 			background: url("/static/images/about/social/skype.svg") no-repeat;
 		}
 		a {
-			width: 50px;
-			height: 50px;
+			width: 30px;
+			height: 30px;
 			display: inline-block;
 			background-size: 100%;
 			transition: all 0.6s;
 			@include tablets {
-				width: 30px;
-				height: 30px;
+				width: 35px;
+				height: 35px;
 			}
 			&:hover {
 				transform: scale(1.2);

@@ -30,16 +30,6 @@
 		"skypeLinksTeam": ""
 	},
 	{
-		"idTeam": 4,
-		"imageTeam": "/static/images/about/teams/k_prokopova.jpg",
-		"nameTeam": "Kateryna Prokopova",
-		"positionTeam": "Office Manager",
-		"shortBioTeam": "Specialist in the fields of international information, communications and relations.",
-		"facebookLinksTeam": "https://www.facebook.com/kat.prokopova",
-		"linkedinLinksTeam": "https://www.linkedin.com/in/kateryna-prokopova-1a0997161",
-		"skypeLinksTeam": ""
-	},
-	{
 		"idTeam": 5,
 		"imageTeam": "/static/images/about/teams/Natalia-Yakimenko.jpg",
 		"nameTeam": "Natalia Yakimenko",
@@ -59,26 +49,7 @@
 		"linkedinLinksTeam": "https://www.linkedin.com/in/alekseyyp",
 		"skypeLinksTeam": "skype:skynixukraine?call"
 	},
-	{
-		"idTeam": 7,
-		"imageTeam": "/static/images/about/teams/v-prozhoga.jpg",
-		"nameTeam": "Vitaliy Prozhoga",
-		"positionTeam": "Front End Developer",
-		"shortBioTeam": "",
-		"facebookLinksTeam": "https://www.facebook.com/SkynixUkraine/",
-		"linkedinLinksTeam": "",
-		"skypeLinksTeam": ""
-	},
-	{
-		"idTeam": 8,
-		"imageTeam": "/static/images/about/teams/Olha-Hrybuk.jpg",
-		"nameTeam": "Olha Hrybuk",
-		"positionTeam": "PHP / Magento Developer",
-		"shortBioTeam": "",
-		"facebookLinksTeam": "https://www.facebook.com/SkynixUkraine/",
-		"linkedinLinksTeam": "",
-		"skypeLinksTeam": ""
-	},
+
 	{
 		"idTeam": 9,
 		"imageTeam": "/static/images/about/teams/alex-griban.jpg",
@@ -99,26 +70,7 @@
 		"linkedinLinksTeam": "",
 		"skypeLinksTeam": ""
 	},
-	{
-		"idTeam": 11,
-		"imageTeam": "/static/images/about/teams/Yurii-Geivakh.jpg",
-		"nameTeam": "Yurii Geivakh",
-		"positionTeam": "Front End Developer",
-		"shortBioTeam": "",
-		"facebookLinksTeam": "https://www.facebook.com/SkynixUkraine/",
-		"linkedinLinksTeam": "",
-		"skypeLinksTeam": ""
-	},
-	{
-		"idTeam": 12,
-		"imageTeam": "/static/images/about/teams/Oleksandr-Malamud.jpg",
-		"nameTeam": "Oleksandr Malamud",
-		"positionTeam": "Front End Developer",
-		"shortBioTeam": "",
-		"facebookLinksTeam": "https://www.facebook.com/SkynixUkraine/",
-		"linkedinLinksTeam": "",
-		"skypeLinksTeam": ""
-	},
+
 	{
 		"idTeam": 13,
 		"imageTeam": "/static/images/about/teams/v-litvinov.jpg",
@@ -134,126 +86,6 @@
 		"imageTeam": "/static/images/about/teams/Anton-Matyunin.jpg",
 		"nameTeam": "Anton Matyunin",
 		"positionTeam": "DevOps Engineer",
-		"shortBioTeam": "",
-		"facebookLinksTeam": "https://www.facebook.com/SkynixUkraine/",
-		"linkedinLinksTeam": "",
-		"skypeLinksTeam": ""
-	},
-	{
-		"idTeam": 15,
-		"imageTeam": "/static/images/about/teams/Anton-Lykhatskyi.jpg",
-		"nameTeam": "Anton Lykhatskyi",
-		"positionTeam": "Front End Developer",
-		"shortBioTeam": "",
-		"facebookLinksTeam": "https://www.facebook.com/SkynixUkraine/",
-		"linkedinLinksTeam": "",
-		"skypeLinksTeam": ""
-	},
-	{
-		"idTeam": 16,
-		"imageTeam": "/static/images/about/teams/i-luchko.jpg",
-		"nameTeam": "Igor Luchko",
-		"positionTeam": "Back End Developer",
-		"shortBioTeam": "",
-		"facebookLinksTeam": "https://www.facebook.com/SkynixUkraine/",
-		"linkedinLinksTeam": "",
-		"skypeLinksTeam": ""
-	},
-	{
-		"idTeam": 17,
-		"imageTeam": "/static/images/about/teams/borys-l.jpg",
-		"nameTeam": "Boris Lemeshko",
-		"positionTeam": "Back End Developer",
-		"shortBioTeam": "",
-		"facebookLinksTeam": "https://www.facebook.com/SkynixUkraine/",
-		"linkedinLinksTeam": "",
-		"skypeLinksTeam": ""
-	},
-	{
-		"idTeam": 18,
-		"imageTeam": "/static/images/about/teams/Maksim-Sukhar.jpg",
-		"nameTeam": "Maksim Sukhar",
-		"positionTeam": "QA Engineer",
-		"shortBioTeam": "",
-		"facebookLinksTeam": "https://www.facebook.com/SkynixUkraine/",
-		"linkedinLinksTeam": "",
-		"skypeLinksTeam": ""
-	},
-	{
-		"idTeam": 19,
-		"imageTeam": "/static/images/about/teams/Volodymyr-Babak-.jpg",
-		"nameTeam": "Volodymyr Babak",
-		"positionTeam": "Back End Developer",
-		"shortBioTeam": "",
-		"facebookLinksTeam": "https://www.facebook.com/SkynixUkraine/",
-		"linkedinLinksTeam": "",
-		"skypeLinksTeam": ""
-	},
-	{
-		"idTeam": 20,
-		"imageTeam": "/static/images/about/teams/Tetiana-Dmitrenko.jpg",
-		"nameTeam": "Tetiana Dmitrenko",
-		"positionTeam": "Front End Developer",
-		"shortBioTeam": "",
-		"facebookLinksTeam": "https://www.facebook.com/SkynixUkraine/",
-		"linkedinLinksTeam": "",
-		"skypeLinksTeam": ""
-	},
-	{
-		"idTeam": 21,
-		"imageTeam": "/static/images/about/teams/Maryna-Skrypnyk.jpg",
-		"nameTeam": "Maryna Skrypnyk",
-		"positionTeam": "Front End Developer",
-		"shortBioTeam": "",
-		"facebookLinksTeam": "https://www.facebook.com/SkynixUkraine/",
-		"linkedinLinksTeam": "",
-		"skypeLinksTeam": ""
-	},
-	{
-		"idTeam": 22,
-		"imageTeam": "/static/images/about/teams/o-bulba.jpg",
-		"nameTeam": "Oleksii Bulba",
-		"positionTeam": "Back End Developer",
-		"shortBioTeam": "",
-		"facebookLinksTeam": "https://www.facebook.com/SkynixUkraine/",
-		"linkedinLinksTeam": "",
-		"skypeLinksTeam": ""
-	},
-	{
-		"idTeam": 23,
-		"imageTeam": "/static/images/about/teams/oleg-m.jpg",
-		"nameTeam": "Oleg Pristashkin",
-		"positionTeam": "Back End Developer",
-		"shortBioTeam": "",
-		"facebookLinksTeam": "https://www.facebook.com/SkynixUkraine/",
-		"linkedinLinksTeam": "",
-		"skypeLinksTeam": ""
-	},
-	{
-		"idTeam": 24,
-		"imageTeam": "/static/images/about/teams/o-lihachov.jpg",
-		"nameTeam": "Oleksii Lihachov",
-		"positionTeam": "Front End Developer",
-		"shortBioTeam": "",
-		"facebookLinksTeam": "https://www.facebook.com/SkynixUkraine/",
-		"linkedinLinksTeam": "",
-		"skypeLinksTeam": ""
-	},
-	{
-		"idTeam": 25,
-		"imageTeam": "/static/images/about/teams/d-bondaletov.jpg",
-		"nameTeam": "Denis Bondaletov",
-		"positionTeam": "System Administrator",
-		"shortBioTeam": "",
-		"facebookLinksTeam": "https://www.facebook.com/SkynixUkraine/",
-		"linkedinLinksTeam": "",
-		"skypeLinksTeam": ""
-	},
-	{
-		"idTeam": 26,
-		"imageTeam": "/static/images/about/teams/Helena-Sajuk.jpg",
-		"nameTeam": "Helena Sajuk",
-		"positionTeam": "QA Engineer",
 		"shortBioTeam": "",
 		"facebookLinksTeam": "https://www.facebook.com/SkynixUkraine/",
 		"linkedinLinksTeam": "",
