@@ -4,7 +4,6 @@ import PropTypes from 'prop-types';
 import AuthorPic from "./AuthorPic";
 export default function ArticleBody(props) {
     const {content} = props;
-
     return (
         <div className='blog-article__content-text'>
             {ReactHtmlParser(content.rendered)}
