@@ -1,21 +1,33 @@
+
+const { createServer } = require('http')
+const { parse } = require('url')
 const next = require('next')
-const routes = require('./routes')
-const app = next({dev: process.env.NODE_ENV !== 'production'})
-const handler = routes.getRequestHandler(app)
+const { join } = require('path')
 
-// // With express
-const express = require('express')
+const port = parseInt(process.env.PORT, 10) || 3000
+const dev = process.env.NODE_ENV !== 'production'
+const app = next({ dev })
+const handle = app.getRequestHandler()
+
+
 app.prepare().then(() => {
+    createServer((req, res) => {
+        const parsedUrl = parse(req.url, true)
+        const rootStaticFiles = ['/robots.txt', '/sitemap.xml', '/favicon.ico']
 
-    const server = express()
+        if (rootStaticFiles.indexOf(parsedUrl.pathname) > -1) {
+            const path = join(__dirname, 'static', parsedUrl.pathname)
+            app.serveStatic(req, res, path)
+        } else if (parsedUrl.pathname.includes('/resources/')) {
+            let slug = parsedUrl.pathname.substring(parsedUrl.pathname.lastIndexOf("/") + 1),
+                route = slug ? "/article" : "/resources";
 
-    server.get('*', (req, res) => {
-        return handle(req, res)
+            app.render(req, res, route, slug ? {slug: slug}: {page:1})
+
+        } else {
+            handle(req, res)
+        }
+    }).listen(port, err => {
+        if (err) throw err
     })
-    express().use(handler).listen(3000)
-
 })
-
-
-
-
