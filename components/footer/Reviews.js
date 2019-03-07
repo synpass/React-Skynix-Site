@@ -8,7 +8,7 @@ import Clutch from '../reviews/Clutch';
 
 export default function Reviews() {
     return (
-        <LazyLoad className='reviews' animationIn='fadeInUp'>
+        <LazyLoad className='reviews' animationIn='fadeIn' animationInDelay = {600}>
             <h4 className='reviews__title'>Check out our <b>reviews</b></h4>
             <div className='reviews__grid'>
                 <div className='reviews__item'>

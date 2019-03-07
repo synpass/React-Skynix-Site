@@ -3,7 +3,7 @@ import {Animated} from "react-animated-css";
 
 export default function TitleHeader() {
     const animation = {
-        animationIn: 'fadeInDown',
+        animationIn: 'fadeIn',
         animationInDelay: 400
     };
     return(

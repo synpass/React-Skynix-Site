@@ -4,8 +4,8 @@ import { Animated } from "react-animated-css";
 export default class ThemeDev extends Component {
     render() {
         const animation = {
-            animationIn: 'fadeInUp',
-            animationInDelay: 700
+            animationIn: 'fadeIn',
+            animationInDelay: 1000
         };
         return (
             <Animated {...animation}>

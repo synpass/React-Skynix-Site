@@ -3,7 +3,7 @@ import {Animated} from "react-animated-css";
 
 export default function Ideology() {
 	const animation = {
-		animationIn: 'fadeInRight',
+		animationIn: 'fadeIn',
 		animationInDelay: 1000
 	};
 	return (

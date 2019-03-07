@@ -4,8 +4,8 @@ import Particle from "../Particle";
 
 export default function TitleHeader() {
     const animation = {
-        animationIn: 'fadeInDown',
-        animationInDelay: 400
+        animationIn: 'fadeIn',
+        animationInDelay: 600
     };
     return (
         <Animated {...animation}>

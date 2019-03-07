@@ -4,8 +4,8 @@ import Particle from "../Particle";
 
 export default function Rate() {
     const animation = {
-        animationIn: 'fadeInDown',
-        animationInDelay: 1000
+        animationIn: 'fadeIn',
+        animationInDelay: 500
     };
     return (
         <Animated {...animation}>

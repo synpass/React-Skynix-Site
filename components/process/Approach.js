@@ -4,8 +4,8 @@ import { Animated } from 'react-animated-css';
 
 export default function Approach() {
 	const animation = {
-		animationIn: 'fadeInDown',
-		animationInDelay: 1000
+		animationIn: 'fadeIn',
+		animationInDelay: 800
 	};
 	return (
 		<Animated {...animation} className='pr-approach'>
