@@ -1,29 +1,110 @@
 import React, { Component } from 'react';
 import LazyLoad from "../LazyLoad";
+import AnchorLink from 'react-anchor-link-smooth-scroll';
+import {TweenMax} from 'gsap';
 
 export default class TestDriven extends Component {
+	
 	componentDidMount() {
 		const script = (
-			$('.js-hook__td-title').find('.item-wave').hover(function testDriven() {
-				let titledata = $(this).data('wavetitle');
-				let title = $('.js-hook__td-title');
-				let contentItem = $('.js-hook__td-content').find('.content-show');
-				title.find('.item-wave').removeClass('active');
-				contentItem.removeClass('active');
-				title.attr('class', 'pr-testdriven__wave-area js-hook__td-title');
-				title.addClass('step-' + titledata);
-				$(this).addClass('active');
-				$('.js-hook__td-content').find('.content-show[data-wavecontainer=' + titledata + ']').addClass('active');
-			}));
+			
+			$('.pr-testdriven').on('mousewheel DOMMouseScroll', function (event) {
+				
+				let processContainer = $('.js-hook__td-title');
+
+				if (processContainer.css('display') === 'none') {
+					return;
+				}
+
+				let scrollValue = navigator.userAgent.toLowerCase().indexOf('firefox') > -1 ?
+					- event.originalEvent.detail 
+					:
+					event.originalEvent.wheelDelta;
+				
+				let	currentItem = processContainer.find('div.active'),
+					titledata = currentItem.data('wavetitle'),
+					finishScrollValue = $('.pr-testdriven').offset().top,
+					nextItem;
+				
+				if ((titledata === 8 && scrollValue < 0) || (titledata === 1 && scrollValue > 0)) {
+					return;
+				} 
+				
+				event.preventDefault();
+
+				if ( window.scrollY - finishScrollValue > 10 || window.scrollY - finishScrollValue < -10 ) {
+					smoothScroll(window.scrollY, finishScrollValue);
+				} else {
+					getNextStep();
+				}
+
+				function getNextStep () {
+					
+					let descriptionContainer = $('.js-hook__td-content');
+					let nextDescription; 
+
+					if ( scrollValue < 0 && titledata < 8) {
+						currentItem.removeClass('active');
+						nextItem = currentItem.next('.item-wave');
+						nextItem.addClass('active');
+						titledata = nextItem.data('wavetitle');
+					}
+					else if (scrollValue > 0 && titledata > 1) {
+						currentItem.removeClass('active');
+						nextItem = currentItem.prev('.item-wave');
+						nextItem.addClass('active');
+						titledata = nextItem.data('wavetitle');
+					}
+					
+					processContainer.attr('class', 'pr-testdriven__wave-area js-hook__td-title').addClass('step-' + titledata)
+
+					descriptionContainer
+						.find('.active')
+						.removeClass('active');
+					nextDescription = descriptionContainer
+						.find('.content-show[data-wavecontainer=' + titledata + ']')
+						.addClass('active');
+						
+					if (nextDescription.children().length === 1) {
+						descriptionContainer.css('opacity', 0);
+					} else {
+						descriptionContainer.css('opacity', 1);
+					}
+					
+				}
+
+				function smoothScroll (currentScroll, finishVal) {
+					let timer;
+					let currentVal = currentScroll;
+						
+					if ( currentVal < finishVal && scrollValue < 0 ) {
+						timer = setTimeout( () => {
+							window.scrollTo(0, currentVal);
+							smoothScroll(currentVal + 10, finishVal);
+						}, 10);
+					} else if ( currentVal > finishVal - 1 && scrollValue > 0 ) {
+						timer = setTimeout( () => {
+							window.scrollTo(0, currentVal);
+							smoothScroll(currentVal - 11, finishVal);
+						}, 10);
+					} else {
+						clearTimeout(timer);
+					}
+				}
+			})
+		);
 	}
+
 	render () {
 		return (
 				<LazyLoad className='pr-testdriven'>
 					<div className="pr-testdriven__fon-title-area">
 						<p className="fon-title">process</p>
-						<h2 className="section-heading">agile test driven development</h2>
+						<h2 onClick = {this.handleWheel} className="section-heading">agile test driven development</h2>
 					</div>
-
+					
+					<AnchorLink href='#competitivepricing' offset='-120' className = 'pr-testdriven__go-next-section'>Next section</AnchorLink>
+					
 					<div className='pr-testdriven__wave-area step-1 js-hook__td-title'>
 						<div className='item-wave active' data-wavetitle="1">
 							<h4 className='wave-title text-top'>Project Kickoff</h4>
@@ -60,8 +141,7 @@ export default class TestDriven extends Component {
 						<div className="content-show active" data-wavecontainer="1" >
 							<h5 className="content-title">Project Kickoff</h5>
 							<ul>
-								<li>We get to the bottom of your every expectation and 
-								requirement</li>
+								<li>we get to the bottom of your every expectation and requirement</li>
 								<li>Where necessary, we prepare a full project specification and 
 								submit a detailed quote for your review and approval</li>
 							</ul>
@@ -89,32 +169,14 @@ export default class TestDriven extends Component {
 
 						<div className="content-show" data-wavecontainer="4">
 							<h5 className="content-title">Deploy to Production (live) environment</h5>
-							<ul>
-								<li>We get to the bottom of your every expectation and 
-								requirement</li>
-								<li>Where necessary, we prepare a full project specification and 
-								submit a detailed quote for your review and approval</li>
-							</ul>
 						</div>
 
 						<div className="content-show" data-wavecontainer="5">
 							<h5 className="content-title">Load testing</h5>
-							<ul>
-								<li>We get to the bottom of your every expectation and 
-								requirement</li>
-								<li>Where necessary, we prepare a full project specification and 
-								submit a detailed quote for your review and approval</li>
-							</ul>
 						</div>
 
 						<div className="content-show" data-wavecontainer="6">
 							<h5 className="content-title">Backups</h5>
-							<ul>
-								<li>We get to the bottom of your every expectation and 
-								requirement</li>
-								<li>Where necessary, we prepare a full project specification and 
-								submit a detailed quote for your review and approval</li>
-							</ul>
 						</div>
 
 						<div className="content-show" data-wavecontainer="7">
@@ -124,12 +186,6 @@ export default class TestDriven extends Component {
 
 						<div className="content-show" data-wavecontainer="8">
 							<h5 className="content-title">Ongoing Maintenance</h5>
-							<ul>
-								<li>We get to the bottom of your every expectation and 
-								requirement</li>
-								<li>Where necessary, we prepare a full project specification and 
-								submit a detailed quote for your review and approval</li>
-							</ul>
 						</div>
 
 					</div>
