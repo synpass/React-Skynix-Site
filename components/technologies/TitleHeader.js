@@ -4,7 +4,7 @@ import TextLoop from "react-text-loop";
 
 export default function TitleHeader() {
     const animation = {
-        animationIn: 'fadeInDown',
+        animationIn: 'fadeIn',
         animationInDelay: 400
     };
     return(

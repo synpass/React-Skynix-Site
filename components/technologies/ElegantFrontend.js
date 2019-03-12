@@ -3,8 +3,8 @@ import FrontBrands from "./FrontBrands"
 
 export default function ElegantFrontend() {
     const animation = {
-        animationIn: 'fadeInDown',
-        animationInDelay: 400,
+        animationIn: 'fadeIn',
+        animationInDelay: 700,
     };
     return (
     <div className="tech__block-pos1">

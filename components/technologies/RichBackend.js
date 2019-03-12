@@ -7,8 +7,8 @@ export default function RichBackend() {
         position: 'relative',
     }
     const animation = {
-        animationIn: 'fadeInDown',
-        animationInDelay: 400,
+        animationIn: 'fadeIn',
+        animationInDelay: 800,
         style: styleBlock,
     };
     return (

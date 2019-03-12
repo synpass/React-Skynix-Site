@@ -5,8 +5,8 @@ import PropTypes from 'prop-types';
 export function WhySkynixPoint(props) {
 
     const animation = {
-        animationIn: 'fadeInUp',
-        animationInDelay: props.id * 350,
+        animationIn: 'fadeIn',
+        animationInDelay: props.id * 450,
         className: 'why-skynix-point',
         isVisible: props.show
     };

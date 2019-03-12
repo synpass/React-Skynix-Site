@@ -3,8 +3,8 @@ import {Animated} from "react-animated-css";
 
 export default function History() {
 	const animation = {
-		animationIn: 'fadeInLeft',
-		animationInDelay: 600
+		animationIn: 'fadeIn',
+		animationInDelay: 700
 	};
 	return (
 		<Animated {...animation} className='as-history'>

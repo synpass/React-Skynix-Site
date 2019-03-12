@@ -3,7 +3,7 @@ import LazyLoad from "../LazyLoad";
 
 export default function DataMigration() {
     return (
-        <LazyLoad className='ec-datamigration' id='ecDatamigration' animationIn='fadeInUp'>
+        <LazyLoad className='ec-datamigration' id='ecDatamigration' animationIn='fadeIn' animationInDelay={600}>
             <h2 className='section-heading'>Data Migration<br />
             & Product Structuring</h2>
             <div className='ec-datamigration__container'>

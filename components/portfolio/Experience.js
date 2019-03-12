@@ -5,8 +5,8 @@ import WorldMap from "./WorldMap";
 export default function Experience() {
 	return (
         <Animated 
-        animationIn= "fadeInDown"
-        animationInDelay= {400}>
+        animationIn= "fadeIn"
+        animationInDelay= {600}>
             <div className='ec-titleheader'>
                 <h1 className='heading ec-titleheader__heading'><b>skynix</b> experience</h1>
                 <h3 className='paragraph'>
