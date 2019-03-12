@@ -21,9 +21,12 @@ export default function SkynixTeam(props) {
 			544:{
 				items:2,
 			},
-			1024:{
-				items:3,
+			1024: {
+				items:3
 			},
+			1300:{
+				items:4,
+			}
 		}
 	};
 
