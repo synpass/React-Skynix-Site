@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import LazyLoad from "../LazyLoad";
 import AnchorLink from 'react-anchor-link-smooth-scroll';
-import {TweenMax} from 'gsap';
 
 export default class TestDriven extends Component {
 	
@@ -9,47 +8,51 @@ export default class TestDriven extends Component {
 		const script = (
 			
 			$('.pr-testdriven').on('mousewheel DOMMouseScroll', function (event) {
-				
+
 				let processContainer = $('.js-hook__td-title');
 
 				if (processContainer.css('display') === 'none') {
 					return;
 				}
 
-				let scrollValue = navigator.userAgent.toLowerCase().indexOf('firefox') > -1 ?
+				let scrollDelta = navigator.userAgent.toLowerCase().indexOf('firefox') > -1 ?
 					- event.originalEvent.detail 
 					:
-					event.originalEvent.wheelDelta;
+					event.originalEvent.wheelDelta / 120;
 				
 				let	currentItem = processContainer.find('div.active'),
 					titledata = currentItem.data('wavetitle'),
-					finishScrollValue = $('.pr-testdriven').offset().top,
+					containerOffset = $(this).offset().top,
+					timer,
 					nextItem;
 				
-				if ((titledata === 8 && scrollValue < 0) || (titledata === 1 && scrollValue > 0)) {
+				if ((titledata === 8 && scrollDelta < 0) || (titledata === 1 && scrollDelta > 0)) {
+					clearTimeout(timer);
 					return;
 				} 
 				
 				event.preventDefault();
-
-				if ( window.scrollY - finishScrollValue > 10 || window.scrollY - finishScrollValue < -10 ) {
-					smoothScroll(window.scrollY, finishScrollValue);
+				
+				if ( window.scrollY - containerOffset > 10 || window.scrollY - containerOffset < 0 ) {
+					window.scrollTo({
+						top: containerOffset,
+						behavior: "smooth"
+					});
 				} else {
-					getNextStep();
+					timer = setTimeout(getNextStep, 150);
 				}
-
+			
 				function getNextStep () {
-					
 					let descriptionContainer = $('.js-hook__td-content');
 					let nextDescription; 
 
-					if ( scrollValue < 0 && titledata < 8) {
+					if ( scrollDelta < 0 && titledata < 8) {
 						currentItem.removeClass('active');
 						nextItem = currentItem.next('.item-wave');
 						nextItem.addClass('active');
 						titledata = nextItem.data('wavetitle');
 					}
-					else if (scrollValue > 0 && titledata > 1) {
+					else if (scrollDelta > 0 && titledata > 1) {
 						currentItem.removeClass('active');
 						nextItem = currentItem.prev('.item-wave');
 						nextItem.addClass('active');
@@ -64,32 +67,6 @@ export default class TestDriven extends Component {
 					nextDescription = descriptionContainer
 						.find('.content-show[data-wavecontainer=' + titledata + ']')
 						.addClass('active');
-						
-					if (nextDescription.children().length === 1) {
-						descriptionContainer.css('opacity', 0);
-					} else {
-						descriptionContainer.css('opacity', 1);
-					}
-					
-				}
-
-				function smoothScroll (currentScroll, finishVal) {
-					let timer;
-					let currentVal = currentScroll;
-						
-					if ( currentVal < finishVal && scrollValue < 0 ) {
-						timer = setTimeout( () => {
-							window.scrollTo(0, currentVal);
-							smoothScroll(currentVal + 10, finishVal);
-						}, 10);
-					} else if ( currentVal > finishVal - 1 && scrollValue > 0 ) {
-						timer = setTimeout( () => {
-							window.scrollTo(0, currentVal);
-							smoothScroll(currentVal - 11, finishVal);
-						}, 10);
-					} else {
-						clearTimeout(timer);
-					}
 				}
 			})
 		);
