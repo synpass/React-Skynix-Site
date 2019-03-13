@@ -19,20 +19,17 @@
 			padding-bottom: 40px;
 		}
 	}
+	.owl-stage {
+		display: flex;
+	}
 	.owl-item {
-        padding: 10px;
-        
-        img{
-            width: 80%;
-            display: block;
-            margin: 0 auto;
-        }
+		padding: 10px;
 	}
 	.owl-nav {
 		@include max-width;
+		padding-top: 30px;
 		display: flex;
 		justify-content: flex-end;
-		padding-top: 30px;
 		.owl-prev, .owl-next {
 			height: 22px;
 			background: url('/static/images/carousel/arrow.svg') no-repeat center;
@@ -49,18 +46,19 @@
 		}
 	}
 	&__col {
-		padding: 10px;
 		height: 100%;
 		box-shadow: rgba(28, 28, 28, 0.05) 0px 0px 8px 3px;
+		display: flex;
+		flex-direction: column;
+		justify-content: flex-start;
 		img {
-            width: 80%;
+            width: 100%;
             display: block;
-            margin: 0 auto;
+			margin: 0 auto;
 		}
 	}
 	&__name {
-		padding-top: 10px;
-		padding-bottom: 10px;
+		padding: 10px;
 		line-height: 30px;
 		font-size: 16px;
 		font-family: $gotham-medium;
@@ -72,7 +70,7 @@
 	&__position {
 		font-size:13px;
 		line-height: 23px;
-		padding-bottom: 15px;
+		padding: 0 10px 15px 10px;
 		color: $grey-dark;
 		@include tablets {
 			font-size:17px;
@@ -83,6 +81,7 @@
 	&__description {
 		font-size:13px;
 		line-height: 19px;
+		padding: 0 10px;
 		@include tablets {
 			font-size:16px;
 			line-height: 21px;
@@ -90,7 +89,8 @@
 	}
 	&__social {
 		list-style: none;
-		padding-top: 15px;
+		margin-top: auto;
+		padding: 15px 10px;
 		li {
 			display: inline-block;
 			margin-right:15px;
