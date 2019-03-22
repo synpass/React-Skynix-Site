@@ -3,73 +3,88 @@ import LazyLoad from "../LazyLoad";
 import AnchorLink from 'react-anchor-link-smooth-scroll';
 
 export default class TestDriven extends Component {
+
+	constructor (props) {
+		super(props);
+
+		this.processTimeline = this._processTimeline.bind(this);
+
+		this.state = {
+			marker: true,
+		}
+
+	}
 	
 	componentDidMount() {
-		const script = (
+		let container = document.querySelector('.pr-testdriven');
+		container.addEventListener('wheel', this.processTimeline);
+	}
+
+	_processTimeline (event){
+		
+			let container = document.querySelector('.pr-testdriven');
+			let processContainer = container.querySelector('.js-hook__td-title');
+
+			if (getComputedStyle(processContainer, null).display === 'none') {
+				return;
+			}
 			
-			$('.pr-testdriven').on('mousewheel DOMMouseScroll', function (event) {
-
-				let processContainer = $('.js-hook__td-title');
-
-				if (processContainer.css('display') === 'none') {
-					return;
-				}
-
-				let scrollDelta = navigator.userAgent.toLowerCase().indexOf('firefox') > -1 ?
-					- event.originalEvent.detail 
-					:
-					event.originalEvent.wheelDelta / 120;
+			let scrollDelta = event.deltaY;
+			let	currentItem = processContainer.querySelector('div.active');
+			let titledata = currentItem.dataset.wavetitle;
+			let containerTop = container.getBoundingClientRect().top;
+			let containerOffset = container.getBoundingClientRect().top - document.querySelector('body').getBoundingClientRect().top;
+			let	timer,
+				nextItem;
 				
-				let	currentItem = processContainer.find('div.active'),
-					titledata = currentItem.data('wavetitle'),
-					containerOffset = $(this).offset().top,
-					timer,
-					nextItem;
-				
-				if ((titledata === 8 && scrollDelta < 0) || (titledata === 1 && scrollDelta > 0)) {
-					clearTimeout(timer);
-					return;
-				} 
-				
-				event.preventDefault();
-				
-				if ( window.scrollY - containerOffset > 10 || window.scrollY - containerOffset < 0 ) {
-					window.scrollTo({
-						top: containerOffset,
-						behavior: "smooth"
-					});
-				} else {
-					timer = setTimeout(getNextStep, 150);
-				}
+			if ((titledata == 8 && scrollDelta > 0) || (titledata == 1 && scrollDelta < 0)) {
+				return;
+			} 
 			
-				function getNextStep () {
-					let descriptionContainer = $('.js-hook__td-content');
+			event.preventDefault();
+
+		if ( containerTop > 10 || containerTop < 0 ) {
+			window.scrollTo({
+				top: containerOffset,
+				behavior: "smooth"
+			});
+		} else {
+			if (this.state.marker) {
+				this.setState({marker: false});
+				timer = setTimeout( () => {
+					let descriptionContainer = container.querySelector('.js-hook__td-content');
 					let nextDescription; 
 
-					if ( scrollDelta < 0 && titledata < 8) {
-						currentItem.removeClass('active');
-						nextItem = currentItem.next('.item-wave');
-						nextItem.addClass('active');
-						titledata = nextItem.data('wavetitle');
+					if ( scrollDelta > 0 && titledata < 8) {
+						currentItem.classList.remove('active');
+						nextItem = currentItem.nextElementSibling;
+						nextItem.classList.add('active');
+						titledata = nextItem.dataset.wavetitle;
 					}
-					else if (scrollDelta > 0 && titledata > 1) {
-						currentItem.removeClass('active');
-						nextItem = currentItem.prev('.item-wave');
-						nextItem.addClass('active');
-						titledata = nextItem.data('wavetitle');
+					else if (scrollDelta < 0 && titledata > 1) {
+						currentItem.classList.remove('active');
+						nextItem = currentItem.previousElementSibling;
+						nextItem.classList.add('active');
+						titledata = nextItem.dataset.wavetitle;
 					}
 					
-					processContainer.attr('class', 'pr-testdriven__wave-area js-hook__td-title').addClass('step-' + titledata)
-
+					processContainer.setAttribute('class', 'pr-testdriven__wave-area js-hook__td-title');
+					processContainer.classList.add('step-' + titledata);
+					
 					descriptionContainer
-						.find('.active')
-						.removeClass('active');
-					nextDescription = descriptionContainer
-						.find('.content-show[data-wavecontainer=' + titledata + ']')
-						.addClass('active');
-				}
-			})
-		);
+						.querySelector('.active')
+						.classList.remove('active');
+					nextDescription = descriptionContainer.querySelector(`[data-wavecontainer= "${titledata}" ]`);
+						nextDescription.classList.add('active');
+						
+					this.setState({marker: true});
+
+					clearTimeout(timer);
+					
+				}, 400)
+			}	
+			return;
+		}
 	}
 
 	render () {
