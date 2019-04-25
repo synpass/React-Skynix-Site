@@ -12,12 +12,10 @@ export default function ElegantFrontend() {
             <div className="tech__block tech__block-pos2">
                 <h2 className='heading'><b>elegant & responsive frontend </b>development</h2>
                 <p className='paragraph'>
-                    Our DevOps engineers are magicians of Amazon Web Services,<br/>
-                    complex architectures, software integrations, mind-blowing<br/>
-                    customizations and continuous integration systems. They ensure<br/>
-                    that your staging and production environments have secure and<br/>
-                    reliable architecture, and your customers never have to face any<br/>
-                    downtimes, technical or security difficulties.
+                    Our front end developers can quickly customize and adapt your <br/>
+                    website's UI to suit your unique company's needs. They make sure<br/>
+                    your audience gets your brand's message in an effective way, on<br/>
+                    every screen size imaginable.
                 </p>
             </div>
             <FrontBrands/>
