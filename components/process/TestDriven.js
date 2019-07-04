@@ -12,7 +12,6 @@ export default class TestDriven extends Component {
 		this.state = {
 			marker: true,
 		}
-
 	}
 	
 	componentDidMount() {
@@ -51,7 +50,7 @@ export default class TestDriven extends Component {
 		} else {
 			if (this.state.marker) {
 				this.setState({marker: false});
-				timer = setTimeout( () => {
+				timer = setTimeout( async () => {
 					let descriptionContainer = container.querySelector('.js-hook__td-content');
 					let nextDescription; 
 
@@ -60,12 +59,14 @@ export default class TestDriven extends Component {
 						nextItem = currentItem.nextElementSibling;
 						nextItem.classList.add('active');
 						titledata = nextItem.dataset.wavetitle;
+						await this.sleep()
 					}
 					else if (scrollDelta < 0 && titledata > 1) {
 						currentItem.classList.remove('active');
 						nextItem = currentItem.previousElementSibling;
 						nextItem.classList.add('active');
 						titledata = nextItem.dataset.wavetitle;
+						await this.sleep()
 					}
 					
 					processContainer.setAttribute('class', 'pr-testdriven__wave-area js-hook__td-title');
@@ -85,6 +86,14 @@ export default class TestDriven extends Component {
 			}	
 			return;
 		}
+	}
+
+	timeout(ms) {
+		return new Promise(resolve => setTimeout(resolve, ms));
+	}
+	sleep = async () =>  {
+		await this.timeout(900);
+		return null;
 	}
 
 	render () {
