@@ -32,6 +32,21 @@ const Service = {
             )
     },
 
+    postComment(data) {
+        // create unique numer for id
+        let integer = Date.now() + ( (Math.random()*100000).toFixed())
+        
+        axios.post(`${API}${SLUG1}/comments`, {
+            id: integer,
+            author_email: data.email,
+            author_name: data.name,
+            content: data.content,
+            date: new Date(),
+            post: 1397
+        }).then(res => console.log(res))
+
+    },
+
     getCatalogByPage(page) {
         let totals;
 

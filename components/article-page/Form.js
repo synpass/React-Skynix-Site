@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import Input from "./Input";
+import Service from '../resources/service';
 export default class Form extends Component {
     constructor(props) {
         super(props);
@@ -31,7 +32,7 @@ export default class Form extends Component {
             showError: false,
         };
 
-        this.baseState = this.state;
+        this.baseState = {...this.state};
 
         this.handleChange = this.handleChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
@@ -43,23 +44,26 @@ export default class Form extends Component {
         this.setState(state);
     }
 
-    handleSubmit(event) {
+    async handleSubmit(event) {
         const formInputs = ['comment', 'author', 'email', 'submit', 'comment_post_ID', 'comment_parent'];
         event.preventDefault();
 
         const isValid = formInputs.reduce((prev, curr) => {
             return prev && this.state[curr].isValid
-        }, true) && this.state.agreement;
-
+        }, true);
 
         if (isValid) {
-            this.setState({...this.baseState});
-        } else {
-            this.setState({showError: true});
+            const {email, author, comment, comment_post_ID, comment_parent } = this.state;
+            const data = {
+                email: email.value,
+                name: author.value,
+                content: comment.value,
+                post: this.props.postId,
+                comment_parent: comment_parent.value
+            }
+            await Service.postComment(data)
         }
     }
-
-
 
     render() {
         const error = this.state.showError;
@@ -68,6 +72,7 @@ export default class Form extends Component {
             <form
                   onSubmit={this.handleSubmit} noValidate
                   method='post'
+                  action="https://staging.cms.skynix.co/wp-json/wp/v2/comments"
                   className='blog-comment-form'
                   name='comment'>
                 <h2 className='blog-comment-form__title'>Comments</h2>
@@ -108,7 +113,7 @@ export default class Form extends Component {
                 <div className='blog-comment-form__form-group'>
                     <Input
                         value={email.value}
-                        className='blog-comment-form__input'
+                        className={email.value ? 'blog-comment-form__input blog-comment-form__input--active' : 'blog-comment-form__input'}
                         error={error}
                         onChange={this.handleChange}
                         name='email'

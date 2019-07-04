@@ -8,9 +8,10 @@ import PropTypes from 'prop-types';
 
 function BlogArticle(props) {
     if(!props)return false;
+
     return (
-        props.article.map(item =>
-            <div key={item.id}>
+        props.article.map(item => {
+           return ( <div key={item.id}>
                 <div className='blog-article' >
                     <ArticleHeader {...item}/>
                     <div className='blog-article__content'>
@@ -21,8 +22,9 @@ function BlogArticle(props) {
                         <ArticleBody {...item}/>
                     </div>
                 </div>
-                {/*(item.comment_status ==='open') ? <Comments /> : null*/}
-            </div>
+                {(item.comment_status ==='open') ? <Comments postId={item.id} /> : null}
+           </div> )
+        }
         )
     );
 }
