@@ -11,6 +11,7 @@ export default class TestDriven extends Component {
 
 		this.state = {
 			marker: true,
+			hideBox: false
 		}
 	}
 	
@@ -31,6 +32,11 @@ export default class TestDriven extends Component {
 			let scrollDelta = event.deltaY;
 			let	currentItem = processContainer.querySelector('div.active');
 			let titledata = currentItem.dataset.wavetitle;
+			if(titledata == 5 || titledata == 6 || titledata == 8) {
+				this.setState({hideBox: true})
+			}else {
+				this.setState({hideBox: false})
+			}
 			let containerTop = container.getBoundingClientRect().top;
 			let containerOffset = container.getBoundingClientRect().top - document.querySelector('body').getBoundingClientRect().top;
 			let	timer,
@@ -59,6 +65,8 @@ export default class TestDriven extends Component {
 						nextItem = currentItem.nextElementSibling;
 						nextItem.classList.add('active');
 						titledata = nextItem.dataset.wavetitle;
+						processContainer.setAttribute('class', 'pr-testdriven__wave-area js-hook__td-title');
+						processContainer.classList.add('step-' + titledata);
 						await this.sleep()
 					}
 					else if (scrollDelta < 0 && titledata > 1) {
@@ -66,11 +74,10 @@ export default class TestDriven extends Component {
 						nextItem = currentItem.previousElementSibling;
 						nextItem.classList.add('active');
 						titledata = nextItem.dataset.wavetitle;
+						processContainer.setAttribute('class', 'pr-testdriven__wave-area js-hook__td-title');
+						processContainer.classList.add('step-' + titledata);
 						await this.sleep()
 					}
-					
-					processContainer.setAttribute('class', 'pr-testdriven__wave-area js-hook__td-title');
-					processContainer.classList.add('step-' + titledata);
 					
 					descriptionContainer
 						.querySelector('.active')
@@ -92,7 +99,7 @@ export default class TestDriven extends Component {
 		return new Promise(resolve => setTimeout(resolve, ms));
 	}
 	sleep = async () =>  {
-		await this.timeout(900);
+		await this.timeout(800);
 		return null;
 	}
 
@@ -137,7 +144,10 @@ export default class TestDriven extends Component {
 						</div>
 					</div>
 
-					<div className="pr-testdriven__content js-hook__td-content">
+					<div className={this.state.hideBox ? 
+					"pr-testdriven__content pr-testdriven__content--hidden js-hook__td-content" : 
+					"pr-testdriven__content pr-testdriven__content js-hook__td-content"
+				}>
 
 						<div className="content-show active" data-wavecontainer="1" >
 							<h5 className="content-title">Project Kickoff</h5>
@@ -162,7 +172,7 @@ export default class TestDriven extends Component {
 								<li>Manual Testing</li>
 								<li>Potentially shippable increments of a project delivered
 								every 2-3 weeks</li>
-								<li>Retrospective at the end of every sprint we look back 
+								<li>Retrospective: at the end of every sprint we look back 
 								and determine what could have been 
 								done better, further boosting performance on our next undertaking</li>
 							</ul>
@@ -170,14 +180,18 @@ export default class TestDriven extends Component {
 
 						<div className="content-show" data-wavecontainer="4">
 							<h5 className="content-title">Deploy to Production (live) environment</h5>
+							<ul>
+								<li>Exquisite setup of live architecture and supporting services according to your security and stability demands</li>
+								
+							</ul>
 						</div>
 
 						<div className="content-show" data-wavecontainer="5">
-							<h5 className="content-title">Load testing</h5>
+							{/* <h5 className="content-title">Load testing</h5> */}
 						</div>
 
 						<div className="content-show" data-wavecontainer="6">
-							<h5 className="content-title">Backups</h5>
+							{/* <h5 className="content-title">Backups</h5> */}
 						</div>
 
 						<div className="content-show" data-wavecontainer="7">
@@ -186,7 +200,7 @@ export default class TestDriven extends Component {
 						</div>
 
 						<div className="content-show" data-wavecontainer="8">
-							<h5 className="content-title">Ongoing Maintenance</h5>
+							{/* <h5 className="content-title">Ongoing Maintenance</h5> */}
 						</div>
 
 					</div>

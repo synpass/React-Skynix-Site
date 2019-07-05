@@ -55,6 +55,10 @@
 		box-shadow: 0 10px 120px rgba(42, 42, 42, 0.2);
 		border: 1px solid $lilac;
 		background-color: $white;
+		transition: all .3s;
+		&--hidden {
+			opacity: 0;
+		}
 		@include laptop {
 			height: 290px;
 			margin: 100px auto 50px;
@@ -62,6 +66,9 @@
 			display: flex;
 			flex-direction: column;
 			justify-content: center;
+			&--hidden {
+				opacity: 0;
+			}
 		}
 		* {
 			margin: 0;
