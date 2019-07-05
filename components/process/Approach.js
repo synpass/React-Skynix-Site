@@ -9,7 +9,7 @@ export default function Approach() {
 	};
 	return (
 		<Animated {...animation} className='pr-approach'>
-				<h3 className='heading'>approach</h3>
+				<h3 id="approach" className='heading'>approach</h3>
 				<h2 className="heading__sub">your search for your dream team ends here</h2>
 				<p className='paragraph'>You benefit from a 
 				complete and dedicated development 

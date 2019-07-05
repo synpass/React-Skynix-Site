@@ -111,7 +111,8 @@ export default class TestDriven extends Component {
 						<h2 onClick = {this.handleWheel} className="section-heading">agile test driven development</h2>
 					</div>
 					
-					<AnchorLink href='#competitivepricing' offset='-120' className = 'pr-testdriven__go-next-section'>Next section</AnchorLink>
+					<AnchorLink href='#competitivepricing' offset='35' className = 'pr-testdriven__go-next-section'>Next section</AnchorLink>
+					<AnchorLink href='#approach' offset='85' className='pr-testdriven__go-previous-section'>Previous section</AnchorLink>
 					
 					<div className='pr-testdriven__wave-area step-1 js-hook__td-title'>
 						<div className='item-wave active' data-wavetitle="1">
