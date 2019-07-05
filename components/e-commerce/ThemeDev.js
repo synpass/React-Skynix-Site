@@ -7,19 +7,18 @@ export default class ThemeDev extends Component {
             animationIn: 'fadeIn',
             animationInDelay: 1000
         };
+
+        const {props} = this
+
         return (
             <Animated {...animation}>
                 <div className='ec-themedev'>
-                    <h3 className='section-heading'>Online Shop Theme Development</h3>
+                    <h3 className='section-heading'> {props.heading} </h3>
                     <div className='ec-themedev__columns'>
-                        <h4 className='paragraph paragraph--large'>Refresh your brand identity, attract and retain more customers
-                            by making their shopping experience with you a breeze</h4>
+                        <h4 className='paragraph paragraph--large'> {props.subheading} </h4>
 
                         <section>
-                            <p>Your store must remain clear and user-friendly, provide all the necessary information yet not
-                                overwhelm or distract your customers from completing the purchase.</p>
-                            <p>Skynix UI team works tightly with platform experts to find <b>a perfect balance between
-                                usability and appeal.</b></p>
+                            {props.paragraph}
                         </section>
                     </div>
                 </div>

@@ -21,12 +21,21 @@ class Ecommerce extends Component {
             paragraph: <> Whether you need to start an e-store from scratch or to extend functionality of an existing one, you are in the right place. Skynix is an <b>e-commerce development company</b>, specialised in Magentoand Woocommerce platforms </>
         }
 
+        const themeDevData = {
+            heading: 'Online Shop Theme Development',
+            subheading: 'Refresh your brand identity, attract and retain more customers by making their shopping experience with you a breeze',
+            paragraph: <><p>Your store must remain clear and user-friendly, provide all the necessary information yet not
+            overwhelm or distract your customers from completing the purchase.</p>
+            <p>Skynix UI team works tightly with platform experts to find <b>a perfect balance between
+            usability and appeal.</b></p></>
+        }
+
 
 
         return (
             <Page meta={meta} loading={true} newsItems={this.props.newsItems} showLoader={this.props.showLoader} canonical={url + "/ecommerce"}>
                 <HeroText {...heroTextData} />
-                <ThemeDev/>
+                <ThemeDev {...themeDevData} />
                 <Brands brands={brands}/>
                 <Platform/>
                 <DataMigration/>
