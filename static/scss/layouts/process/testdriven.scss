@@ -56,6 +56,7 @@
 		border: 1px solid $lilac;
 		background-color: $white;
 		transition: all .3s;
+
 		&--hidden {
 			opacity: 0;
 		}
@@ -69,6 +70,13 @@
 			&--hidden {
 				opacity: 0;
 			}
+		}
+
+		@include retina {
+			max-width: 1112px;
+			margin-top: 60px;
+			padding-top: 15px;
+			justify-content: flex-start;
 		}
 		* {
 			margin: 0;
@@ -101,6 +109,10 @@
 				font-size: 24px;
 				text-align: center;
 			}
+
+			@include retina {
+				padding-bottom: 10px;
+			}
 		}
 		ul {
 			padding-left: 15px;
@@ -128,6 +140,11 @@
 		@include desktop {
 			width: 1360px;
 		}
+
+		@include retina {
+			transform: scale(0.8)
+		}
+
 		&:after {
 			content: '';
 			display: block;
