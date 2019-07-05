@@ -34,7 +34,7 @@
 			padding: 10px 25px;
 			position: absolute;
 			top: 150px;
-			left: 60%;
+			left: 63%;
 			transform: translateX(-50%);
 			display: inline-block;
 			border: 1px solid #e0e0ff;
@@ -54,7 +54,7 @@
 			padding: 10px 25px;
 			position: absolute;
 			top: 150px;
-			left: 30%;
+			left: 33%;
 			transform: translateX(-50%);
 			display: inline-block;
 			border: 1px solid #e0e0ff;
@@ -95,7 +95,7 @@
 
 		@include retina {
 			max-width: 1112px;
-			margin-top: 60px;
+			margin-top: 5px;
 			padding-top: 15px;
 			justify-content: flex-start;
 		}
@@ -163,7 +163,7 @@
 		}
 
 		@include retina {
-			transform: scale(0.8)
+			transform: scale(0.6)
 		}
 
 		&:after {
