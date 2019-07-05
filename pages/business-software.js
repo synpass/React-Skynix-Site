@@ -13,15 +13,20 @@ import url from '../domain.config'
 import {connect} from "react-redux"
 
 
-class Ecommerce extends Component {
+class BusinessSoftware extends Component {
     
     render() {
+
         const heroTextData = {
-            heading: <>first-rate <b>e-commerce</b><br/> web development services </>,
-            paragraph: <> Whether you need to start an e-store from scratch or to extend functionality of an existing one, you are in the right place. Skynix is an <b>e-commerce development company</b>, specialised in Magentoand Woocommerce platforms </>
+            heading: 'Scalable cloud and web software for small and medium business',
+            paragraph: <> Uncommon business operations require <b>tailored software</b>
+            in order to hit their specific targets. 
+            Template solutions are often too restrictive to meet every need of your scaling business.
+            <br/> <br/>
+            Skynix has a proven track record of building ultra-scalable architectures and <b>allowing companies expand 
+            naturally and cost-effectively.</b>
+             </>
         }
-
-
 
         return (
             <Page meta={meta} loading={true} newsItems={this.props.newsItems} showLoader={this.props.showLoader} canonical={url + "/ecommerce"}>
@@ -37,4 +42,4 @@ class Ecommerce extends Component {
     }
 }
 
-export default connect(state => state)(Ecommerce);
+export default connect(state => state)(BusinessSoftware);

@@ -5,6 +5,10 @@
       {
         "name": "E-commerce",
         "link": "/ecommerce"
+      },
+      {
+        "name": "Business Software",
+        "link": "/business-software"
       }
     ]
   },
