@@ -34,7 +34,7 @@
 			padding: 10px 25px;
 			position: absolute;
 			top: 150px;
-			left: 50%;
+			left: 60%;
 			transform: translateX(-50%);
 			display: inline-block;
 			border: 1px solid #e0e0ff;
@@ -47,6 +47,27 @@
 			}
 		}
 	}
+
+	&__go-previous-section{
+		display: none;
+		@include laptop {
+			padding: 10px 25px;
+			position: absolute;
+			top: 150px;
+			left: 30%;
+			transform: translateX(-50%);
+			display: inline-block;
+			border: 1px solid #e0e0ff;
+			cursor: pointer;
+			color: $blue;
+			transition: box-shadow 0.3s;
+			text-decoration: none;
+			&:hover {
+				box-shadow: 0 1px 3px 0 rgba(33, 33, 33, 0.3);
+			}
+		}
+	}
+
 	&__content {
 		max-width: 580px;
 		width: 100%; 
