@@ -9,7 +9,7 @@ export default function OfflineCommerce() {
 			<p className='paragraph pr-partnership__paragraph'>Skynix values its' 
 			loyal customers and rewards them with not only bespoke services, 
 			but also discounts varying between 5% and 20%. To find out 
-			how you can join a Skynix Partnership Scheme, reach out to 
+			how you can join Skynix Partnership Scheme, reach out to 
 			your project manager</p>
 			<div className="pr-partnership__circle" />
 			<div className="pr-partnership__cart" />
