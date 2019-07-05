@@ -4,7 +4,7 @@ import Particle from "../Particle";
 
 export default function CompetitivePricing() {
 	return (
-		<LazyLoad className='pr-competitivepricing'>
+		<LazyLoad id='competitivepricing' className='pr-competitivepricing'>
 			<div className="pr-competitivepricing__row">
 				<div className="pr-competitivepricing__col">
 					<h2 className='section-heading'>serious about security</h2>
