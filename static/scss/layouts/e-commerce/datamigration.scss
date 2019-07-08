@@ -2,6 +2,16 @@
   @include max-width;
   position: relative;
   z-index: 10;
+
+  &__img-25 {
+    display: none;
+    @include tablets {
+      width: 25%;
+      display: inline;
+    }
+    
+  }
+
   &__disable-line {
     &:before {
       display: none;

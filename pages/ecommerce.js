@@ -36,6 +36,13 @@ class Ecommerce extends Component {
             paragraph: 'Skynix provides custom e-store tuning and takes on the creation of new modules tailored specifically to your business strategy'
         }
 
+        const dataMigrationSectionData = {
+            heading: <> Data Migration<br />
+                        & Product Structuring </>,
+            subheadingLine: 'Upgrade your old platform to a more powerful one without losing any valuable customer data and search engine reputation collected over the years',
+            subheading: 'Improve site usability and conversion level by creating a working catalog and product page structure'
+        }
+
 
 
         return (
@@ -44,7 +51,7 @@ class Ecommerce extends Component {
                 <ThemeDev {...themeDevData} />
                 <Brands brands={brands}/>
                 <Platform {...platformData} parallax />
-                <DataMigration/>
+                <DataMigration {...dataMigrationSectionData} />
                 <BugFixing/>
                 <OfflineCommerce/>
             </Page>
