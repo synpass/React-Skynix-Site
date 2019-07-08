@@ -30,6 +30,12 @@ class Ecommerce extends Component {
             usability and appeal.</b></p></>
         }
 
+        const platformData = {
+            heading: 'Platform Customization and Integration',
+            subheadning: 'Merge and manage all your systems and tools conveniently from one, single interface',
+            paragraph: 'Skynix provides custom e-store tuning and takes on the creation of new modules tailored specifically to your business strategy'
+        }
+
 
 
         return (
@@ -37,7 +43,7 @@ class Ecommerce extends Component {
                 <HeroText {...heroTextData} />
                 <ThemeDev {...themeDevData} />
                 <Brands brands={brands}/>
-                <Platform/>
+                <Platform {...platformData} parallax />
                 <DataMigration/>
                 <BugFixing/>
                 <OfflineCommerce/>

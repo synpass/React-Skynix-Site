@@ -1,0 +1,77 @@
+{
+    "brandsConfig": [
+        {
+          "id": 0,
+          "imgClass": "angular",
+          "img": "angular-logo.png",
+          "link": "",
+          "linkTitle": "Angular"
+        },
+        {
+          "id": 2,
+          "imgClass": "node",
+          "img": "node-logo.png",
+          "link": "",
+          "linkTitle": "NodeJS"
+        },
+        {
+          "id": 4,
+          "imgClass": "docker",
+          "img": "docker-logo.png",
+          "link": "",
+          "linkTitle": "Docker"
+        },
+        {
+          "id": 1,
+          "imgClass": "react",
+          "img": "react-logo.png",
+          "link": "",
+          "linkTitle": "React"
+        },
+        {
+          "id": 3,
+          "imgClass": "phonegap",
+          "img": "phonegap-logo.png",
+          "link": "",
+          "linkTitle": "phonegap"
+        }
+      ],
+      "animatedList": [
+            "Salesforce",
+            "Stripe",
+            "Paypal",
+            "Amazon",
+            "Facebook",
+            "Magento",
+            "Mailchimp",
+            "Braintree",
+            "SAP",
+            "QuintilesIMS",
+            "SplendidCRM",
+            "OneSignal",
+            "Sendgrid",
+            "Twitter",
+            "Google",
+            "Apple APNS",
+            "Google Adsense",
+            "Google Analytics",
+            "Google Adwords",
+            "Google Tag Manager",
+            "Google Cloud",
+            "Walmart",
+            "Wordpress",
+            "BBForum",
+            "Cloudflare",
+            "RailGun",
+            "SLI Search",
+            "Algolia Search",
+            "Xero",
+            "Atlassian Jira",
+            "Atlassian Confluence",
+            "Bitbucket",
+            "Bamboo",
+            "Slack",
+            "Crowd",
+            "Atlassian ServiceDesk"
+        ]
+}

@@ -1,0 +1,24 @@
+.animated-list {
+    display: inline-block;
+    max-height: 190px;
+    overflow: hidden;
+    margin-left: 141px;
+
+    &__ul {
+        list-style: none;
+        position: relative;
+        transition: all 1.5s ease;
+        margin-top: 0;
+        margin-bottom: 0; 
+        text-align: center;
+    }
+
+    &__item {
+        letter-spacing: .02em;
+        font-family: $proxima-semibold;
+        color: $blue;
+        font-size: 30px;
+        height: 38px;
+    }
+
+}
