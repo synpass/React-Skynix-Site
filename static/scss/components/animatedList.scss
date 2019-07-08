@@ -1,0 +1,33 @@
+.animated-list {
+    display: block;
+    max-height: 190px;
+    overflow: hidden;
+    margin-bottom: 30px;
+
+    @include tablets {
+        display: inline-block;
+        margin-left: 141px;
+    }
+    
+    &__ul {
+        list-style: none;
+        position: relative;
+        transition: all 1.5s ease;
+        margin-top: 0;
+        margin-bottom: 0; 
+        text-align: center;
+    }
+
+    &__item {
+        white-space: nowrap;
+        font-size: 20px;
+        letter-spacing: .02em;
+        font-family: $proxima-semibold;
+        color: $blue;
+        height: 38px;
+        @include tablets {
+            font-size: 30px;
+        }
+    }
+
+}
