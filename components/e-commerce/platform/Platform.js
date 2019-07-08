@@ -3,6 +3,7 @@ import LazyLoad from "../../LazyLoad";
 import PlatformParallax from "./PlatformParallax";
 import { ParallaxProvider } from 'react-scroll-parallax';
 import AnimatedList from '../../AnimatedList';
+import { oneOfType, object, string, bool } from 'prop-types';
 
 export default function Platform(props) {
     return (
@@ -17,4 +18,11 @@ export default function Platform(props) {
             </LazyLoad>
         </ParallaxProvider>
     )
+}
+
+Platform.propTypes = {
+    heading: oneOfType([object, string]),
+    subheadning: oneOfType([object, string]),
+    parallax: bool,
+    animatedList: bool
 }

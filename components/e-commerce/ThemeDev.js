@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import { Animated } from "react-animated-css";
+import {object, string, oneOfType} from 'prop-types'
 
 export default class ThemeDev extends Component {
     render() {
@@ -25,4 +26,10 @@ export default class ThemeDev extends Component {
             </Animated>
         )
     }
+}
+
+ThemeDev.propTypes = {
+    heading: oneOfType([object, string]),
+    subheading: oneOfType([object, string]),
+    paragraph: oneOfType([object, string])
 }
