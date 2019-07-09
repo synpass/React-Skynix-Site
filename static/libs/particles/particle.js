@@ -49,7 +49,7 @@ container = document.getElementsByClassName( 'container-animation' );
 for (z = 0; z < container.length; z++) {
 function init() {
     canvas = document.createElement( 'canvas' );
-
+    canvas.className = "canvas"
     man = true;
     tog = true;
 
@@ -81,7 +81,7 @@ function init() {
     }
 
     container[z].appendChild( canvas );
-    canvastelement = document.getElementsByTagName( 'canvas' );
+    canvastelement = document.getElementsByClassName( 'canvas' );
 }
 
 function step() {

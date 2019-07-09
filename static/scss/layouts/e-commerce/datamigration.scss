@@ -3,6 +3,7 @@
   position: relative;
   z-index: 10;
 
+
   &__img-25 {
     display: none;
     @include tablets {
@@ -20,9 +21,13 @@
   .section-heading {
     line-height: 40px;
     margin-top: 0;
-    @include laptop {
-      margin-top: -150px;
+
+    &--negative-margin{
+      @include laptop {
+        margin-top: -150px;
+      }
     }
+    
   }
   .paragraph {
     margin-top:8px;

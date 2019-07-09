@@ -44,7 +44,7 @@ function BusinessSoftware(props) {
       subheadingLine: 'Improve your workflow by extending the abilities of your existing PHP-based system.',
       subheading: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique quia nemo labore cumque, amet error.',
       rightColumnContent: <> <img className="ec-datamigration__img-25" src="/static/images/process/testdriven/development.svg" /> </>
-  }
+    }
 
 
     return (
