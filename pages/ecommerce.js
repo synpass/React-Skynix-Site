@@ -43,6 +43,16 @@ class Ecommerce extends Component {
             subheading: 'Improve site usability and conversion level by creating a working catalog and product page structure'
         }
 
+        const bugFixingData = {
+            heading: 'Bug Fixing, Security Monitoring and Maintenance',
+            subheading: <>Sleep tight knowing your online store is out of risk with<br />
+            the backup of our thorough Magento and Woocommerce<br />
+            developers, who can:</>,
+            points: <><p><b>•  efficiently</b> configure your server and platform</p>
+            <p><b>•  quickly</b> detect and fix any vulnerabilities</p>
+            <p><b>•  regularly</b> apply security patches</p></>
+        }
+
 
 
         return (
@@ -52,7 +62,7 @@ class Ecommerce extends Component {
                 <Brands brands={brands}/>
                 <Platform {...platformData} parallax />
                 <DataMigration {...dataMigrationSectionData} negativeMargin/>
-                <BugFixing/>
+                <BugFixing {...bugFixingData} />
                 <OfflineCommerce/>
             </Page>
         )

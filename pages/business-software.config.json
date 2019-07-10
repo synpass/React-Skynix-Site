@@ -1,4 +1,20 @@
 {
+    "seo": {
+      "ogURL": "https://skynix.co/business-software",
+      "title": "Business software development services | Skynix LLC",
+      "description": "✔ Plenty of high-level business software development services ✔ Individual approach to the solution of each problem  ⚡ Enhance your biz today to show the back to competitors tomorrow!",
+      "ogTitle": "Business software development services | Skynix LLC",
+      "ogDescription": "Is e-commerce an art or a science? Both! Skynix provides complex e-commerce web development services for stable growth ✔ Magento 1 & 2 ✔ Woocommerce ✔ Powerful extensions and custom solutions",
+      "ogImage": "../static/images/og-skynix-logo.jpg",
+      "ogSiteName": "Skynix LLC",
+      "ogImageAlt": "Business software development services from Skynix LLC - for you and your success",
+      "twitterCard": "summary_large_image",
+      "twitterTitle": "Business software development services | Skynix LLC",
+      "twitterDescription": "Is e-commerce an art or a science? Both! Skynix provides complex e-commerce web development services for stable growth ✔ Magento 1 & 2 ✔ Woocommerce ✔ Powerful extensions and custom solutions",
+      "twitterImage": "../static/images/og-skynix-logo.jpg",
+      "twitterImageAlt": "Business software development services from Skynix LLC - for you and your success",
+      "keywordsSeo": "keywords home"
+    },
     "brandsConfig": [
         {
           "id": 0,
