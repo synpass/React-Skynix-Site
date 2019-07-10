@@ -4,6 +4,7 @@ import Page from '../components/Page';
 import meta from './ecommerce-meta.config.json';
 import url from '../domain.config'
 import HeroText from '../components/e-commerce/HeroText';
+import {array, bool} from 'prop-types'
 
 export default function MobileApplications(props) {
 
@@ -30,5 +31,5 @@ export default function MobileApplications(props) {
 
 MobileApplications.propTypes = {
     newsItems: array,
-    showLoader: bool,
+    showLoader: bool
 }
