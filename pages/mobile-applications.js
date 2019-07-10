@@ -27,3 +27,8 @@ export default function MobileApplications(props) {
         </Page>
     )
 }
+
+MobileApplications.propTypes = {
+    newsItems: array,
+    showLoader: bool,
+}
