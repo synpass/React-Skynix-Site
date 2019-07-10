@@ -33,7 +33,8 @@ export default class PlaneAnimation extends Component {
     animate () {
         const { canvasRef } = this
         
-        
+        const screenWidth = window.innerWidth
+        const screenHeight = window.innerHeight
         const context = canvasRef.current.getContext('2d')
         const planeCanvas = document.createElement('canvas')
         const planeCtx = planeCanvas.getContext('2d')
@@ -41,12 +42,12 @@ export default class PlaneAnimation extends Component {
         const underlineCtx = underlineCanvas.getContext('2d')
         
 
-        planeCanvas.width = window.innerWidth
-        planeCanvas.height = window.innerHeight
-        underlineCanvas.width = window.innerWidth
-        underlineCanvas.height = window.innerHeight
-        canvasRef.current.width = window.innerWidth
-        canvasRef.current.height = window.innerHeight
+        planeCanvas.width = screenWidth
+        planeCanvas.height = screenHeight
+        underlineCanvas.width = screenWidth
+        underlineCanvas.height = screenHeight
+        canvasRef.current.width = screenWidth
+        canvasRef.current.height = screenHeight
 
         underlineCtx.fillStyle = "#223fd5"
 
@@ -66,11 +67,12 @@ export default class PlaneAnimation extends Component {
     draw (ctx, plane, lineCtx) {
         const planeSize = 75
         const screen = window.innerWidth
+        const screenHeight = window.innerHeight
         let flyingRange = screen - planeSize
         const speed = screen / 100 * 0.3
 
-        plane.ctx.clearRect(0, 0, screen, window.innerHeight)
-        ctx.clearRect(0, 0, screen, window.innerHeight)
+        plane.ctx.clearRect(0, 0, screen, screenHeight)
+        ctx.clearRect(0, 0, screen, screenHeight)
 
         if (plane.x > 110 && plane.x < 550) {
             lineCtx.beginPath()
