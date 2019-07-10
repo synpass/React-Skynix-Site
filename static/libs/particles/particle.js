@@ -81,7 +81,7 @@ function init() {
     }
 
     container[z].appendChild( canvas );
-    canvastelement = document.getElementsByClassName( 'canvas' );
+    canvastelement = document.getElementsByTagName( 'canvas' );
 }
 
 function step() {
