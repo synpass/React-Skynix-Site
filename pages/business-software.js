@@ -4,10 +4,9 @@ import HeroText from "../components/e-commerce/HeroText";
 import DataMigration from "../components/e-commerce/DataMigration";
 import ThemeDev from "../components/e-commerce/ThemeDev";
 import Brands from "../components/e-commerce/Brands";
-import OfflineCommerce from "../components/e-commerce/OfflineCommerce";
 import Platform from "../components/e-commerce/platform/Platform";
 import BugFixing from "../components/e-commerce/BugFixing";
-import meta from './ecommerce-meta.config.json';
+import { seo } from './business-software.config.json';
 import url from '../domain.config'
 import {connect} from "react-redux"
 import { brandsConfig, animatedList } from "./business-software.config.json";
@@ -46,16 +45,31 @@ function BusinessSoftware(props) {
       rightColumnContent: <> <img className="ec-datamigration__img-25" src="/static/images/process/testdriven/development.svg" /> </>
   }
 
+  const bugFixingData = {
+    heading: 'Product Maintenance',
+    subheading: <>Access specialists on-demand who can maintain your software, <br />
+    with no need to hire an IT team on a payroll.</>,
+    points: <><p> <b>• DevOps </b></p>
+    <p> <b>• System Administrators </b></p>
+    <p> <b>• QA testers </b></p>
+    <p> <b>• SEO Specialists </b></p>
+    <p> <b>• Backend Developers</b> </p>
+    <p> <b>• Frontend Developers </b></p>
+    <p> <b>• Designers</b> </p>
+    <p> <b>• Product Managers </b></p>
+    <p> <b>• Content Managers </b></p>
+    </>
+  }
+
 
     return (
-        <Page meta={meta} loading={true} newsItems={props.newsItems} showLoader={props.showLoader} canonical={url + "/ecommerce"}>
+        <Page meta={seo} loading={true} newsItems={props.newsItems} showLoader={props.showLoader} canonical={url + "/business-software"}>
             <HeroText {...heroTextData} />
             <ThemeDev {...themeDevData} />
             <Brands brands={brandsConfig}/>
             <Platform {...platformData} animatedList listData={animatedList}/>
             <DataMigration {...dataMigrationSectionData} />
-            <BugFixing/>
-            <OfflineCommerce/>
+            <BugFixing {...bugFixingData}/>
         </Page>
     )
 }
