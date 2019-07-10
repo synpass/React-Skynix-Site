@@ -1,5 +1,4 @@
 import React, { Component } from 'react'
-import {url} from '../../domain.config'
 import SuccessAnimation from '../SuccessAnimation/SuccessAnimation';
 
 export default class PlaneAnimation extends Component {
@@ -12,22 +11,28 @@ export default class PlaneAnimation extends Component {
         animationFinished: false
     }
 
-    componentDidMount() {
-        document.addEventListener('scroll', () => {
-            if (!this.sectionRef || !this.sectionRef.current) return
+    onScroll = () => {
+        if (!this.sectionRef || !this.sectionRef.current) return
 
-            const rect = this.sectionRef.current.getBoundingClientRect();
-            if (
-            rect.top >= 0 &&
-            rect.left >= 0 &&
-            rect.bottom <= (window.innerHeight || document. documentElement.clientHeight) &&
-            rect.right <= (window.innerWidth || document. documentElement.clientWidth) &&
-            !this.animationStarted
-            ) {
-                this.animationStarted = true
-                this.animate();
-            }
-        })
+        const rect = this.sectionRef.current.getBoundingClientRect();
+        if (
+        rect.top >= 0 &&
+        rect.left >= 0 &&
+        rect.bottom <= (window.innerHeight || document. documentElement.clientHeight) &&
+        rect.right <= (window.innerWidth || document. documentElement.clientWidth) &&
+        !this.animationStarted
+        ) {
+            this.animationStarted = true
+            this.animate();
+        }
+    }
+
+    componentDidMount() {
+        document.addEventListener('scroll', this.onScroll)
+    }
+
+    componentWillUnmount () {
+        document.removeEventListener('scroll', this.onScroll)
     }
 
     animate () {
@@ -52,7 +57,7 @@ export default class PlaneAnimation extends Component {
         underlineCtx.fillStyle = "#223fd5"
 
         const image = new Image()
-        image.src = `${url}/static/images/paper-plane.svg`
+        image.src = '/static/images/paper-plane.svg'
 
         const plane = {
             x: 0,
