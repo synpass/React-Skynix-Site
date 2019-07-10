@@ -5,6 +5,7 @@ import meta from './ecommerce-meta.config.json';
 import url from '../domain.config'
 import HeroText from '../components/e-commerce/HeroText';
 import {array, bool} from 'prop-types'
+import Platform from '../components/e-commerce/platform/Platform';
 
 export default function MobileApplications(props) {
 
@@ -21,10 +22,16 @@ export default function MobileApplications(props) {
         withAnimation: true
     }
 
+    const platformData = {
+        heading: 'Beacons',
+        subheadning: 'Stand out from competition by offering your visitors a truly unique and memorable in-store experience.'
+    }
+
     return (
         <Page meta={meta} loading={true} newsItems={props.newsItems} showLoader={props.showLoader} canonical={url + "/ecommerce"}>
             <HeroText {...heroTextData} />
             <DataMigration {...dataMigrationSectionData} />
+            <Platform {...platformData} parallax />
         </Page>
     )
 }
