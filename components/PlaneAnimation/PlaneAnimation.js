@@ -51,7 +51,7 @@ export default class PlaneAnimation extends Component {
         underlineCtx.fillStyle = "#223fd5"
 
         const image = new Image()
-        image.src = `${url}/static/images/paper-plane.svg`
+        image.src = `{url}/static/images/paper-plane.svg`
 
         const plane = {
             x: 0,
