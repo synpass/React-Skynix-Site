@@ -61,7 +61,7 @@ class Ecommerce extends Component {
                 <ThemeDev {...themeDevData} />
                 <Brands brands={brands}/>
                 <Platform {...platformData} parallax />
-                <DataMigration {...dataMigrationSectionData} />
+                <DataMigration {...dataMigrationSectionData} negativeMargin/>
                 <BugFixing {...bugFixingData} />
                 <OfflineCommerce/>
             </Page>

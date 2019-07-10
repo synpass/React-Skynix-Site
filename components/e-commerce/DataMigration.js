@@ -1,11 +1,12 @@
 import React from 'react';
 import LazyLoad from "../LazyLoad";
-import {oneOfType, string, object} from "prop-types"
+import {oneOfType, string, object, bool} from "prop-types"
+import PlaneAnimation from '../PlaneAnimation/PlaneAnimation';
 
 export default function DataMigration(props) {
     return (
         <LazyLoad className='ec-datamigration' id='ecDatamigration' animationIn='fadeIn' animationInDelay={600}>
-            <h2 className='section-heading'> {props.heading} </h2>
+            <h2 className={props.negativeMargin ? `section-heading section-heading--negative-margin` : `section-heading`}> {props.heading} </h2>
             <div className='ec-datamigration__container'>
                 <div>
                     <h4 className='paragraph paragraph--large'>
@@ -15,6 +16,7 @@ export default function DataMigration(props) {
                         {props.subheading}
                     </h4>
                 </div>
+                {props.withAnimation && <PlaneAnimation />}
                 {props.rightColumnContent ? props.rightColumnContent :
                     <div className='ec-datamigration__columns-right'>
                         <p>Skynix has successfully performed SEO preservation, data migration and re-structuring between such platforms as:</p>
@@ -37,5 +39,7 @@ DataMigration.propTypes = {
     heading: oneOfType([object, string]),
     subheadingLine: oneOfType([object, string]),
     subheading: oneOfType([object, string]),
-    rightColumnContent: oneOfType([object, string])
+    rightColumnContent: oneOfType([object, string]),
+    withAnimation: bool,
+    negativeMargin: bool
 }
