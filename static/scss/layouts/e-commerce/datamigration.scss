@@ -3,6 +3,28 @@
   position: relative;
   z-index: 10;
 
+  &__image-container {
+    display: none;
+    position: relative;
+
+    @include laptop {
+      display: inline-block;
+    }
+    
+  }
+
+  &__mark-icon {
+    position: absolute;
+    width: 0%;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    
+    &--active {
+      animation: mark-show 1.5s linear;
+      width: 20%;
+    }
+  }
 
   &__img-25 {
     display: none;
@@ -115,4 +137,19 @@
       max-width:480px;
     }
   }
+}
+
+@keyframes mark-show {
+  0% {
+    width: 0%;
+  }
+
+  75% {
+    width: 35%;
+  }
+
+  100% {
+    width: 20%;
+  }
+
 }
