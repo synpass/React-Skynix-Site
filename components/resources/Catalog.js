@@ -29,8 +29,14 @@ class Catalog extends Component {
             return (
                 <div className='catalog'>
 
-                    {items.map(item => <CatalogArticle {...item} key={item.id}/>)}
+                    {items.length ? items.map(item => <CatalogArticle {...item} key={item.id}/>) : 
+                        <div className="catalog__no-matching">
+                            No matching posts found
+                        </div>
+                    }
                     <Pagination
+                        categories={this.props.categories}
+                        tags={this.props.tags}
                         current={this.props.page}
                         total={this.props.totals}
                         navLink='/resources'

@@ -1,24 +1,39 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { Link }  from '../routes';
 
 export default function Pagination(props) {
-    const { total, current, navLink } = props;
+    const { total, current, navLink, categories, tags } = props;
     const mapping = [];
 
     for (let i = 1; i <= total; i++) {
         mapping.push(i)
     }
 
-    const pages = mapping.map(e => <Page navLink={navLink} page={e} isActive={e === +current} key={e}/>);
+    const pages = mapping.map(e => <Page tags={tags} categories={categories}navLink={navLink} page={e} isActive={e === +current} key={e}/>);
 
     return <div className='pagination'>{pages}</div>
 }
 
 function Page(props) {
-    const { navLink, page, isActive } = props;
-    const link = navLink + '?page=' + page;
+    const { navLink, page, isActive, tags, categories } = props;
 
-    return <a href={link} className={isActive ? 'active' : null}>{page}</a>
+    let link = navLink + '?page=' + page;
+
+    if (categories) {
+        link  += `&categories=${categories}`
+    }
+    if (tags) {
+        link  += `&tags=${tags}`
+    }
+
+    return (
+        <Link href={link}>
+            <a className={isActive ? 'active' : null}>
+                {page}
+            </a>
+        </Link>
+    )
 }
 
 Pagination.propTypes = {
@@ -30,6 +45,12 @@ Pagination.propTypes = {
         PropTypes.string,
         PropTypes.number
     ]),
-    navLink: PropTypes.string
+    navLink: PropTypes.string,
+    tags: PropTypes.oneOfType([
+        PropTypes.string,
+        PropTypes.array]),
+    categories: PropTypes.oneOfType([
+        PropTypes.string,
+        PropTypes.array])
 };
 

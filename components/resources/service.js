@@ -9,7 +9,7 @@ const API_POSTS     = API + SLUG1 +'/posts';
 const API_USERS     = API + SLUG1 +'/users';
 const API_MEDIA     = API + SLUG1 +'/media';
 const API_IN_TOUCH  = API + SLUG2 +'/contact';
-const postperpage = 6;
+const postperpage = 3;
 
 const Service = {
 
@@ -30,6 +30,43 @@ const Service = {
                     }
                 }
             )
+    },
+
+    getFilteredPosts(page, filters) {
+        if (!filters || (!filters.tags && !filters.categories) ) {
+            return Service.getCatalogByPage(page)
+        }
+        let totals;
+        let url = `${API_POSTS}?per_page=${postperpage}&page=${page}`
+        if (filters.tags) url += `&tags=${filters.tags}`
+        if (filters.categories) url += `&categories=${filters.categories}`
+
+        return axios(url)
+            .then(res => {
+                totals = res.headers['x-wp-totalpages'];
+                return res
+            }).then(
+                (result) => {
+                    if(result.message) {
+                        return {
+                            success: false,
+                            error: result.message
+                        }
+                    } else {
+                        return {
+                            success: true,
+                            data: result.data,
+                            totals
+                        }
+                    }
+                },
+                (error) => {
+                    return {
+                        success: false,
+                        error
+                    }
+                }
+            );
     },
 
     getCatalogByPage(page) {
@@ -107,7 +144,18 @@ const Service = {
             f.call(callbackThis, err);
             return false;
         });
+    },
+
+    async getTags () {
+        const tags = await axios.get(`${API}${SLUG1}/tags?per_page=100&hide_empty=true`)
+        return tags.data
+
+    },
+    async getCategories () {
+        const categories = await axios.get(`${API}${SLUG1}/categories?per_page=100&hide_empty=true`)
+        return categories.data
     }
+
 };
 
 export default Service

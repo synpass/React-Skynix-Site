@@ -7,38 +7,80 @@ import Service from "../components/resources/service";
 import meta from './resources-meta.config.json';
 import url from '../domain.config'
 import {connect} from "react-redux"
+import PostFilters from '../components/PostFilters/PostFilters';
+import AuthorName from '../components/article-page/AuthorName';
 
 const Resources = withRouter((props) => {
-    return <ResourcesWrapper page={props.router.query.page} items={props.items} totals={props.totals} news={props.news} showLoader={props.showLoader}/>
+    return <ResourcesWrapper router={props.router} items={props.items} totals={props.totals} news={props.news} showLoader={props.showLoader}/>
 });
 
 class ResourcesWrapper extends Component {
     constructor(props) {
         super(props);
-        this.state = {isLoaded: false}
+        this.state = { isLoaded: false, posts: null, totals: null }
     }
 
+    setPosts = async (response) => {
+        if(response === null) {
+            this.setState({posts: null})
+            return
+        }
+
+        const withMedia = response.data.data.map(async item => {
+            const media = await Service.getPostMedia(item.featured_media)
+            const author = await Service.getAuthor(item.author)
+    
+            let authorName
+            let image
+            if (media.success) image = media.data.source_url
+
+            if (author.success) authorName = author.data.name;
+            return {...item, authorName, imageUrl: image}
+        })
+        await Promise.all(withMedia).then(updatedPosts => {
+            this.setState({posts: updatedPosts, totals: response.totals})
+        })
+
+    }
 
     onPageLoaded = () => this.setState({isLoaded: true, footerLoaded: true});
 
     render() {
+        const { props, state, onPageLoaded, setPosts } = this
+
         return (
-            <Page meta={meta} news={this.props.news} loading={true} isLoaded={this.state.isLoaded} showLoader={this.props.showLoader} canonical={url + '/resources'}>
+            <Page meta={meta} news={props.news} loading={true} isLoaded={state.isLoaded} showLoader={props.showLoader} canonical={url + '/resources'}>
                 <TitleHeader/>
-                <Catalog onLoad={this.onPageLoaded} page={this.props.page} items={this.props.items} totals={this.props.totals}/>
+                <PostFilters 
+                    setPostsData={setPosts} 
+                    router={props.router} 
+                    categories={props.router.query.categories}
+                    tags={props.router.query.tags} />
+                <Catalog 
+                    categories={props.router.query.categories}
+                    tags={props.router.query.tags}
+                    onLoad={onPageLoaded} 
+                    page={props.router.query.page || 1} 
+                    items={state.posts || props.items} 
+                    totals={state.totals || props.totals}/>
             </Page>
         )
     }
 }
 
 Resources.getInitialProps = async ({ query }) => {
+
     let limit = 0;
     let property = {},
         page = query.page!==undefined?['1', query.page]:['1'];
 
+    const filters = {
+        tags: query.tags,
+        categories: query.categories
+    }
 
     for(let i=0; i<page.length; i++){
-        await Service.getCatalogByPage(page[i])
+        await Service.getFilteredPosts(page[i], filters)
             .then(async(response) => {
 
                 const {success, error, totals} = response;
@@ -92,9 +134,5 @@ Resources.getInitialProps = async ({ query }) => {
     return property;
 }
 
-
-ResourcesWrapper.defaultProps = {
-    page: 1
-};
 
 export default Resources;
