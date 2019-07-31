@@ -9,7 +9,7 @@ const API_POSTS     = API + SLUG1 +'/posts';
 const API_USERS     = API + SLUG1 +'/users';
 const API_MEDIA     = API + SLUG1 +'/media';
 const API_IN_TOUCH  = API + SLUG2 +'/contact';
-const postperpage = 3;
+const postperpage = 9;
 
 const Service = {
 
