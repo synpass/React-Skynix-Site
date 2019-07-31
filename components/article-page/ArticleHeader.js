@@ -10,7 +10,8 @@ export default function ArticleHeader(props){
     const {imageUrl, title, authorName, avatar, date} = props;
 
     return (
-        <div className = 'blog-article__header' style={{backgroundImage: `url(${imageUrl}`}}>
+        <div className = 'blog-article__header' >
+            <img className = 'blog-article__header-image' src={imageUrl}/>
             <div className = 'blog-article__header-content' >
                 <Title title={ReactHtmlParser(title.rendered)[0]}/>
                 <div className='author-info'>
