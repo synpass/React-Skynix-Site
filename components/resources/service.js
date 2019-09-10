@@ -154,6 +154,13 @@ const Service = {
     async getCategories () {
         const categories = await axios.get(`${API}${SLUG1}/categories?per_page=100&hide_empty=true`)
         return categories.data
+    },
+
+    async getPortfolioProject (project) {
+        const data = await axios.get(`${API}${SLUG1}/portfolio?slug=${project}`);
+        console.log(project)
+        console.log('')
+        return data
     }
 
 };
