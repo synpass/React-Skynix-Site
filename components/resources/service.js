@@ -156,11 +156,12 @@ const Service = {
         return categories.data
     },
 
-    async getPortfolioProject (project) {
-        const data = await axios.get(`${API}${SLUG1}/portfolio?slug=${project}`);
-        console.log(project)
-        console.log('')
-        return data
+    getPortfolioProject (project) {
+        return this.get(`${API}${SLUG1}/portfolio?slug=${project}`).then(response=>response)
+    },
+
+    fetchProjectMedia (id) {
+        return this.get(API_MEDIA + '?parent=' + id).then(result => result);
     }
 
 };

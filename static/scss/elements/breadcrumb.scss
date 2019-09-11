@@ -1,0 +1,21 @@
+.breadcrumb{
+    display: flex;
+    align-items: center;
+    
+    &__text{
+        text-transform: uppercase;
+        color: $quartz;
+        letter-spacing: 0.5em;
+        font-family: "ProximaNova";
+        font-weight: 100;
+        font-size: 12px;
+    }
+
+    &__icon{
+        width: 12px;
+        height: 6px;
+        display: block;
+        background: url('/static/images/arrow-left.png');
+        margin-right: 13px;
+    }
+}

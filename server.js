@@ -26,7 +26,6 @@ app.prepare().then(() => {
 
         } else if(parsedUrl.pathname.includes('/portfolio/')){
             let project = parsedUrl.pathname.substring(parsedUrl.pathname.lastIndexOf("/") + 1);
-
             app.render(req, res, "/portfolio-custom", {project: project})
         } else {
             handle(req, res)

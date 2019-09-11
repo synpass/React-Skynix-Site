@@ -12,4 +12,20 @@
 			}
 		}
 	}
+
+	&--medium{
+		width: 68%;
+	}
+
+	&--large{
+		width: 81%;
+	}
+
+	&--medium, &--large{
+		margin: 0 auto;
+	}
+
+	&--top-offset{
+		margin-top: -100px;
+	}
 }

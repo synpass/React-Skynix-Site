@@ -1,10 +1,11 @@
 import {Animated} from "react-animated-css";
+import ReactHtmlParser from 'react-html-parser';
 
 export default function ContentSection(props) {
-    const { animation } = props;
+    const { animation, content } = props;
     return (
         <Animated {...animation}>
-
+            <div>{ReactHtmlParser(content)}</div>
         </Animated>
     )
 }

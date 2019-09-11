@@ -1,0 +1,24 @@
+.image-left-text-right{
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    font-family: $proxima;
+
+    img{
+        width: 45%;
+        margin-right: 10%
+    }
+
+    &__title{
+        font-size: 32px;
+    }
+
+    &__text{
+        color: rgba(37, 37, 37, 255);
+        font-size: 18px;
+        line-height: 1.6;
+    }
+    .grid__col6{
+        width: 100%;
+    }
+}
