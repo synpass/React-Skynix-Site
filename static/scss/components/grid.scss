@@ -1,10 +1,51 @@
 .grid{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    @include tablets(){
+       flex-wrap: nowrap;
+    }
+
     &__col{
-        &3{
-            width: 33.3%;
+        &3, &4{
+            width: 50%;
+            box-sizing: border-box;
+            margin-bottom: 20px;
+            padding: 0 5px;
+            @include tablets(){
+                padding-left: 0;
+                padding-right: 10%;
+                width: 25%;
+            }
+        }
+        &4{
+            @include tablets{
+                padding-right: 5%;
+                width: 33.3%;
+            }
         }
         &6{
-            width: 50%;
+            width: 100%;
+            @include tablets{
+                width: 50%;
+                padding-right: 7%;
+            }
+        }
+    }
+
+    &--bordered{
+        &>div{
+            border: 1px solid $lilac;
+            padding: 40px 5%;
+            box-sizing: border-box;
+            @include tablets{
+                border-right: none;
+                margin-top: 20px;
+
+                &:last-of-type{
+                    border-right: 1px solid $lilac;
+                }
+            }
         }
     }
 }

@@ -3,23 +3,78 @@
     align-items: flex-end;
     justify-content: space-between;
     font-family: $proxima;
+    padding: 0 10px;
+    flex-wrap: wrap;
 
-    a {
-        width: 45%;
-        margin-left: 10%
+    @include desktop{
+        margin-top: 90px;
+        margin-bottom: 100px;
+        flex-wrap: nowrap;
+    }
+
+    &__image {
+        width: 100%;
+        order: 1;
+        @include desktop{
+            order: 2;
+            width: 60%;
+            margin-left: 7%;
+            align-self: baseline;
+            margin-top: 140px;
+        }
     }
 
     img {
         width: 100%;
     }
 
+    ul{
+        padding-left: 19px;
+        list-style: none;
+
+       li:before {
+            content: "\2022";
+            color: $blue;
+            font-weight: bold;
+            display: inline-block;
+            width: 1em;
+            margin-left: -1em;
+        }
+    }
+
     &__title{
-        font-size: 32px;
+        font-family: $sofia-semibold;
+        font-size: 26px;
+        color: $dark;
+        @include tablets {
+            font-size: 32px;
+            line-height: 1.4;
+        }
+
+        strong{
+            color: $blue;
+        }
     }
 
     &__text{
+        font-family: $proxima;
         color: rgba(37, 37, 37, 255);
         font-size: 18px;
         line-height: 1.6;
+    }
+    &__content{
+        order: 2;
+        width: 100%;
+
+        @include desktop{
+            order: 1;
+            width: 40%;
+        }
+    }
+
+    &__link{
+        color: $blue;
+        font-size: 16px;
+        text-decoration-color: $lilac;
     }
 }

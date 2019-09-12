@@ -37,6 +37,18 @@
             margin-bottom: -2%;
             width: 448px;
         }
+
+        &-pos4{
+            z-index: 1;
+            display: block;
+            position: relative;
+
+            @include desktop{
+                background-image: url(/static/images/arrows-bg.png);
+                background-repeat: no-repeat;
+                background-position: 0 0;
+            }
+        }
         
     }
     

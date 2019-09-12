@@ -5,7 +5,7 @@ export default function ContentSection(props) {
     const { animation, content } = props;
     return (
         <Animated {...animation}>
-            <div>{ReactHtmlParser(content)}</div>
+            <div class="content-section">{ReactHtmlParser(content)}</div>
         </Animated>
     )
 }

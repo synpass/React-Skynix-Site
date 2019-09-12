@@ -5,7 +5,12 @@ export default function HeroBanner(props) {
     return (
         <Animated {...animation}>
             <div className="herobanner">
-                <img src={image.source_url} sizes="80wv"></img>
+                {
+                    image?
+                        <img src={image.source_url} sizes="80wv"></img>
+                        :null
+                }
+
             </div>
         </Animated>
     )

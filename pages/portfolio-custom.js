@@ -19,8 +19,10 @@ import {Link} from '../routes';
 class PortfolioCustom extends Component {
 
     prepareImage(imageObj, allMedia){
-        const file = allMedia.filter(media=>media.slug === imageObj.post_name);
-        return file[0];
+        const file = allMedia.filter(media=> media.slug === imageObj.post_name);
+
+        const image = file[0] ? file[0] : {source_url:''};
+        return image;
     }
 
     render() {
@@ -57,38 +59,43 @@ class PortfolioCustom extends Component {
                 </div>
                 <HeroBanner animation={animation(3)} image={this.prepareImage(hero_banner_image, media)} />
                 <div className="content--medium content--top-offset">
-                    <ImageLeftTextRight 
-                        animation={animation(4)} 
-                        image={this.prepareImage(projectData.block1_image, media)} 
-                        title={projectData.block1_title} 
+                    <ImageLeftTextRight
+                        animation={animation(4)}
+                        image={this.prepareImage(projectData.block1_image, media)}
+                        title={projectData.block1_title}
                         text={projectData.block1_text}
                     />
                     <ContentImage animation={animation(4)} image={this.prepareImage(projectData.block2_image, media)}></ContentImage>
-                    <ContentSection content={projectData.block3_text} animation={animation(6)} />   
+                    <ContentSection content={projectData.block3_text} animation={animation(6)} />
                 </div>
-                
-                <div className="content--large">
-                <TextLeftImageRight animation={animation(7)} link={projectData.link_to} image={this.prepareImage(projectData.block4_image, media)} text={projectData.block4_text} title={projectData.block4_title} />
-                <TitleHeading animation={animation(8)} title={projectData.block5_title} />
-                <ContentSection content={projectData.block5_text} animation={animation(8)} />
-                <Square 
-                    animation={animation(9)} 
-                    image1={this.prepareImage(projectData.block6_image1, media)}
-                    image2={this.prepareImage(projectData.block6_image2, media)}
-                    image3={this.prepareImage(projectData.block6_image3, media)}
-                    title={projectData.block6_title}
-                    textRight={textRight}
-                    textLeft={textLeft}
-                />
-                <Result animation={animation(10)} title={projectData.block7_title} text={projectData.block7_text}/>
-                <ImageLeftTextRight 
-                    animation={animation(11)} 
-                    image={this.prepareImage(projectData.block8_image, media)} 
-                    title={projectData.block8_title} 
-                    text={projectData.block8_text}
-                />
-                <ContentSection content={projectData.block9_text} animation={animation(12)} />
-                <TextLeftImageRight animation={animation(13)} link={projectData.link_to} image={this.prepareImage(projectData.block4_image, media)} text={projectData.block4_text} title={projectData.block4_title} />
+                <div className="tech__bg-pos4 content--large2">
+                    <div className="content--large">
+                        <TextLeftImageRight animation={animation(7)} link={projectData.link_to} image={this.prepareImage(projectData.block4_image, media)} text={projectData.block4_text} title={projectData.block4_title} />
+
+                        <Animated {...animation(8)}>
+                            <h2 className="heading--2 content-section"> {ReactHtmlParser(projectData.block5_title)}</h2>
+                        </Animated>
+
+                        <ContentSection content={projectData.block5_text} animation={animation(8)} />
+                        <Square
+                            animation={animation(9)}
+                            image1={this.prepareImage(projectData.block6_image1, media)}
+                            image2={this.prepareImage(projectData.block6_image2, media)}
+                            image3={this.prepareImage(projectData.block6_image3, media)}
+                            title={projectData.block6_title}
+                            textRight={textRight}
+                            textLeft={textLeft}
+                        />
+                        <Result animation={animation(10)} title={projectData.block7_title} text={projectData.block7_text}/>
+                        <ImageLeftTextRight
+                            animation={animation(11)}
+                            image={this.prepareImage(projectData.block8_image, media)}
+                            title={projectData.block8_title}
+                            text={projectData.block8_text}
+                        />
+                        <ContentSection content={projectData.block9_text} animation={animation(12)} />
+                        <TextLeftImageRight animation={animation(13)} link={projectData.link_to} image={this.prepareImage(projectData.block4_image, media)} text={projectData.block4_text} title={projectData.block4_title} />
+                    </div>
                 </div>
             </Page>
         )
@@ -96,18 +103,18 @@ class PortfolioCustom extends Component {
 }
 
 PortfolioCustom.getInitialProps = async ({ query }) => {
-    let data;    
+    let data;
     const portfolioData = await Service.getPortfolioProject(query.project);
     if(!portfolioData.data[0]){
         return
     }
     let id = portfolioData.data[0].id;
-            
+
     const media = await Service.fetchProjectMedia(id);
     data = {
         projectData: portfolioData.data[0],
         media: media.data
-    }; 
+    };
 
     return data;
 }

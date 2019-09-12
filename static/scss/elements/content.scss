@@ -13,19 +13,45 @@
 		}
 	}
 
+	&--medium, &--large, &--large2{
+		margin: 0 auto;
+		width: 100%;
+	}
+
 	&--medium{
-		width: 68%;
+		@include desktop {
+			width: 68%;
+		}
 	}
 
 	&--large{
-		width: 81%;
+		@include desktop {
+			width: 81%;
+		}
 	}
 
-	&--medium, &--large{
-		margin: 0 auto;
+	&--large2{
+		@include desktop {
+			width: 83%;
+		}
 	}
 
 	&--top-offset{
-		margin-top: -100px;
+		@include tablets() {
+			margin-top: -100px;
+		}
+	}
+
+	&_strong{
+		width: 100%;
+		display: block;
+		font-family: $sofia;
+		font-size: 18px;
+		color: $dark;
+		margin-bottom: 15px;
+
+		&--blue{
+			color: $blue;
+		}
 	}
 }

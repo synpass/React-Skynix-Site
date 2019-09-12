@@ -1,24 +1,51 @@
 .image-left-text-right{
     display: flex;
     align-items: flex-end;
+    flex-wrap: wrap;
     justify-content: space-between;
-    font-family: $proxima;
+    margin-bottom: 20px;
+    padding: 0 10px;
+
+    @include tablets {
+        flex-wrap: nowrap;
+        margin-bottom: 90px;
+    }
+
+    @include desktop{
+        padding: 0;
+    }
 
     img{
-        width: 45%;
-        margin-right: 10%
+        width: 100%;
+        max-width: 400px;
+        display: none;
+
+        @include tablets {
+            display: block;
+            margin-right: 10%;
+            width: 45%;
+        }
     }
 
     &__title{
-        font-size: 32px;
+        font-family: $sofia-semibold;
+        font-size: 26px;
+        color: rgba(37, 37, 37, 255);
+        @include tablets {
+            font-size: 32px;
+            margin-top: 110px;
+        }
     }
 
     &__text{
+        font-family: $proxima;
         color: rgba(37, 37, 37, 255);
         font-size: 18px;
         line-height: 1.6;
     }
-    .grid__col6{
+
+    .p{
         width: 100%;
+        margin-bottom: 10px;
     }
 }
