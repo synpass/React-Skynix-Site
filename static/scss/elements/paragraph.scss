@@ -68,6 +68,14 @@
       padding-bottom: 0;
       font-size: 18px;
     }
+    &1{
+      font: {
+        size: 18px;
+        family: $proxima;
+        weight: 100;
+      }
+      max-width: 100%;
+    }
   }
 
   &--simple:before {

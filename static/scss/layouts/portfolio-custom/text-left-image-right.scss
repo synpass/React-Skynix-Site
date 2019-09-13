@@ -6,7 +6,7 @@
     padding: 0 10px;
     flex-wrap: wrap;
 
-    @include desktop{
+    @include tablets{
         margin-top: 90px;
         margin-bottom: 100px;
         flex-wrap: nowrap;
@@ -15,7 +15,8 @@
     &__image {
         width: 100%;
         order: 1;
-        @include desktop{
+        box-shadow: 0 0 40px 18px $grey-medium;
+        @include tablets{
             order: 2;
             width: 60%;
             margin-left: 7%;
@@ -66,7 +67,7 @@
         order: 2;
         width: 100%;
 
-        @include desktop{
+        @include tablets{
             order: 1;
             width: 40%;
         }

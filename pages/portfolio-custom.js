@@ -86,17 +86,24 @@ class PortfolioCustom extends Component {
                             textRight={textRight}
                             textLeft={textLeft}
                         />
-                        <Result animation={animation(10)} title={projectData.block7_title} text={projectData.block7_text}/>
-                        <ImageLeftTextRight
-                            animation={animation(11)}
-                            image={this.prepareImage(projectData.block8_image, media)}
-                            title={projectData.block8_title}
-                            text={projectData.block8_text}
-                        />
-                        <ContentSection content={projectData.block9_text} animation={animation(12)} />
-                        <TextLeftImageRight animation={animation(13)} link={projectData.link_to} image={this.prepareImage(projectData.block4_image, media)} text={projectData.block4_text} title={projectData.block4_title} />
+                        </div>
                     </div>
-                </div>
+                    <Result animation={animation(10)} title={projectData.block7_title} text={projectData.block7_text}/>
+                    <div className="content--large2">
+                        <div className="content--large">
+                            <div className="tech__bg-pos4">
+                            <ImageLeftTextRight
+                                animation={animation(11)}
+                                image={this.prepareImage(projectData.block8_image, media)}
+                                title={projectData.block8_title}
+                                text={projectData.block8_text}
+                            />
+                            </div>
+                            <ContentSection content={projectData.block9_text} animation={animation(12)} />
+                        </div>
+                        {/* <TextLeftImageRight animation={animation(13)} link={projectData.link_to} image={this.prepareImage(projectData.block4_image, media)} text={projectData.block4_text} title={projectData.block4_title} /> */}
+                    </div>
+                
             </Page>
         )
     }

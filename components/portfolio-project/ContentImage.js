@@ -4,7 +4,7 @@ export default function TitleHeading(props) {
     const { animation, image } = props;
     return (
         <Animated {...animation}>
-            <div className="herobanner">
+            <div className="content-image">
                 <img src={image.source_url} alt=""/>
             </div>    
         </Animated>

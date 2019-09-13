@@ -47,7 +47,7 @@
 	}
 	&__col {
 		height: 100%;
-		box-shadow: rgba(28, 28, 28, 0.05) 0px 0px 8px 3px;
+		box-shadow:$grey-medium 0px 0px 8px 3px;
 		display: flex;
 		flex-direction: column;
 		justify-content: flex-start;
