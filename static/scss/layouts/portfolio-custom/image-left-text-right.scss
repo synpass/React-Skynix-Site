@@ -28,9 +28,38 @@
         }
     }
 
+    &--pos1{
+        img{
+            display: block;
+            max-width: 579px;
+            width: 100%;
+            margin: 0 auto;
+            margin-top: -60px;
+        }
+        @include tablets {
+            img{
+                width: 61%;
+                position: absolute;
+                top: -13%;
+                left: 0;
+                z-index: 0;
+                margin-top: 0;
+            }
+            padding-left: 67%;
+            padding-bottom: 125px;
+            position: relative;
+        }
+        .image-left-text-right{
+            &__text{
+                z-index: 3;
+            }
+        }
+    }
+
     &__title{
         font-family: $sofia-semibold;
         font-size: 26px;
+        font-weight: 100;
         color: rgba(37, 37, 37, 255);
         @include tablets {
             font-size: 32px;

@@ -1,79 +1,84 @@
-.square{
+.square {
   display: flex;
   flex-wrap: wrap;
   padding: 0 10px;
+  margin-bottom: 35px;
+  position: relative;
 
-  @include tablets{
+  @include tablets {
     display: grid;
     grid-template-columns: repeat(7, 1fr);
     grid-gap: 10px;
     grid-auto-rows: minmax(100px, auto);
+    margin-bottom: 75px;
   }
 
-  img{
+  img {
     max-width: 100%;
   }
 
-  &__1, &__2, &__3, &__4{
+  &__1, &__2, &__3, &__4 {
     margin-bottom: 25px;
     width: 100%;
   }
 
-  &__1, &__top, &__4{
+  &__1 img, &__top, &__4 img {
     box-shadow: 0 0 40px 18px $grey-medium;
   }
 
-  &__1{
+  &__1 {
     order: 1;
-    @include tablets{
+    text-align: start;
+    @include tablets {
       grid-column: 1 / 5;
       grid-row: 1;
       max-height: 440px;
     }
   }
 
-  &__2{
+  &__2 {
     order: 2;
-    @include tablets{
+    @include tablets {
       grid-column: 5 / 8;
       grid-row: 1 / 3;
       padding-left: 15%;
     }
 
-    @include desktop{
+    @include desktop {
       padding-left: 28%;
     }
   }
 
-  &__3{
+  &__3 {
     order: 4;
-    @include tablets{
+    @include tablets {
       grid-column: 1 / 5;
       grid-row: 2/3;
     }
-    @include desktop{
+    @include desktop {
       grid-column: 1 / 3;
       grid-row: 2/6;
     }
   }
 
-  &__4{
+  &__4 {
     order: 5;
-    @include tablets{
+    text-align: end;
+    @include tablets {
       grid-column: 3 / 8;
-      grid-row: 3 / 6;
+      grid-row: 3 / 7;
     }
-    @include desktop{
+    @include desktop {
       grid-column: 4 / 8;
     }
   }
 
-  &__top{
+  &__top {
     order: 3;
     margin: 0 auto;
     margin-bottom: 25px;
-    
-    @include tablets{
+
+    @include tablets {
       display: none;
     }
     @include desktop {
@@ -85,36 +90,47 @@
       max-width: 370px;
       position: relative
     }
-    
+
+    @include largeDesktop {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      margin: auto;
+      grid-column: none;
+      grid-row: none;
+    }
+
   }
-  ul{
+  ul {
     padding-left: 19px;
-        list-style: none;
+    list-style: none;
 
-       li {
-         font-family: $proxima;
-         font-size: 18px;
-         color: $dark;
-         line-height: 1.2;
-         margin-bottom: 15px;
+    li {
+      font-family: $proxima;
+      font-size: 18px;
+      color: $dark;
+      line-height: 1.2;
+      margin-bottom: 15px;
 
-          @include tablets {
-            line-height: 1.5;
-            margin-bottom: 35px;
-          }
-         
-        &:before {
-          content: "\2022";
-          color: $blue;
-          font-weight: bold;
-          display: inline-block;
-          width: 1em;
-          margin-left: -1em;
-        }
-       }
+      @include tablets {
+        line-height: 1.5;
+        margin-bottom: 35px;
+      }
+
+      &:before {
+        content: "\2022";
+        color: $blue;
+        font-weight: bold;
+        display: inline-block;
+        width: 1em;
+        margin-left: -1em;
+      }
+    }
   }
 
-  h2{
+  h2 {
     font-family: $sofia-semibold;
     font-size: 26px;
     color: $dark;

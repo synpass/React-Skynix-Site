@@ -1,5 +1,9 @@
 .result{
     background: $grey-medium;
+    padding-bottom: 70px;
+    @include tablets{
+        padding-bottom: 100px;
+    }
     &__wrapper{
         position: relative;
     }

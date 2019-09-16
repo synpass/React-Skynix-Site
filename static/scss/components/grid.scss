@@ -14,7 +14,7 @@
             padding: 0 5px;
             @include tablets(){
                 padding-left: 0;
-                padding-right: 10%;
+                padding-right: 8%;
                 width: 25%;
             }
         }
@@ -44,6 +44,44 @@
 
                 &:last-of-type{
                     border-right: 1px solid $lilac;
+                }
+            }
+        }
+    }
+    &--numerated{
+        counter-reset: numerate;
+
+        .grid {
+            &__col6, &__col3 {
+                position: relative;
+            }
+            &__content{
+                z-index: 1;
+                position: relative;
+            }
+        }
+
+        &>div{
+            padding: 15px 5% 30px 5%;
+
+            @include tablets{
+                padding: 45px 5% 60px 5%;
+            }
+            &:before{
+                counter-increment: numerate;
+                content: counters(numerate, ".", decimal-leading-zero);
+                position: absolute;
+                bottom: 0;
+                right: -8px;
+                z-index: 0;
+                font:{
+                    size: 100px;
+                    family: $sofia-semibold;
+                }
+                color: rgba(34, 63, 213, 255);
+                opacity: 0.2;
+                @include tablets{
+                    font-size: 100px;
                 }
             }
         }

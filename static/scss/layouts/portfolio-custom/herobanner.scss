@@ -1,6 +1,11 @@
 .herobanner{
+    min-height: 200px;
+    max-height: 544px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
     img{
         width: 100%;
-        min-height: 200px;
+        height: 100%;
     }
 }

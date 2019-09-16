@@ -12,14 +12,34 @@
         flex-wrap: nowrap;
     }
 
+    &--conclusion{
+        margin-bottom: -60px;
+        margin-top: 40px;
+        justify-content: center;
+        align-items: center;
+        @include tablets{
+            margin-bottom: -120px;
+        }
+        .text-left-image-right{
+            &__image{
+                max-width: 400px;
+                margin-top: 0;
+            }
+        }
+    }
+
     &__image {
         width: 100%;
         order: 1;
         box-shadow: 0 0 40px 18px $grey-medium;
+        &--noshadow{
+            box-shadow: none;
+        }
         @include tablets{
             order: 2;
-            width: 60%;
-            margin-left: 7%;
+            width: 62%;
+            max-width: 1000px;
+            margin-left: 5%;
             align-self: baseline;
             margin-top: 140px;
         }
@@ -47,9 +67,10 @@
         font-family: $sofia-semibold;
         font-size: 26px;
         color: $dark;
+        letter-spacing: 0.7px;
         @include tablets {
             font-size: 32px;
-            line-height: 1.4;
+            line-height: 1.25;
         }
 
         strong{
@@ -69,7 +90,7 @@
 
         @include tablets{
             order: 1;
-            width: 40%;
+            width: 33%;
         }
     }
 
