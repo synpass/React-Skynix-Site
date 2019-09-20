@@ -154,6 +154,14 @@ const Service = {
     async getCategories () {
         const categories = await axios.get(`${API}${SLUG1}/categories?per_page=100&hide_empty=true`)
         return categories.data
+    },
+
+    getPortfolioProject (project) {
+        return this.get(`${API}${SLUG1}/portfolio?slug=${project}`).then(response=>response)
+    },
+
+    fetchProjectMedia (id) {
+        return this.get(API_MEDIA + '?parent=' + id).then(result => result);
     }
 
 };

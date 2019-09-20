@@ -1,0 +1,142 @@
+.square {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 0 10px;
+  margin-bottom: 35px;
+  position: relative;
+
+  @include tablets {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    grid-gap: 10px;
+    grid-auto-rows: minmax(100px, auto);
+    margin-bottom: 75px;
+  }
+
+  img {
+    max-width: 100%;
+  }
+
+  &__1, &__2, &__3, &__4 {
+    margin-bottom: 25px;
+    width: 100%;
+  }
+
+  &__1 img, &__top, &__4 img {
+    box-shadow: 0 0 40px 18px $grey-medium;
+  }
+
+  &__1 {
+    order: 1;
+    text-align: start;
+    @include tablets {
+      grid-column: 1 / 5;
+      grid-row: 1;
+      max-height: 440px;
+    }
+  }
+
+  &__2 {
+    order: 2;
+    @include tablets {
+      grid-column: 5 / 8;
+      grid-row: 1 / 3;
+      padding-left: 15%;
+    }
+
+    @include desktop {
+      padding-left: 28%;
+    }
+  }
+
+  &__3 {
+    order: 4;
+    @include tablets {
+      grid-column: 1 / 5;
+      grid-row: 2/3;
+    }
+    @include desktop {
+      grid-column: 1 / 3;
+      grid-row: 2/6;
+    }
+  }
+
+  &__4 {
+    order: 5;
+    text-align: end;
+    @include tablets {
+      grid-column: 3 / 8;
+      grid-row: 3 / 7;
+    }
+    @include desktop {
+      grid-column: 4 / 8;
+    }
+  }
+
+  &__top {
+    order: 3;
+    margin: 0 auto;
+    margin-bottom: 25px;
+
+    @include tablets {
+      display: none;
+    }
+    @include desktop {
+      display: block;
+      grid-column: 3 / -1;
+      grid-row: 2 / 5;
+      min-height: 476px;
+      margin: -80px 0 0 0;
+      max-width: 370px;
+      position: relative
+    }
+
+    @include largeDesktop {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      margin: auto;
+      grid-column: none;
+      grid-row: none;
+    }
+
+  }
+  ul {
+    padding-left: 19px;
+    list-style: none;
+
+    li {
+      font-family: $proxima;
+      font-size: 18px;
+      color: $dark;
+      line-height: 1.2;
+      margin-bottom: 15px;
+
+      @include tablets {
+        line-height: 1.5;
+        margin-bottom: 35px;
+      }
+
+      &:before {
+        content: "\2022";
+        color: $blue;
+        font-weight: bold;
+        display: inline-block;
+        width: 1em;
+        margin-left: -1em;
+      }
+    }
+  }
+
+  h2 {
+    font-family: $sofia-semibold;
+    font-size: 26px;
+    color: $dark;
+    @include tablets {
+      font-size: 32px;
+      line-height: 1.4;
+    }
+  }
+}

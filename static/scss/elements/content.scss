@@ -12,4 +12,46 @@
 			}
 		}
 	}
+
+	&--medium, &--large, &--large2{
+		margin: 0 auto;
+		width: 100%;
+	}
+
+	&--medium{
+		@include desktop {
+			width: 68%;
+		}
+	}
+
+	&--large{
+		@include desktop {
+			width: 84%;
+		}
+	}
+
+	&--large2{
+		@include desktop {
+			width: 97%;
+		}
+	}
+
+	&--top-offset{
+		@include tablets() {
+			margin-top: -100px;
+		}
+	}
+
+	&_strong{
+		width: 100%;
+		display: block;
+		font-family: $sofia;
+		font-size: 18px;
+		color: $dark;
+		margin-bottom: 15px;
+
+		&--blue{
+			color: $blue;
+		}
+	}
 }

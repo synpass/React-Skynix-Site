@@ -1,0 +1,45 @@
+.result{
+    background: $grey-medium;
+    padding-bottom: 70px;
+    @include tablets{
+        padding-bottom: 100px;
+    }
+    &__wrapper{
+        position: relative;
+    }
+    &__logo{
+        display: none;
+        font: {
+            size: 120px;
+            family: $sofia-bold;
+        }
+        color: white;
+        position: relative;
+        white-space: nowrap;
+        z-index: 0;
+        position: absolute;
+        right: 0;
+        top: -50px;
+        line-height: 1;
+        @include phones{
+            display: block;
+        }
+        @include tablets{
+            font: {
+                size: 150px;
+            }
+        }
+
+        @include desktop{
+            font: {
+                size: 200px;
+            }
+        }
+    }
+
+    &__content{
+        padding: 50px 10%;
+        position: relative;
+        z-index: 1;
+    }
+}

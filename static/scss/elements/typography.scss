@@ -30,6 +30,19 @@
       font-size: 14px;
     }
   }
+  &--2{
+    font-family: $sofia-semibold;
+    font-size: 26px;
+    color: $dark;
+    @include tablets {
+      font-size: 32px;
+      line-height: 1.4;
+    }
+
+    strong{
+      color: $blue;
+    }
+  }
 }
 
 .section-heading {

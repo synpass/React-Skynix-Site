@@ -37,6 +37,29 @@
             margin-bottom: -2%;
             width: 448px;
         }
+
+        &-pos4, &-pos5{
+            z-index: 1;
+            display: block;
+            position: relative;
+
+            @include tablets{
+                background-image: url(/static/images/arrows-bg.png);
+                background-repeat: no-repeat;
+                background-position: 0 0;
+            }
+        }
+        &-pos5{
+            @include tablets{
+                width: 100%;
+                display: block;
+                position: absolute;
+                height: 100%;
+                left: 0;
+                background-position: 50% 100%;
+                bottom: -1px;
+            }
+        }
         
     }
     

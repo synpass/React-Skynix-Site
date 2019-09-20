@@ -1,0 +1,102 @@
+.text-left-image-right{
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    font-family: $proxima;
+    padding: 0 10px;
+    flex-wrap: wrap;
+
+    @include tablets{
+        margin-top: 90px;
+        margin-bottom: 100px;
+        flex-wrap: nowrap;
+    }
+
+    &--conclusion{
+        margin-bottom: -60px;
+        margin-top: 40px;
+        justify-content: center;
+        align-items: center;
+        @include tablets{
+            margin-bottom: -120px;
+        }
+        .text-left-image-right{
+            &__image{
+                max-width: 400px;
+                margin-top: 0;
+            }
+        }
+    }
+
+    &__image {
+        width: 100%;
+        order: 1;
+        box-shadow: 0 0 40px 18px $grey-medium;
+        &--noshadow{
+            box-shadow: none;
+        }
+        @include tablets{
+            order: 2;
+            width: 62%;
+            max-width: 1000px;
+            margin-left: 5%;
+            align-self: baseline;
+            margin-top: 140px;
+        }
+    }
+
+    img {
+        width: 100%;
+    }
+
+    ul{
+        padding-left: 19px;
+        list-style: none;
+
+       li:before {
+            content: "\2022";
+            color: $blue;
+            font-weight: bold;
+            display: inline-block;
+            width: 1em;
+            margin-left: -1em;
+        }
+    }
+
+    &__title{
+        font-family: $sofia-semibold;
+        font-size: 26px;
+        color: $dark;
+        letter-spacing: 0.7px;
+        @include tablets {
+            font-size: 32px;
+            line-height: 1.25;
+        }
+
+        strong{
+            color: $blue;
+        }
+    }
+
+    &__text{
+        font-family: $proxima;
+        color: rgba(37, 37, 37, 255);
+        font-size: 18px;
+        line-height: 1.6;
+    }
+    &__content{
+        order: 2;
+        width: 100%;
+
+        @include tablets{
+            order: 1;
+            width: 33%;
+        }
+    }
+
+    &__link{
+        color: $blue;
+        font-size: 16px;
+        text-decoration-color: $lilac;
+    }
+}

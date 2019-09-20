@@ -3,7 +3,7 @@
   width: 100%;
   flex-direction: column;
   position: relative;
-  box-shadow: 0 0 40px 18px rgba(28, 28, 28, 0.05);
+  box-shadow: 0 0 40px 18px $grey-medium;
   @include tablets {
     flex-direction: row;
   }
