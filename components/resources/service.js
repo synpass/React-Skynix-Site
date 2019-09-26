@@ -156,6 +156,39 @@ const Service = {
         return categories.data
     },
 
+    getAllPortfolioProjects (page) {
+        const perPage = 18;
+        let totals;
+
+        return fetch(`${API}${SLUG1}/portfolio?per_page=${perPage}&page=${page}`)
+            .then(res => {
+                 totals = res.headers.get('x-wp-totalpages');
+                 return res.json();
+                })
+            .then(
+                (result) => {
+                    if(result.message) {
+                        return {
+                            success: false,
+                            error: result.message
+                        }
+                    } else {
+                        return {
+                            success: true,
+                            data: result,
+                            totals
+                        }
+                    }
+                },
+                (error) => {
+                    return {
+                        success: false,
+                        error
+                    }
+                }
+            );
+    },
+
     getPortfolioProject (project) {
         return this.get(`${API}${SLUG1}/portfolio?slug=${project}`).then(response=>response)
     },

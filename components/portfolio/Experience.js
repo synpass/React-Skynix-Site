@@ -15,7 +15,6 @@ export default function Experience() {
                     Oceania, Europe, and the Americas.
                 </h3>
             </div> 
-            <WorldMap/>
         </Animated>
         )
     }
