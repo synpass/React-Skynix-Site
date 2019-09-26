@@ -1,6 +1,7 @@
 import React from 'react';
 import { array, number, string, oneOfType } from "prop-types";
 import Pagination from '../Pagination';
+import {Link} from '../../routes'
 
 function ProjectsList (props)  {
     const { projects } = props;
@@ -9,15 +10,16 @@ function ProjectsList (props)  {
         <div className="projects">
             {projects.map((item, key) => {
                 const imageSrc = item.preview_image ? item.preview_image.guid : "";
-                const title = item.title ? item.title.rendered : "";
-                const link = item.link
+                const title = item.title ? item.title_1 : "";
                 return <div className="project" key={key}>
-                            <a href={link} className="project__link">
-                                <div className="project__thumb"
-                                     style={{"backgroundImage": `url(${imageSrc})`}}
-                                     />
-                                <h3 className="project__title"> {title} </h3>
-                            </a>
+                            <Link route='project' params={{slug: item.slug}}>
+                                <a className="project__link">
+                                    <div className="project__thumb"
+                                        style={{"backgroundImage": `url(${imageSrc})`}}
+                                        />
+                                    <h3 className="project__title" dangerouslySetInnerHTML={{__html:title}}></h3>
+                                </a>
+                            </Link>
                         </div>
             })}
             <Pagination 
