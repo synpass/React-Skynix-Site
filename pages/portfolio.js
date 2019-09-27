@@ -4,7 +4,7 @@ import Page from "../components/Page";
 import Experience from "../components/portfolio/Experience";
 import url from '../domain.config';
 import {connect} from "react-redux";
-import { obj, number, string, oneOfType } from "prop-types";
+import { object, number, string, oneOfType } from "prop-types";
 import ProjectsList from '../components/portfolio/ProjectsList.js';
 import Service from '../components/resources/service.js';
 
@@ -23,7 +23,7 @@ class Portfolio extends Component {
 }
 
 Portfolio.propTypes = {
-    projects: obj,
+    projects: object,
     page: oneOfType([string, number]),
     totalProjects: oneOfType([string, number])
 }
