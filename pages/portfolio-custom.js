@@ -1,5 +1,4 @@
 import React, {Component} from 'react';
-import meta from './portfolio-meta.config.json';
 import Page from "../components/Page";
 import url from '../domain.config'
 import {connect} from "react-redux"
@@ -43,8 +42,13 @@ class PortfolioCustom extends Component {
             }
         };
 
+        const title = projectData.title.rendered;
+        const description = projectData.meta_description;
+
+        const meta = {title, description}
+
         return (
-            <Page meta={this.props.meta} newsItems={this.props.newsItems} loading={true} showLoader={this.props.showLoader} canonical={url + "/portfolio"}>
+            <Page meta={meta} newsItems={this.props.newsItems} loading={true} showLoader={this.props.showLoader} canonical={url + "/portfolio/" + this.props.canonicalPage}>
                 <div className="pr-approach">
                     <Link route="/portfolio">
                         <span className="breadcrumb">
@@ -123,7 +127,8 @@ PortfolioCustom.getInitialProps = async ({ query }) => {
     const media = await Service.fetchProjectMedia(id);
     data = {
         projectData: portfolioData.data[0],
-        media: media.data
+        media: media.data,
+        canonicalPage: query.project
     };
 
     return data;
