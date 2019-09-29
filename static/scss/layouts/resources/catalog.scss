@@ -5,6 +5,15 @@
   justify-content: space-between;
   z-index: 9;
 
+  &__no-matching {
+    font-size: 18px;
+    color: $blue;
+    margin: 35px;
+    @include tablets {
+      font-size: 21px;
+    }
+  }
+
   &-article {
     width: 100%;
     padding: 20px;

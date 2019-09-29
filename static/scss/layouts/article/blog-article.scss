@@ -168,5 +168,11 @@
     width: 100%;
     height: auto;
   }
+.blog-article__header-image{
+  object-fit: cover;
+  position: absolute;
+  height: 330px;
+  z-index: -20;
+}
 
 }

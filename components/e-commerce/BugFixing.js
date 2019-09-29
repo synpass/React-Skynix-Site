@@ -1,23 +1,26 @@
 import React from 'react';
 import LazyLoad from "../LazyLoad";
 import Particle from "../Particle";
+import { oneOfType, string, object } from 'prop-types'
 
-export default function BugFixing() {
+export default function BugFixing(props) {
     return (
         <LazyLoad className='ec-bugfixing'>
-            <h2 className='section-heading'>Bug Fixing, Security Monitoring and Maintenance</h2>
+            <h2 className='section-heading'> {props.heading} </h2>
             <h4 className='paragraph ec-bugfixing__paragraph'>
-                Sleep tight knowing your online store is out of risk with<br />
-                the backup of our thorough Magento and Woocommerce<br />
-                developers, who can:
+                {props.subheading}
             </h4>
-            <p><b>•  efficiently</b> configure your server and platform</p>
-            <p><b>•  quickly</b> detect and fix any vulnerabilities</p>
-            <p><b>•  regularly</b> apply security patches</p>
+            {props.points}
             <div className='ec-bugfixing__particle'>
                 <Particle/>
             </div>
             <div className="ec-bugfixing__padding-bottom"></div>
         </LazyLoad>
     )
+}
+
+BugFixing.propTypes = {
+    heading: oneOfType([string, object]),
+    subheading: oneOfType([string, object]),
+    points: object
 }

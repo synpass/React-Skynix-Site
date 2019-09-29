@@ -1,0 +1,89 @@
+.grid{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    @include tablets(){
+       flex-wrap: nowrap;
+    }
+
+    &__col{
+        &3, &4{
+            width: 50%;
+            box-sizing: border-box;
+            margin-bottom: 20px;
+            padding: 0 5px;
+            @include tablets(){
+                padding-left: 0;
+                padding-right: 8%;
+                width: 25%;
+            }
+        }
+        &4{
+            @include tablets{
+                padding-right: 5%;
+                width: 33.3%;
+            }
+        }
+        &6{
+            width: 100%;
+            @include tablets{
+                width: 50%;
+                padding-right: 7%;
+            }
+        }
+    }
+
+    &--bordered{
+        &>div{
+            border: 1px solid $lilac;
+            padding: 40px 5%;
+            box-sizing: border-box;
+            @include tablets{
+                border-right: none;
+                margin-top: 20px;
+
+                &:last-of-type{
+                    border-right: 1px solid $lilac;
+                }
+            }
+        }
+    }
+    &--numerated{
+        counter-reset: numerate;
+
+        .grid {
+            &__col6, &__col3 {
+                position: relative;
+            }
+            &__content{
+                z-index: 1;
+                position: relative;
+            }
+        }
+
+        &>div{
+            padding: 15px 5% 30px 5%;
+
+            @include tablets{
+                padding: 45px 5% 60px 5%;
+            }
+            &:before{
+                counter-increment: numerate;
+                content: counters(numerate, ".", decimal-leading-zero);
+                position: absolute;
+                bottom: 0;
+                right: -8px;
+                z-index: 0;
+                font:{
+                    size: 100px;
+                    family: $sofia-semibold;
+                }
+                color: rgba(34, 63, 213, 255);
+                opacity: 0.2;
+                @include tablets{
+                    font-size: 100px;
+                }
+            }
+        }
+    }
+}

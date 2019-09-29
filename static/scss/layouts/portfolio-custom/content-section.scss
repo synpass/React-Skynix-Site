@@ -1,0 +1,22 @@
+.content-section{
+  line-height: 1.2;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  padding: 0 10px;
+  color: rgba(82, 82, 82, 255);
+  font-size: 14px;
+  line-height: 1.7;
+
+
+  @include desktop(){
+    margin-bottom: 50px;
+    padding: 0;
+  }
+
+  &__text{
+    font-size: 18px;
+    font-family: $proxima;
+    color: $dark;
+    line-height: 1.5
+  }
+}

@@ -4,8 +4,7 @@ let gtmId = '<gtmId>'; // production: GTM-MV4FKFF, staging: GTM-N6CK5NF
 let contactFormId = "<contactFormId>";
 
 export {contactFormId}
-export {cmsHost} 
+export {cmsHost}
 export {gtmId}
 
 export default hostname
-

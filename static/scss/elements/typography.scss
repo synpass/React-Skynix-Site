@@ -30,9 +30,23 @@
       font-size: 14px;
     }
   }
+  &--2{
+    font-family: $sofia-semibold;
+    font-size: 26px;
+    color: $dark;
+    @include tablets {
+      font-size: 32px;
+      line-height: 1.4;
+    }
+
+    strong{
+      color: $blue;
+    }
+  }
 }
 
 .section-heading {
+  background-color: $white;
   padding: 20px 0;
   margin: 0;
   letter-spacing: .02em;
@@ -42,6 +56,7 @@
     weight: 100;
   }
   @include tablets {
+    background-color: transparent;
     font-size: 32px;
     padding: 70px 0 42px;
   }

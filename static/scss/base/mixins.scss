@@ -4,6 +4,11 @@
     @content
   }
 }
+@mixin largeDesktop {
+  @media (min-width: 1366px) {
+    @content
+  }
+}
 @mixin laptop {
   @media (min-width: 1024px) {
     @content
@@ -16,6 +21,14 @@
 }
 @mixin phones {
   @media (min-width: 544px) {
+    @content
+  }
+}
+
+@mixin retina {
+  @media
+  only screen and ( min-device-pixel-ratio: 2),
+  only screen and ( min-resolution: 192dpi) {
     @content
   }
 }
@@ -39,4 +52,49 @@
     z-index: 10;
     box-shadow: 0 10px 120px 0 rgba(42, 42, 42, 0.15);
   }
+}
+
+@mixin transitions($time, $easing, $delay:0s) {
+  -webkit-transition: all $time $easing $delay;
+     -moz-transition: all $time $easing $delay;
+      -ms-transition: all $time $easing $delay;
+       -o-transition: all $time $easing $delay;
+          transition: all $time $easing $delay;
+}
+       
+@mixin animation($name, $time) {
+  -webkit-animation: $name $time 1;
+     -moz-animation: $name $time 1;
+       -o-animation: $name $time 1;
+          animation: $name $time 1;
+  -webkit-animation-direction: alternate;
+          animation-direction: alternate;
+  -webkit-animation-fill-mode: forwards; 
+  
+}
+        
+@mixin keyframes($name) {
+  @-webkit-keyframes #{$name} {
+    @content; 
+  }
+  @-moz-keyframes #{$name} {
+    @content;
+  }
+  @-ms-keyframes #{$name} {
+    @content;
+  }
+  @keyframes #{$name} {
+    @content;
+  } 
+}
+
+@mixin simple-transform($scalex: false, $scaley :false, $rotate: false, $trans-x: false, $trans-y: false){
+  $trans: unquote("");
+ 
+  $trans: $trans scale($scalex, $scaley);
+  $trans: $trans rotateZ($rotate);
+  $trans: $trans translate($trans-x, $trans-y);
+
+  transform: $trans;
+
 }
