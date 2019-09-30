@@ -215,7 +215,7 @@ const Service = {
     },
 
     fetchProjectMedia (id) {
-        return this.get(API_MEDIA + '?parent=' + id).then(result => result);
+        return this.get(API_MEDIA + '?parent=' + id + '&per_page=100').then(result => result);
     }
 
 };
