@@ -43,14 +43,13 @@
       -webkit-text-fill-color: $dark-pale;
       -webkit-box-shadow: 0 0 0 1000px $white inset;
     }
-    &.dirty,
+    &--dirty,
     &:focus {
       &~label{
         top: -13px;
         font-size: 14px;
         color: $blue2;
       }
-
     }
     &:focus{
       &~.blog-comment-form__input-bar{

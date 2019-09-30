@@ -1,0 +1,43 @@
+.comment {
+    width: 100%;
+    margin: 0 auto;
+    padding: 16px;
+    border-top: 1px solid $gray-cb;
+
+    &:last-child {
+        margin-bottom: 40px;
+        border-bottom: 1px solid $gray-cb;
+    }
+
+    &__info {
+        display: flex;
+        color: $grey;
+    }
+
+    &__message {
+        font-size: 18px;
+
+        p {
+            margin-top: 10px;
+            margin-bottom: 27px;
+        }
+    }
+
+    &__author {
+        margin-right: 30px;
+    }
+
+    @include tablets {
+
+    }
+}
+
+.comment-messages {
+    width: 100%;
+    max-width: 798px;
+    margin: 0 auto;
+
+    &__title {
+        margin-bottom: 30px;
+    }
+}

@@ -32,6 +32,27 @@ const Service = {
             )
     },
 
+    async postComment(postId, data) {
+       try {
+            const res = await axios.post(`${API}${SLUG1}/comments`, {
+                author_email: data.email,
+                author_name: data.name,
+                content: data.content,
+                date: new Date(),
+                post: postId
+            })
+
+            return res;
+        } catch (error) {
+            return error
+        }
+    },
+
+    async loadComments(postId) {
+        const response = await axios.get(`${API}${SLUG1}/comments?post=${postId}`);
+        return response;
+    },
+
     getFilteredPosts(page, filters) {
         if (!filters || (!filters.tags && !filters.categories) ) {
             return Service.getCatalogByPage(page)
