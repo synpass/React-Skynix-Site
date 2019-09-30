@@ -48,9 +48,9 @@ const Service = {
         }
     },
 
-    async loadComments(data) {
-
-        axios.get(`${API}${SLUG1}/comments?post=${1397}`).then(res => console.log(res))
+    async loadComments(postId) {
+        const response = await axios.get(`${API}${SLUG1}/comments?post=${postId}`);
+        return response;
     },
 
     getFilteredPosts(page, filters) {

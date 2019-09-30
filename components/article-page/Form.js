@@ -63,12 +63,14 @@ export default class Form extends Component {
                 post: this.props.postId,
                 comment_parent: comment_parent.value
             }
-            const response = await Service.postComment(1397, data)
-            console.log(response)
-            if (response.status = 201) {
+            const response = await Service.postComment(this.props.postId, data)
+ 
+            if (response.status === 201) {
                 this.setState({commentCreated: true, commentError: false})
+            } else if (response.message && response.message.includes("409")) {
+                this.setState({commentCreated: false, commentError: "Duplicate comment detected; it looks as though you've already said that!"})
             } else {
-                this.setState({commentCreated: false, commentError: response.message})
+                this.setState({commentCreated: false, commentError: "An unexpected error has occurred. Please try again later."})
             }
         }
     }
@@ -89,7 +91,7 @@ export default class Form extends Component {
                     action="https://staging.cms.skynix.co/wp-json/wp/v2/comments"
                     className='blog-comment-form'
                     name='comment'>
-                    <h2 className='blog-comment-form__title'>Comments</h2>
+                    <h2 className='blog-comment-form__title'>Write a comment</h2>
                     <div className='blog-comment-form__form-group'>
                         <Input
                             value={comment.value}
@@ -111,7 +113,11 @@ export default class Form extends Component {
                     <div className='blog-comment-form__form-group'>
                         <Input
                             value={author.value}
-                            className='blog-comment-form__input'
+                            className={author.value ? 
+                                'blog-comment-form__input blog-comment-form__input--dirty'
+                                :
+                                'blog-comment-form__input'
+                            }
                             error={error}
                             onChange={this.handleChange}
                             name='author'
@@ -127,7 +133,7 @@ export default class Form extends Component {
                     <div className='blog-comment-form__form-group'>
                         <Input
                             value={email.value}
-                            className={email.value ? 'blog-comment-form__input blog-comment-form__input--active' : 'blog-comment-form__input'}
+                            className={email.value ? 'blog-comment-form__input blog-comment-form__input--dirty' : 'blog-comment-form__input'}
                             error={error}
                             onChange={this.handleChange}
                             name='email'

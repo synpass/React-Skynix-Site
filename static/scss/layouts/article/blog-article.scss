@@ -124,11 +124,23 @@
 
 
   }
+
   &__comments{
-    max-width: 800px;
+    max-width: 798px;
     margin: 0 auto;
-    padding: 10px 10px 30px;
+    padding: 10px 0 30px;
+
+    .comment-success {
+      margin: 0 5px;
+      color: $green;
+    }
+
+    .comment-error {
+      margin: 0 5px;
+      color: $red;
+    }
   }
+
   @include tablets {
     padding: 100px 0 0;
 
