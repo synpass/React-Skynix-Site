@@ -10,14 +10,29 @@ class ProjectsList extends Component  {
     
         return (
             <div className="projects">
-                {projects.map((item, key) => {
-                    return <ProjectThumb {...item} key={key} />
-                })}
-                <Pagination 
+
+                <aside className="projects__sidebar">
+                    <ul className="projects__sidebar-list">
+                        <li className="projects__sidebar-item projects__sidebar-item--active"> E-commerce </li>
+                        <li className="projects__sidebar-item"> Systems </li>
+                        <li className="projects__sidebar-item"> Promo websites </li>
+                        <li className="projects__sidebar-item"> Applications </li>
+                    </ul>
+                </aside>
+                <main className="projects__thumbs">
+                    {projects.map((item, key) => {
+                        return <ProjectThumb {...item} key={key} />
+                    })}
+                    {/* <Pagination 
                     current={page}
                     total={totals}
                     navLink='/portfolio'
-                />
+                    /> 
+                    
+                    Pagination is temporarily disabled.
+
+                    */}
+                </main>
             </div>
         );
     }
