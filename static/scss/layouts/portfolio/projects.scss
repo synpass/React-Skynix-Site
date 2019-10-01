@@ -1,62 +1,166 @@
 .projects {
-    @include max-width;
     display: flex;
-    flex-wrap: wrap;
     justify-content: space-between;
+    @include max-width;
+    flex-wrap: wrap;
+    margin: auto;
+
+    @include tablets {
+        margin-top: 140px;
+    }
+
+    @include desktop {
+        flex-wrap: nowrap;
+    }
+
+    &__sidebar {
+        width: 574px;
+        margin: 30px auto;
+        min-width: 160px;
+
+        @include laptop {
+            width: 874px;
+        }
+
+        @include desktop {
+            width: auto;
+            margin: unset;
+        }
+    }
+
+    &__sidebar-list {
+        list-style: none;
+        margin: 0;
+    }
+
+    &__sidebar-item {
+        display: inline-block;
+        margin-bottom: 16px;
+        margin-right: 20px;
+        font-size: 14px;
+        color: $quartz;
+
+        @include desktop {
+            margin-bottom: 30px;
+            display: block;
+            margin-right: 0;
+        }
+
+        &--active {
+            position: relative;
+            font-size: 18px;
+            color: $black;
+
+            &:before {
+                content: "";
+                position: absolute;
+                top: 10px;
+                left: -35px;
+                display: inline-block;
+                width: 25px;
+                height: 1px;
+                margin-right: 15px;
+                background-color: $grey;
+            }
+        }
+    }
+
+    &__thumbs {
+        width: 100%;
+
+        @include desktop {
+            width: auto;
+        }
+    }
 
     .project {
-        display: block;
-        width: 100%;
-        padding: 20px;
-        z-index: 9;
         position: relative;
-        text-decoration: none;
-        color: $dark;
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: column-reverse;
+        width: fit-content;
+        margin: auto;
+        margin-bottom: 60px;
         background: $white;
-        @include phones {
-        width: 50%;
+        color: $dark;
+        text-decoration: none;
+        z-index: 9;
+
+        @include laptop {
+            flex-wrap: nowrap;
+            flex-direction: row;
+            margin-bottom: 125px;
         }
-        @include tablets {
-        width: 33.3333%;
+
+        &__info {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            width: 100%;
+            margin-right: 65px;
+
+            @include laptop {
+                width: 235px;
+            }
         }
 
         &__link {
+            margin-right: 30px;
+            border-bottom: 1px solid $blue;
             text-decoration: none;
+            color: $blue;
+            font-size: 16px;
+            white-space: nowrap;
+        }
+
+        &__thumb-wrap {
+            width: 574px; 
+            height: 175px;
+            max-width: calc(100vw - 32px);
+
+            @include phones {
+                height: 250px;
+            }
+
+            @include laptop {
+                height: 347px;
+            }
         }
 
         &__title {
             width: 100%;
-            text-align: center;
-            margin: 10px 0 0;
+            margin: 0;
+            text-align: left;
+            line-height: 1;
             color: $black;
+            margin-top: 40px;
             font: {
-              size: 14px;
+              size: 18px;
               family: $proxima-semibold;
               weight: 100;
             }
+
             @include tablets {
-              font-size: 18px;
+              font-size: 32px;
             }
+
+            @include laptop {
+                margin-top: 0;
+            }
+        }
+
+        &__p {
+            margin-top: 30px;
+            margin-bottom: 50px;
+            font-size: 14px;
+            color: $grey-dark;
+            line-height: 1.6;
         }
 
         &__thumb {
             width: 100%;
-            height: calc((100vw - 70px) * 0.58333);
-            background-size: 100%;
-            background-position: center;
-            background-repeat: no-repeat;
-            transition: background-size .3s;
-
-            @include phones {
-                height: calc((50vw - 55px)  * 0.58333);
-            }
-            @include laptop {
-                height: 210px;
-            }
-        }
-
-        &:hover .project__thumb {
-            background-size: 110%;
+            height: 100%;
+            object-fit: cover;
         }
     }
 }

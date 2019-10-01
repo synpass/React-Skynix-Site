@@ -7,6 +7,7 @@ import {connect} from "react-redux";
 import { object, number, string, oneOfType } from "prop-types";
 import ProjectsList from '../components/portfolio/ProjectsList.js';
 import Service from '../components/resources/service.js';
+import Clients from '../components/portfolio/Clients';
 
 class Portfolio extends Component {
     render() {
@@ -16,6 +17,7 @@ class Portfolio extends Component {
 	    return (
                 <Page meta={meta} newsItems={this.props.newsItems} loading={true} showLoader={this.props.showLoader} canonical={url + "/portfolio"}>
                     <Experience/>
+                    <Clients/>
                     <ProjectsList projects={projects.data} page={page} totals={totalProjects} />
                 </Page>
             )

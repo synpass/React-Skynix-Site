@@ -178,7 +178,7 @@ const Service = {
     },
 
     getAllPortfolioProjects (page) {
-        const perPage = 18;
+        const perPage = 100; // pagination is temporarily disabled for portfolio
         let totals;
 
         return fetch(`${API}${SLUG1}/portfolio?per_page=${perPage}&page=${page}`)
