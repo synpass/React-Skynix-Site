@@ -210,6 +210,10 @@ const Service = {
             );
     },
 
+    getPortfolioMeta (id) {
+        return this.get(`${API}/acf/v3/portfolio/${id}`)
+    },
+ 
     getPortfolioProject (project) {
         return this.get(`${API}${SLUG1}/portfolio?slug=${project}`).then(response=>response)
     },

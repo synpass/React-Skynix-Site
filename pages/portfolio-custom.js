@@ -25,7 +25,12 @@ class PortfolioCustom extends Component {
     }
 
     render() {
-        const { projectData, media } = this.props;
+        const { projectData, media, metadata } = this.props;
+
+        const canonical = {canonicalUrl: url + '/portfolio/' + projectData.slug};
+        const metaTime = {metaPublishedTime: projectData.date, metaModifiedTime: projectData.modified};
+        const sameMeta ={ogLocale: 'en_US', ogType: 'article'};
+        const acf = metadata ? metadata.acf : {};
 
         if(!projectData){
             return null
@@ -45,7 +50,7 @@ class PortfolioCustom extends Component {
         const title = projectData.title.rendered;
         const description = projectData.meta_description;
 
-        const meta = {title, description}
+        const meta = {title, description, ...acf , ...canonical, ...sameMeta, ...metaTime}
 
         return (
             <Page meta={meta} newsItems={this.props.newsItems} loading={true} showLoader={this.props.showLoader} canonical={url + "/portfolio/" + this.props.canonicalPage}>
@@ -125,8 +130,10 @@ PortfolioCustom.getInitialProps = async ({ query }) => {
     let id = portfolioData.data[0].id;
 
     const media = await Service.fetchProjectMedia(id);
+    const metadata = await Service.getPortfolioMeta(id)
     data = {
         projectData: portfolioData.data[0],
+        metadata: metadata.data,
         media: media.data,
         canonicalPage: query.project
     };
