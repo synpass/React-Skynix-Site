@@ -16,7 +16,7 @@ export default class Social extends Component{
 
         const sLinks = [
             {className: 'facebook', target: '_blank', href:`https://www.facebook.com/sharer.php?u=${url}`},
-            {className: 'linkedin', target: '_blank', href:`http://www.linkedin.com/shareArticle?mini=true&amp;url=${url}`},
+            {className: 'linkedin', target: '_blank', href:`https://www.linkedin.com/shareArticle?mini=true&amp;url=${url}`},
             {className: 'pinterest', target: '_blank', href:`https://pinterest.com/pin/create/link/?url=&amp;media=${url}`},
             {className: 'twitter', target: '_blank', href:`https://twitter.com/intent/tweet?url=${url}`},
             {className: 'email', href:`mailto:?body=${url}`}
