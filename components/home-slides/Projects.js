@@ -31,16 +31,24 @@ export default class Projects extends Component {
 
         const options = {
             loop:false,
-            margin:10,
+            margin:40,
             nav:true,
             responsive: {
                 0:{
-                    items:1
+                    items:1,
+                    autoHeight: true,
                 },
                 1024:{
                     items:2,
+                    autoHeight: false,
                     stagePadding: 72,
                 },
+
+                1440: {
+                    items:2,
+                    autoHeight: false,
+                    stagePadding: 7,
+                }
             }
         };
 
