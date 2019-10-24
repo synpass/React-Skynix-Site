@@ -14,8 +14,8 @@
     position: relative;
     @include tablets {
       min-height: 50%;
-      background: -webkit-linear-gradient(to left, transparent, white);
-      background: linear-gradient(to left, transparent, white);
+      background-image: linear-gradient(to left, transparent, white);
+      background-image: -webkit-linear-gradient(right, rgba(255,255,255,0.001) 0%, $white 5%, $white 100%); // safari workaround
     }
 
     &--reverse {
@@ -24,8 +24,8 @@
       border-top: 0;
       @include tablets {
         min-height: 50%;
-        background: -webkit-linear-gradient(to right, transparent, white);
-        background: linear-gradient(to right, transparent, white);
+        background-image: linear-gradient(to right, transparent, white);
+        background-image: -webkit-linear-gradient(left, rgba(255,255,255,0.001) 0%, $white 5%, $white 100%); // safari workaround
         border-top: 1px solid rgba($blue, .2);
       }
     }
