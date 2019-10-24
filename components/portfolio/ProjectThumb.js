@@ -16,7 +16,7 @@ export default class ProjectThumb extends Component {
         const json = await media.json()
 
         const filtered = json.find(mediaData => {   
-            return mediaData.slug === this.props.hero_banner_image.post_name;
+            return mediaData.slug === this.props.block1_image.post_name;
         })
 
         if (filtered) { 
@@ -25,7 +25,6 @@ export default class ProjectThumb extends Component {
             this.setState({imgSrc})
         };
     }
-
     render() {
         return (
             <div className="project">

@@ -4,6 +4,7 @@ import WorldMap from "./WorldMap";
 
 export default function Experience() {
 	return (
+        <>
         <Animated 
         animationIn= "fadeIn"
         animationInDelay= {600}>
@@ -16,6 +17,8 @@ export default function Experience() {
                 </h3>
             </div> 
         </Animated>
+        <WorldMap />
+        </>
         )
     }
 
