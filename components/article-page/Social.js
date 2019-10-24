@@ -15,11 +15,10 @@ export default class Social extends Component{
         const {url} = this.state;
 
         const sLinks = [
-            {className: 'facebook', target: '_blank', href:`https://www.facebook.com/sharer/sharer.php?u=${url}`},
-            {className: 'gplus', target: '_blank', href:`https://plus.google.com/share?url=${url}`},
+            {className: 'facebook', target: '_blank', href:`https://www.facebook.com/sharer.php?u=${url}`},
             {className: 'linkedin', target: '_blank', href:`https://www.linkedin.com/shareArticle?mini=true&amp;url=${url}`},
-            {className: 'pinterest', target: '_blank', href:`https://pinterest.com/pin/create/button/?url=&amp;media=${url}`},
-            {className: 'twitter', target: '_blank', href:`https://twitter.com/home?status=${url}`},
+            {className: 'pinterest', target: '_blank', href:`https://pinterest.com/pin/create/link/?url=&amp;media=${url}`},
+            {className: 'twitter', target: '_blank', href:`https://twitter.com/intent/tweet?url=${url}`},
             {className: 'email', href:`mailto:?body=${url}`}
         ];
         const listSocialLinks = sLinks.map(
