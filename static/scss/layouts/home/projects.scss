@@ -1,5 +1,7 @@
 .projects {
   width: 100%;
+  max-width: 1285px !important;
+  transform: translateX(12px);
   position: relative;
   padding-bottom: 72px;
   padding-top: 74px;
@@ -11,6 +13,10 @@
     }
     .owl-stage-outer {
       overflow: visible;
+    }
+
+    .owl-item:last-child {
+      margin-right: 0 !important;
     }
   }
 
@@ -38,7 +44,7 @@
 
 
   &__item {
-    height: 400px;
+    height: auto;
     position: relative;
     background-size: cover;
     background-position: center;
@@ -55,7 +61,7 @@
       display: block;
       text-decoration: none;
       @include laptop {
-        padding: 0 20px 0 0;
+        padding: 0;
       }
     }
 
@@ -113,7 +119,7 @@
       }
 
       a {
-        margin-top: auto;
+        margin-top: 15px;
         letter-spacing: 0.05em;
         color: $white;
         text-decoration: none;
@@ -143,8 +149,9 @@
     margin-top: 15px;
     display: block;
     transition: box-shadow .2s;
-    position: static;
-    bottom: 70px;
+    position: absolute;
+    bottom: -5px;
+    z-index: 99;
     margin-left: 15px;
     font: {
       family: $proxima-semibold;
