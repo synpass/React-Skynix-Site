@@ -1,49 +1,60 @@
 @font-face {
   font-family: "SofiaPro";
   src: url('/static/fonts/SofiaPro/SofiaProRegular.ttf');
+  font-display: swap;
 }
 @font-face {
   font-family: "SofiaProMedium";
   src: url('/static/fonts/SofiaPro/SofiaProMedium.ttf');
+  font-display: swap;
 }
 @font-face {
   font-family: "SofiaProSemiBold";
   src: url('/static/fonts/SofiaPro/SofiaProSemiBold.ttf');
+  font-display: swap;
 }
 @font-face {
   font-family: "SofiaProBold";
   src: url('/static/fonts/SofiaPro/SofiaProBold.ttf');
+  font-display: swap;
 }
 @font-face {
   font-family: "ProximaNova";
   src: url('/static/fonts/ProximaNova/ProximaNova-Regular.ttf');
+  font-display: swap;
 }
 @font-face {
   font-family: "ProximaNovaSemiBold";
   src: url('/static/fonts/ProximaNova/ProximaNova-Semibold.ttf');
+  font-display: swap;
 }
 @font-face {
   font-family: "ProximaNovaBold";
   src: url('/static/fonts/ProximaNova/ProximaNova-Bold.ttf');
+  font-display: swap;
 }
 
 @font-face {
   font-family: "BrandonGrotesqueBold";
   src: url('/static/fonts/BrandonGrotesque-Bold.ttf');
+  font-display: swap;
 }
 
 
 @font-face {
   font-family: "Gotham";
   src: url('/static/fonts/gotham/gotham-regular.woff2');
+  font-display: swap;
 }
 @font-face {
   font-family: "GothamMedium";
   src: url('/static/fonts/gotham/gotham-medium.woff2');
+  font-display: swap;
 }
 @font-face {
   font-family: "GothamBold";
   src: url('/static/fonts/gotham/gotham-bold.woff2');
+  font-display: swap;
 }
 
 @font-face {
@@ -56,5 +67,6 @@
   src:url('/static/fonts/fontello-icon.eot#iefix') format("embedded-opentype"),
   url('/static/fonts/fontello-icon.woff2') format("woff2"),
   url('/static/fonts/fontello-icon.ttf') format("truetype");
-  font-weight:400;font-style:normal
+  font-weight:400;
+  font-style:normal;
 }
