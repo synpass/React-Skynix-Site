@@ -15,8 +15,8 @@ class News extends Component{
         return (
             <div className='news'>
                 <div className='news__grid'>
-                    {this.props.items && this.props.items.length > 0 ? this.props.items.map(item => <NewsItem {...item}
-                                                                                                   key={item.id}/>) : null}
+                    {this.props.items && this.props.items.length > 0 ? this.props.items.slice(0, 6).map(item => <NewsItem {...item}
+                                                                                                   key={item.id}/> ) : null}
                 </div>
                 <a href='/resources' className='news__link'>view all posts</a>
             </div>
