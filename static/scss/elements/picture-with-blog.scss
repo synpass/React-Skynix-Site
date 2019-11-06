@@ -1,0 +1,12 @@
+img {
+
+  &.aligncenter {
+    display: block;
+    margin: auto;
+  }
+
+  &.alignright {
+    display: block;
+    margin: 0 0 0 auto;
+  }
+}
