@@ -55,6 +55,16 @@
       @include laptop {
         transform: scale(1);
       }
+
+      &.atlassian {
+        transform: scale(.3);
+        @include tablets {
+          transform: scale(.4);
+        }
+        @include laptop {
+          transform: scale(1);
+        }
+      }
         
       &.react,&.jquery{
           width: 100%;
@@ -93,7 +103,7 @@
           height: 65px;
       }
         
-      &.wordpress-logo, {
+      &.wordpress-logo {
           width: 100%;
           height: auto;
           max-width: 200px;
