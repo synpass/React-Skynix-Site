@@ -98,6 +98,7 @@ export default class Form extends Component {
                             name='name'
                             required={true}
                             label='Your Name'
+                            pattern="^[A-Za-zА-Яа-яЁё\s]+$"
                         />
                         <Input
                             value={contact.value}
@@ -107,6 +108,7 @@ export default class Form extends Component {
                             required={true}
                             label='Your Email'
                             type='email'
+                            pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$"
                         />
                         <Input
                             error={error}
