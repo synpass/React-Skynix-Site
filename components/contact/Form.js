@@ -58,7 +58,6 @@ export default class Form extends Component {
     handleSubmit(event) {
         this.setState({'loadingEvent': true});
         const formInputs = ['name', 'contact', 'project'];
-        console.log("11");
         event.preventDefault();
 
         const isValid = formInputs.reduce((prev, curr) => {
