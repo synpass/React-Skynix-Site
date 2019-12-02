@@ -47,6 +47,7 @@ export default class Input extends Component {
             type,
             error,
             value,
+            pattern,
             maxLength,
             parentClass
         } = this.props;
@@ -77,6 +78,7 @@ export default class Input extends Component {
                         ref={this.inputRef}
                         type={type}
                         id={id}
+                        pattern ={pattern}
                         name={name}
                         value={value}
                         maxLength={maxLength}
@@ -97,6 +99,7 @@ Input.propTypes = {
     required: PropTypes.bool,
     error:  PropTypes.bool,
     label: PropTypes.string,
+    pattern: PropTypes.string,
     onChange: PropTypes.func,
     className: PropTypes.string,
     type: PropTypes.string,

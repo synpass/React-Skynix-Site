@@ -58,6 +58,7 @@ export default class Form extends Component {
     handleSubmit(event) {
         this.setState({'loadingEvent': true});
         const formInputs = ['name', 'contact', 'project'];
+        console.log("11");
         event.preventDefault();
 
         const isValid = formInputs.reduce((prev, curr) => {
@@ -98,6 +99,7 @@ export default class Form extends Component {
                             name='name'
                             required={true}
                             label='Your Name'
+                            pattern="^[A-Za-zА-Яа-яЁё\s]+$"
                         />
                         <Input
                             value={contact.value}
@@ -107,6 +109,7 @@ export default class Form extends Component {
                             required={true}
                             label='Your Email'
                             type='email'
+                            pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$"
                         />
                         <Input
                             error={error}

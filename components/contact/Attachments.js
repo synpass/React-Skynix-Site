@@ -30,7 +30,7 @@ export default class Attachments extends Component {
             reader = new FileReader();
 
         if (file) {
-            const pattern = (/\.(PDF|doc|docx|txt|ppt|pptx|pdf|png|jpg|jpeg|sketch)$/i).test(file.name),
+            const pattern = (/\.(doc|docx|txt|ppt|pptx|pdf|png|jpg|jpeg|sketch)$/i).test(file.name),
                 checkSize = 10000000 > file.size;
 
             if(!pattern) {
@@ -94,7 +94,7 @@ export default class Attachments extends Component {
 
         const customErrors = {
             maxSize: 'Max size is 10 mb',
-            format: 'Formats allowed: PDF, doc, docx, txt, ppt, pptx, pdf, png, jpg, jpeg, sketch.'
+            format: 'Formats allowed: doc, docx, txt, ppt, pptx, pdf, png, jpg, jpeg, sketch.'
         };
 
         const filesList = <ul>
