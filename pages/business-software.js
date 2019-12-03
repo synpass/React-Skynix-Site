@@ -16,8 +16,7 @@ import PropTypes from 'prop-types';
 function BusinessSoftware(props) {
     const heroTextData = {
         heading: 'Scalable cloud and web software for small and medium business',
-        paragraph: <> Uncommon business operations require <b>tailored software</b>
-        in order to hit their specific targets. 
+        paragraph: <> Uncommon business operations require <b>tailored software</b> in order to hit their specific targets.
         Template solutions are often too restrictive to meet every need of your scaling business.
         <br/> <br/>
         Skynix has a proven track record of building ultra-scalable architectures and <b>allowing companies expand 
