@@ -9,6 +9,7 @@
         font-family: "ProximaNova";
         font-weight: 100;
         font-size: 12px;
+        cursor: pointer;
     }
 
     &__icon{
@@ -17,5 +18,6 @@
         display: block;
         background: url('/static/images/arrow-left.png');
         margin-right: 13px;
+        cursor: pointer;
     }
 }
