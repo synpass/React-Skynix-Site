@@ -97,18 +97,24 @@
     align-items: flex-start;
     justify-content:space-between;
     list-style:none;
-    margin-left: 70px;
+    margin-left: 30px;
+    @include tablets {
+      margin-left: 70px;
+    }
     @include laptop {
       margin-left: 0;
     }
     li {
       padding-left: 18px;
-      width: 40%;
+      width: 51%;
       display: block;
       color: $dark-pale;
       font-size: 18px;
       line-height: 34px;
       position: relative;
+      @include tablets {
+        width: 40%;
+      }
       &:after {
         content: "";
         width: 4px;
