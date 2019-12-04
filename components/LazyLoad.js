@@ -11,6 +11,7 @@ export default class LazyLoad extends Component {
         this.loadSection = this.loadSection.bind(this);
     }
 
+
     componentDidMount() {
         window.addEventListener('scroll', this.handleScroll);
     }
@@ -38,6 +39,9 @@ export default class LazyLoad extends Component {
     };
 
     render() {
+        if (this.props.firstDownload === true) {
+            this.state = {show: true}
+        }
         return(
             <div ref={this.lazyRef} id={this.props.id}>
                 <Animated {...this.props} isVisible={this.state.show}/>
@@ -52,6 +56,7 @@ LazyLoad.propTypes = {
     onLoad: PropTypes.func,
     animationIn: PropTypes.string,
     animationInDelay: PropTypes.number,
+    firstDownload: PropTypes.bool
 };
 
 LazyLoad.defaultProps = {
