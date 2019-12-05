@@ -48,7 +48,8 @@ export default class MobileApplications extends Component {
             subheadingLine: 'Deliver your message clearly and effectively to every device, exactly as you intend it.',
             subheading: '',
             rightColumnContent: <> </>,
-            withAnimation: true
+            withAnimation: true,
+            firstDownload: true
         }
     
         const platformData = {

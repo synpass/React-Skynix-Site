@@ -5,7 +5,7 @@ import PlaneAnimation from '../PlaneAnimation/PlaneAnimation';
 
 export default function DataMigration(props) {
     return (
-        <LazyLoad className='ec-datamigration' id='ecDatamigration' animationIn='fadeIn' animationInDelay={600}>
+        <LazyLoad className='ec-datamigration' id='ecDatamigration' firstDownload={props.firstDownload} animationIn='fadeIn' animationInDelay={600}>
             <h2 className={props.negativeMargin ? `section-heading section-heading--negative-margin` : `section-heading`}> {props.heading} </h2>
             <div className='ec-datamigration__container'>
                 <div>
@@ -41,5 +41,6 @@ DataMigration.propTypes = {
     subheading: oneOfType([object, string]),
     rightColumnContent: oneOfType([object, string]),
     withAnimation: bool,
-    negativeMargin: bool
+    negativeMargin: bool,
+    firstDownload: bool
 }
