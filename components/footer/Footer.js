@@ -16,13 +16,14 @@ export default function Footer(props) {
                 <div className='m-footer__cols'>
                     <div className='m-footer__col m-footer__col--left'>
                         <h4 className='m-footer__title'>Latest News</h4>
-                        <News limit={4} onLoad={props.onLoad} page='1' items={props.items}/>
+                        <News limit={6} onLoad={props.onLoad} page='1' items={props.items}/>
                     </div>
                     <div className='m-footer__col m-footer__col--right'>
                         <h4 className='m-footer__title'>Skynix Social</h4>
                         <Social/>
                         <ClutchBadge/>
-                        <span className='m-footer__copy'>Skynix LLC 2018</span>
+                        <span className='m-footer__copy'>Skynix LLC 2020</span>
+                        <span className='m-footer__copy'>Turhenievska St, 55А, Kyiv, 04050</span>
                     </div>
                 </div>
                 <CookieBanner
