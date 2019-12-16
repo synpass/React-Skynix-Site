@@ -22,8 +22,8 @@ export default function Footer(props) {
                         <h4 className='m-footer__title'>Skynix Social</h4>
                         <Social/>
                         <ClutchBadge/>
-                        <span className='m-footer__copy'>Skynix LLC 2020</span>
                         <span className='m-footer__copy'>Turhenievska St, 55А, Kyiv, 04050</span>
+                        <span className='m-footer__copy'>Skynix LLC 2020</span>
                     </div>
                 </div>
                 <CookieBanner
