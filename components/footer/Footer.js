@@ -21,9 +21,20 @@ export default function Footer(props) {
                     <div className='m-footer__col m-footer__col--right'>
                         <h4 className='m-footer__title'>Skynix Social</h4>
                         <Social/>
-                        <ClutchBadge/>
-                        <span className='m-footer__copy'>Turhenievska St, 55А, Kyiv, 04050</span>
-                        <span className='m-footer__copy'>Skynix LLC 2020</span>
+                        <div className="m-footer__info">
+                            <ClutchBadge/>
+                            <div className="m-footer__copy-wrapper">
+                                <a target="_blank" rel="noopener noreferrer" href="https://goo.gl/maps/DfoZ1uYkDdiKEZQ47">
+                                    <span className='m-footer__copy m-footer__map-link'>
+                                        <img src="/static/images/mark.svg" className="m-footer__map-icon" alt="google map"/>
+                                        Turhenievska St, 55А, Kyiv, 04050
+                                    </span>
+                                </a>
+                                <span className='m-footer__copy'>Skynix LLC 2020</span>
+                            </div>
+                        </div>
+                        
+                        
                     </div>
                 </div>
                 <CookieBanner
