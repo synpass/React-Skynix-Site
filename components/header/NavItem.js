@@ -1,16 +1,16 @@
 import React, {Component} from 'react';
 import Submenu from "./Submenu";
 import PropTypes from 'prop-types';
-import { Animated } from "react-animated-css";
+import {Animated} from "react-animated-css";
 import AnchorLink from 'react-anchor-link-smooth-scroll';
 import Link from 'next/link';
 
 export default class NavItem extends Component {
-
     constructor(props) {
         super(props);
         this.state = {
             height: 0,
+            test: false
         };
 
         this.show = this.show.bind(this);
@@ -18,50 +18,60 @@ export default class NavItem extends Component {
         this.toggle = this.toggle.bind(this);
     }
 
+    componentDidMount() {
+        document.getElementsByClassName("parent")[0].addEventListener("click", this.toggle);
+    }
+
     /* Show / Hide are used only for desktop version */
     show() {
-        if(window.innerWidth >= 768) this.setState({height: 'auto'});
+        if (window.innerWidth >= 768) this.setState({height: 'auto'});
     }
 
     hide() {
-        if(window.innerWidth >= 768) this.setState({height: 0});
+        if (window.innerWidth >= 768) this.setState({height: 0});
     };
 
     /* Toggle is used only for mobile version */
-    toggle() {
+    toggle(e) {
         const height = this.state.height === 0 ? 'auto' : 0;
         this.setState({height});
     }
 
+    changeBodyOverflow() {
+        document.body.style.overflow = "visible";
+    }
+
+
     render() {
-        const { 
-            children, 
-            name, 
-            contrast, 
+        const {
+            children,
+            name,
+            contrast,
             order,
             link,
             anchor
         } = this.props;
 
-        const { height } = this.state;
+        const {height} = this.state;
 
         let linkClasses = ["nav-link"];
-        if(children) linkClasses.push("parent");
-        if(contrast) linkClasses.push(linkClasses[0] + "--contrast");
+        if (children) linkClasses.push("parent");
+        if (contrast) linkClasses.push(linkClasses[0] + "--contrast");
 
         let expandClasses = ["expand"];
-        if(height === 'auto') expandClasses.push("opened");
+        if (height === 'auto') expandClasses.push("opened");
 
         return (
             <li onMouseLeave={this.hide} onMouseEnter={this.show}>
-                { anchor ? 
+                {anchor ?
                     <AnchorLink className={linkClasses.join(' ')} offset='-150' href={link}>{name}</AnchorLink> :
                     <Link href={link}>
-                        <a className={linkClasses.join(' ')}>{name} { children ? <span/> : null}</a>
-                     </Link>
+                        <a className={linkClasses.join(' ')} onClick={this.changeBodyOverflow}>{name} {children ?
+                            <span/> : null}</a>
+                    </Link>
                 }
-                { children ? <button className={expandClasses.join(' ')} onClick={this.toggle}/> : null }
-                { children ? <Submenu children={children} height={height}/> : null }
+                {children ? <button className={expandClasses.join(' ')} onClick={this.toggle}/> : null}
+                {children ? <Submenu children={children} height={height}/> : null}
             </li>
         )
     }
