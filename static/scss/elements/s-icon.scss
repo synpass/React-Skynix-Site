@@ -1,18 +1,15 @@
 .s-icon{
-  width: 30px;
-  height: 30px;
+  width: 20px;
+  height: 20px;
   margin: 0 15px 15px 0;
-  line-height: 31px;
+  line-height: 21px;
   text-decoration: none;
   font-size: 20px;
   text-align: center;
-  border-radius: 50%;
-  color: $white;
-  box-shadow: 0 1px 3px rgba(0,0,0,.12), 0 1px 2px rgba(0,0,0,.24);
+  color: $black;
   transition: box-shadow .3s ease;
 
   &--facebook {
-    background: $facebook;
     .icon-facebook{
       &:before {
         content: "\F09A";
@@ -20,7 +17,6 @@
     }
   }
   &--gplus {
-    background: $gplus;
     .icon-gplus{
       &:before {
         content: "\F0D5";
@@ -28,7 +24,6 @@
     }
   }
   &--linkedin {
-    background: $linkedin;
     .icon-linkedin{
       &:before {
         content: "\F0E1";
@@ -36,7 +31,6 @@
     }
   }
   &--pinterest {
-    background: $pinterest;
     .icon-pinterest{
       &:before {
         content: "\F231";
@@ -44,7 +38,6 @@
     }
   }
   &--twitter {
-    background: $twitter;
     .icon-twitter{
       &:before {
         content: "\F099";
@@ -52,7 +45,6 @@
     }
   }
   &--email {
-    background: $mail-alt;
     .icon-email{
       &:before {
         content: "\F0E0";
@@ -78,9 +70,9 @@
     }
   }
   @include tablets {
-    width: 40px;
-    height: 40px;
-    font-size: 25px;
-    line-height: 43px;
+    width: 20px;
+    height: 20px;
+    font-size: 20px;
+    line-height: 23px;
   }
 }

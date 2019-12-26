@@ -14,6 +14,7 @@ const ArticlePage = withRouter((props) => {
 });
 
 
+
 class ArticleWrap extends Component {
     constructor(props) {
         super(props);
@@ -70,7 +71,7 @@ class ArticleWrap extends Component {
 
         return (
             <Page meta={meta} loading={true} newsItems={news} showLoader={showLoader} canonical={canonical.canonicalUrl} schemaData={schema}>
-                <BlogArticle article={article} limit={1} onLoad={this.articleLoaded} slug={slug}/>
+                <BlogArticle article={article} limit={1} onLoad={this.articleLoaded} slug={slug} newsItems={news}/>
             </Page>
         )
     }
@@ -149,11 +150,6 @@ ArticlePage.getInitialProps = async ({ query }) => {
                         if (authorSuccess) item.authorName = authorData.name;
                     });
 
-                })
-
-                data.forEach(news=>{
-                    if(news.content) delete news.content
-                    if(news.excerpt) delete news.excerpt
                 })
 
                 property.news = data;

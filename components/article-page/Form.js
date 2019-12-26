@@ -91,96 +91,101 @@ export default class Form extends Component {
                     action="https://staging.cms.skynix.co/wp-json/wp/v2/comments"
                     className='blog-comment-form'
                     name='comment'>
-                    <h2 className='blog-comment-form__title'>Write a comment</h2>
-                    <div className='blog-comment-form__form-group'>
+                    <h2 className='blog-comment-form__title'>Write a response</h2>
+                    <div className='blog-comment-form__wrapper'>
+                        <div className='blog-comment-form__form-group'>
+                            <Input
+                                value={author.value}
+                                className={author.value ?
+                                    'blog-comment-form__input blog-comment-form__input--dirty'
+                                    :
+                                    'blog-comment-form__input'
+                                }
+                                error={error}
+                                onChange={this.handleChange}
+                                name='author'
+                                required={true}
+                                label=''
+                                pattern='.{2,}'
+                                type='text'
+                            />
+                            <label className='blog-comment-form__label'>Your Name <span>*</span></label>
+                            <span className='blog-comment-form__input-bar'></span>
+                            <span className='blog-comment-form__error-message'>Enter at least 2 characters</span>
+                        </div>
+                        <div className='blog-comment-form__form-group'>
+                            <Input
+                                value={email.value}
+                                className={email.value ? 'blog-comment-form__input blog-comment-form__input--dirty' : 'blog-comment-form__input'}
+                                error={error}
+                                onChange={this.handleChange}
+                                name='email'
+                                required={true}
+                                label=''
+                                pattern='[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$'
+                                type='email'
+                            />
+                            <label className='blog-comment-form__label'>Your e-mail <span>*</span></label>
+                            <span className='blog-comment-form__input-bar'></span>
+                            <span className='blog-comment-form__error-message'>Not a valid email address</span>
+                        </div>
+                        <div className='blog-comment-form__form-group'>
+                            <Input
+                                value={comment.value}
+                                className={comment.value ?
+                                    'blog-comment-form__textarea blog-comment-form__textarea--dirty'
+                                    :
+                                    'blog-comment-form__textarea'
+                                }
+                                error={error}
+                                onChange={this.handleChange}
+                                name='comment'
+                                required={false}
+                                label=''
+                                pattern='.{2,}'
+                                type='textarea'
+                            />
+                            <label className='blog-comment-form__label blog-comment-form__label--textarea'>
+                                Your response
+                            </label>
+                            <span className='blog-comment-form__input-bar'></span>
+                        </div>
+                        <button className='blog-comment-form__submit-button'
+                                type='submit'
+                                disabled=''>
+                            Publish
+                        </button>
                         <Input
-                            value={comment.value}
-                            className='blog-comment-form__textarea'
-                            error={error}
+                            value={submit.value}
+                            className='submit'
                             onChange={this.handleChange}
-                            name='comment'
-                            required={true}
+                            name='submit'
+                            required={false}
                             label=''
-                            pattern='.{2,}'
-                            type='textarea'
+                            id='submit'
+                            type='hidden'
                         />
-                        <label className='blog-comment-form__label blog-comment-form__label--textarea'>
-                            Write Comment
-                            <span>*</span>
-                        </label>
-                        <span className='blog-comment-form__error-message'>This field cannot be empty</span>
-                    </div>
-                    <div className='blog-comment-form__form-group'>
                         <Input
-                            value={author.value}
-                            className={author.value ? 
-                                'blog-comment-form__input blog-comment-form__input--dirty'
-                                :
-                                'blog-comment-form__input'
-                            }
-                            error={error}
+                            value={comment_post_ID.value}
+                            className='submit'
                             onChange={this.handleChange}
-                            name='author'
-                            required={true}
+                            name='comment_post_ID'
+                            required={false}
                             label=''
-                            pattern='.{2,}'
-                            type='text'
+                            id='comment_post_ID'
+                            type='hidden'
                         />
-                        <label className='blog-comment-form__label'>Your Name <span>*</span></label>
-                        <span className='blog-comment-form__input-bar'></span>
-                        <span className='blog-comment-form__error-message'>Enter at least 2 characters</span>
-                    </div>
-                    <div className='blog-comment-form__form-group'>
                         <Input
-                            value={email.value}
-                            className={email.value ? 'blog-comment-form__input blog-comment-form__input--dirty' : 'blog-comment-form__input'}
-                            error={error}
+                            value={comment_parent.value}
+                            className='submit'
                             onChange={this.handleChange}
-                            name='email'
-                            required={true}
+                            name='comment_parent'
+                            required={false}
                             label=''
-                            pattern='[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$'
-                            type='email'
+                            id='comment_parent'
+                            type='hidden'
                         />
-                        <label className='blog-comment-form__label'>Your E-mail <span>*</span></label>
-                        <span className='blog-comment-form__input-bar'></span>
-                        <span className='blog-comment-form__error-message'>Not a valid email address</span>
                     </div>
-                    <button className='blog-comment-form__submit-button'
-                            type='submit'
-                            disabled=''>
-                        Send Comment
-                    </button>
-                    <Input
-                        value={submit.value}
-                        className='submit'
-                        onChange={this.handleChange}
-                        name='submit'
-                        required={false}
-                        label=''
-                        id='submit'
-                        type='hidden'
-                    />
-                    <Input
-                        value={comment_post_ID.value}
-                        className='submit'
-                        onChange={this.handleChange}
-                        name='comment_post_ID'
-                        required={false}
-                        label=''
-                        id='comment_post_ID'
-                        type='hidden'
-                    />
-                    <Input
-                        value={comment_parent.value}
-                        className='submit'
-                        onChange={this.handleChange}
-                        name='comment_parent'
-                        required={false}
-                        label=''
-                        id='comment_parent'
-                        type='hidden'
-                    />
                 </form>
             </div>
             )

@@ -20,11 +20,17 @@
   }
 
   &__map-link {
+    font-family: $sofia-semibold;
+    color: $black;
     cursor: pointer;
     transition: color .3s;
 
     &:hover {
       color: $blue;
+    }
+
+    span {
+      padding-left: 23px;
     }
   }
 
@@ -75,6 +81,10 @@
     display: flex;
     flex-direction: column;
     padding-top: 20px;
+
+    a {
+      text-decoration: none;
+    }
   }
 
   &__copy {

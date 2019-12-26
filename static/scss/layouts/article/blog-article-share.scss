@@ -1,17 +1,17 @@
 .blog-article-share{
+  max-width: 190px;
   width: 100%;
-  max-width: 470px;
-  padding: 0 10px;
+  padding: 0 10px 0 0;
   box-sizing: border-box;
   order: 1;
 
   &__title {
-    text-align: center;
-    color: $grey-google;
-    text-transform: uppercase;
-    font-size: 25px;
-    font-family: SofiaPro;
-    font-weight: 700;
+    text-align: left;
+    color: $dark-pale;
+    text-transform: capitalize;
+    font-size: 18px;
+    font-family: $sofia;
+    font-weight: normal;
   }
   &__icons{
     margin: 20px 0 0;
@@ -20,21 +20,18 @@
     flex-wrap: wrap;
   }
   @include tablets {
-    max-width: 450px;
+    max-width: 200px;
   }
   @include laptop {
-    width: calc((100% - 800px)/2);
-    max-width: none;
-    margin: 25px 0 0;
+    margin: 18px 0 0;
     order: 0;
 
     &__icons{
-      height: 470px;
+      height: 186px;
       margin: 25px 0 0;
       flex-direction: column;
       justify-content: space-around;
-      align-items: center;
+      align-items: flex-start;
     }
   }
-
 }

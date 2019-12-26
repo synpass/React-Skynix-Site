@@ -1,0 +1,133 @@
+.blog-article {
+  &__related-articles {
+    display: flex;
+    justify-content: center;
+    margin-top: -10px;
+    margin-bottom: -65px;
+    padding-top: 0;
+  }
+  &__related-inner {
+    max-width: 1180px;
+    width: 100%;
+    padding: 0 20px;
+  }
+  &__related-heading {
+    margin-bottom: 23px;
+    font-family: $sofia-semibold;
+    font-size: 32px;
+    line-height: 80px;
+    font-weight: normal;
+    letter-spacing: 0.7px;
+    color: $dark-pale;
+  }
+  &__related-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0;
+
+    > div {
+      width: 100%;
+      margin: 0 0 30px;
+    }
+  }
+  &__related-article {
+    display: flex;
+    flex-direction: column;
+    max-width: 100%;
+    width: 100%;
+    text-decoration: none;
+
+    &:hover .blog-article__related-image {
+      background-size: 110%;
+    }
+  }
+  &__related-image {
+    width: 100%;
+    height: 205px;
+    margin-bottom: 16px;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 100%;
+    transition: background-size .2s ease-in-out;
+  }
+  &__related-info {
+    font-family: $proxima;
+    font-size: 14px;
+    line-height: 22px;
+    font-weight: normal;
+    letter-spacing: 0.5px;
+    color: #a9a9a9;
+  }
+  &__related-date {
+    margin-right: 4px;
+    letter-spacing: 0.4px;
+    color: $grey-dark;
+  }
+  &__related-title {
+    margin-top: 11px;
+    margin-bottom: 0;
+    font-family: $sofia;
+    font-size: 18px;
+    line-height: 23px;
+    font-weight: normal;
+    letter-spacing: 0.5px;
+    color: $dark-pale;
+  }
+  &__related-content {
+    margin-top: 9px;
+    font-family: $proxima;
+    font-size: 14px;
+    line-height: 22px;
+    font-weight: normal;
+    letter-spacing: 0.4px;
+    color: $grey-dark;
+  }
+
+  @include tablets {
+    &__related-wrapper {
+      margin: 0 -1.16%;
+
+      > div {
+        max-width: 31%;
+        margin: 0 1.16% 30px;
+      }
+    }
+  }
+  @include laptop {
+
+  }
+  @include desktop {
+    &__related-articles {
+      margin-top: 0;
+      margin-bottom: -26px;
+      padding-top: 68px;
+    }
+    &__related-wrapper {
+      margin: 0 -25px;
+
+      > div {
+        max-width: 360px;
+        margin: 0 25px 30px;
+      }
+    }
+    &__related-inner {
+      padding: 0;
+    }
+    &__related-image {
+      width: 360px;
+      margin-bottom: 26px;
+    }
+    &__related-title {
+      margin-top: 19px;
+      margin-bottom: 2px;
+    }
+    &__related-content {
+      margin-top: 14px;
+    }
+    &__header {
+      &-content {
+        padding: 100px 15px 0 !important;
+      }
+    }
+  }
+}

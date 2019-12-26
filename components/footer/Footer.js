@@ -27,7 +27,9 @@ export default function Footer(props) {
                                 <a target="_blank" rel="noopener noreferrer" href="https://goo.gl/maps/DfoZ1uYkDdiKEZQ47">
                                     <span className='m-footer__copy m-footer__map-link'>
                                         <img src="/static/images/mark.svg" className="m-footer__map-icon" alt="google map"/>
-                                        Turhenievska St, 55А, Kyiv, 04050
+                                        Turhenievska St, 55А
+                                        <br/>
+                                        <span>Kyiv, Ukraine</span>
                                     </span>
                                 </a>
                                 <span className='m-footer__copy'>Skynix LLC 2020</span>

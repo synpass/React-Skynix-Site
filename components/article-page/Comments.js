@@ -23,17 +23,27 @@ export default class Comments extends Component{
             <LazyLoad className='contact' id='comments'>
                 <div id='comments' className='comments-area'>
 
-                    <div className='comment-messages'>             
-                        <h2 className='blog-comment-form__title comment-messages__title'>Comments</h2>
+                    <div className='comment-messages'>
+                        <h2 className='blog-comment-form__title comment-messages__title'>
+                            Comments {this.state.comments.length != 0 ?
+                            <span className='comment-messages__count'>{this.state.comments.length}</span> : ''}
+                        </h2>
 
                         {this.state.comments.map((comment, index) => {
 
-                            const date = new Date(comment.date)
-                            const dateFormatted = `${date.getDate()}.${date.getMonth()}.${date.getFullYear()}`
+                            const date = new Date(comment.date);
+                            const postMonth = () => {
+                                const monthList = [ "January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December" ];
+                                for (let i = 0; i <= monthList.length; i++) {
+                                    if (date.getMonth() == i) return monthList[i];
+                                }
+                            };
+                            const dateFormatted = `${date.getDate()} ${postMonth()} ${date.getFullYear()} at ${date.getHours()}:${date.getMinutes()}`;
 
                             return (
                                 <Comment 
-                                    name={comment.author_name}  
+                                    name={comment.author_name}
+                                    photo={comment.author_avatar_urls}
                                     content={comment.content}
                                     date={dateFormatted}
                                     key={`comments-${index}`}
