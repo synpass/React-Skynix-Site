@@ -10,16 +10,11 @@ export default class NavItem extends Component {
         super(props);
         this.state = {
             height: 0,
-            test: false
         };
 
         this.show = this.show.bind(this);
         this.hide = this.hide.bind(this);
         this.toggle = this.toggle.bind(this);
-    }
-
-    componentDidMount() {
-        document.getElementsByClassName("parent")[0].addEventListener("click", this.toggle);
     }
 
     /* Show / Hide are used only for desktop version */
@@ -37,10 +32,6 @@ export default class NavItem extends Component {
         this.setState({height});
     }
 
-    changeBodyOverflow() {
-        document.body.style.overflow = "visible";
-    }
-
 
     render() {
         const {
@@ -49,7 +40,8 @@ export default class NavItem extends Component {
             contrast,
             order,
             link,
-            anchor
+            anchor,
+            toggleMobileMenu
         } = this.props;
 
         const {height} = this.state;
@@ -64,10 +56,9 @@ export default class NavItem extends Component {
         return (
             <li onMouseLeave={this.hide} onMouseEnter={this.show}>
                 {anchor ?
-                    <AnchorLink className={linkClasses.join(' ')} offset='-150' href={link}>{name}</AnchorLink> :
+                    <AnchorLink className={linkClasses.join(' ')} offset='-150' href={link} onClick={toggleMobileMenu}>{name}</AnchorLink> :
                     <Link href={link}>
-                        <a className={linkClasses.join(' ')} onClick={this.changeBodyOverflow}>{name} {children ?
-                            <span/> : null}</a>
+                        {children ? <a className={linkClasses.join(' ')} onClick={this.toggle} >{name} <span/> </a> : <a className={linkClasses.join(' ')} onClick={this.toggle} >{name}</a>}
                     </Link>
                 }
                 {children ? <button className={expandClasses.join(' ')} onClick={this.toggle}/> : null}
