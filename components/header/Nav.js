@@ -8,7 +8,7 @@ import {connect} from "react-redux";
 class Nav extends Component {
     constructor(props) {
         super(props);
-        this.state = { mobileMenu: false };
+        this.state = { mobileMenu: false, };
         this.toggleMobileMenu = this.toggleMobileMenu.bind(this);
     }
 
@@ -17,19 +17,22 @@ class Nav extends Component {
     }
 
     render() {
-
         const { mobileMenu } = this.state;
-
         const navItems = config.map((item, i) =>
-            <NavItem {...item} key={shortid.generate()} order={i}/>
+            <NavItem {...item} key={shortid.generate()} order={i} toggleMobileMenu={this.toggleMobileMenu} />
         );
 
+        let styles = ( <style global jsx>{` html { overflow: visible;} `}</style>);
+
         let menuClassName = ["nav__menu"],
-            burgerClassName = ["burger"];
-    
+            burgerClassName = ["burger"],
+            overlayClassName = ["header__overlay"];
+
         if (mobileMenu) {
             menuClassName.push("opened");
             burgerClassName.push("opened");
+            overlayClassName.push("opened");
+            styles = ( <style global jsx>{` html { overflow: hidden;} `}</style>);
         }
 
         return (
@@ -40,6 +43,8 @@ class Nav extends Component {
                         <span/><span/><span/>
                     </button>
                 </Animated>
+                <div className={overlayClassName.join(" ")}  onClick={this.toggleMobileMenu} />
+                {styles}
             </nav>
         )
     }
