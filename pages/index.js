@@ -83,7 +83,6 @@ class Index extends Component {
                         <WhySkynix/>
                         <Numbers heading="in numbers" about="DON'T JUST TAKE OUR WORD FOR IT" config="numbers"/>
                         <Projects/>
-                        <Reviews/>
                     </div>
                 </Fullpage>
                 <FooterFixed/>

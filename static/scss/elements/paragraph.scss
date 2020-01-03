@@ -60,8 +60,8 @@
     letter-spacing: .02em;
     font: {
       size: 14px;
-      family: $proxima-semibold;
-      weight: 100;
+      family: $proxima;
+      weight: normal;
     }
 
     @include tablets {
