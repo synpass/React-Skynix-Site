@@ -1,6 +1,10 @@
 .reviews {
   @include max-width;
 
+  @include laptop {
+    padding-bottom: 101px;
+  }
+
   &__title {
     font: {
       size: 25px;
@@ -9,6 +13,9 @@
     }
     @include tablets {
       font-size: 32px;
+    }
+    @include laptop {
+      margin-top: 73px;
     }
 
     b {

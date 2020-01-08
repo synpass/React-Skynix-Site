@@ -12,6 +12,7 @@ import url from '../domain.config'
 
 import Meta from "./Meta";
 import Head from 'next/head'
+import Reviews from "./footer/Reviews";
 
 class Page extends Component {
     constructor(props) {
@@ -58,6 +59,7 @@ class Page extends Component {
                         </div>
                     </div>
                     <ContactBlock/>
+                    <Reviews/>
                     <Footer onLoad={this.footerLoaded} page={1} items={newsItems||news}/>
                     
                 </div>

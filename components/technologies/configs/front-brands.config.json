@@ -1,34 +1,4 @@
-[   
-  {
-    "id": 12,
-    "imgClass": "jquery",
-    "img": "jquery-logo.png"
-  },
-  {
-    "id": 11,
-    "imgClass": "vue",
-    "img": "vue-logo.png"
-  },
-  {
-    "id": 10,
-    "imgClass": "angular",
-    "img": "angular-logo.png"
-  },
-  {
-    "id": 9,
-    "imgClass": "ember",
-    "img": "ember-logo.png"
-  },
-  {
-    "id": 8,
-    "imgClass": "react",
-    "img": "react-logo.png"
-  },
-  {
-    "id": 7,
-    "imgClass": "node",
-    "img": "node-logo.png"
-  },
+[
   {
     "id": 6,
     "imgClass": "sencha",
@@ -62,6 +32,7 @@
   {
     "id": 0,
     "imgClass": "js",
-    "img": "js-logo.png"
+    "img": "js-logo.png",
+    "frameworks": ["Node", "React", "Ember", "Angular", "Vue", "jQuery"]
   }
 ]

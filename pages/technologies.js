@@ -10,19 +10,20 @@ import Engine from "../components/technologies/Engine";
 import ProjectManagement from "../components/technologies/ProjectManagement";
 import url from '../domain.config'
 import {connect} from "react-redux"
+import Banner from "../components/Banner";
 
 class Technologies extends Component{
 
     render() {
 	    return (
             <Page meta={meta} loading={true} newsItems={this.props.newsItems} showLoader={this.props.showLoader} canonical={url + '/technologies'}>
+                <Banner title={'technology stack'} />
                 <TitleHeader/>
                 <RichBackend/>
                 <ElegantFrontend/>
                 <Development/>
                 <QualityAssurance/>
                 <Engine/>
-                <ProjectManagement/>
             </Page>
         )
     }
