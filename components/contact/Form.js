@@ -97,7 +97,7 @@ export default class Form extends Component {
                             value={name.value}
                             name='name'
                             required={true}
-                            label='Your Name'
+                            label='How should we call you?'
                             pattern="^[A-Za-zА-Яа-яЁё\s]+$"
                         />
                         <Input
@@ -106,7 +106,7 @@ export default class Form extends Component {
                             onChange={this.handleChange}
                             name='contact'
                             required={true}
-                            label='Your Email'
+                            label='How can we contact you?'
                             type='email'
                             pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$"
                         />
@@ -116,12 +116,12 @@ export default class Form extends Component {
                             value={project.value}
                             maxLength="2000"
                             name='project'
-                            label='Your Inquiry'
+                            label='Tell us about your project'
                             type='textarea'
                         />
                         <Attachments onChange={this.handleAttachmentsChange} files={files}/>
-                        <Agreement error={error} value={agreement} onChange={this.handleAgreementsChange}/>
                     </div>
+                    <Agreement error={error} value={agreement} onChange={this.handleAgreementsChange}/>
                     <div className='contact-form__submit'>
                         <button type='submit'>
                             {   
