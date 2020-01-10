@@ -32,7 +32,7 @@ export default function Footer(props) {
                                         <span>Kyiv, Ukraine</span>
                                     </span>
                                 </a>
-                                <span className='m-footer__copy'>Skynix LLC 2020</span>
+                                <span className='m-footer__copy'>Skynix LLC {new Date().getFullYear()}</span>
                             </div>
                         </div>
                         
