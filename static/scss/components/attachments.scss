@@ -1,5 +1,8 @@
 .attachments {
   margin-top: auto;
+  @include tablets {
+    margin-top: 32px;
+  }
 
   &__submit {
     position: relative;
