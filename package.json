@@ -21,7 +21,7 @@
     "core-js": "2.5.7",
     "express": "^4.16.4",
     "gsap": "^2.0.2",
-    "next": "^7.0.2",
+    "next": "^9.3.3",
     "next-redux-wrapper": "^2.1.0",
     "react": "^16.6.3",
     "react-dom": "^16.6.3",
